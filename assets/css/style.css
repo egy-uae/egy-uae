@@ -1,264 +1,155 @@
-/* Custom Styles for Al Massria Al Emaratia Website */
+/* ========== إعدادات عامة ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* General Body Styles */
 body {
-    font-family: 'Cairo', sans-serif; /* Arabic Font - Cairo, or 'Roboto', sans-serif for English */
-    direction: rtl; /* Default to RTL for Arabic */
-    text-align: right; /* Default to right for Arabic */
-    color: #333;
-    line-height: 1.6;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
 }
 
-body.ltr {
-    direction: ltr;
-    text-align: left;
+/* ========== الهيدر ========== */
+header {
+  background: #b30000; /* أحمر */
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
 }
 
-/* Navbar Customizations */
-.navbar-brand img {
-    height: 50px; /* Adjust logo height */
-}
-.navbar-nav .nav-link {
-    font-weight: 500;
-    color: #000;
-    margin-right: 15px; /* Adjust spacing for RTL */
-    margin-left: 0;
-}
-.navbar-nav .nav-link:hover {
-    color: #007bff; /* Primary color for hover */
-}
-body.ltr .navbar-nav .nav-link {
-    margin-right: 0;
-    margin-left: 15px; /* Adjust spacing for LTR */
+header h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
 }
 
-/* Language Switcher */
-.lang-switcher {
-    cursor: pointer;
-    font-weight: bold;
-    color: #007bff;
-}
-.lang-switcher:hover {
-    text-decoration: underline;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-banner.jpg') no-repeat center center/cover;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero-section h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-.hero-section p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-}
-.hero-section .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 10px 30px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-}
-.hero-section .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+nav ul li {
+  margin: 0 15px;
 }
 
-/* Section Styling */
-.section-padding {
-    padding: 60px 0;
-}
-.section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #007bff;
-    margin-bottom: 40px;
-    position: relative;
-}
-.section-title::after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 4px;
-    background-color: #007bff;
-    bottom: -10px;
-    right: 0; /* Default for RTL */
-}
-body.ltr .section-title::after {
-    left: 0; /* For LTR */
-    right: auto;
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Features/Highlights Section */
-.features-section .icon-box {
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 30px;
-    transition: all 0.3s ease-in-out;
-}
-.features-section .icon-box i {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-.features-section .icon-box h4 {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.features-section .icon-box:hover {
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+nav ul li a:hover {
+  color: #ffcccb;
 }
 
-/* Testimonials/Partners Section */
-.partner-logo {
-    max-height: 80px;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: all 0.3s ease-in-out;
-}
-.partner-logo:hover {
-    filter: grayscale(0%);
-    opacity: 1;
+/* ========== الأقسام ========== */
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-/* About Us Page */
-.about-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #b30000;
 }
 
-/* Services Page */
-.service-card {
-    border: 1px solid #eee;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 30px;
-    transition: all 0.3s ease-in-out;
-}
-.service-card i {
-    font-size: 3.5rem;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-.service-card h4 {
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.service-card:hover {
-    box-shadow: 0 0 25px rgba(0,0,0,0.15);
-    transform: translateY(-5px);
+/* ========== البطاقات ========== */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 15px 0;
+  transition: transform 0.3s ease;
 }
 
-/* Products Page */
-.product-item {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.product-item img {
-    max-width: 100%;
-    height: 200px; /* Fixed height for product images */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.08);
-}
-.product-item h5 {
-    font-weight: bold;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* Contact Page Form */
-.contact-form .form-control {
-    border-radius: 5px;
-    padding: 10px;
-}
-.contact-form textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-.contact-info i {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-right: 15px; /* RTL spacing */
-    margin-left: 0;
-}
-body.ltr .contact-info i {
-    margin-left: 15px; /* LTR spacing */
-    margin-right: 0;
+/* ========== الأسئلة الشائعة (FAQ) ========== */
+.faq {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
-/* Footer */
-.footer {
-    background-color: #222;
-    color: #ccc;
-    padding: 40px 0 20px;
-    font-size: 0.9rem;
-    direction: rtl; /* Default for Arabic */
-    text-align: right; /* Default for Arabic */
-}
-body.ltr .footer {
-    direction: ltr;
-    text-align: left;
-}
-.footer h5 {
-    color: #fff;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-.footer ul {
-    list-style: none;
-    padding: 0;
-}
-.footer ul li {
-    margin-bottom: 10px;
-}
-.footer ul li a {
-    color: #ccc;
-    text-decoration: none;
-}
-.footer ul li a:hover {
-    color: #fff;
-}
-.footer .social-icons a {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s ease-in-out;
-}
-.footer .social-icons a:hover {
-    color: #007bff;
-}
-.footer .footer-bottom {
-    border-top: 1px solid #444;
-    padding-top: 20px;
-    margin-top: 30px;
-    text-align: center;
+.faq h3 {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
 }
 
-/* RTL Adjustments for Bootstrap */
-/* Some Bootstrap classes automatically handle RTL with `direction: rtl` on body.
-   For others, specific overrides might be needed if they don't behave as expected. */
-.btn {
-    text-align: center;
+.faq p {
+  display: none;
+  padding-top: 5px;
+  font-size: 15px;
+  color: #555;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    .hero-section p {
-        font-size: 1rem;
- 
+/* ========== الفورم (Contact) ========== */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  background: #b30000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #800000;
+}
+
+/* ========== الفوتر ========== */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+footer a {
+  color: #ffcccb;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
