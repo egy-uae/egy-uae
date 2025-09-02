@@ -1,12 +1,12 @@
-/* General Styles */
+/* General Styling */
 :root {
-    --primary-color: #0056b3; /* Darker blue for corporate feel */
-    --secondary-color: #f8b300; /* Gold/yellow for accent */
-    --text-color: #333;
-    --light-gray: #f4f4f4;
-    --dark-gray: #555;
+    --primary-color: #007bff; /* أزرق */
+    --secondary-color: #6c757d; /* رمادي */
+    --accent-color: #28a745; /* أخضر */
+    --text-color: #343a40; /* نص داكن */
+    --light-bg: #f8f9fa; /* خلفية فاتحة */
     --white: #ffffff;
-    --black: #000000;
+    --dark: #212529;
 }
 
 * {
@@ -16,43 +16,17 @@
 }
 
 body {
-    font-family: 'Cairo', sans-serif; /* Default for Arabic */
+    font-family: 'Cairo', sans-serif; /* استخدام الخط العربي */
     line-height: 1.6;
     color: var(--text-color);
-    background: var(--white);
-    direction: rtl; /* Default to RTL for Arabic */
-    text-align: right;
-}
-
-body[lang="en"] {
-    font-family: 'Poppins', sans-serif; /* For English */
-    direction: ltr;
-    text-align: left;
+    background-color: var(--white);
+    direction: rtl; /* لجعل الموقع من اليمين لليسار بشكل افتراضي */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-ul {
-    list-style: none;
-}
-
-h1, h2, h3, h4 {
-    margin-bottom: 15px;
-    color: var(--primary-color);
 }
 
 .section-padding {
@@ -62,69 +36,72 @@ h1, h2, h3, h4 {
 .section-title {
     text-align: center;
     font-size: 2.5em;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    color: var(--dark);
     position: relative;
-    padding-bottom: 15px;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
-    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    bottom: -15px;
+    width: 60px;
     height: 4px;
-    background: var(--secondary-color);
+    background-color: var(--primary-color);
     border-radius: 2px;
 }
 
 .bg-light {
-    background: var(--light-gray);
+    background-color: var(--light-bg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 2rem;
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 12px 25px;
     border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
-.primary-btn {
-    background: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
+.btn:hover {
+    background-color: darken(var(--primary-color), 10%); /* لا يعمل مباشرة في CSS, استبدل بلون يدوي */
+    background-color: #0056b3; /* لون أغمق للأزرق */
 }
 
-.primary-btn:hover {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--white);
+.btn-secondary {
+    background-color: var(--secondary-color);
 }
 
-.secondary-btn {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-
-.secondary-btn:hover {
-    background: var(--primary-color);
-    color: var(--white);
+.btn-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%); /* لا يعمل مباشرة في CSS */
+    background-color: #5a6268;
 }
 
 /* Header */
 .main-header {
-    background: var(--white);
+    background-color: var(--white);
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .main-header .container {
@@ -134,40 +111,41 @@ h1, h2, h3, h4 {
 }
 
 .main-header .logo img {
-    height: 60px; /* Adjust as needed */
-    width: auto;
+    height: 50px;
 }
 
 .main-nav .nav-links {
+    list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav .nav-links li {
-    margin: 0 15px;
+    margin-left: 30px; /* المسافة بين الروابط */
+}
+html[dir="ltr"] .main-nav .nav-links li { /* Adjust for LTR */
+    margin-left: 0;
+    margin-right: 30px;
 }
 
 .main-nav .nav-links a {
+    text-decoration: none;
     color: var(--text-color);
-    font-weight: 600;
-    padding: 5px 0;
+    font-weight: bold;
+    padding-bottom: 5px;
     position: relative;
 }
 
 .main-nav .nav-links a::after {
     content: '';
     position: absolute;
+    left: 0;
     bottom: 0;
-    right: 0; /* For RTL */
-    left: auto; /* For RTL */
     width: 0;
-    height: 3px;
-    background: var(--primary-color);
+    height: 2px;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
-}
-
-body[lang="en"] .main-nav .nav-links a::after {
-    right: auto;
-    left: 0; /* For LTR */
 }
 
 .main-nav .nav-links a:hover::after,
@@ -175,106 +153,45 @@ body[lang="en"] .main-nav .nav-links a::after {
     width: 100%;
 }
 
-.lang-switcher button {
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: bold;
-    margin-left: 20px; /* Adjust for RTL */
-    margin-right: 0; /* Adjust for RTL */
-    transition: background-color 0.3s ease;
+.main-nav .lang-switcher {
+    margin-left: 20px;
+    display: inline-block;
 }
-body[lang="en"] .lang-switcher button {
+html[dir="ltr"] .main-nav .lang-switcher { /* Adjust for LTR */
     margin-left: 0;
     margin-right: 20px;
 }
 
-.lang-switcher button:hover {
-    background: var(--secondary-color);
+.main-nav .lang-switcher .lang-btn {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
 
-.hamburger-menu {
-    display: none; /* Hidden on desktop */
+.main-nav .lang-switcher .lang-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.main-nav .hamburger-menu {
+    display: none; /* مخفي افتراضيا لسطح المكتب */
     font-size: 1.8em;
     cursor: pointer;
-    color: var(--primary-color);
-    margin-right: 15px; /* Adjust for RTL */
-}
-
-/* Mobile Nav Overlay */
-.mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1001;
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-}
-
-.mobile-nav-overlay.active {
-    display: flex;
-}
-
-.mobile-nav-menu {
-    background: var(--white);
-    width: 80%;
-    max-width: 300px;
-    padding: 30px;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.mobile-nav-menu .close-btn {
-    position: absolute;
-    top: 15px;
-    left: 15px; /* Adjust for RTL */
-    right: auto; /* Adjust for RTL */
-    font-size: 2em;
-    cursor: pointer;
-    color: var(--dark-gray);
-}
-body[lang="en"] .mobile-nav-menu .close-btn {
-    left: auto;
-    right: 15px;
-}
-
-.mobile-nav-links {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.mobile-nav-links li {
-    margin-bottom: 20px;
-}
-
-.mobile-nav-links a {
-    font-size: 1.2em;
     color: var(--text-color);
-    font-weight: 600;
-    display: block;
-    padding: 10px;
-    border-bottom: 1px solid var(--light-gray);
-}
-
-.mobile-nav-links a:hover {
-    color: var(--primary-color);
 }
 
 /* Hero Section */
 .hero-section {
-    background: url('../images/hero-banner.jpg') no-repeat center center/cover;
+    background: url('https://via.placeholder.com/1920x600?text=Company+Building') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
     padding: 150px 0;
+    display: flex;
+    align-items: center;
+    min-height: 600px;
     position: relative;
 }
 
@@ -285,164 +202,219 @@ body[lang="en"] .mobile-nav-menu .close-btn {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+    background-color: rgba(0,0,0,0.5); /* طبقة شفافة لتوضيح النص */
 }
 
-.hero-content {
+.hero-section .container {
     position: relative;
     z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 3.5em;
+    font-size: 3.8em;
     margin-bottom: 20px;
-    color: var(--white);
 }
 
 .hero-content p {
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
+    font-size: 1.5em;
+    margin-bottom: 40px;
 }
 
-/* Grid Layouts */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    align-items: center;
+/* About Brief Section */
+.about-brief .features-bar {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-.grid-3-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.grid-4-col {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-/* About & Services Overview */
-.about-overview-text h2 {
-    font-size: 2.2em;
-}
-
-.about-overview-text p {
-    margin-bottom: 20px;
-}
-
-.services-overview-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.service-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+.about-brief .feature-item {
     text-align: center;
-    transition: transform 0.3s ease;
+    flex: 1;
+    min-width: 150px;
+    margin: 15px;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-.service-card i {
+.about-brief .feature-item i {
     font-size: 3em;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
-.service-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: var(--primary-color);
+.about-brief .feature-item span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
-/* Features Section */
-.features-grid {
-    text-align: center;
+/* Services Brief Section */
+.services-brief .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.feature-item {
-    background: var(--white);
+.services-brief .service-card {
+    background-color: var(--white);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-item:hover {
+.services-brief .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-.feature-item i {
+.services-brief .service-card i {
     font-size: 3.5em;
-    color: var(--primary-color);
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
-.feature-item h3 {
-    font-size: 1.6em;
-    color: var(--dark-gray);
+.services-brief .service-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--dark);
 }
 
-.feature-item p {
-    color: var(--dark-gray);
+.services-brief .service-card p {
+    color: var(--secondary-color);
 }
 
-/* Partners & Testimonials */
-.partners-slider {
+/* Partners Section */
+.partners-section {
+    background-color: var(--white);
+}
+
+.partners-section .partner-logos {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    margin-top: 40px;
-    gap: 30px;
+    gap: 40px;
 }
 
-.partner-logo {
-    padding: 10px 20px;
-    background: var(--white);
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.partner-logo:hover {
-    transform: translateY(-5px);
-}
-
-.partner-logo img {
+.partners-section .partner-logos img {
     max-height: 80px;
     width: auto;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: filter 0.3s ease, opacity 0.3s ease;
+    filter: grayscale(80%);
+    transition: filter 0.3s ease;
 }
 
-.partner-logo img:hover {
+.partners-section .partner-logos img:hover {
     filter: grayscale(0%);
-    opacity: 1;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 60px 0 20px;
+    font-size: 0.9em;
+}
+
+.main-footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.main-footer .footer-col .footer-logo {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.main-footer .footer-col p {
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.main-footer .footer-col h4 {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.main-footer .footer-col h4::after {
+    content: '';
+    position: absolute;
+    right: 0; /* Left for LTR */
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+html[dir="ltr"] .main-footer .footer-col h4::after { /* Adjust for LTR */
+    right: auto;
+    left: 0;
+}
+
+.main-footer .footer-col ul {
+    list-style: none;
+}
+
+.main-footer .footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.main-footer .footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-footer .footer-col ul li a:hover {
+    color: var(--primary-color);
+}
+
+.main-footer .footer-col.contact-info p i {
+    margin-left: 10px;
+    color: var(--accent-color);
+}
+html[dir="ltr"] .main-footer .footer-col.contact-info p i { /* Adjust for LTR */
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.main-footer .social-icons a {
+    color: var(--white);
+    font-size: 1.2em;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+html[dir="ltr"] .main-footer .social-icons a { /* Adjust for LTR */
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.main-footer .social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 30px;
+    color: #ccc;
 }
 
 /* WhatsApp Button */
 .whatsapp-btn {
     position: fixed;
-    bottom: 25px;
-    left: 25px; /* Adjust for RTL */
-    right: auto; /* Adjust for RTL */
-    background: #25D366;
+    bottom: 30px;
+    left: 30px; /* For RTL */
+    background-color: #25d366;
     color: var(--white);
     width: 60px;
     height: 60px;
@@ -451,98 +423,98 @@ body[lang="en"] .mobile-nav-menu .close-btn {
     justify-content: center;
     align-items: center;
     font-size: 2.2em;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
     transition: transform 0.3s ease;
 }
-
-body[lang="en"] .whatsapp-btn {
+html[dir="ltr"] .whatsapp-btn { /* Adjust for LTR */
     left: auto;
-    right: 25px;
+    right: 30px;
 }
 
 .whatsapp-btn:hover {
     transform: scale(1.1);
 }
 
-/* Footer */
-.main-footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 60px 0 20px;
-    font-size: 0.9em;
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav .nav-links {
+        display: none; /* إخفاء قائمة التنقل لنمط الجوال */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* تحت الهيدر */
+        left: 0;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+    .main-nav .nav-links.active {
+        display: flex; /* إظهار القائمة عند تفعيل الهامبرجر */
+    }
+    .main-nav .nav-links li {
+        margin: 10px 20px;
+        text-align: center;
+    }
+    .main-nav .hamburger-menu {
+        display: block; /* إظهار أيقونة الهامبرجر */
+    }
+    .main-header .container {
+        flex-wrap: wrap; /* للسماح للعناصر بالنزول لسطر جديد */
+    }
+    .main-nav .lang-switcher {
+        order: -1; /* لجعل مبدل اللغة يظهر قبل الشعار في بعض الحالات */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+    .about-brief .features-bar,
+    .services-brief .service-cards,
+    .main-footer .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .partners-section .partner-logos {
+        gap: 20px;
+    }
 }
 
-.main-footer .grid-footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+@media (max-width: 576px) {
+    .section-padding {
+        padding: 60px 0;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .hero-section {
+        padding: 100px 0;
+        min-height: 400px;
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.8em;
+        bottom: 20px;
+        left: 20px; /* For RTL */
+    }
+    html[dir="ltr"] .whatsapp-btn { /* Adjust for LTR */
+        left: auto;
+        right: 20px;
+    }
 }
-
-.footer-about img {
-    height: 70px;
-    margin-bottom: 15px;
-    filter: brightness(0) invert(1); /* Makes logo white */
-}
-
-.footer-about p {
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-links h4, .footer-contact h4 {
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links a, .footer-contact p {
-    color: rgba(255, 255, 255, 0.8);
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover, .footer-contact p:hover {
-    color: var(--white);
-}
-
-.footer-contact p i {
-    margin-left: 10px; /* Adjust for RTL */
-    margin-right: 0; /* Adjust for RTL */
-    color: var(--secondary-color);
-}
-body[lang="en"] .footer-contact p i {
-    margin-left: 0;
-    margin-right: 10px;
-}
-
-
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: var(--white);
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--secondary-color);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* General Page Styles (for other pages like About, Services, etc.) */
-.
