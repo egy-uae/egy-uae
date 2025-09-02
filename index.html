@@ -1,196 +1,969 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المؤسسة المصرية الإماراتية - للاستيراد والتصدير والتوكيلات التجارية</title>
-    <meta name="description" content="المؤسسة المصرية الإماراتية: شريكك الموثوق في الاستيراد، التصدير، والوكالات التجارية. الجودة، الثقة، السرعة.">
-    <meta name="keywords" content="استيراد, تصدير, وكالات تجارية, مصر, الإمارات, تجارة دولية, لوجستيات">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts for better typography (e.g., Cairo for Arabic, Poppins for English) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+/* General Styles */
+:root {
+    --primary-color: #0056b3; /* Darker blue for corporate feel */
+    --secondary-color: #f8b300; /* Gold/yellow for accent */
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --dark-gray: #555;
+    --white: #ffffff;
+    --black: #000000;
+}
 
-    <!-- Header -->
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="Al Massria Al Emaratia Logo">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-                    <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
-                    <li><a href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
-                    <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
-                    <li><a href="faqs.html" data-ar="الأسئلة الشائعة" data-en="FAQs">الأسئلة الشائعة</a></li>
-                    <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
-                </ul>
-                <div class="lang-switcher">
-                    <button id="lang-toggle" data-lang="en">English</button>
-                </div>
-                <div class="hamburger-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Mobile Navigation Menu (Hidden by default) -->
-    <div class="mobile-nav-overlay">
-        <div class="mobile-nav-menu">
-            <span class="close-btn">&times;</span>
-            <ul class="mobile-nav-links">
-                <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-                <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
-                <li><a href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
-                <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
-                <li><a href="faqs.html" data-ar="الأسئلة الشائعة" data-en="FAQs">الأسئلة الشائعة</a></li>
-                <li><a href="contact.html" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a></li>
-            </ul>
-        </div>
-    </div>
+body {
+    font-family: 'Cairo', sans-serif; /* Default for Arabic */
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--white);
+    direction: rtl; /* Default to RTL for Arabic */
+    text-align: right;
+}
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-content container">
-            <h1 data-ar="شريكك الموثوق في الاستيراد والتصدير" data-en="Your Trusted Partner in Import & Export">شريكك الموثوق في الاستيراد والتصدير</h1>
-            <p data-ar="المؤسسة المصرية الإماراتية: جسر التجارة الدولية نحو مستقبل أفضل." data-en="Al Massria Al Emaratia: Your bridge to global trade and a better future.">المؤسسة المصرية الإماراتية: جسر التجارة الدولية نحو مستقبل أفضل.</p>
-            <a href="services.html" class="btn primary-btn" data-ar="اكتشف خدماتنا" data-en="Discover Our Services">اكتشف خدماتنا</a>
-        </div>
-    </section>
+body[lang="en"] {
+    font-family: 'Poppins', sans-serif; /* For English */
+    direction: ltr;
+    text-align: left;
+}
 
-    <!-- About Us & Services Overview -->
-    <section class="about-services-overview section-padding bg-light">
-        <div class="container grid-2-col">
-            <div class="about-overview-text">
-                <h2 data-ar="من نحن" data-en="About Us">من نحن</h2>
-                <p data-ar="تأسست المؤسسة المصرية الإماراتية عام 2010 لتكون رائدة في مجال الاستيراد والتصدير والتوكيلات التجارية، ملتزمون بتقديم حلول تجارية متكاملة وموثوقة لعملائنا حول العالم." data-en="Established in 2010, Al Massria Al Emaratia has quickly become a leader in import, export, and commercial agencies, committed to providing integrated and reliable trade solutions to our global clients.">تأسست المؤسسة المصرية الإماراتية عام 2010 لتكون رائدة في مجال الاستيراد والتصدير والتوكيلات التجارية، ملتزمون بتقديم حلول تجارية متكاملة وموثوقة لعملائنا حول العالم.</p>
-                <a href="about.html" class="btn secondary-btn" data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</a>
-            </div>
-            <div class="services-overview-cards">
-                <div class="service-card">
-                    <i class="fas fa-truck-loading"></i>
-                    <h3 data-ar="الاستيراد" data-en="Import">الاستيراد</h3>
-                    <p data-ar="نقدم حلول استيراد شاملة تلبي احتياجات عملائنا بكفاءة." data-en="We offer comprehensive import solutions to efficiently meet our clients' needs.">نقدم حلول استيراد شاملة تلبي احتياجات عملائنا بكفاءة.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3 data-ar="التصدير" data-en="Export">التصدير</h3>
-                    <p data-ar="نساعدك على توسيع نطاق أعمالك والوصول إلى أسواق عالمية جديدة." data-en="We help you expand your business and reach new global markets.">نساعدك على توسيع نطاق أعمالك والوصول إلى أسواق عالمية جديدة.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3 data-ar="الوكالات التجارية" data-en="Commercial Agencies">الوكالات التجارية</h3>
-                    <p data-ar="نتيح فرصًا للشراكة والتمثيل التجاري للعلامات التجارية العالمية." data-en="We provide partnership and commercial representation opportunities for international brands.">نتيح فرصًا للشراكة والتمثيل التجاري للعلامات التجارية العالمية.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    <!-- Features/Why Choose Us Section -->
-    <section class="features-section section-padding">
-        <div class="container">
-            <h2 class="section-title" data-ar="لماذا تختارنا؟" data-en="Why Choose Us?">لماذا تختارنا؟</h2>
-            <div class="features-grid grid-4-col">
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3 data-ar="الثقة" data-en="Trust">الثقة</h3>
-                    <p data-ar="بناء علاقات طويلة الأمد مبنية على الشفافية والأمانة." data-en="Building long-term relationships based on transparency and integrity.">بناء علاقات طويلة الأمد مبنية على الشفافية والأمانة.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-award"></i>
-                    <h3 data-ar="الجودة" data-en="Quality">الجودة</h3>
-                    <p data-ar="نلتزم بأعلى معايير الجودة في كل خطوة." data-en="Committed to the highest quality standards at every step.">نلتزم بأعلى معايير الجودة في كل خطوة.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h3 data-ar="السرعة" data-en="Speed">السرعة</h3>
-                    <p data-ar="كفاءة عالية في إنجاز المعاملات والتسليم." data-en="High efficiency in transaction processing and delivery.">كفاءة عالية في إنجاز المعاملات والتسليم.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-globe-americas"></i>
-                    <h3 data-ar="الشراكات العالمية" data-en="Global Partnerships">الشراكات العالمية</h3>
-                    <p data-ar="شبكة واسعة من الشركاء حول العالم لضمان وصولك." data-en="An extensive network of global partners to ensure your reach.">شبكة واسعة من الشركاء حول العالم لضمان وصولك.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-    <!-- Testimonials/Partners Section -->
-    <section class="partners-testimonials section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title" data-ar="عملاؤنا وشركاؤنا" data-en="Our Clients & Partners">عملاؤنا وشركاؤنا</h2>
-            <div class="partners-slider">
-                <!-- Example partner logos - in a real site, these would be dynamic or in a slider -->
-                <div class="partner-logo">
-                    <img src="images/partner1.png" alt="Partner Logo 1">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/partner2.png" alt="Partner Logo 2">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/partner3.png" alt="Partner Logo 3">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/partner4.png" alt="Partner Logo 4">
-                </div>
-                 <div class="partner-logo">
-                    <img src="images/partner5.png" alt="Partner Logo 5">
-                </div>
-            </div>
-            <!-- Testimonials can be added here -->
-            <div class="testimonials">
-                <!-- Add testimonial cards here -->
-            </div>
-        </div>
-    </section>
-    
-    <!-- WhatsApp Chat Button -->
-    <a href="https://wa.me/01013378572" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+a:hover {
+    color: var(--secondary-color);
+}
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container grid-footer">
-            <div class="footer-about">
-                <img src="images/logo.png" alt="Al Massria Al Emaratia Logo">
-                <p data-ar="المؤسسة المصرية الإماراتية: شريكك الموثوق في التجارة الدولية. ملتزمون بالتميز والجودة." data-en="Al Massria Al Emaratia: Your trusted partner in international trade. Committed to excellence and quality.">المؤسسة المصرية الإماراتية: شريكك الموثوق في التجارة الدولية. ملتزمون بالتميز والجودة.</p>
-            </div>
-            <div class="footer-links">
-                <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
-                <ul>
-                    <li><a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a></li>
-                    <li><a href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
-                    <li><a href="products.html" data-ar="المنتجات" data-en="Products">المنتجات</a></li>
-                    <li><a href="faqs.html" data-ar="الأسئلة الشائعة" data-en="FAQs">الأسئلة الشائعة</a></li>
-                    <li><a href="privacy-policy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h4>
-                <p><i class="fas fa-envelope"></i> info@egy-uae.com</p>
-                <p><i class="fas fa-phone-alt"></i> 01013378572 (مصر)</p>
-                <p data-ar="<i class='fas fa-map-marker-alt'></i> العنوان هنا" data-en="<i class='fas fa-map-marker-alt'></i> Your Address Here"><i class='fas fa-map-marker-alt'></i> العنوان هنا</p>
-                <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p data-ar="&copy; <span id='current-year'></span> المؤسسة المصرية الإماراتية. جميع الحقوق محفوظة." data-en="&copy; <span id='current-year'></span> Al Massria Al Emaratia. All Rights Reserved.">&copy; <span id="current-year"></span> المؤسسة المصرية الإماراتية. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+ul {
+    list-style: none;
+}
 
-    <script src="js/script.js"></script>
-</body>
-</html>
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.bg-light {
+    background: var(--light-gray);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+}
+
+.primary-btn:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Header */
+.main-header {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo img {
+    height: 60px; /* Adjust as needed */
+    width: auto;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .nav-links {
+    display: flex;
+}
+
+.main-nav .nav-links li {
+    margin: 0 15px;
+}
+
+.main-nav .nav-links a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0; /* For RTL */
+    left: auto; /* For RTL */
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+body[lang="en"] .main-nav .nav-links a::after {
+    right: auto;
+    left: 0; /* For LTR */
+}
+
+.main-nav .nav-links a:hover::after,
+.main-nav .nav-links a.active::after {
+    width: 100%;
+}
+
+.lang-switcher button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-left: 20px; /* Adjust for RTL */
+    margin-right: 0; /* Adjust for RTL */
+    transition: background-color 0.3s ease;
+}
+body[lang="en"] .lang-switcher button {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+.lang-switcher button:hover {
+    background: var(--secondary-color);
+}
+
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--primary-color);
+    margin-right: 15px; /* Adjust for RTL */
+    margin-left: 0;
+}
+body[lang="en"] .hamburger-menu {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+/* Mobile Nav Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1001;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav-overlay.active {
+    display: flex;
+}
+
+.mobile-nav-menu {
+    background: var(--white);
+    width: 80%;
+    max-width: 300px;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav-menu .close-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* Adjust for RTL */
+    right: auto; /* Adjust for RTL */
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--dark-gray);
+}
+body[lang="en"] .mobile-nav-menu .close-btn {
+    left: auto;
+    right: 15px;
+}
+
+.mobile-nav-links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav-links a {
+    font-size: 1.2em;
+    color: var(--text-color);
+    font-weight: 600;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.mobile-nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section (Home Page) */
+.hero-section {
+    background: url('../images/hero-banner.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* Page Hero Section (For internal pages) */
+.page-hero {
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    margin-top: -1px; /* To prevent gap with header */
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero h1 {
+    font-size: 3em;
+    color: var(--white);
+    margin: 0;
+}
+
+/* Grid Layouts */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    align-items: center;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.grid-4-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* About & Services Overview */
+.about-overview-text h2 {
+    font-size: 2.2em;
+}
+
+.about-overview-text p {
+    margin-bottom: 20px;
+}
+
+.services-overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3em;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Features Section */
+.features-grid {
+    text-align: center;
+}
+
+.feature-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item i {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.6em;
+    color: var(--dark-gray);
+}
+
+.feature-item p {
+    color: var(--dark-gray);
+}
+
+/* Partners & Testimonials */
+.partners-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-top: 40px;
+    gap: 30px;
+}
+
+.partner-logo {
+    padding: 10px 20px;
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+}
+
+.partner-logo img {
+    max-height: 80px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px; /* Adjust for RTL */
+    right: auto; /* Adjust for RTL */
+    background: #25D366;
+    color: var(--white);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+body[lang="en"] .whatsapp-btn {
+    left: auto;
+    right: 25px;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+.main-footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+    font-size: 0.9em;
+}
+
+.main-footer .grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about img {
+    height: 70px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.footer-about p {
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-contact p {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-contact p:hover {
+    color: var(--white);
+}
+
+.footer-contact p i {
+    margin-left: 10px; /* Adjust for RTL */
+    margin-right: 0; /* Adjust for RTL */
+    color: var(--secondary-color);
+}
+body[lang="en"] .footer-contact p i {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* General Page Content Sections */
+.content-section {
+    padding: 60px 0;
+}
+
+.content-section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* About Us Page Specific */
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.about-intro-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.mission-vision-values .grid-3-col {
+    margin-top: 40px;
+}
+
+.mvv-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+.mvv-card i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.mvv-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.4em;
+}
+
+.team-section .grid-3-col {
+    margin-top: 40px;
+}
+.team-member {
+    text-align: center;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--secondary-color);
+}
+.team-member h4 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+.team-member p {
+    font-size: 0.9em;
+    color: var(--dark-gray);
+}
+
+/* Services Page Specific */
+.service-details {
+    margin-bottom: 60px;
+}
+.service-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+.service-item-card:hover {
+    transform: translateY(-10px);
+}
+.service-item-card i {
+    font-size: 3.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+.service-item-card h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+.service-item-card p {
+    color: var(--dark-gray);
+}
+
+/* Products Page Specific */
+.product-category-list {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.product-category-list .btn {
+    margin: 0 10px 10px 0;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-10px);
+}
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+.product-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+.product-card p {
+    padding: 0 20px 20px;
+    color: var(--dark-gray);
+    font-size: 0.95em;
+}
+.product-card .btn {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* FAQ Page Specific */
+.faq-item {
+    background: var(--white);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.faq-question {
+    padding: 20px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question i {
+    transition: transform 0.3s ease;
+}
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    padding: 0 30px 20px;
+    font-size: 1.1em;
+    color: var(--dark-gray);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+.faq-answer.active {
+    max-height: 200px; /* Adjust as needed */
+    padding-bottom: 20px;
+}
+
+/* Compliance & Quality Page Specific */
+.compliance-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.compliance-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+.compliance-item i {
+    font-size: 3.5em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+.compliance-item h3 {
+    color: var(--primary-color);
+}
+
+/* Careers Page Specific */
+.careers-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.job-listing {
+    background: var(--white);
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.job-listing h3 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+.job-listing p {
+    margin-bottom: 0;
+    font-size: 0.95em;
+    color: var(--dark-gray);
+}
+.job-listing .btn {
+    margin-top: 15px;
+    font-size: 0.9em;
+    padding: 8px 20px;
+}
+.application-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+.application-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.application-form .form-group {
+    margin-bottom: 20px;
+}
+.application-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+.application-form input[type="text"],
+.application-form input[type="email"],
+.application-form input[type="file"],
+.application-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Cairo', sans-serif;
+}
+body[lang="en"] .application-form input[type="text"],
+body[lang="en"] .application-form input[type="email"],
+body[lang="en"] .application-form input[type="file"],
+body[lang="en"] .application-form textarea {
+    font-family: 'Poppins', sans-serif;
+}
+
+.application-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.application-form .btn {
+    width: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto; /* Center button */
+}
+
+/* Contact Us Page Specific */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+}
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+.contact-info p i {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin-left: 15px; /* Adjust for RTL */
+    margin-right: 0; /* Adjust for RTL */
+    min-width: 30px; /* Align icons */
+}
+body[lang="en"] .contact-info p i {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Cairo', sans-serif;
+}
+body[lang="en"] .contact-form input[type="text"],
+body[lang="en"] .contact-form input[type="email"],
+body[lang="en"] .contact-form textarea {
+    font-family: 'Poppins', sans-serif;
+}
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+.contact-form .btn {
+    width: 100%;
+}
+.map-container {
+    margin-top: 50px;
+    height: 400px;
+    background: var(--light-gray); /* Placeholder for map */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive Design */
+@media (max
