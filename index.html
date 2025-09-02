@@ -1,969 +1,174 @@
-/* General Styles */
-:root {
-    --primary-color: #0056b3; /* Darker blue for corporate feel */
-    --secondary-color: #f8b300; /* Gold/yellow for accent */
-    --text-color: #333;
-    --light-gray: #f4f4f4;
-    --dark-gray: #555;
-    --white: #ffffff;
-    --black: #000000;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Cairo', sans-serif; /* Default for Arabic */
-    line-height: 1.6;
-    color: var(--text-color);
-    background: var(--white);
-    direction: rtl; /* Default to RTL for Arabic */
-    text-align: right;
-}
-
-body[lang="en"] {
-    font-family: 'Poppins', sans-serif; /* For English */
-    direction: ltr;
-    text-align: left;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-ul {
-    list-style: none;
-}
-
-h1, h2, h3, h4 {
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-p {
-    margin-bottom: 15px;
-}
-
-.section-padding {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 60px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--secondary-color);
-    border-radius: 2px;
-}
-
-.bg-light {
-    background: var(--light-gray);
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
-}
-
-.primary-btn {
-    background: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
-}
-
-.primary-btn:hover {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--white);
-}
-
-.secondary-btn {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-
-.secondary-btn:hover {
-    background: var(--primary-color);
-    color: var(--white);
-}
-
-/* Header */
-.main-header {
-    background: var(--white);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main-header .logo img {
-    height: 60px; /* Adjust as needed */
-    width: auto;
-}
-
-.main-nav {
-    display: flex;
-    align-items: center;
-}
-
-.main-nav .nav-links {
-    display: flex;
-}
-
-.main-nav .nav-links li {
-    margin: 0 15px;
-}
-
-.main-nav .nav-links a {
-    color: var(--text-color);
-    font-weight: 600;
-    padding: 5px 0;
-    position: relative;
-}
-
-.main-nav .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0; /* For RTL */
-    left: auto; /* For RTL */
-    width: 0;
-    height: 3px;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-body[lang="en"] .main-nav .nav-links a::after {
-    right: auto;
-    left: 0; /* For LTR */
-}
-
-.main-nav .nav-links a:hover::after,
-.main-nav .nav-links a.active::after {
-    width: 100%;
-}
-
-.lang-switcher button {
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: bold;
-    margin-left: 20px; /* Adjust for RTL */
-    margin-right: 0; /* Adjust for RTL */
-    transition: background-color 0.3s ease;
-}
-body[lang="en"] .lang-switcher button {
-    margin-left: 0;
-    margin-right: 20px;
-}
-
-.lang-switcher button:hover {
-    background: var(--secondary-color);
-}
-
-.hamburger-menu {
-    display: none; /* Hidden on desktop */
-    font-size: 1.8em;
-    cursor: pointer;
-    color: var(--primary-color);
-    margin-right: 15px; /* Adjust for RTL */
-    margin-left: 0;
-}
-body[lang="en"] .hamburger-menu {
-    margin-right: 0;
-    margin-left: 15px;
-}
-
-/* Mobile Nav Overlay */
-.mobile-nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1001;
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-}
-
-.mobile-nav-overlay.active {
-    display: flex;
-}
-
-.mobile-nav-menu {
-    background: var(--white);
-    width: 80%;
-    max-width: 300px;
-    padding: 30px;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.mobile-nav-menu .close-btn {
-    position: absolute;
-    top: 15px;
-    left: 15px; /* Adjust for RTL */
-    right: auto; /* Adjust for RTL */
-    font-size: 2em;
-    cursor: pointer;
-    color: var(--dark-gray);
-}
-body[lang="en"] .mobile-nav-menu .close-btn {
-    left: auto;
-    right: 15px;
-}
-
-.mobile-nav-links {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.mobile-nav-links li {
-    margin-bottom: 20px;
-}
-
-.mobile-nav-links a {
-    font-size: 1.2em;
-    color: var(--text-color);
-    font-weight: 600;
-    display: block;
-    padding: 10px;
-    border-bottom: 1px solid var(--light-gray);
-}
-
-.mobile-nav-links a:hover {
-    color: var(--primary-color);
-}
-
-/* Hero Section (Home Page) */
-.hero-section {
-    background: url('../images/hero-banner.jpg') no-repeat center center/cover;
-    color: var(--white);
-    text-align: center;
-    padding: 150px 0;
-    position: relative;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Overlay for readability */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-.hero-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    color: var(--white);
-}
-
-.hero-content p {
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-}
-
-/* Page Hero Section (For internal pages) */
-.page-hero {
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    text-align: center;
-    padding: 100px 0;
-    position: relative;
-    margin-top: -1px; /* To prevent gap with header */
-}
-
-.page-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.page-hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-.page-hero h1 {
-    font-size: 3em;
-    color: var(--white);
-    margin: 0;
-}
-
-/* Grid Layouts */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    align-items: center;
-}
-
-.grid-3-col {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.grid-4-col {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-/* About & Services Overview */
-.about-overview-text h2 {
-    font-size: 2.2em;
-}
-
-.about-overview-text p {
-    margin-bottom: 20px;
-}
-
-.services-overview-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.service-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-.service-card i {
-    font-size: 3em;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.service-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-/* Features Section */
-.features-grid {
-    text-align: center;
-}
-
-.feature-item {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-}
-
-.feature-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.feature-item i {
-    font-size: 3.5em;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.feature-item h3 {
-    font-size: 1.6em;
-    color: var(--dark-gray);
-}
-
-.feature-item p {
-    color: var(--dark-gray);
-}
-
-/* Partners & Testimonials */
-.partners-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    margin-top: 40px;
-    gap: 30px;
-}
-
-.partner-logo {
-    padding: 10px 20px;
-    background: var(--white);
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.partner-logo:hover {
-    transform: translateY(-5px);
-}
-
-.partner-logo img {
-    max-height: 80px;
-    width: auto;
-    filter: grayscale(100%);
-    opacity: 0.7;
-    transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.partner-logo img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* WhatsApp Button */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 25px;
-    left: 25px; /* Adjust for RTL */
-    right: auto; /* Adjust for RTL */
-    background: #25D366;
-    color: var(--white);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2.2em;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    transition: transform 0.3s ease;
-}
-
-body[lang="en"] .whatsapp-btn {
-    left: auto;
-    right: 25px;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Footer */
-.main-footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 60px 0 20px;
-    font-size: 0.9em;
-}
-
-.main-footer .grid-footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-about img {
-    height: 70px;
-    margin-bottom: 15px;
-    filter: brightness(0) invert(1); /* Makes logo white */
-}
-
-.footer-about p {
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-links h4, .footer-contact h4 {
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links a, .footer-contact p {
-    color: rgba(255, 255, 255, 0.8);
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover, .footer-contact p:hover {
-    color: var(--white);
-}
-
-.footer-contact p i {
-    margin-left: 10px; /* Adjust for RTL */
-    margin-right: 0; /* Adjust for RTL */
-    color: var(--secondary-color);
-}
-body[lang="en"] .footer-contact p i {
-    margin-left: 0;
-    margin-right: 10px;
-}
-
-
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: var(--white);
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--secondary-color);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-/* General Page Content Sections */
-.content-section {
-    padding: 60px 0;
-}
-
-.content-section p {
-    font-size: 1.1em;
-    line-height: 1.8;
-}
-
-/* About Us Page Specific */
-.about-intro-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 60px;
-}
-.about-intro-grid img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.mission-vision-values .grid-3-col {
-    margin-top: 40px;
-}
-
-.mvv-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-.mvv-card i {
-    font-size: 2.5em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-.mvv-card h3 {
-    color: var(--secondary-color);
-    font-size: 1.4em;
-}
-
-.team-section .grid-3-col {
-    margin-top: 40px;
-}
-.team-member {
-    text-align: center;
-    background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-.team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 4px solid var(--secondary-color);
-}
-.team-member h4 {
-    margin-bottom: 5px;
-    color: var(--primary-color);
-}
-.team-member p {
-    font-size: 0.9em;
-    color: var(--dark-gray);
-}
-
-/* Services Page Specific */
-.service-details {
-    margin-bottom: 60px;
-}
-.service-details img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.service-item-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-.service-item-card:hover {
-    transform: translateY(-10px);
-}
-.service-item-card i {
-    font-size: 3.5em;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-.service-item-card h3 {
-    color: var(--primary-color);
-    font-size: 1.8em;
-}
-.service-item-card p {
-    color: var(--dark-gray);
-}
-
-/* Products Page Specific */
-.product-category-list {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.product-category-list .btn {
-    margin: 0 10px 10px 0;
-}
-
-.product-card {
-    background: var(--white);
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-.product-card:hover {
-    transform: translateY(-10px);
-}
-.product-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 15px;
-}
-.product-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    padding: 0 20px;
-}
-.product-card p {
-    padding: 0 20px 20px;
-    color: var(--dark-gray);
-    font-size: 0.95em;
-}
-.product-card .btn {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 8px 15px;
-    font-size: 0.9em;
-}
-
-/* FAQ Page Specific */
-.faq-item {
-    background: var(--white);
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-.faq-question {
-    padding: 20px 30px;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--primary-color);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.faq-question i {
-    transition: transform 0.3s ease;
-}
-.faq-question.active i {
-    transform: rotate(180deg);
-}
-.faq-answer {
-    padding: 0 30px 20px;
-    font-size: 1.1em;
-    color: var(--dark-gray);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-}
-.faq-answer.active {
-    max-height: 200px; /* Adjust as needed */
-    padding-bottom: 20px;
-}
-
-/* Compliance & Quality Page Specific */
-.compliance-intro {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.compliance-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-.compliance-item {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-.compliance-item i {
-    font-size: 3.5em;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-.compliance-item h3 {
-    color: var(--primary-color);
-}
-
-/* Careers Page Specific */
-.careers-intro {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.job-listing {
-    background: var(--white);
-    padding: 25px 30px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.job-listing h3 {
-    margin-bottom: 5px;
-    font-size: 1.5em;
-}
-.job-listing p {
-    margin-bottom: 0;
-    font-size: 0.95em;
-    color: var(--dark-gray);
-}
-.job-listing .btn {
-    margin-top: 15px;
-    font-size: 0.9em;
-    padding: 8px 20px;
-}
-.application-form {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
-}
-.application-form h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.application-form .form-group {
-    margin-bottom: 20px;
-}
-.application-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-gray);
-}
-.application-form input[type="text"],
-.application-form input[type="email"],
-.application-form input[type="file"],
-.application-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Cairo', sans-serif;
-}
-body[lang="en"] .application-form input[type="text"],
-body[lang="en"] .application-form input[type="email"],
-body[lang="en"] .application-form input[type="file"],
-body[lang="en"] .application-form textarea {
-    font-family: 'Poppins', sans-serif;
-}
-
-.application-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-.application-form .btn {
-    width: auto;
-    display: block;
-    margin-right: auto;
-    margin-left: auto; /* Center button */
-}
-
-/* Contact Us Page Specific */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 50px;
-}
-.contact-info p {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-}
-.contact-info p i {
-    font-size: 1.5em;
-    color: var(--secondary-color);
-    margin-left: 15px; /* Adjust for RTL */
-    margin-right: 0; /* Adjust for RTL */
-    min-width: 30px; /* Align icons */
-}
-body[lang="en"] .contact-info p i {
-    margin-left: 0;
-    margin-right: 15px;
-}
-
-.contact-form {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-.contact-form h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.contact-form .form-group {
-    margin-bottom: 20px;
-}
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-gray);
-}
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Cairo', sans-serif;
-}
-body[lang="en"] .contact-form input[type="text"],
-body[lang="en"] .contact-form input[type="email"],
-body[lang="en"] .contact-form textarea {
-    font-family: 'Poppins', sans-serif;
-}
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-.contact-form .btn {
-    width: 100%;
-}
-.map-container {
-    margin-top: 50px;
-    height: 400px;
-    background: var(--light-gray); /* Placeholder for map */
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* Responsive Design */
-@media (max
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المؤسسة المصرية الإماراتية للاستيراد والتصدير</title>
+    <!-- تضمين خطوط Google Fonts لتحسين الخط العربي (مثال) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- يمكنك وضع CSS هنا مؤقتاً أو في قسم <b:skin> في Blogspot -->
+    <style>
+        /* سيتم وضع CSS هنا في القسم التالي */
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="https://via.placeholder.com/150x50?text=AlMassriaLogo" alt="شعار المؤسسة المصرية الإماراتية">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active" data-lang-key="nav_home">الرئيسية</a></li>
+                    <li><a href="#about" data-lang-key="nav_about">من نحن</a></li>
+                    <li><a href="#services" data-lang-key="nav_services">خدماتنا</a></li>
+                    <li><a href="#products" data-lang-key="nav_products">المنتجات</a></li>
+                    <li><a href="#faq" data-lang-key="nav_faq">الأسئلة الشائعة</a></li>
+                    <li><a href="#contact" data-lang-key="nav_contact">اتصل بنا</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <a href="#" class="lang-btn active" data-lang="ar">العربية</a> |
+                    <a href="#" class="lang-btn" data-lang="en">English</a>
+                </div>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-lang-key="hero_title">المؤسسة المصرية الإماراتية</h1>
+                <p data-lang-key="hero_subtitle">للاستيراد والتصدير والتوكيلات التجارية</p>
+                <a href="#services" class="btn" data-lang-key="hero_btn">اكتشف خدماتنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (Brief) -->
+    <section id="about-brief" class="about-brief section-padding">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="about_brief_title">من نحن</h2>
+            <p data-lang-key="about_brief_text">المؤسسة المصرية الإماراتية هي بوابتك نحو عالم التجارة الدولية. منذ عام 2010، نقدم حلولاً متكاملة في الاستيراد والتصدير والوكالات التجارية، ملتزمون بالجودة والشفافية لبناء شراكات مستدامة.</p>
+            <div class="features-bar">
+                <div class="feature-item">
+                    <i class="fas fa-handshake"></i>
+                    <span data-lang-key="feature_trust">الثقة</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-award"></i>
+                    <span data-lang-key="feature_quality">الجودة</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span data-lang-key="feature_speed">السرعة</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <span data-lang-key="feature_partnerships">شراكات عالمية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Brief) -->
+    <section id="services-brief" class="services-brief section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="services_brief_title">خدماتنا في لمحة</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <i class="fas fa-dolly"></i>
+                    <h3 data-lang-key="service_import">الاستيراد</h3>
+                    <p data-lang-key="service_import_desc">تسهيل عمليات استيراد المنتجات من جميع أنحاء العالم بكفاءة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3 data-lang-key="service_export">التصدير</h3>
+                    <p data-lang-key="service_export_desc">فتح أسواق جديدة لمنتجاتك وتصديرها عالمياً بسلاسة.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake-alt"></i>
+                    <h3 data-lang-key="service_agencies">الوكالات التجارية</h3>
+                    <p data-lang-key="service_agencies_desc">بناء شراكات قوية وتمثيل الشركات العالمية في السوق المحلي.</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#services" class="btn btn-secondary" data-lang-key="view_all_services">عرض كل الخدمات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Partners Section -->
+    <section id="partners" class="partners-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-lang-key="partners_title">عملاؤنا وشركاؤنا</h2>
+            <div class="partner-logos">
+                <img src="https://via.placeholder.com/120x60?text=Partner1" alt="شعار شريك 1">
+                <img src="https://via.placeholder.com/120x60?text=Partner2" alt="شعار شريك 2">
+                <img src="https://via.placeholder.com/120x60?text=Partner3" alt="شعار شريك 3">
+                <img src="https://via.placeholder.com/120x60?text=Partner4" alt="شعار شريك 4">
+                <img src="https://via.placeholder.com/120x60?text=Partner5" alt="شعار شريك 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col about-company">
+                    <img src="https://via.placeholder.com/150x50?text=AlMassriaLogo" alt="شعار المؤسسة" class="footer-logo">
+                    <p data-lang-key="footer_desc">المؤسسة المصرية الإماراتية: شريكك الموثوق في عالم التجارة الدولية.</p>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col quick-links">
+                    <h4 data-lang-key="footer_quick_links">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#about" data-lang-key="nav_about">من نحن</a></li>
+                        <li><a href="#services" data-lang-key="nav_services">خدماتنا</a></li>
+                        <li><a href="#products" data-lang-key="nav_products">المنتجات</a></li>
+                        <li><a href="#faq" data-lang-key="nav_faq">الأسئلة الشائعة</a></li>
+                        <li><a href="#" data-lang-key="footer_privacy">سياسة الخصوصية</a></li>
+                        <li><a href="#" data-lang-key="footer_terms">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-info">
+                    <h4 data-lang-key="footer_contact_us">اتصل بنا</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">العنوان: 123 شارع النيل، القاهرة، مصر</span></p>
+                    <p><i class="fas fa-phone"></i> <span data-lang-key="footer_phone">الهاتف: 01013378572</span></p>
+                    <p><i class="fas fa-envelope"></i> <span data-lang-key="footer_email">البريد الإلكتروني: info@egy-uae.com</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> <span data-lang-key="footer_copyright">المؤسسة المصرية الإماراتية - جميع الحقوق محفوظة.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button (Optional) -->
+    <a href="https://wa.me/01013378572" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript - يفضل وضعه قبل إغلاق وسم </body> -->
+    <script>
+        // سيتم وضع JavaScript هنا في القسم التالي
+    </script>
+</body>
+</html>
