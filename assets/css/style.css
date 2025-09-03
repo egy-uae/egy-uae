@@ -1,155 +1,363 @@
-/* ========== إعدادات عامة ========== */
-* {
+/* General Body Styles */
+body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  background: #f8f9fa;
-  color: #333;
   line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
 }
 
-/* ========== الهيدر ========== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Header & Navigation */
 header {
-  background: #b30000; /* أحمر */
+  background: #2c3e50; /* Dark Blue */
   color: #fff;
-  padding: 15px 0;
-  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  margin-bottom: 10px;
-  font-size: 28px;
-}
-
-nav ul {
-  list-style: none;
+.navbar {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
+.logo a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 5px 0;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #ffcccb;
+.nav-links a:hover,
+.nav-links a.active {
+  color: #3498db; /* Bright Blue */
+  border-bottom: 2px solid #3498db;
 }
 
-/* ========== الأقسام ========== */
-section {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #b30000;
-}
-
-/* ========== البطاقات ========== */
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 15px 0;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* ========== الأسئلة الشائعة (FAQ) ========== */
-.faq {
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-}
-
-.faq h3 {
-  font-size: 18px;
-  color: #333;
-  cursor: pointer;
-}
-
-.faq p {
+.menu-toggle {
   display: none;
-  padding-top: 5px;
-  font-size: 15px;
-  color: #555;
-}
-
-/* ========== الفورم (Contact) ========== */
-form {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: auto;
-}
-
-form label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: 600;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-form button {
-  background: #b30000;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
+  font-size: 2rem;
   cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://img.freepik.com/premium-photo/global-business-shipping-logistics-concept-container-cargo-ship-sea-freight-transport-import-export-international-transportation_34200-502.jpg?w=1380') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Overlay for readability */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  color: #3498db; /* Bright Blue */
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #ecf0f1;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+
+.btn-primary {
+  background: #3498db; /* Bright Blue */
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
   transition: background 0.3s ease;
 }
 
-form button:hover {
-  background: #800000;
+.btn-primary:hover {
+  background: #2980b9; /* Darker Bright Blue */
 }
 
-/* ========== الفوتر ========== */
-footer {
-  background: #333;
-  color: #fff;
+/* Section Styling */
+section {
+  padding: 60px 0;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+section:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
   text-align: center;
-  padding: 20px 10px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #3498db;
+  margin: 15px auto 0 auto;
+}
+
+/* About Us Section */
+.about-us .about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.about-us .about-image {
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us p {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Services, Partners, Team Sections - Common Grid Layout */
+.service-container,
+.partner-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   margin-top: 30px;
-  font-size: 14px;
 }
 
-footer a {
-  color: #ffcccb;
+.service-box,
+.partner-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover,
+.partner-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-box img,
+.partner-box img,
+.team-member img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  /* Add specific styling for your actual icons if they are not SVGs or need adjustment */
+}
+
+.service-box h3,
+.partner-box h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.service-box p,
+.partner-box p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Team Section Specifics */
+.team .team-member {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #3498db;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.team-member p {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links a {
+  color: #fff;
   text-decoration: none;
-  margin: 0 8px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.footer-links a:hover {
+  color: #3498db;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default for mobile */
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background: #34495e; /* Slightly lighter dark blue */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    color: #fff;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .about-us .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us .about-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .service-container,
+  .partner-container {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+/* JavaScript for menu toggle (optional, but good for mobile nav) */
+/* You would add this to your script.js file */
+/*
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+*/
