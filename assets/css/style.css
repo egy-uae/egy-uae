@@ -502,3 +502,174 @@ footer p {
       max-width: 100%;
   }
 }
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header Styles */
+header {
+  background: #ffffff; /* أبيض للخلفية */
+  color: #333;
+  padding: 1rem 0;
+  border-bottom: 3px solid #E40F22; /* خط أحمر أسفل الهيدر */
+}
+
+header .logo {
+  float: left;
+  margin: 0;
+  padding: 0;
+  color: #0F3A86; /* اللون الأزرق من الشعار */
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+header li {
+  display: inline;
+  padding: 0 15px;
+}
+
+header a {
+  color: #0F3A86; /* اللون الأزرق للنصوص */
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+header a:hover,
+header a.active {
+  color: #E40F22; /* اللون الأحمر عند التمرير أو النشط */
+}
+
+/* Contact Section Styles */
+.contact {
+  padding: 40px 0;
+  background: #ffffff;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+  color: #0F3A86; /* اللون الأزرق للعناوين */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  background: #E40F22; /* زر الإرسال باللون الأحمر */
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background: #bf0b1c; /* لون أغمق عند التمرير */
+}
+
+.contact-info {
+  padding: 20px;
+  background: #0F3A86; /* خلفية قسم معلومات الاتصال باللون الأزرق */
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.contact-info h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  line-height: 1.8;
+  text-align: left; /* جعل النص لليسار */
+}
+
+.contact-info strong {
+  color: #E40F22; /* جعل العناوين الفرعية قوية باللون الأحمر */
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 3px solid #0F3A86; /* خط أزرق أعلى الفوتر */
+}
