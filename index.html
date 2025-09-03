@@ -15,7 +15,9 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html">Al Massria Al Emaratia</a>
+        <a href="index.html">
+          <img src="https://i.imgur.com/your-company-logo-header.png" alt="Company Logo" class="company-logo-header"> <!-- Placeholder for your actual header logo -->
+        </a>
       </div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -120,7 +122,7 @@
     <div class="container">
       <h2>Meet Our Team</h2>
       <div class="team-member">
-        <img src="https://uc2619d8c80f91a5999ee6b073a7.previews.dropboxusercontent.com/p/thumb/ACwphfyb-MFKjNar-NGKare7WB0rHDY7YvPRY1hY8n3Skk9ytv0nuvJanOh_hvcz06PVi1puoHeoGgsY9-Ampltzvm7Tss3RnLuBxcIQs_UVC2uMosrW2oQaeVN-Ncd0jD8sN3HtoqPz24LLOrRINalAgZ_MBI_DaeliIeEpf6fsb9reHB2E9iUoyvSqbANXCfQwSb9xWP6YqHMlXP_m2Zd3T6rxAv3aburgp07-BOrpzeMQCpnN3EHSvwCeELze8quVZRpRzfChi5sHc9npDWDLsCxtQc9DT0eMwornoJC0AI36VVKT-KR8LqXRZCkXwxco9E3L9zYTpK9edx8upPRlq6MHjLi8EfuP_gQax2azcXfZZJ5uErFj-gKc5HpPEbTyVmxDpWO_iU9xOcr723Ad/p.jpeg?is_prewarmed=true" /> <!-- Placeholder for actual team photo -->
+        <img src="https://uc2619d8c80f91a5999ee6b073a7.previews.dropboxusercontent.com/p/thumb/ACwphfyb-MFKjNar-NGKare7WB0rHDY7YvPRY1hY8n3Skk9ytv0nuvJanOh_hvcz06PVi1puoHeoGgsY9-Ampltzvm7Tss3RnLuBxcIQs_UVC2uMosrW2oQaeVN-Ncd0jD8sN3HtoqPz24LLOrRINalAgZ_MBI_DaeliIeEpf6fsb9reHB2E9iUoyvSqbANXCfQwSb9xWP6YqHMlXP_m2Zd3T6rxAv3aburgp07-BOrpzeMQCpnN3EHSvwCeELze8quVZRpRzfChi5sHc9npDWDLsCxtQc9DT0eMwornoJC0AI36VVKT-KR8LqXRZCkXwxco9E3L9zYTpK9edx8upPRLq6MHjLi8EfuP_gQax2azcXfZZJ5uErFj-gKc5HpPEbTyVmxDpWO_iU9xOcr723Ad/p.jpeg?is_prewarmed=true" alt="Ismail El-Menshawy" /> <!-- Placeholder for actual team photo -->
         <h3>Ismail El-Menshawy</h3>
         <p>CEO</p>
       </div>
@@ -130,6 +132,9 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
+      <div class="footer-logo">
+        <img src="https://i.imgur.com/your-company-logo-footer.png" alt="Company Logo" class="company-logo-footer"> <!-- Placeholder for your actual footer logo -->
+      </div>
       <p>&copy; <span id="current-year"></span> Al Massria Al Emaratia | All Rights Reserved.</p>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a> | 
@@ -142,6 +147,11 @@
   <script src="js/script.js"></script>
   <script>
     document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
   </script>
 </body>
 </html>
