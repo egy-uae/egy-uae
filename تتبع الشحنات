@@ -1,44 +1,274 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المصرية الإماراتية - تتبع الشحنات</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>المصرية الإماراتية - نظام تتبع الشحنات</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient to right, #f0f2f5, #e0e5ec; /* Soft gradient background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            direction: rtl; /* Right-to-left for Arabic */
+            text-align: right;
+        }
+
+        /* Container for the whole application */
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            border-top: 5px solid #007bff; /* Blue accent for Egyptian-Emirati theme */
+            border-bottom: 5px solid #007bff;
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #007bff; /* Primary blue color */
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+            /* Placeholder for a real logo */
+        }
+
+        /* Input Group Styling */
+        .search-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .search-input {
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+            width: calc(70% - 20px); /* Adjust width for responsive design */
+            max-width: 400px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            text-align: right;
+        }
+
+        .search-input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .search-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .search-button:active {
+            transform: translateY(0);
+        }
+
+        /* Search Results Styling */
+        #results {
+            margin-top: 30px;
+            text-align: right;
+            border-top: 1px solid #eee;
+            padding-top: 25px;
+        }
+
+        .shipment-card {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .shipment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .shipment-card h2 {
+            color: #28a745; /* Green for "Found" or main status */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .shipment-card p {
+            margin: 8px 0;
+            line-height: 1.6;
+            font-size: 1.05em;
+            color: #555;
+        }
+
+        .shipment-card p strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .error-message {
+            color: #dc3545; /* Red for error messages */
+            font-weight: 600;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .search-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-input {
+                width: calc(100% - 20px);
+                max-width: none;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="logo.png" alt="شعار المصرية الإماراتية" class="logo">
-            <h1>نظام تتبع الشحنات</h1>
-            <p>المصرية الإماراتية - حيث تلتقي السرعة بالثقة</p>
+    <div class="container">
+        <!-- Optional: Add a logo here for "المصرية الإماراتية" -->
+        <!-- <img src="path/to/your/logo.png" alt="Egyptian-Emirati Logo" class="logo"> -->
+        <h1>المصرية الإماراتية</h1>
+        <h2>نظام تتبع الشحنات</h2>
+        
+        <div class="search-group">
+            <input type="text" id="trackingInput" class="search-input" placeholder="أدخل رقم الشحنة أو الكود هنا...">
+            <button id="searchButton" class="search-button">تتبع الشحنة</button>
         </div>
-    </header>
 
-    <main>
-        <div class="container">
-            <section class="tracking-section">
-                <h2>تتبع شحنتك</h2>
-                <p>أدخل رقم التتبع أو الكود الخاص بشحنتك أدناه:</p>
-                <div class="search-box">
-                    <input type="text" id="trackingInput" placeholder="أدخل رقم التتبع هنا...">
-                    <button id="trackButton">تتبع الشحنة</button>
-                </div>
-                <div id="trackingResults" class="tracking-results">
-                    <!-- نتائج التتبع ستظهر هنا -->
-                    <p class="no-results">لا توجد نتائج لعرضها حاليًا. يرجى إدخال رقم تتبع.</p>
-                </div>
-            </section>
+        <div id="results">
+            <!-- Search results will be displayed here -->
+            <p class="error-message" id="errorMessage" style="display: none;">لم يتم العثور على شحنة بهذا الرقم. يرجى التحقق من الرقم والمحاولة مرة أخرى.</p>
         </div>
-    </main>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
+    <script>
+        // Sample shipment data (replace with actual data from a backend later)
+        const shipments = {
+            "EE123456789": {
+                id: "EE123456789",
+                status: "قيد التسليم",
+                origin: "دبي، الإمارات العربية المتحدة",
+                destination: "القاهرة، مصر",
+                lastUpdate: "2023-10-26 10:30 صباحًا",
+                description: "طرود ملابس جاهزة",
+                eta: "2023-10-28" // Estimated Time of Arrival
+            },
+            "EE987654321": {
+                id: "EE987654321",
+                status: "تم التسليم",
+                origin: "الإسكندرية، مصر",
+                destination: "أبوظبي، الإمارات العربية المتحدة",
+                lastUpdate: "2023-10-20 03:00 مساءً",
+                description: "قطع غيار إلكترونية",
+                deliveryDate: "2023-10-20"
+            },
+            "EE112233445": {
+                id: "EE112233445",
+                status: "في الجمارك",
+                origin: "الشارقة، الإمارات العربية المتحدة",
+                destination: "أسوان، مصر",
+                lastUpdate: "2023-10-25 09:00 صباحًا",
+                description: "مواد بناء",
+                notes: "بانتظار موافقة الجمارك",
+                eta: "2023-11-01"
+            }
+        };
 
-    <script src="script.js"></script>
+        const trackingInput = document.getElementById('trackingInput');
+        const searchButton = document.getElementById('searchButton');
+        const resultsDiv = document.getElementById('results');
+        const errorMessage = document.getElementById('errorMessage');
+
+        searchButton.addEventListener('click', trackShipment);
+        trackingInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                trackShipment();
+            }
+        });
+
+        function trackShipment() {
+            const trackingCode = trackingInput.value.trim().toUpperCase();
+            resultsDiv.innerHTML = ''; // Clear previous results
+            errorMessage.style.display = 'none'; // Hide error message
+
+            if (!trackingCode) {
+                errorMessage.textContent = "الرجاء إدخال رقم تتبع صالح.";
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            const shipment = shipments[trackingCode];
+
+            if (shipment) {
+                // Display shipment details
+                const shipmentCard = document.createElement('div');
+                shipmentCard.classList.add('shipment-card');
+                shipmentCard.innerHTML = `
+                    <h2>حالة الشحنة: ${shipment.status}</h2>
+                    <p><strong>رقم الشحنة:</strong> ${shipment.id}</p>
+                    <p><strong>المنشأ:</strong> ${shipment.origin}</p>
+                    <p><strong>الوجهة:</strong> ${shipment.destination}</p>
+                    <p><strong>آخر تحديث:</strong> ${shipment.lastUpdate}</p>
+                    <p><strong>الوصف:</strong> ${shipment.description}</p>
+                    ${shipment.eta ? `<p><strong>تاريخ الوصول المتوقع:</strong> ${shipment.eta}</p>` : ''}
+                    ${shipment.deliveryDate ? `<p><strong>تاريخ التسليم:</strong> ${shipment.deliveryDate}</p>` : ''}
+                    ${shipment.notes ? `<p><strong>ملاحظات:</strong> ${shipment.notes}</p>` : ''}
+                `;
+                resultsDiv.appendChild(shipmentCard);
+            } else {
+                errorMessage.textContent = "لم يتم العثور على شحنة بهذا الرقم. يرجى التحقق من الرقم والمحاولة مرة أخرى.";
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
