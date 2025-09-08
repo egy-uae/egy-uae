@@ -1,52 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQs - Egyptian Emirati Foundation</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs - Al Massria Al Emaratia</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Find answers to frequently asked questions about Al Massria Al Emaratia, an international import, export, and commercial agency company." />
+  <meta name="keywords" content="Al Massria Al Emaratia, import, export, trading, commercial agency, Egypt, UAE, FAQs" />
+  <meta name="author" content="Al Massria Al Emaratia" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="FAQs - Al Massria Al Emaratia" />
+  <meta property="og:description" content="Find answers to frequently asked questions about Al Massria Al Emaratia's import, export, and trading services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.egy-uae.com/faqs.html" />
+  <meta property="og:image" content="https://www.egy-uae.com/assets/images/logo.png" />
+  
+  <!-- Styles -->
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+    body {background: #f9f9f9; color: #333; line-height: 1.6;}
+    .container {width: 90%; max-width: 1200px; margin: auto;}
+
+    header {background: #0056b3; padding: 15px 0; color: #fff; position: sticky; top: 0; z-index: 1000;}
+    .logo {font-size: 1.5rem; font-weight: bold;}
+    nav ul {list-style: none; display: flex; gap: 20px;}
+    nav ul li a {color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s;}
+    nav ul li a:hover, nav ul li a.active {color: #ffcc00;}
+
+    /* FAQ Section */
+    .faq-section {padding: 50px 0;}
+    .faq-section h2 {text-align: center; font-size: 2rem; margin-bottom: 20px; color: #0056b3;}
+    .faq-item {background: #fff; margin: 10px 0; padding: 20px; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s;}
+    .faq-item:hover {transform: translateY(-3px);}
+    .faq-question {font-weight: bold; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: space-between;}
+    .faq-answer {margin-top: 10px; display: none; color: #444;}
+
+    /* Footer */
+    footer {background: #0056b3; color: #fff; text-align: center; padding: 15px; margin-top: 50px;}
+    footer p {margin: 5px 0;}
+    footer a {color: #ffcc00; text-decoration: none;}
+
+    /* Animations */
+    nav ul li a {position: relative;}
+    nav ul li a::after {content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: #ffcc00; transition: 0.3s;}
+    nav ul li a:hover::after {width: 100%;}
+
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="container">
-      <h1>Egyptian Emirati Foundation</h1>
+      <h1 class="logo">Al Massria Al Emaratia</h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home | الرئيسية</a></li>
-          <li><a href="about.html">About | من نحن</a></li>
-          <li><a href="services.html">Services | خدماتنا</a></li>
-          <li><a href="faqs.html" class="active">FAQs | الأسئلة الشائعة</a></li>
-          <li><a href="contact.html">Contact | تواصل معنا</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="faqs.html" class="active">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- FAQs Section -->
-  <section class="faqs">
+  <!-- FAQ Section -->
+  <section class="faq-section">
     <div class="container">
-      <h2>Frequently Asked Questions | الأسئلة الشائعة</h2>
-      <p class="intro">Here are some of the most common questions and their answers. | فيما يلي بعض الأسئلة الأكثر شيوعًا وإجاباتها.</p>
-      
+      <h2>Frequently Asked Questions</h2>
+
       <div class="faq-item">
-        <h3>Q: What does the Egyptian Emirati Foundation do? <br> س: ما هو عمل المؤسسة المصرية الإماراتية؟</h3>
-        <p>A: We specialize in import, export, and commercial agencies, providing trusted global trade solutions. <br> ج: نحن متخصصون في الاستيراد والتصدير والتوكيلات التجارية، ونوفر حلول تجارة عالمية موثوقة.</p>
+        <div class="faq-question">What services does Al Massria Al Emaratia provide? <span>+</span></div>
+        <div class="faq-answer">We specialize in import, export, and commercial agency services, connecting businesses in Egypt, the UAE, and worldwide.</div>
       </div>
 
       <div class="faq-item">
-        <h3>Q: How can I contact the foundation? <br> س: كيف يمكنني التواصل مع المؤسسة؟</h3>
-        <p>A: You can reach us through the <a href="contact.html">Contact Page</a>. <br> ج: يمكنك التواصل معنا عبر <a href="contact.html">صفحة تواصل معنا</a>.</p>
+        <div class="faq-question">Where is your main office located? <span>+</span></div>
+        <div class="faq-answer">Our head office is located in 10th of Ramadan City, Al Sharqia, Egypt.</div>
       </div>
 
       <div class="faq-item">
-        <h3>Q: Do you provide services outside Egypt? <br> س: هل تقدمون خدمات خارج مصر؟</h3>
-        <p>A: Yes, our network is global, and we support clients in multiple countries. <br> ج: نعم، شبكتنا عالمية وندعم عملاء في عدة دول.</p>
+        <div class="faq-question">How can I become a business partner? <span>+</span></div>
+        <div class="faq-answer">You can reach out via our Contact page or email us directly at info@egy-uae.com. Our team will guide you through the partnership process.</div>
       </div>
 
       <div class="faq-item">
-        <h3>Q: Can I partner with the foundation? <br> س: هل يمكنني الشراكة مع المؤسسة؟</h3>
-        <p>A: Absolutely, we welcome partnerships. Please visit the <a href="services.html">Services Page</a> for more details. <br> ج: بالطبع، نرحب بالشراكات. يرجى زيارة <a href="services.html">صفحة الخدمات</a> للمزيد من التفاصيل.</p>
+        <div class="faq-question">Do you support international shipping? <span>+</span></div>
+        <div class="faq-answer">Yes, we handle international trade operations, ensuring smooth logistics for imports and exports across multiple regions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What makes Al Massria Al Emaratia different? <span>+</span></div>
+        <div class="faq-answer">We combine years of experience, strong regional partnerships, and a global trade network to provide reliable, efficient, and transparent services.</div>
       </div>
     </div>
   </section>
@@ -54,8 +101,27 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 Egyptian Emirati Foundation | المؤسسة المصرية الإماراتية. All rights reserved.</p>
+      <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+      <p>Support: <a href="tel:+201013378572">+20 101 337 8572</a></p>
     </div>
   </footer>
+
+  <!-- Script -->
+  <script>
+    const questions = document.querySelectorAll(".faq-question");
+    questions.forEach(q => {
+      q.addEventListener("click", () => {
+        const answer = q.nextElementSibling;
+        const symbol = q.querySelector("span");
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          symbol.textContent = "+";
+        } else {
+          answer.style.display = "block";
+          symbol.textContent = "-";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
