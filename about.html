@@ -4,7 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Al Massria Al Emaratia</title>
-  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Al Massria Al Emaratia is a global import, export, and commercial agency company based in Egypt and the UAE. Learn about our vision, mission, and innovative platforms like amae.cloud and MEtrade.cloud.">
+  <meta name="keywords" content="Al Massria Al Emaratia, import export Egypt UAE, commercial agency, amae.cloud, MEtrade.cloud, international trade, logistics">
+  <meta name="author" content="Al Massria Al Emaratia">
+
+  <!-- Open Graph for Social Media -->
+  <meta property="og:title" content="About Us | Al Massria Al Emaratia">
+  <meta property="og:description" content="Global import & export solutions, trusted trade partner, and cloud-powered platforms for businesses worldwide.">
+  <meta property="og:image" content="assets/img/about-us.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/about.html">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9fbfd;
+      color: #333;
+    }
+
+    /* Navbar */
+    header {
+      background: #004aad;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
+    }
+    .navbar .logo a {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    .navbar .logo a:hover {
+      transform: scale(1.1);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #ffdd57;
+      transform: translateY(-3px);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(to right, #004aad, #0073e6);
+      color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* About Section */
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      gap: 30px;
+      padding: 60px 10%;
+    }
+    .about-content .text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #004aad;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-content .text h2 i {
+      color: #0073e6;
+    }
+    .about-content .text p {
+      margin-bottom: 20px;
+    }
+    .about-content .image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+    .about-content .image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #004aad;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+    footer .support {
+      margin-top: 10px;
+    }
+    footer .support i {
+      margin-right: 8px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -21,36 +158,45 @@
     </nav>
   </header>
 
-  <!-- Main Section -->
-  <main class="about">
-    <section class="hero">
-      <h1>About Us</h1>
-      <p>Learn more about Al Massria Al Emaratia, our vision, and our mission.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>About Us</h1>
+    <p>Discover the story, vision, and mission of Al Massria Al Emaratia.</p>
+  </section>
 
-    <section class="about-content">
-      <div class="text">
-        <h2>Who We Are</h2>
-        <p>
-          Al Massria Al Emaratia for Import, Export, and Commercial Agencies was founded in 2020.  
-          Our company operates globally, specializing in trade solutions, logistics, and partnership development.  
-          We provide clients with reliable, cloud-powered platforms like <strong>amae.cloud</strong> and <strong>MEtrade.cloud</strong>  
-          to streamline operations and expand their business reach.
-        </p>
+  <!-- Main Content -->
+  <section class="about-content">
+    <div class="text">
+      <h2><i class="fas fa-building"></i> Who We Are</h2>
+      <p>
+        Al Massria Al Emaratia for Import, Export, and Commercial Agencies was founded in 2020.  
+        Our company operates globally, specializing in trade solutions, logistics, and partnership development.  
+        We provide clients with reliable, cloud-powered platforms like <strong>amae.cloud</strong> and <strong>MEtrade.cloud</strong>  
+        to streamline operations and expand their business reach.
+      </p>
 
-        <h2>Our Vision</h2>
-        <p>
-          To be a trusted international trade partner, empowering businesses with seamless solutions  
-          and a strong community built on trust and collaboration.
-        </p>
+      <h2><i class="fas fa-lightbulb"></i> Our Vision</h2>
+      <p>
+        To be a trusted international trade partner, empowering businesses with seamless solutions  
+        and a strong community built on trust and collaboration.
+      </p>
 
-        <h2>Our Mission</h2>
-        <p>
-          Deliver world-class import and export services supported by advanced digital platforms,  
-          while fostering growth opportunities for individuals, factories, and companies worldwide.
-        </p>
-      </div>
-      <div class="image">
-        <img src="assets/img/about-us.jpg" alt="About Al Massria Al Emaratia">
-      </div>
-    </section>
+      <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+      <p>
+        Deliver world-class import and export services supported by advanced digital platforms,  
+        while fostering growth opportunities for individuals, factories, and companies worldwide.
+      </p>
+    </div>
+
+    <div class="image">
+      <img src="assets/img/about-us.jpg" alt="About Al Massria Al Emaratia">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+    <div class="support"><i class="fas fa-headset"></i> Support: +20 101 337 8572</div>
+  </footer>
+</body>
+</html>
