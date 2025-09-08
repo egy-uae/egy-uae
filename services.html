@@ -4,79 +4,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services | Al Massria Al Emaratia</title>
+
+  <!-- SEO -->
   <meta name="description" content="Discover the professional services of Al Massria Al Emaratia, including import, export, trade consulting, logistics, and business partnerships.">
   <meta name="keywords" content="Import, Export, Trade, Logistics, Commercial Agency, Consulting, Egypt, UAE, Al Massria Al Emaratia">
   <meta name="author" content="Al Massria Al Emaratia">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif;}
-    body{line-height:1.6;color:#333;}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;}
+
+    /* Header */
     header{
-      background: linear-gradient(90deg, #004aad, #0073e6);
-      position:fixed;top:0;width:100%;z-index:1000;
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
     }
-    header .container{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;}
-    header .logo{font-size:1.5rem;font-weight:bold;color:#fff;}
-    nav ul{list-style:none;display:flex;gap:20px;}
-    nav ul li a{color:#fff;text-decoration:none;position:relative;padding:5px;}
-    nav ul li a.active,
-    nav ul li a:hover{color:#fff;font-weight:500;}
-    nav ul li a::after{
-      content:"";
-      position:absolute;
-      bottom:-5px;
-      left:0;
-      width:0;
-      height:2px;
-      background:#fff; /* الخط بقى نفس لون الهيدر */
+    .navbar{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.5rem;}
+    .nav-links li a{
+      color:#fff;
+      font-weight:600;
+      position:relative;
+      text-decoration:none;
       transition:0.3s;
     }
-    nav ul li a:hover::after,
-    nav ul li a.active::after{width:100%;}
+    .nav-links li a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:#bbdefb;
+      transition:width 0.3s ease;
+    }
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after{width:100%;}
+
+    /* Hero */
     .hero{
       background:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
-      padding:0 20px;margin-top:70px;position:relative;
+      height:60vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      padding:0 20px;
+      margin-top:70px;
+      position:relative;
     }
-    .hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+    .hero::after{
+      content:"";
+      position:absolute;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,0.5);
+    }
     .hero .content{position:relative;z-index:1;}
     .hero h1{font-size:2.8rem;margin-bottom:15px;}
     .hero p{font-size:1.2rem;}
-    .services-nav{background:#f9f9f9;padding:30px 8%;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;}
-    .services-nav .service-item{flex:1 1 150px;text-align:center;cursor:pointer;transition:0.3s;}
-    .services-nav .service-item i{font-size:40px;color:#004aad;margin-bottom:10px;}
+
+    /* Services Navigation */
+    .services-nav{
+      background:#f9f9f9;
+      padding:30px 8%;
+      display:flex;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+    .services-nav .service-item{
+      flex:1 1 150px;
+      text-align:center;
+      cursor:pointer;
+      transition:0.3s;
+    }
+    .services-nav .service-item i{font-size:40px;color:#0d47a1;margin-bottom:10px;}
     .services-nav .service-item:hover{transform:translateY(-5px);}
+
+    /* Services Details */
     .services-details{padding:50px 8%;background:#fff;}
     .service-detail{display:none;animation:fadeIn 0.6s ease;}
     .service-detail.active{display:block;}
-    .service-detail h2{color:#004aad;margin-bottom:15px;}
+    .service-detail h2{color:#0d47a1;margin-bottom:15px;}
     .service-detail p{margin-bottom:15px;}
+
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-    footer{background:#004aad;color:#fff;text-align:center;padding:15px;margin-top:40px;}
+
+    /* Footer */
+    footer{
+      background:#0d47a1;
+      color:#fff;
+      text-align:center;
+      padding:20px 10px;
+      margin-top:40px;
+    }
+    footer p{margin-bottom:8px;}
+    footer .social a{color:#fff;margin:0 10px;font-size:18px;transition:0.3s;}
+    footer .social a:hover{color:#bbdefb;}
+
+    /* Responsive */
     @media(max-width:768px){
-      nav ul{flex-direction:column;gap:10px;}
+      .nav-links{flex-direction:column;gap:0.5rem;}
+      .navbar{flex-direction:column;align-items:flex-start;}
       .hero h1{font-size:2rem;}
+      .hero p{font-size:1rem;}
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="container">
-      <div class="logo">Al Massria Al Emaratia</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Al Massria Al Emaratia</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
     <div class="content">
       <h1>Our Services</h1>
@@ -108,7 +179,7 @@
     </div>
   </section>
 
-  <!-- Service Details -->
+  <!-- Services Details -->
   <section class="services-details">
     <div id="import" class="service-detail active">
       <h2>Import & Export Solutions</h2>
@@ -135,6 +206,10 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
   </footer>
 
   <script>
