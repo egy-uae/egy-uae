@@ -4,19 +4,295 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- SEO Enhancements: Optimized Title, Meta Description, and Keywords -->
-  <title>Al Massria Al Emaratia - Global Trade, Import & Export Solutions in Egypt</title>
-  <meta name="description" content="Al Massria Al Emaratia provides integrated solutions for import, export, and commercial agencies in Egypt. We connect Egyptian companies with global markets and bring international products to Egypt." />
-  <meta name="keywords" content="Al Massria Al Emaratia, import, export, commercial agencies, global trade, Egypt, trade solutions, shipping, logistics, international markets, Egyptian products, international products" />
+  <title>Al Massria Al Emaratia - Global Trade, Import & Export Solutions</title>
+  <meta name="description" content="Al Massria Al Emaratia provides integrated solutions for import, export, and commercial agencies in Egypt and UAE. We connect businesses with global markets." />
+  <meta name="keywords" content="Al Massria Al Emaratia, import, export, commercial agencies, global trade, Egypt, UAE, trade solutions, shipping, logistics, international markets" />
   <meta name="author" content="Al Massria Al Emaratia" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.yourwebsite.com/" /> <!-- Replace with your actual website link -->
+  <link rel="canonical" href="https://www.egy-uae.com/" /> 
 
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Use a professional and stable favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" /> 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+    }
+    .navbar{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.5rem;}
+    .nav-links li a{
+      color:#fff;
+      font-weight:600;
+      position:relative;
+      text-decoration:none;
+      border:none;          
+      transition:0.3s;
+    }
+    .nav-links li a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:#bbdefb;
+      transition:width 0.3s ease;
+    }
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after{width:100%;}
+    .company-logo-header {
+      height: 40px; /* Adjust as needed */
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero{
+      background:url('https://images.unsplash.com/photo-1505839673365-e3971f8d9184?w=1200') center/cover no-repeat;
+      color:#fff;text-align:center;
+      padding:100px 20px;
+      animation:fadeIn 1.5s;
+    }
+    .hero h1{font-size:48px;margin-bottom:10px;}
+    .hero h1 span {color: #bbdefb;}
+    .hero p{font-size:20px;max-width:700px;margin:auto;}
+    .btn-primary {
+      display: inline-block;
+      background-color: #bbdefb;
+      color: #0d47a1;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 25px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #90caf9;
+    }
+
+    /* General Section Styles */
+    section {
+      padding: 60px 20px;
+      margin-bottom: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+    section h2 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #1976d2;
+      border-radius: 2px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* About Us Section */
+    .about-us .about-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-us .about-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .about-us .about-content p {
+      flex: 2;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* Services Section */
+    .service-container, .partner-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-box, .partner-box {
+      background: #f1f7ff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .service-box i, .partner-box i {
+      font-size: 45px;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+    .service-box h3, .partner-box h3 {
+      margin-bottom: 15px;
+      color: #1976d2;
+      font-size: 1.5rem;
+    }
+    .service-box p, .partner-box p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .service-box:hover, .partner-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Team Section */
+    .team-members-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .team-member {
+      text-align: center;
+      background: #f1f7ff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #1976d2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .team-member h3 {
+      color: #0d47a1;
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+    .team-member p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .team-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* Footer */
+    .official-footer{background:#0d47a1;color:#fff;padding:40px 20px 20px;}
+    .official-footer .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-bottom:30px;
+      width:90%;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .official-footer .footer-column h4{color:#bbdefb;margin-bottom:20px;font-size:1.4rem;}
+    .official-footer .footer-column p,
+    .official-footer .footer-column ul li,
+    .official-footer .footer-column a{color:#e0e0e0;font-size:0.95rem;text-decoration:none;}
+    .official-footer .footer-column ul{list-style:none;}
+    .official-footer .footer-column ul li{margin-bottom:10px;}
+    .official-footer .footer-column ul li a:hover,
+    .official-footer .footer-column a:hover{color:#fff;}
+    .official-footer .footer-column .social-links a{
+      color:#fff;
+      margin-right:15px;
+      font-size:1.3rem;
+      transition:0.3s;
+    }
+    .official-footer .footer-column .social-links a:hover{color:#bbdefb;}
+    .official-footer .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:20px;
+      text-align:center;
+      font-size:0.9rem;
+      color:#e0e0e0;
+    }
+    .official-footer .footer-legal-links a{
+      color:#e0e0e0;
+      text-decoration:none;
+      margin:0 10px;
+      transition:0.3s;
+    }
+    .official-footer .footer-legal-links a:hover{color:#fff;}
+
+    /* Animations */
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+    @keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+    /* Responsive */
+    @media(max-width:992px){
+      .navbar .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0;padding-bottom:15px;z-index:1000;}
+      .navbar .nav-links.nav-active{display:flex;}
+      .navbar .nav-links li{text-align:center;margin:10px 0;}
+      .navbar .nav-links li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+      .about-us .about-content{flex-direction:column;}
+      .about-us .about-image{width:100%;}
+      .hero h1{font-size:36px;}
+      .hero p{font-size:18px;}
+      section h2{font-size:2rem;}
+      .official-footer .footer-grid{grid-template-columns:1fr;}
+      .official-footer .footer-column{text-align:center;}
+      .official-footer .footer-column .social-links{margin-top:20px;}
+    }
+    @media(max-width:768px){
+      .hero h1{font-size:32px;}
+      .hero p{font-size:16px;}
+      .service-container, .partner-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation Header -->
@@ -24,8 +300,9 @@
     <nav class="navbar">
       <div class="logo">
         <a href="index.html">
-          <!-- TODO: Replace with your actual logo path. Google Photos links can be unstable. -->
-          <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFmv89WqXXUhQ/company-logo_200_200/company-logo_200_200/0/1729355046941/al_massria_al_emaratia_for_import_export_and_commercial_agencies_logo?e=2147483647&v=beta&t=IgDmCVujrrsY3jPigHMLwFIJsv_9j6lEqkL0k_xqSRw" alt="Al Massria Al Emaratia Company Logo" class="company-logo-header"> 
+          <!-- Using a placeholder image for the logo. You should replace this with a stable, professional logo. -->
+          <img src="https://via.placeholder.com/40x40/BBDEFB/0D47A1?text=Logo" alt="Al Massria Al Emaratia Company Logo" class="company-logo-header"> 
+          Al Massria Al Emaratia
         </a>
       </div>
       <ul class="nav-links">
@@ -44,8 +321,8 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Welcome to <span>Al Massria Al Emaratia</span></h1>
-        <h2>Global Trade Solutions from Egypt to the World</h2>
-        <p>We facilitate international import operations into Egypt and export from Egypt to the world, offering comprehensive trade solutions and commercial agency services that connect Egyptian businesses with international markets.</p>
+        <h2>Global Trade Solutions from Egypt & UAE to the World</h2>
+        <p>We facilitate international import operations into Egypt and export from Egypt to the world, offering comprehensive trade solutions and commercial agency services that connect businesses with international markets.</p>
         <a href="services.html" class="btn-primary">Discover Our Services</a>
       </div>
     </section>
@@ -55,10 +332,11 @@
       <div class="container">
         <h2>About Our Organization</h2>
         <div class="about-content">
-          <img src="https://d2b8hn823db72v.cloudfront.net/wp-content/uploads/2014/11/World-global-network-trade-01.jpg" alt="Illustration of Global Trade Network" class="about-image" />
-          <p>Al Massria Al Emaratia for Import, Export, and Commercial Agencies was established in 2010 to facilitate global trade with Egypt as a strategic hub. We specialize in importing from global markets into Egypt and exporting high-quality Egyptian products to international destinations, creating valuable commercial opportunities for our global partners.</p>
-          <p>With our deep knowledge of international markets and extensive global networks, we provide comprehensive services to help businesses navigate the complexities of global trade. Our team of experts offers tailored solutions to connect Egyptian businesses with global opportunities and bring international products to the Egyptian market.</p>
-          <p>Our mission is to enhance Egypt's position as a gateway for global trade, contributing to the growth and prosperity of Egyptian businesses through strategic international partnerships and innovative trade solutions that link Egypt to markets worldwide.</p>
+          <!-- Professional image illustrating global trade -->
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="Global Trade Network Illustration" class="about-image" />
+          <p>Al Massria Al Emaratia for Import, Export, and Commercial Agencies was established in 2020 with strong roots in Egypt and the UAE, serving as a strategic hub for global trade. We specialize in importing from global markets into Egypt and exporting high-quality Egyptian products to international destinations, creating valuable commercial opportunities for our global partners.</p>
+          <p>With our deep knowledge of international markets and extensive global networks, we provide comprehensive services to help businesses navigate the complexities of global trade. Our team of experts offers tailored solutions to connect businesses with global opportunities and bring international products to their desired markets.</p>
+          <p>Our mission is to enhance the region's position as a gateway for global trade, contributing to the growth and prosperity of businesses through strategic international partnerships and innovative trade solutions that link our markets to the world.</p>
         </div>
       </div>
     </section>
@@ -69,34 +347,34 @@
         <h2>Our Services</h2>
         <div class="service-container">
           <div class="service-box">
-            <i class="fas fa-ship fa-3x"></i> <!-- Shipping icon -->
-            <h3>Import & Export</h3>
-            <p>Comprehensive global import and export services for Egyptian businesses, including documentation, logistics, customs clearance, and regulatory compliance for international trade.</p>
+            <i class="fas fa-chart-bar"></i> <!-- Bar chart for trade -->
+            <h3>Import & Export Management</h3>
+            <p>Comprehensive global import and export services, including documentation, logistics, customs clearance, and regulatory compliance for international trade.</p>
           </div>
           <div class="service-box">
-            <i class="fas fa-handshake fa-3x"></i> <!-- Handshake icon for agency -->
-            <h3>Commercial Agencies</h3>
-            <p>Representing international brands and products in the Egyptian market, and Egyptian products in international markets, providing local expertise and access to global markets.</p>
+            <i class="fas fa-handshake"></i> <!-- Handshake for agency -->
+            <h3>Commercial Agency Representation</h3>
+            <p>Representing international brands and products in local markets, and local products in international markets, providing expertise and access to global networks.</p>
           </div>
           <div class="service-box">
-            <i class="fas fa-chart-line fa-3x"></i> <!-- Chart line icon for market analysis -->
-            <h3>Market Analysis</h3>
-            <p>Detailed market research and analysis to help businesses understand opportunities, challenges, and the competitive landscape in international markets and facilitate successful global trade.</p>
+            <i class="fas fa-magnifying-glass-chart"></i> <!-- Magnifying glass with chart for market analysis -->
+            <h3>Global Market Analysis</h3>
+            <p>Detailed market research and analysis to help businesses understand opportunities, challenges, and the competitive landscape in international markets.</p>
           </div>
           <div class="service-box">
-            <i class="fas fa-globe-americas fa-3x"></i> <!-- Globe icon for networking -->
-            <h3>Business Networking</h3>
-            <p>Connect with potential partners, suppliers, and clients through our extensive global network spanning key international markets and trade centers worldwide.</p>
+            <i class="fas fa-network-wired"></i> <!-- Network for networking -->
+            <h3>Strategic Business Networking</h3>
+            <p>Connect with potential partners, suppliers, and clients through our extensive global network spanning key international trade centers worldwide.</p>
           </div>
           <div class="service-box">
-            <i class="fas fa-balance-scale fa-3x"></i> <!-- Balance scale icon for legal -->
-            <h3>Legal Consultation</h3>
-            <p>Expert guidance on the legal and regulatory requirements for international trade with Egypt, including import/export regulations, international contracts, compliance, and trade agreements across multiple jurisdictions.</p>
+            <i class="fas fa-gavel"></i> <!-- Gavel for legal -->
+            <h3>International Trade Consultation</h3>
+            <p>Expert guidance on legal and regulatory requirements for international trade, including import/export regulations, contracts, and compliance across jurisdictions.</p>
           </div>
           <div class="service-box">
-            <i class="fas fa-boxes fa-3x"></i> <!-- Boxes icon for supply chain -->
-            <h3>Supply Chain Management</h3>
-            <p>Optimize your global supply chain operations connecting Egypt with international markets to achieve maximum efficiency, reliability, and cost-effectiveness in global trade.</p>
+            <i class="fas fa-boxes-packing"></i> <!-- Boxes packing for supply chain -->
+            <h3>Optimized Supply Chain Solutions</h3>
+            <p>Optimize your global supply chain operations to achieve maximum efficiency, reliability, and cost-effectiveness in international trade.</p>
           </div>
         </div>
       </div>
@@ -105,23 +383,23 @@
     <!-- Partners Section -->
     <section class="partners">
       <div class="container">
-        <h2>Our Partners</h2>
-        <p>We collaborate with leading global organizations and companies to provide comprehensive international trade solutions. Our strategic partnerships with shipping companies, customs agencies, trade organizations, and financial institutions worldwide enable us to offer enhanced services and connect Egyptian businesses with markets across all continents.</p>
+        <h2>Our Strategic Partners</h2>
+        <p>We collaborate with leading global organizations and companies to provide comprehensive international trade solutions. Our strategic partnerships with shipping companies, customs agencies, trade organizations, and financial institutions worldwide enable us to offer enhanced services and connect businesses with markets across all continents.</p>
         <div class="partner-container">
           <div class="partner-box">
-            <i class="fas fa-building fa-3x"></i> <!-- Building icon for government -->
-            <h3>Government Agencies</h3>
-            <p>Partnerships with governmental trade organizations in Egypt and international trade bodies around the world.</p>
+            <i class="fas fa-building-columns"></i> <!-- Building columns for government/institutions -->
+            <h3>Government & Trade Bodies</h3>
+            <p>Partnerships with governmental trade organizations and international trade bodies to ensure smooth operations and compliance.</p>
           </div>
           <div class="partner-box">
-            <i class="fas fa-briefcase fa-3x"></i> <!-- Briefcase icon for corporate -->
-            <h3>Corporate Partners</h3>
+            <i class="fas fa-sitemap"></i> <!-- Sitemap for corporate network -->
+            <h3>Corporate & Industry Alliances</h3>
             <p>Strategic alliances with leading international corporations and industry associations across global markets and sectors.</p>
           </div>
           <div class="partner-box">
-            <i class="fas fa-truck-moving fa-3x"></i> <!-- Truck moving icon for logistics -->
-            <h3>Logistics Partners</h3>
-            <p>Partnerships with international shipping, transport, and logistics companies operating across major global trade routes and transit hubs.</p>
+            <i class="fas fa-route"></i> <!-- Route for logistics -->
+            <h3>Global Logistics & Shipping</h3>
+            <p>Partnerships with international shipping, transport, and logistics companies operating across major global trade routes and hubs.</p>
           </div>
         </div>
       </div>
@@ -130,16 +408,16 @@
     <!-- Team Section -->
     <section class="team">
       <div class="container">
-        <h2>Meet Our Team</h2>
-        <div class="team-members-grid"> <!-- Changed class name to align with grid layout -->
+        <h2>Meet Our Expert Team</h2>
+        <div class="team-members-grid"> 
           <div class="team-member">
-            <!-- TODO: Replace with your actual team photo path. Dropbox links can be unstable. -->
-            <img src="https://uc2619d8c80f91a5999ee6b073a7.previews.dropboxusercontent.com/p/thumb/ACy2sFfIplabRPCKQ7oBkyqNj9x-MGJlTHKbnIj1OQNbOvdkgZm5CktVa927bez9EbYNg6HxNO4pj9OkrIdw2BlcXwfEvppQRHkWAYhXLaVFjm3vUN_RikMn8YW0upE8QpITYC6K9H8a898MbgiHI6E2l7jqNmIdxnY39QtELfuKQWfuZoDA7mZqtj4x4eZ9F6ToSjA_a3zU189-r6-sEaph_aVzj0pBcwOnXiAHNVr405hLWz8HdiKZe-ycGpoDjsmLodfBkOJ8y2X1LO5_ntIVBEQrvHH2S_3acl_wwfeArc9-aiQWduABqT1tCnw2tHzObCx_008UlFKJX3Fis8DNkXRdnaGsHUs1GJNu0DeWM5X6vfTibUbfpqcdYed-vnvuleI1mFr7ymCbl6Z_2mW9/p.jpeg?is_prewarmed=true" alt="Ismail El Menshawy Photo" /> 
+            <!-- Using a placeholder image for team members. Replace with actual photos. -->
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJ1c2luZXNzJTIwbWFufGVufDB8fDB8fHww" alt="Ismail El Menshawy Photo" /> 
             <h3>Ismail El Menshawy</h3>
-            <p>CEO</p>
+            <p>CEO & Founder</p>
           </div>
           <div class="team-member">
-            <img src="https://media.licdn.com/dms/image/v2/D4E03AQF53Zyc3C3eVg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1730487573408?e=1759968000&v=beta&t=mFhiI8AMgaVE28LXkm8nDBCDzu-qxMU-P-9xZXrvqpk" alt="Ahmed Badrawy Photo" /> 
+            <img src="https://images.unsplash.com/photo-1542157545-a74b2762a045?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGJ1c2luZXNzJTIwbWFufGVufDB8fDB8fHww" alt="Ahmed Badrawy Photo" /> 
             <h3>Ahmed Badrawy</h3>
             <p>Head of Digital Transformation</p>
           </div>
@@ -154,7 +432,7 @@
       <div class="footer-grid">
         <div class="footer-column">
           <h4>Al Massria Al Emaratia</h4>
-          <p>We provide integrated solutions for international trade, import, export, and commercial agencies, connecting Egypt with global markets.</p>
+          <p>We provide integrated solutions for international trade, import, export, and commercial agencies, connecting businesses with global markets from Egypt & UAE.</p>
         </div>
         <div class="footer-column">
           <h4>Quick Links</h4>
@@ -167,9 +445,9 @@
         </div>
         <div class="footer-column">
           <h4>Contact Us</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Address: 10th of Ramadan, Sharqia, Egypt</p>
+          <p><i class="fas fa-map-marker-alt"></i> Address: 10th of Ramadan City, Sharqia, Egypt</p>
           <p><i class="fas fa-phone"></i> Phone: <a href="tel:+201011766232">+20 101 176 6232</a></p>
-          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@yourwebsite.com">info@egy-uae.com</a></p>
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@egy-uae.com">info@egy-uae.com</a></p>
         </div>
         <div class="footer-column">
           <h4>Follow Us</h4>
@@ -192,7 +470,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
   <script>
     document.getElementById("current-year-footer").textContent = new Date().getFullYear();
 
