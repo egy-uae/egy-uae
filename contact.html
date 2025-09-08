@@ -4,7 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - Al Massria Al Emaratia</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Font & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: "Cairo", sans-serif;
+    }
+    body {
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #d32f2f, #b71c1c);
+      padding: 1rem 0;
+      color: #fff;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: flex-end;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: #ffccbc;
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 3rem 0;
+    }
+    .contact h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #b71c1c;
+    }
+    .contact p {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .contact-form, .contact-info {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Form */
+    form label {
+      display: block;
+      margin: 0.8rem 0 0.3rem;
+      font-weight: 600;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: 0.3s;
+    }
+    form input:focus, form textarea:focus {
+      border-color: #b71c1c;
+      outline: none;
+    }
+    .btn {
+      background: #b71c1c;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #d32f2f;
+    }
+
+    /* Contact Info */
+    .contact-info h3 {
+      margin-bottom: 1rem;
+      color: #b71c1c;
+    }
+    .contact-info p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .contact-info i {
+      color: #b71c1c;
+      font-size: 1.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #aaa;
+      padding: 1rem 0;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    footer p { font-size: 0.9rem; }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -42,16 +194,17 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
 
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
           </form>
         </div>
 
         <!-- Contact Info -->
         <div class="contact-info">
           <h3>Our Contact Details</h3>
-          <p><strong>Address:</strong> 10th of Ramadan, Al Sharqia, Egypt</p>
-          <p><strong>Phone:</strong> +20 101 176 6232</p>
-          <p><strong>Email:</strong> info@egy-uae.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> <strong>Address:</strong> 10th of Ramadan, Al Sharqia, Egypt</p>
+          <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +20 101 176 6232</p>
+          <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> info@egy-uae.com</p>
+          <p><i class="fa-solid fa-globe"></i> <strong>Website:</strong> www.egy-uae.com</p>
         </div>
       </div>
     </div>
