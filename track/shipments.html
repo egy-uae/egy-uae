@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المصرية الإماراتية - نظام تتبع الشحنات</title>
+    <title>Egyptian-Emirati - Shipment Tracking System</title>
+    <!-- Google Fonts - Poppins for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Body Styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient to right, #f0f2f5, #e0e5ec; /* Soft gradient background */
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #eceff1, #cfd8dc); /* Lighter, professional gradient */
             color: #333;
             margin: 0;
             padding: 0;
@@ -16,177 +20,285 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            direction: rtl; /* Right-to-left for Arabic */
-            text-align: right;
+            text-align: center;
+            line-height: 1.6;
         }
 
         /* Container for the whole application */
         .container {
             background-color: #ffffff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            width: 95%;
+            max-width: 800px; /* Increased max-width for more content */
             text-align: center;
-            border-top: 5px solid #007bff; /* Blue accent for Egyptian-Emirati theme */
-            border-bottom: 5px solid #007bff;
+            border-top: 6px solid #007bff; /* Primary blue accent */
+            box-sizing: border-box; /* Include padding in width calculation */
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Header Styling */
-        h1 {
-            color: #007bff; /* Primary blue color */
-            margin-bottom: 25px;
-            font-size: 2.2em;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        .header {
+            margin-bottom: 30px;
         }
 
-        .logo {
-            max-width: 150px;
+        .header .logo {
+            max-width: 180px;
             margin-bottom: 20px;
-            /* Placeholder for a real logo */
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        h1 {
+            color: #007bff; /* Primary blue color */
+            margin-bottom: 10px;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: #555;
+            font-size: 1.4em;
+            font-weight: 400;
+            margin-top: 0;
         }
 
         /* Input Group Styling */
         .search-group {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center;
+            gap: 15px; /* Spacing between input and button */
+            margin-bottom: 40px;
         }
 
         .search-input {
-            padding: 15px 20px;
+            flex-grow: 1; /* Allows input to take up available space */
+            padding: 16px 20px;
             border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1.1em;
-            width: calc(70% - 20px); /* Adjust width for responsive design */
-            max-width: 400px;
+            border-radius: 10px;
+            font-size: 1.15em;
+            max-width: 450px;
             outline: none;
-            transition: border-color 0.3s ease;
-            text-align: right;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .search-input::placeholder {
+            color: #aaa;
         }
 
         .search-input:focus {
             border-color: #007bff;
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 12px rgba(0, 123, 255, 0.25);
         }
 
         .search-button {
             background-color: #007bff;
             color: white;
-            padding: 15px 30px;
+            padding: 16px 35px;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
+            border-radius: 10px;
+            font-size: 1.15em;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .search-button:hover {
             background-color: #0056b3;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
         }
 
         .search-button:active {
             transform: translateY(0);
+            box-shadow: none;
         }
 
         /* Search Results Styling */
         #results {
             margin-top: 30px;
-            text-align: right;
+            text-align: left; /* Align text to left for better readability */
             border-top: 1px solid #eee;
-            padding-top: 25px;
+            padding-top: 30px;
         }
 
         .shipment-card {
-            background-color: #f9f9f9;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            background-color: #fcfcfc;
+            border: 1px solid #e0e0e0;
+            border-left: 6px solid #28a745; /* Green accent for active status */
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideIn 0.6s ease-out;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for details */
+            gap: 15px 30px; /* Row and column gap */
+        }
+
+        .shipment-card.status-delivered {
+            border-left-color: #6c757d; /* Grey for delivered */
+        }
+        .shipment-card.status-customs {
+            border-left-color: #ffc107; /* Yellow for customs */
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .shipment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
-        .shipment-card h2 {
-            color: #28a745; /* Green for "Found" or main status */
+        .shipment-card h3 {
+            color: #007bff;
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 1.8em;
             font-weight: 600;
+            grid-column: 1 / -1; /* Span across all columns */
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .shipment-card p {
-            margin: 8px 0;
-            line-height: 1.6;
+        .shipment-card h3 i {
+            font-size: 1em;
+            color: #28a745; /* Icon color */
+        }
+        .shipment-card.status-delivered h3 i { color: #6c757d; }
+        .shipment-card.status-customs h3 i { color: #ffc107; }
+
+
+        .shipment-detail {
+            margin: 0;
             font-size: 1.05em;
             color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .shipment-card p strong {
+        .shipment-detail strong {
             color: #333;
             font-weight: 600;
         }
 
-        .error-message {
+        .shipment-detail i {
+            color: #007bff; /* Icon color for details */
+            font-size: 1.1em;
+            width: 25px; /* Fixed width for icons */
+            text-align: center;
+        }
+
+        .error-message, .info-message {
             color: #dc3545; /* Red for error messages */
-            font-weight: 600;
-            font-size: 1.2em;
-            margin-top: 20px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.1em;
+            margin-top: 25px;
+            display: none; /* Hidden by default */
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .info-message {
+            color: #007bff;
+            background-color: #e7f3ff;
+            border-color: #b8daff;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive adjustments */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .container {
-                padding: 25px;
-                width: 95%;
+                padding: 30px 25px;
             }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            .search-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .search-input, .search-button {
+                width: 100%;
+                max-width: none;
+            }
+            .shipment-card {
+                grid-template-columns: 1fr; /* Stack details vertically on small screens */
+                padding: 20px;
+            }
+            .shipment-card h3 {
+                font-size: 1.5em;
+                flex-direction: column; /* Stack icon and text */
+                gap: 8px;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
 
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
             h1 {
                 font-size: 1.8em;
             }
-
-            .search-group {
-                flex-direction: column;
-                gap: 15px;
+            h2 {
+                font-size: 1em;
             }
-
-            .search-input {
-                width: calc(100% - 20px);
-                max-width: none;
-            }
-
-            .search-button {
-                width: 100%;
+            .search-input, .search-button {
+                font-size: 1em;
+                padding: 12px 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Optional: Add a logo here for "المصرية الإماراتية" -->
-        <!-- <img src="path/to/your/logo.png" alt="Egyptian-Emirati Logo" class="logo"> -->
-        <h1>المصرية الإماراتية</h1>
-        <h2>نظام تتبع الشحنات</h2>
+        <div class="header">
+            <!-- Example: Replace with your actual logo -->
+            <!-- <img src="path/to/your/logo.png" alt="Egyptian-Emirati Logo" class="logo"> -->
+            <h1>Egyptian-Emirati</h1>
+            <h2>Shipment Tracking System</h2>
+        </div>
         
         <div class="search-group">
-            <input type="text" id="trackingInput" class="search-input" placeholder="أدخل رقم الشحنة أو الكود هنا...">
-            <button id="searchButton" class="search-button">تتبع الشحنة</button>
+            <input type="text" id="trackingInput" class="search-input" placeholder="Enter tracking number or code...">
+            <button id="searchButton" class="search-button">
+                <i class="fas fa-search"></i> Track Shipment
+            </button>
         </div>
 
         <div id="results">
             <!-- Search results will be displayed here -->
-            <p class="error-message" id="errorMessage" style="display: none;">لم يتم العثور على شحنة بهذا الرقم. يرجى التحقق من الرقم والمحاولة مرة أخرى.</p>
+            <p class="error-message" id="errorMessage"></p>
+            <p class="info-message" id="infoMessage">Enter a tracking number above to see shipment details.</p>
         </div>
     </div>
 
@@ -195,31 +307,40 @@
         const shipments = {
             "EE123456789": {
                 id: "EE123456789",
-                status: "قيد التسليم",
-                origin: "دبي، الإمارات العربية المتحدة",
-                destination: "القاهرة، مصر",
-                lastUpdate: "2023-10-26 10:30 صباحًا",
-                description: "طرود ملابس جاهزة",
+                status: "In Transit",
+                origin: "Dubai, UAE",
+                destination: "Cairo, Egypt",
+                lastUpdate: "2023-10-26 10:30 AM",
+                description: "Ready-made clothing parcels",
                 eta: "2023-10-28" // Estimated Time of Arrival
             },
             "EE987654321": {
                 id: "EE987654321",
-                status: "تم التسليم",
-                origin: "الإسكندرية، مصر",
-                destination: "أبوظبي، الإمارات العربية المتحدة",
-                lastUpdate: "2023-10-20 03:00 مساءً",
-                description: "قطع غيار إلكترونية",
+                status: "Delivered",
+                origin: "Alexandria, Egypt",
+                destination: "Abu Dhabi, UAE",
+                lastUpdate: "2023-10-20 03:00 PM",
+                description: "Electronic spare parts",
                 deliveryDate: "2023-10-20"
             },
             "EE112233445": {
                 id: "EE112233445",
-                status: "في الجمارك",
-                origin: "الشارقة، الإمارات العربية المتحدة",
-                destination: "أسوان، مصر",
-                lastUpdate: "2023-10-25 09:00 صباحًا",
-                description: "مواد بناء",
-                notes: "بانتظار موافقة الجمارك",
+                status: "At Customs",
+                origin: "Sharjah, UAE",
+                destination: "Aswan, Egypt",
+                lastUpdate: "2023-10-25 09:00 AM",
+                description: "Construction materials",
+                notes: "Awaiting customs clearance",
                 eta: "2023-11-01"
+            },
+            "EE556677889": {
+                id: "EE556677889",
+                status: "Out for Delivery",
+                origin: "Riyadh, Saudi Arabia",
+                destination: "Giza, Egypt",
+                lastUpdate: "2023-10-27 08:00 AM",
+                description: "Documents and paperwork",
+                eta: "Today"
             }
         };
 
@@ -227,6 +348,10 @@
         const searchButton = document.getElementById('searchButton');
         const resultsDiv = document.getElementById('results');
         const errorMessage = document.getElementById('errorMessage');
+        const infoMessage = document.getElementById('infoMessage');
+
+        // Show initial info message
+        infoMessage.style.display = 'block';
 
         searchButton.addEventListener('click', trackShipment);
         trackingInput.addEventListener('keypress', function(event) {
@@ -235,13 +360,32 @@
             }
         });
 
+        function getStatusIcon(status) {
+            switch (status) {
+                case "In Transit": return "<i class='fas fa-truck'></i>";
+                case "Delivered": return "<i class='fas fa-check-circle'></i>";
+                case "At Customs": return "<i class='fas fa-box'></i>";
+                case "Out for Delivery": return "<i class='fas fa-shipping-fast'></i>";
+                default: return "<i class='fas fa-info-circle'></i>";
+            }
+        }
+
+        function getStatusClass(status) {
+            switch (status) {
+                case "Delivered": return "status-delivered";
+                case "At Customs": return "status-customs";
+                default: return "";
+            }
+        }
+
         function trackShipment() {
             const trackingCode = trackingInput.value.trim().toUpperCase();
             resultsDiv.innerHTML = ''; // Clear previous results
             errorMessage.style.display = 'none'; // Hide error message
+            infoMessage.style.display = 'none'; // Hide info message
 
             if (!trackingCode) {
-                errorMessage.textContent = "الرجاء إدخال رقم تتبع صالح.";
+                errorMessage.textContent = "Please enter a valid tracking number.";
                 errorMessage.style.display = 'block';
                 return;
             }
@@ -249,23 +393,22 @@
             const shipment = shipments[trackingCode];
 
             if (shipment) {
-                // Display shipment details
                 const shipmentCard = document.createElement('div');
-                shipmentCard.classList.add('shipment-card');
+                shipmentCard.classList.add('shipment-card', getStatusClass(shipment.status));
                 shipmentCard.innerHTML = `
-                    <h2>حالة الشحنة: ${shipment.status}</h2>
-                    <p><strong>رقم الشحنة:</strong> ${shipment.id}</p>
-                    <p><strong>المنشأ:</strong> ${shipment.origin}</p>
-                    <p><strong>الوجهة:</strong> ${shipment.destination}</p>
-                    <p><strong>آخر تحديث:</strong> ${shipment.lastUpdate}</p>
-                    <p><strong>الوصف:</strong> ${shipment.description}</p>
-                    ${shipment.eta ? `<p><strong>تاريخ الوصول المتوقع:</strong> ${shipment.eta}</p>` : ''}
-                    ${shipment.deliveryDate ? `<p><strong>تاريخ التسليم:</strong> ${shipment.deliveryDate}</p>` : ''}
-                    ${shipment.notes ? `<p><strong>ملاحظات:</strong> ${shipment.notes}</p>` : ''}
+                    <h3>${getStatusIcon(shipment.status)} Shipment Status: ${shipment.status}</h3>
+                    <p class="shipment-detail"><strong><i class="fas fa-barcode"></i> Tracking ID:</strong> ${shipment.id}</p>
+                    <p class="shipment-detail"><strong><i class="fas fa-globe-americas"></i> Origin:</strong> ${shipment.origin}</p>
+                    <p class="shipment-detail"><strong><i class="fas fa-map-marker-alt"></i> Destination:</strong> ${shipment.destination}</p>
+                    <p class="shipment-detail"><strong><i class="fas fa-clock"></i> Last Update:</strong> ${shipment.lastUpdate}</p>
+                    <p class="shipment-detail"><strong><i class="fas fa-box-open"></i> Description:</strong> ${shipment.description}</p>
+                    ${shipment.eta ? `<p class="shipment-detail"><strong><i class="fas fa-calendar-alt"></i> Estimated Arrival:</strong> ${shipment.eta}</p>` : ''}
+                    ${shipment.deliveryDate ? `<p class="shipment-detail"><strong><i class="fas fa-calendar-check"></i> Delivery Date:</strong> ${shipment.deliveryDate}</p>` : ''}
+                    ${shipment.notes ? `<p class="shipment-detail"><strong><i class="fas fa-sticky-note"></i> Notes:</strong> ${shipment.notes}</p>` : ''}
                 `;
                 resultsDiv.appendChild(shipmentCard);
             } else {
-                errorMessage.textContent = "لم يتم العثور على شحنة بهذا الرقم. يرجى التحقق من الرقم والمحاولة مرة أخرى.";
+                errorMessage.textContent = `No shipment found with tracking number: "${trackingCode}". Please check the number and try again.`;
                 errorMessage.style.display = 'block';
             }
         }
