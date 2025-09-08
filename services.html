@@ -3,68 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services - Egyptian Emirati Foundation</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Our Services | Al Massria Al Emaratia</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Al Massria Al Emaratia provides world-class services in import, export, logistics, and commercial agency, helping businesses grow with trusted trade solutions.">
+  <meta name="keywords" content="Al Massria Al Emaratia, services, import export, logistics, commercial agency, trade solutions, Egypt, UAE, international business">
+  <meta name="author" content="Al Massria Al Emaratia">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Services | Al Massria Al Emaratia">
+  <meta property="og:description" content="Explore the services of Al Massria Al Emaratia, offering global import & export, logistics, and commercial agency solutions.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/services.html">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;}
+
+    /* Header */
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+    }
+    .navbar{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.5rem;}
+    .nav-links li a{
+      color:#fff;
+      font-weight:600;
+      position:relative;
+      transition:0.3s;
+      text-decoration:none;
+    }
+    .nav-links li a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:#bbdefb;
+      transition:width 0.3s ease;
+    }
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after{width:100%;}
+
+    /* Hero */
+    .hero{
+      background:url('https://images.unsplash.com/photo-1549924231-f129b911e442?w=1200') center/cover no-repeat;
+      color:#fff;text-align:center;
+      padding:100px 20px;
+      animation:fadeIn 1.5s;
+    }
+    .hero h1{font-size:48px;margin-bottom:10px;}
+    .hero p{font-size:20px;max-width:700px;margin:auto;}
+
+    /* Services */
+    .services-page{padding:60px 20px;}
+    .services-page .container{width:90%;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+    .service-box{
+      background:#fff;
+      border-radius:12px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition:0.3s;
+      animation:fadeInUp 1s;
+    }
+    .service-box i{font-size:40px;color:#0d47a1;margin-bottom:15px;}
+    .service-box h2{color:#0d47a1;margin-bottom:15px;font-size:22px;}
+    .service-box p{font-size:15px;}
+    .service-box:hover{transform:translateY(-8px);box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+
+    /* Footer */
+    footer{background:#0d47a1;color:#fff;text-align:center;padding:20px 10px;margin-top:50px;}
+    footer p{margin-bottom:8px;}
+    footer .social a{color:#fff;margin:0 10px;font-size:18px;transition:0.3s;}
+    footer .social a:hover{color:#bbdefb;}
+
+    /* Animations */
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .nav-links{flex-direction:column;gap:0.5rem;}
+      .navbar{flex-direction:column;align-items:flex-start;}
+      .hero h1{font-size:32px;}
+      .hero p{font-size:16px;}
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="container">
-      <div class="logo">EGY-UAE</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="faqs.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Al Massria Al Emaratia</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero small-hero">
-    <div class="container">
-      <h1>Our Services</h1>
-      <p>Explore the wide range of services we provide to support businesses and partners worldwide.</p>
-    </div>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Our Services</h1>
+    <p>Explore the trusted trade and logistics services we provide to businesses worldwide.</p>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section class="services-page">
     <div class="container">
       <div class="service-box">
-        <h2>Import & Export Solutions</h2>
-        <p>We specialize in facilitating international trade by providing complete import and export services, ensuring compliance with global standards and regulations.</p>
+        <i class="fas fa-ship"></i>
+        <h2>Import & Export</h2>
+        <p>Comprehensive import and export services ensuring compliance with international standards and smooth cross-border operations.</p>
       </div>
-
       <div class="service-box">
+        <i class="fas fa-handshake"></i>
         <h2>Commercial Agency</h2>
-        <p>Our expertise extends to acting as a commercial agency, representing top brands and creating long-term partnerships across different markets.</p>
+        <p>Representing leading brands and building long-term partnerships across diverse global markets.</p>
       </div>
-
       <div class="service-box">
-        <h2>E-commerce Operations</h2>
-        <p>We manage online stores, product listings, marketing campaigns, and customer service on platforms like Jumia, B.TECH, and more.</p>
+        <i class="fas fa-truck-fast"></i>
+        <h2>Logistics Solutions</h2>
+        <p>Efficient and reliable logistics tailored to meet the needs of our global clients.</p>
       </div>
-
       <div class="service-box">
-        <h2>Cloud Business Solutions</h2>
-        <p>Through <strong>amae.cloud</strong> and <strong>MEtrade.cloud</strong>, we provide digital platforms for trade management, collaboration, and operational efficiency.</p>
+        <i class="fas fa-lightbulb"></i>
+        <h2>Business Consulting</h2>
+        <p>Expert advice and strategies in trade, operations, and supply chain to support sustainable growth.</p>
       </div>
-
       <div class="service-box">
-        <h2>Consulting & Training</h2>
-        <p>We offer professional consultancy and training programs in import/export, business operations, and supply chain management, empowering businesses to grow globally.</p>
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h2>Training Programs</h2>
+        <p>Specialized training in international trade and operations to empower businesses and professionals.</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>© 2025 Egyptian Emirati Foundation - All Rights Reserved.</p>
+    <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </footer>
 </body>
