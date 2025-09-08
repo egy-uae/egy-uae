@@ -4,50 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services | Al Massria Al Emaratia</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Explore the professional import, export, logistics, and commercial agency services offered by Al Massria Al Emaratia to support global trade and business growth.">
-  <meta name="keywords" content="Al Massria Al Emaratia services, import export Egypt UAE, logistics solutions, commercial agency, business consulting, supply chain management">
+  <meta name="description" content="Discover the professional services of Al Massria Al Emaratia, including import, export, trade consulting, logistics, and business partnerships.">
+  <meta name="keywords" content="Import, Export, Trade, Logistics, Commercial Agency, Consulting, Egypt, UAE, Al Massria Al Emaratia">
   <meta name="author" content="Al Massria Al Emaratia">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Our Services | Al Massria Al Emaratia">
-  <meta property="og:description" content="Professional global trade, import, export, and commercial services to grow your business.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=1200">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.egy-uae.com/services.html">
-
-  <!-- Icons & Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body{line-height:1.6;color:#333;background:#f9f9f9;}
-
-    /* Header */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif;}
+    body{line-height:1.6;color:#333;}
     header{
-      background:linear-gradient(90deg,#1976d2,#0d47a1);
-      padding:1rem 0;
-      color:#fff;
-      box-shadow:0 3px 6px rgba(0,0,0,0.2);
-      position:sticky;top:0;z-index:1000;
+      background: linear-gradient(90deg, #004aad, #0073e6);
+      position:fixed;top:0;width:100%;z-index:1000;
     }
-    .navbar{
-      width:90%;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+    header .container{display:flex;justify-content:space-between;align-items:center;padding:15px 8%;}
+    header .logo{font-size:1.5rem;font-weight:bold;color:#fff;}
+    nav ul{list-style:none;display:flex;gap:20px;}
+    nav ul li a{color:#fff;text-decoration:none;position:relative;padding:5px;}
+    nav ul li a.active,
+    nav ul li a:hover{color:#fff;font-weight:500;}
+    nav ul li a::after{
+      content:"";
+      position:absolute;
+      bottom:-5px;
+      left:0;
+      width:0;
+      height:2px;
+      background:#fff; /* الخط بقى نفس لون الهيدر */
+      transition:0.3s;
     }
-    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
-    .nav-links{list-style:none;display:flex;gap:1.5rem;}
-    .nav-links li a{
-      color:#fff;font-weight:600;position:relative;text-decoration:none;transition:0.3s;
+    nav ul li a:hover::after,
+    nav ul li a.active::after{width:100%;}
+    .hero{
+      background:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+      height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+      padding:0 20px;margin-top:70px;position:relative;
     }
-    .nav-links li a::after{
-      content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#bbdefb;transition:width 0.3s ease;
-    }
-    .nav-links li a:hover::after,
-    .nav-links li a.active::after{width:100%;}
-    .hero{background:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
-      height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding:0 20px;margin-top:70px;position:relative;}
     .hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
     .hero .content{position:relative;z-index:1;}
     .hero h1{font-size:2.8rem;margin-bottom:15px;}
