@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المصرية الإماراتية - تتبع الشحنات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="شعار المصرية الإماراتية" class="logo">
+            <h1>نظام تتبع الشحنات</h1>
+            <p>المصرية الإماراتية - حيث تلتقي السرعة بالثقة</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="tracking-section">
+                <h2>تتبع شحنتك</h2>
+                <p>أدخل رقم التتبع أو الكود الخاص بشحنتك أدناه:</p>
+                <div class="search-box">
+                    <input type="text" id="trackingInput" placeholder="أدخل رقم التتبع هنا...">
+                    <button id="trackButton">تتبع الشحنة</button>
+                </div>
+                <div id="trackingResults" class="tracking-results">
+                    <!-- نتائج التتبع ستظهر هنا -->
+                    <p class="no-results">لا توجد نتائج لعرضها حاليًا. يرجى إدخال رقم تتبع.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
