@@ -62,6 +62,21 @@
       nav ul{flex-direction:column;gap:0.5rem;}
       header .container{flex-direction:column;align-items:flex-start;}
     }
+    /* تصميم الزر الخاص بالترجمة */
+#google_translate_element select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#google_translate_element select:hover {
+  background-color: #eaeaea;
+}
   </style>
 </head>
 <body>
@@ -79,6 +94,24 @@
         </ul>
       </nav>
     </div>
+      <!-- زر اللغة -->
+  <div id="google_translate_element" style="margin-left: 20px;"></div>
+
+<!-- جوجل ترانسليت -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en', 
+      includedLanguages: 'ar,en,de,tr,hi,zh-CN', 
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   </header>
 
   <!-- FAQ Section -->
