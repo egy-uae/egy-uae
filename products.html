@@ -87,6 +87,86 @@
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <!-- ====== Search Box ====== -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search products..." onkeyup="handleEnter(event)">
+  <button onclick="searchProducts()"><i class="fas fa-search"></i></button>
+</div>
+
+<style>
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px auto;
+  max-width: 420px;
+  width: 90%;
+  background: transparent; /* شفاف */
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #2196f3, #1976d2);
+  border-image-slice: 1;
+  border-radius: 0; /* مربع */
+  padding: 6px 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.search-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 15px;
+  color: #333;
+  background: transparent; /* شفاف */
+}
+.search-box input::placeholder {
+  color: #999;
+  transition: 0.3s;
+}
+.search-box input:focus::placeholder {
+  color: transparent;
+}
+.search-box button {
+  background: linear-gradient(90deg, #2196f3, #1976d2);
+  border: none;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.search-box button:hover {
+  background: linear-gradient(90deg, #1976d2, #0d47a1);
+  transform: scale(1.05);
+}
+.search-box button i {
+  font-size: 16px;
+}
+</style>
+
+<!-- Font Awesome for icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<script>
+function searchProducts() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let products = document.getElementsByClassName("product-card");
+  for (let i = 0; i < products.length; i++) {
+    let text = products[i].innerText.toLowerCase();
+    products[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+
+function handleEnter(event) {
+  if (event.key === "Enter") {
+    searchProducts();
+  }
+}
+</script>
+
   </header>
 
   <!-- Hero -->
