@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اتصل بنا - المصرية الإماراتية</title>
+  
+  <!-- تحسينات SEO -->
+  <meta name="description" content="تواصل مع المصرية الإماراتية للاستفسارات عن خدمات الاستيراد والتصدير، الوكالات التجارية، أو الدعم. نحن هنا لمساعدتك.">
+  <meta name="keywords" content="اتصل بنا، تواصل، المصرية الإماراتية، استيراد، تصدير، وكالات تجارية، رقم هاتف، بريد إلكتروني، عنوان، دعم فني، استشارات">
+  <meta name="author" content="المصرية الإماراتية">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="اتصل بنا | المصرية الإماراتية">
+  <meta property="og:description" content="نتطلع إلى التواصل معكم. استخدم النموذج أدناه أو اتصل بنا مباشرةً عبر التفاصيل المتاحة.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1543269865-cbf427fdc121?w=800"> <!-- صورة مناسبة لصفحة الاتصال -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/contact-ar.html">
+  <meta property="og:site_name" content="المصرية الإماراتية">
+
+  <!-- الخطوط والأيقونات -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    /* إعادة تعيين الأنماط الأساسية */
+    * {margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body {background:#f7f9fc;color:#333;line-height:1.6;direction:rtl;} /* دعم RTL */
+    a{text-decoration:none;color:inherit;}
+    ul{list-style:none;}
+
+    /* الرسوم المتحركة */
+    @keyframes fadeSlideDown {
+      0% {opacity:0;transform:translateY(-30px);}
+      100% {opacity:1;transform:translateY(0);}
+    }
+    @keyframes fadeIn {
+      0% {opacity:0;transform:translateY(20px);}
+      100% {opacity:1;transform:translateY(0);}
+    }
+    @keyframes iconBounce {
+      0%,100% {transform:translateY(0);}
+      50% {transform:translateY(-4px);}
+    }
+
+    /* الرأس */
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+      animation:fadeSlideDown 0.8s ease;
+      position:fixed; /* تثبيت الرأس */
+      width:100%;
+      top:0;
+      z-index:1000;
+      display: flex; /* لترتيب العناصر بشكل أفقي */
+      justify-content: space-between; /* توزيع العناصر على الأطراف */
+      align-items: center; /* محاذاة العناصر عموديًا */
+      flex-wrap: wrap; /* للسماح بالعناصر بالتجاوب */
+    }
+    .container{width:90%;max-width:1200px;margin:auto;}
+    header .logo{font-size:1.5rem;font-weight:700;}
+    header .logo a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+    .company-logo-header {
+      height: 40px;
+      vertical-align: middle;
+      margin-left: 10px; /* تغيير الهامش لـ RTL */
+      margin-right: 0;
+    }
+    nav ul{display:flex;gap:1.5rem;justify-content:flex-start;} /* تغيير الاتجاه لـ RTL */
+    nav ul li a{color:#fff;font-weight:600;position:relative;padding-bottom:4px;}
+    nav ul li a::after{
+      content:"";position:absolute;right:0;bottom:0;width:0;height:2px;background:#bbdefb; /* تغيير الاتجاه لـ RTL */
+      transition:width 0.3s ease;
+    }
+    nav ul li a:hover::after,nav ul li a.active::after{width:100%;}
+
+    header .container{display:flex;justify-content:space-between;align-items:center;}
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* قسم الاتصال */
+    .contact{padding:3rem 0;margin-top:90px;} /* تعويض ارتفاع الهيدر الثابت */
+    .contact h2{text-align:center;font-size:2.5rem;margin-bottom:1rem;color:#0d47a1;
+      animation:fadeIn 1s ease;}
+    .contact p{text-align:center;font-size:1.1rem;margin-bottom:2.5rem;color:#555;animation:fadeIn 1.3s ease;max-width:800px;margin-left:auto;margin-right:auto;}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+    .contact-form,.contact-info{background:#fff;padding:2rem;border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);animation:fadeIn 1.6s ease;}
+
+    /* النموذج */
+    form label{display:block;margin:0.8rem 0 0.3rem;font-weight:600;}
+    form input,form textarea{width:100%;padding:0.8rem;border:1px solid #ccc;border-radius:8px;
+      margin-bottom:1rem;transition:0.3s;direction:rtl;text-align:right;} /* دعم RTL */
+    form input:focus,form textarea:focus{border-color:#0d47a1;outline:none;}
+    .btn{background:#0d47a1;color:#fff;padding:0.8rem 1.5rem;border:none;border-radius:8px;
+      cursor:pointer;font-weight:600;transition:background 0.3s, transform 0.2s;display:flex;align-items:center;justify-content:center;gap:10px;}
+    .btn:hover{background:#1976d2;transform:scale(1.05);}
+    .btn i {order: 2;} /* ترتيب الأيقونة بعد النص في RTL */
+
+    /* معلومات الاتصال */
+    .contact-info h3{margin-bottom:1.5rem;color:#0d47a1;font-size:1.3rem;}
+    .contact-info p{margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;
+      transition:transform 0.3s;text-align:right;justify-content:flex-end;} /* دعم RTL */
+    .contact-info p:hover{transform:translateX(-5px);} /* تغيير الاتجاه لـ RTL */
+    .contact-info i{color:#0d47a1;font-size:1.2rem;transition:0.3s;}
+    .contact-info p:hover i{animation:iconBounce 0.6s;}
+
+    /* التذييل */
+    footer{background:#0d47a1;color:#fff;padding:1.5rem 0;text-align:center;margin-top:3rem;}
+    footer p{font-size:0.95rem;margin-bottom:10px;}
+    footer .social a{color:#fff;margin:0 10px;font-size:1.4rem;transition:color 0.3s;}
+    footer .social a:hover{color:#bbdefb;}
+
+    /* الاستجابة للأجهزة المختلفة */
+    @media(max-width:992px){
+      .contact-grid{grid-template-columns:1fr;}
+      nav ul{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;right:0;padding-bottom:15px;z-index:1000;}
+      nav ul.nav-active{display:flex;}
+      nav ul li{text-align:center;margin:10px 0;}
+      nav ul li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+      header .container{flex-direction:column;align-items:flex-end;} /* تعديل لمحاذاة العناصر في وضع الكولوم لـ RTL */
+      .contact h2{font-size:2rem;}
+      .contact p{font-size:1rem;}
+    }
+    @media(max-width:768px){
+      .contact{padding:2rem 0;margin-top:80px;}
+      .contact h2{font-size:1.8rem;}
+      .contact p{font-size:0.9rem;}
+      .contact-form, .contact-info{padding:1.5rem;}
+      .contact-info h3{font-size:1.2rem;}
+      .contact-info p{font-size:0.95rem;justify-content:center;}
+      .btn{padding:0.7rem 1.2rem;}
+    }
+
+    /* تصميم زر تبديل اللغة المخصص */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px; /* Adjusted for RTL */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <a href="home-ar.html">
+            <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="شعار المصرية الإماراتية" class="company-logo-header">
+            المصرية الإماراتية
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home-ar.html">الرئيسية</a></li>
+          <li><a href="about-ar.html">من نحن</a></li>
+          <li><a href="services-ar.html">خدماتنا</a></li>
+          <li><a href="faqs-ar.html">الأسئلة الشائعة</a></li>
+          <li><a href="contact-ar.html" class="active">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="contact.html" aria-label="English Language"><i class="fas fa-globe"></i> English</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <h2>اتصل بنا</h2>
+      <p>يسعدنا تواصلكم معنا. يمكنكم استخدام النموذج أدناه أو الاتصال بنا مباشرةً عبر بيانات الاتصال الموضحة.</p>
+      
+      <div class="contact-grid">
+        <!-- نموذج الاتصال -->
+        <div class="contact-form">
+          <form action="mailto:info@egy-uae.com" method="POST" enctype="text/plain">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" name="Full Name" placeholder="أدخل اسمك" required />
+
+            <label for="email">عنوان البريد الإلكتروني</label>
+            <input type="email" id="email" name="Email" placeholder="أدخل بريدك الإلكتروني" required />
+
+            <label for="message">رسالتك</label>
+            <textarea id="message" name="Message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+            <button type="submit" class="btn"><i class="fa-solid fa-paper-plane"></i> إرسال الرسالة</button>
+          </form>
+        </div>
+
+        <!-- معلومات الاتصال -->
+        <div class="contact-info">
+          <h3>تفاصيل الاتصال بنا</h3>
+          <p><i class="fa-solid fa-location-dot"></i> <strong>العنوان:</strong> مدينة العاشر من رمضان، الشرقية، مصر</p>
+          <p><i class="fa-solid fa-phone"></i> <strong>الهاتف:</strong> +20 101 176 6232</p>
+          <p><i class="fa-solid fa-envelope"></i> <strong>البريد الإلكتروني:</strong> info@egy-uae.com</p>
+          <p><i class="fa-solid fa-globe"></i> <strong>الموقع الإلكتروني:</strong> www.egy-uae.com</p>
+          <p><i class="fa-brands fa-whatsapp"></i> <strong>الدعم الفني والواتساب:</strong> +20 101 337 8572</p>
+          <!-- يمكنك إضافة خريطة جوجل هنا -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.793751098679!2d31.737119284883984!3d30.04441998188151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14582f3c0e3e2d7f%3A0xf0db7c5e2d6b7e1!2s10th%20of%20Ramadan%20City%2C%20Al%20Sharqia%20Governorate!5e0!3m2!1sen!2seg!4v1678912345678!5m2!1sen!2seg" 
+            width="100%" 
+            height="250" 
+            style="border:0; border-radius: 8px; margin-top: 1.5rem;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+</html>
