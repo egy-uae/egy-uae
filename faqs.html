@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQs - Al Massria Al Emaratia</title>
-  <!-- Font & Icons -->
+  <title>FAQs - Al Masriya Al Emaratiya</title>
+  
+  <!-- SEO Enhancements -->
+  <meta name="description" content="Answers to the most common questions about Egyptian Emirati's import, export, and commercial agency services. Learn about our operations and locations.">
+  <meta name="keywords" content="frequently asked questions, FAQs, Egyptian Emirati, import, export, commercial agencies, logistics, business consulting, partnerships, Egypt, UAE">
+  <meta name="author" content="Egyptian Emirati">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="FAQs | Egyptian Emirati">
+  <meta property="og:description" content="We provide clear and detailed answers to your main inquiries about our services and policies.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1549646467-3c9f2b8f3a3e?w=800"> <!-- Suitable image for FAQs -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/faqs.html">
+  <meta property="og:site_name" content="Egyptian Emirati">
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
+    /* Reset basic styles */
     * {margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body {background:#f7f9fc;color:#333;line-height:1.6;}
+    body {background:#f7f9fc;color:#333;line-height:1.6;direction:ltr;} /* LTR support */
     a{text-decoration:none;color:inherit;}
     ul{list-style:none;}
 
@@ -28,136 +44,204 @@
     }
 
     /* Header */
-    header{background:linear-gradient(90deg,#1976d2,#0d47a1);padding:1rem 0;color:#fff;
-      box-shadow:0 3px 6px rgba(0,0,0,0.2);animation:fadeSlideDown 0.8s ease;}
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+      animation:fadeSlideDown 0.8s ease;
+      position:fixed; /* Fixed header */
+      width:100%;
+      top:0;
+      z-index:1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .container{width:90%;max-width:1200px;margin:auto;}
     header .logo{font-size:1.5rem;font-weight:700;}
-    nav ul{display:flex;gap:1.5rem;justify-content:flex-end;}
+    header .logo a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+    .company-logo-header {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px; /* Margin for LTR */
+      margin-left: 0;
+    }
+    nav ul{display:flex;gap:1.5rem;justify-content:flex-end;} /* Direction for LTR */
     nav ul li a{color:#fff;font-weight:600;position:relative;padding-bottom:4px;}
     nav ul li a::after{
-      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:#bbdefb;
+      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:#bbdefb; /* Direction for LTR */
       transition:width 0.3s ease;
     }
     nav ul li a:hover::after,nav ul li a.active::after{width:100%;}
 
     header .container{display:flex;justify-content:space-between;align-items:center;}
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
 
     /* FAQ Section */
-    .faq{padding:3rem 0;}
-    .faq h2{text-align:center;font-size:2rem;margin-bottom:1rem;color:#0d47a1;animation:fadeIn 1s ease;}
-    .faq p{text-align:center;margin-bottom:2rem;color:#555;animation:fadeIn 1.3s ease;}
+    .faq{padding:3rem 0;margin-top:90px;} /* Compensate for fixed header height */
+    .faq h2{text-align:center;font-size:2.5rem;margin-bottom:1rem;color:#0d47a1;animation:fadeIn 1s ease;}
+    .faq p{text-align:center;font-size:1.1rem;margin-bottom:2.5rem;color:#555;animation:fadeIn 1.3s ease;max-width:800px;margin-left:auto;margin-right:auto;}
 
-    .faq-item{background:#fff;margin:1rem 0;padding:1rem 1.5rem;border-radius:10px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.3s;}
-    .faq-item:hover{transform:translateX(5px);}
-    .faq-question{display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#0d47a1;}
-    .faq-answer{display:none;margin-top:0.8rem;color:#444;}
+    .faq-item{background:#fff;margin:1rem 0;padding:1.2rem 1.8rem;border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.3s, box-shadow 0.3s;}
+    .faq-item:hover{transform:translateX(5px);box-shadow:0 6px 12px rgba(0,0,0,0.12);} /* Direction for LTR */
+    .faq-question{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#0d47a1;font-size:1.1rem;}
+    .faq-question i.fa-solid {
+        margin-right: 10px; /* Space between icon and text for LTR */
+        margin-left: 0;
+        transition: transform 0.3s ease;
+    }
+    .faq-question .toggle-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+    .faq-answer{display:none;margin-top:1rem;color:#444;line-height:1.8;font-size:1rem;}
+    .faq-item.active .faq-question .toggle-icon {
+        transform: rotate(45deg); /* Rotate plus icon to become X when open */
+    }
+
 
     /* Footer */
-    footer{background:#222;color:#aaa;padding:1rem 0;text-align:center;margin-top:2rem;}
-    footer p{font-size:0.9rem;}
+    footer{background:#0d47a1;color:#fff;padding:1.5rem 0;text-align:center;margin-top:3rem;}
+    footer p{font-size:0.95rem;margin-bottom:10px;}
+    footer .social a{color:#fff;margin:0 10px;font-size:1.4rem;transition:color 0.3s;}
+    footer .social a:hover{color:#bbdefb;}
 
-    /* Responsive */
-    @media(max-width:768px){
-      nav ul{flex-direction:column;gap:0.5rem;}
-      header .container{flex-direction:column;align-items:flex-start;}
+    /* Responsiveness */
+    @media(max-width:992px){
+      nav ul{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0;padding-bottom:15px;z-index:1000;}
+      nav ul.nav-active{display:flex;}
+      nav ul li{text-align:center;margin:10px 0;}
+      nav ul li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+      header .container{flex-direction:column;align-items:flex-start;} /* Adjusted alignment for LTR column mode */
+      .faq h2{font-size:2rem;}
+      .faq p{font-size:1rem;}
+      .faq-question{font-size:1rem;}
+      .faq-answer{font-size:0.9rem;}
     }
-    /* تصميم الزر الخاص بالترجمة */
-#google_translate_element select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+    @media(max-width:768px){
+      .faq{padding:2rem 0;margin-top:80px;}
+      .faq h2{font-size:1.8rem;}
+      .faq p{font-size:0.9rem;}
+      .faq-item{padding:1rem 1.2rem;}
+      .faq-question span{font-size:0.95rem;}
+      .faq-question .toggle-icon {font-size:1rem;}
+    }
 
-#google_translate_element select:hover {
-  background-color: #eaeaea;
-}
+    /* Custom language switcher button design */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px; /* Adjusted for LTR */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <div class="container">
-      <h1 class="logo">Al Massria Al Emaratia</h1>
+      <h1 class="logo">
+        <a href="index.html">
+            <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="Egyptian Emirati Logo" class="company-logo-header">
+            Al Masriya Al Emaratiya
+        </a>
+      </h1>
       <nav>
-        <ul>
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="faqs.html" class="active">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
+      <div class="language-switcher">
+        <a href="faqs-ar.html" aria-label="Arabic Language"><i class="fas fa-globe"></i> Arabic</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </div>
-      <!-- زر اللغة -->
-  <div id="google_translate_element" style="margin-left: 20px;"></div>
-
-<!-- جوجل ترانسليت -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en', 
-      includedLanguages: 'ar,en,de,tr,hi,zh-CN', 
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },
-    'google_translate_element'
-  );
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
   </header>
 
   <!-- FAQ Section -->
   <section class="faq">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
-      <p>Find answers to the most common questions about Al Massria Al Emaratia and our services.</p>
+      <p>Find answers to the most common questions about Egyptian Emirati and our services.</p>
 
       <div class="faq-item">
         <div class="faq-question">
           <span><i class="fa-solid fa-briefcase"></i> What services do you provide?</span>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus toggle-icon"></i>
         </div>
-        <div class="faq-answer">We provide import, export, and commercial agency services, connecting businesses across Egypt, the UAE, and international markets.</div>
+        <div class="faq-answer">We offer import and export services, commercial agencies, consulting, logistics solutions, and specialized training programs to connect businesses across Egypt, the UAE, and international markets.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
           <span><i class="fa-solid fa-location-dot"></i> Where is your company located?</span>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus toggle-icon"></i>
         </div>
-        <div class="faq-answer">Our head office is located in 10th of Ramadan City, Al Sharqia, Egypt.</div>
+        <div class="faq-answer">Our main office is located in 10th of Ramadan City, Al Sharqia, Egypt. We also have partnerships and operations in the United Arab Emirates to support our international business.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
           <span><i class="fa-solid fa-handshake"></i> How can I become a business partner?</span>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus toggle-icon"></i>
         </div>
-        <div class="faq-answer">You can reach us through our Contact page or by emailing info@egy-uae.com. Our team will guide you through the partnership process.</div>
+        <div class="faq-answer">You can contact us through our "Contact Us" page or by sending an email to <a href="mailto:info@egy-uae.com">info@egy-uae.com</a>. Our team will get in touch to discuss partnership opportunities.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
           <span><i class="fa-solid fa-ship"></i> Do you manage international shipping?</span>
-          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-plus toggle-icon"></i>
         </div>
-        <div class="faq-answer">Yes, we handle international logistics to ensure smooth operations for imports and exports worldwide.</div>
+        <div class="faq-answer">Yes, we provide comprehensive logistics solutions including sea, air, and land freight, customs clearance, and warehouse management to ensure smooth import and export operations globally.</div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <span><i class="fa-solid fa-star"></i> Why choose Al Massria Al Emaratia?</span>
-          <i class="fa-solid fa-plus"></i>
+          <span><i class="fa-solid fa-star"></i> Why choose Egyptian Emirati?</span>
+          <i class="fa-solid fa-plus toggle-icon"></i>
         </div>
-        <div class="faq-answer">We combine regional expertise, strong global partnerships, and years of experience to deliver efficient and reliable trade solutions.</div>
+        <div class="faq-answer">We combine deep regional expertise, strong global partnerships, and years of experience to deliver efficient and reliable trade and logistics solutions, with a focus on customer service and sustainable growth.</div>
       </div>
     </div>
   </section>
@@ -165,7 +249,11 @@ function googleTranslateElementInit() {
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+      <p>&copy; 2025 Al Masriya Al Emaratiya. All Rights Reserved.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
   </footer>
 
@@ -176,23 +264,36 @@ function googleTranslateElementInit() {
       const question = item.querySelector(".faq-question");
       question.addEventListener("click", () => {
         const answer = item.querySelector(".faq-answer");
-        const icon = question.querySelector("i.fa-solid.fa-plus, i.fa-solid.fa-minus");
-        const isOpen = answer.style.display === "block";
-
-        // Close all
-        document.querySelectorAll(".faq-answer").forEach(a => a.style.display = "none");
-        document.querySelectorAll(".faq-question i.fa-minus").forEach(i => {
-          i.classList.remove("fa-minus");
-          i.classList.add("fa-plus");
+        const icon = question.querySelector(".toggle-icon");
+        
+        // Close all other open FAQs first
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector(".faq-answer").style.display = "none";
+            otherItem.querySelector(".toggle-icon").classList.remove("fa-minus");
+            otherItem.querySelector(".toggle-icon").classList.add("fa-plus");
+          }
         });
 
-        if (!isOpen) {
+        // Toggle the current item's state
+        item.classList.toggle('active');
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          icon.classList.remove("fa-minus");
+          icon.classList.add("fa-plus");
+        } else {
           answer.style.display = "block";
           icon.classList.remove("fa-plus");
           icon.classList.add("fa-minus");
         }
       });
     });
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
   </script>
 </body>
 </html>
