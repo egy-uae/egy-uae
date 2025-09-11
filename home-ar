@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- تحسينات SEO: عنوان محسّن، وصف ميتا، وكلمات مفتاحية -->
+  <title>المصرية الإماراتية - حلول التجارة العالمية، الاستيراد والتصدير</title>
+  <meta name="description" content="المصرية الإماراتية تقدم حلولًا متكاملة للاستيراد والتصدير والوكالات التجارية في مصر والإمارات. نربط الأعمال بالأسواق العالمية." />
+  <meta name="keywords" content="المصرية الإماراتية, استيراد, تصدير, وكالات تجارية, تجارة عالمية, مصر, الإمارات, حلول تجارية, شحن, لوجستيات, أسواق دولية" />
+  <meta name="author" content="المصرية الإماراتية" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.egy-uae.com/" /> 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* تصميمات أساسية */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;direction:rtl;} /* دعم RTL */
+
+    /* الرأس */
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+    }
+    .navbar{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.5rem;}
+    .nav-links li a{
+      color:#fff;
+      font-weight:600;
+      position:relative;
+      text-decoration:none;
+      border:none;          
+      transition:0.3s;
+    }
+    .nav-links li a::after{
+      content:"";
+      position:absolute;
+      right:0; /* تغيير الاتجاه لـ RTL */
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:#bbdefb;
+      transition:width 0.3s ease;
+    }
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after{width:100%;}
+    .company-logo-header {
+      height: 40px; /* تعديل حسب الحاجة */
+      vertical-align: middle;
+      margin-left: 10px; /* تغيير الهامش لـ RTL */
+      margin-right: 0;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* قسم الأيقونة الرئيسية (Hero Section) */
+    .hero{
+      background:url('https://images.pexels.com/photos/12810604/pexels-photo-12810604.jpeg') center/cover no-repeat;
+      color:#fff;text-align:center;
+      padding:100px 20px;
+      animation:fadeIn 1.5s;
+    }
+    .hero h1{font-size:48px;margin-bottom:10px;}
+    .hero h1 span {color: #bbdefb;}
+    .hero p{font-size:20px;max-width:700px;margin:auto;}
+    .btn-primary {
+      display: inline-block;
+      background-color: #bbdefb;
+      color: #0d47a1;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 25px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #90caf9;
+    }
+
+    /* أنماط الأقسام العامة */
+    section {
+      padding: 60px 20px;
+      margin-bottom: 30px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+    section h2 {
+      text-align: center;
+      color: #0d47a1;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #1976d2;
+      border-radius: 2px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* قسم من نحن */
+    .about-us .about-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about-us .about-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .about-us .about-content p {
+      flex: 2;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* قسم الخدمات */
+    .service-container, .partner-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-box, .partner-box {
+      background: #f1f7ff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .service-box i, .partner-box i {
+      font-size: 45px;
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+    .service-box h3, .partner-box h3 {
+      margin-bottom: 15px;
+      color: #1976d2;
+      font-size: 1.5rem;
+    }
+    .service-box p, .partner-box p {
+      font-size: 1rem;
+      color: #555;
+    }
+    .service-box:hover, .partner-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* قسم فريق العمل */
+    .team-members-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .team-member {
+      text-align: center;
+      background: #f1f7ff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #1976d2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .team-member h3 {
+      color: #0d47a1;
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+    .team-member p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .team-member:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    /* التذييل */
+    .official-footer{background:#0d47a1;color:#fff;padding:40px 20px 20px;}
+    .official-footer .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      margin-bottom:30px;
+      width:90%;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .official-footer .footer-column h4{color:#bbdefb;margin-bottom:20px;font-size:1.4rem;}
+    .official-footer .footer-column p,
+    .official-footer .footer-column ul li,
+    .official-footer .footer-column a{color:#e0e0e0;font-size:0.95rem;text-decoration:none;}
+    .official-footer .footer-column ul{list-style:none;}
+    .official-footer .footer-column ul li{margin-bottom:10px;}
+    .official-footer .footer-column ul li a:hover,
+    .official-footer .footer-column a:hover{color:#fff;}
+    .official-footer .footer-column .social-links a{
+      color:#fff;
+      margin-left:15px; /* تغيير الهامش لـ RTL */
+      margin-right:0;
+      font-size:1.3rem;
+      transition:0.3s;
+    }
+    .official-footer .footer-column .social-links a:hover{color:#bbdefb;}
+    .official-footer .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.1);
+      padding-top:20px;
+      text-align:center;
+      font-size:0.9rem;
+      color:#e0e0e0;
+    }
+    .official-footer .footer-legal-links a{
+      color:#e0e0e0;
+      text-decoration:none;
+      margin:0 10px;
+      transition:0.3s;
+    }
+    .official-footer .footer-legal-links a:hover{color:#fff;}
+
+    /* الرسوم المتحركة */
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+    @keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+    /* الاستجابة للأجهزة المختلفة */
+    @media(max-width:992px){
+      .navbar .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;right:0; /* تغيير الاتجاه لـ RTL */padding-bottom:15px;z-index:1000;}
+      .navbar .nav-links.nav-active{display:flex;}
+      .navbar .nav-links li{text-align:center;margin:10px 0;}
+      .navbar .nav-links li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+      .about-us .about-content{flex-direction:column;}
+      .about-us .about-image{width:100%;}
+      .hero h1{font-size:36px;}
+      .hero p{font-size:18px;}
+      section h2{font-size:2rem;}
+      .official-footer .footer-grid{grid-template-columns:1fr;}
+      .official-footer .footer-column{text-align:center;}
+      .official-footer .footer-column .social-links{margin-top:20px;}
+    }
+    @media(max-width:768px){
+      .hero h1{font-size:32px;}
+      .hero p{font-size:16px;}
+      .service-container, .partner-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    /* تصميم زر تبديل اللغة المخصص */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px; /* Adjust as needed */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <!-- رأس التنقل -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <!-- استخدام صورة شعار للموقع. يجب استبدالها بشعار احترافي ثابت. -->
+          <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="شعار المصرية الإماراتية" class="company-logo-header"> 
+          المصرية الإماراتية
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home-ar.html" class="active">الرئيسية</a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="faqs.html">الأسئلة الشائعة</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+      <div class="language-switcher">
+        <a href="index.html" aria-label="English Language"><i class="fas fa-globe"></i> English</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- قسم الأيقونة الرئيسية (Hero Section) -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>أهلاً بكم في <span>المصرية الإماراتية</span></h1>
+        <h2>حلول التجارة العالمية من مصر والإمارات إلى العالم</h2>
+        <p>نحن نسهل عمليات الاستيراد الدولية إلى مصر والتصدير من مصر إلى العالم، ونقدم حلولًا تجارية شاملة وخدمات وكالات تجارية تربط الأعمال بالأسواق الدولية.</p>
+        <a href="services.html" class="btn-primary">اكتشف خدماتنا</a>
+      </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section class="about-us">
+      <div class="container">
+        <h2>عن مؤسستنا</h2>
+        <div class="about-content">
+          <!-- صورة احترافية توضح التجارة العالمية -->
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="توضيح لشبكة التجارة العالمية" class="about-image" />
+          <p>تأسست الشركة المصرية الإماراتية للاستيراد والتصدير والوكالات التجارية في عام 2020 بجذور قوية في مصر والإمارات العربية المتحدة، لتكون مركزًا استراتيجيًا للتجارة العالمية. نحن متخصصون في الاستيراد من الأسواق العالمية إلى مصر وتصدير المنتجات المصرية عالية الجودة إلى وجهات دولية، مما يخلق فرصًا تجارية قيمة لشركائنا العالميين.</p>
+          <p>بفضل معرفتنا العميقة بالأسواق الدولية وشبكاتنا العالمية الواسعة، نقدم خدمات شاملة لمساعدة الشركات على التعامل مع تعقيدات التجارة العالمية. يقدم فريق خبرائنا حلولًا مخصصة لربط الشركات بالفرص العالمية وجلب المنتجات الدولية إلى أسواقها المستهدفة.</p>
+          <p>مهمتنا هي تعزيز مكانة المنطقة كبوابة للتجارة العالمية، والمساهمة في نمو وازدهار الأعمال من خلال الشراكات الدولية الاستراتيجية والحلول التجارية المبتكرة التي تربط أسواقنا بالعالم.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services">
+      <div class="container">
+        <h2>خدماتنا</h2>
+        <div class="service-container">
+          <div class="service-box">
+            <i class="fas fa-chart-bar"></i> <!-- رسم بياني للتجارة -->
+            <h3>إدارة الاستيراد والتصدير</h3>
+            <p>خدمات استيراد وتصدير عالمية شاملة، بما في ذلك الوثائق واللوجستيات والتخليص الجمركي والامتثال التنظيمي للتجارة الدولية.</p>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-handshake"></i> <!-- مصافحة للوكالة -->
+            <h3>تمثيل الوكالات التجارية</h3>
+            <p>تمثيل العلامات التجارية والمنتجات الدولية في الأسواق المحلية، والمنتجات المحلية في الأسواق الدولية، مما يوفر الخبرة والوصول إلى الشبكات العالمية.</p>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-magnifying-glass-chart"></i> <!-- عدسة مكبرة مع رسم بياني لتحليل السوق -->
+            <h3>تحليل السوق العالمية</h3>
+            <p>أبحاث وتحليلات سوقية مفصلة لمساعدة الشركات على فهم الفرص والتحديات والمشهد التنافسي في الأسواق الدولية.</p>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-network-wired"></i> <!-- شبكة للتواصل -->
+            <h3>تواصل أعمال استراتيجي</h3>
+            <p>تواصل مع الشركاء والموردين والعملاء المحتملين من خلال شبكتنا العالمية الواسعة التي تمتد عبر مراكز التجارة الدولية الرئيسية في جميع أنحاء العالم.</p>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-gavel"></i> <!-- مطرقة للقانون -->
+            <h3>استشارات التجارة الدولية</h3>
+            <p>إرشادات الخبراء حول المتطلبات القانونية والتنظيمية للتجارة الدولية، بما في ذلك لوائح الاستيراد/التصدير والعقود والامتثال عبر الولايات القضائية.</p>
+          </div>
+          <div class="service-box">
+            <i class="fas fa-boxes-packing"></i> <!-- صناديق تعبئة لسلسلة التوريد -->
+            <h3>حلول سلسلة التوريد المحسنة</h3>
+            <p>تحسين عمليات سلسلة التوريد العالمية الخاصة بك لتحقيق أقصى قدر من الكفاءة والموثوقية وفعالية التكلفة في التجارة الدولية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الشركاء -->
+    <section class="partners">
+      <div class="container">
+        <h2>شركاؤنا الاستراتيجيون</h2>
+        <p>نتعاون مع منظمات وشركات عالمية رائدة لتقديم حلول تجارية دولية شاملة. تتيح لنا شراكاتنا الاستراتيجية مع شركات الشحن والوكالات الجمركية والمنظمات التجارية والمؤسسات المالية حول العالم تقديم خدمات معززة وربط الشركات بالأسواق عبر جميع القارات.</p>
+        <div class="partner-container">
+          <div class="partner-box">
+            <i class="fas fa-building-columns"></i> <!-- أعمدة مبان للحكومة/المؤسسات -->
+            <h3>الهيئات الحكومية والتجارية</h3>
+            <p>شراكات مع المنظمات التجارية الحكومية والهيئات التجارية الدولية لضمان سلاسة العمليات والامتثال.</p>
+          </div>
+          <div class="partner-box">
+            <i class="fas fa-sitemap"></i> <!-- خريطة موقع لشبكة الشركات -->
+            <h3>تحالفات الشركات والصناعة</h3>
+            <p>تحالفات استراتيجية مع الشركات الدولية الرائدة والجمعيات الصناعية عبر الأسواق والقطاعات العالمية.</p>
+          </div>
+          <div class="partner-box">
+            <i class="fas fa-route"></i> <!-- مسار للوجستيات -->
+            <h3>اللوجستيات والشحن العالمي</h3>
+            <p>شراكات مع شركات الشحن والنقل واللوجستيات الدولية العاملة عبر طرق ومراكز التجارة العالمية الرئيسية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="team">
+      <div class="container">
+        <h2>تعرف على فريق عملنا الخبير</h2>
+        <div class="team-members-grid"> 
+          <div class="team-member">
+            <!-- استخدام صورة شعار لأعضاء الفريق. استبدلها بصور حقيقية. -->
+            <img src="https://uc2619d8c80f91a5999ee6b073a7.previews.dropboxusercontent.com/p/thumb/ACzB_yOswJivCRlIEU2bL9o4W0X3RNZ5-2MuZhm5PL25E6UcUwVUduowbF1fpuldfa3_MjEBkbpWaqo_60wv9_J9EOQv-1VP9Z775pGrOKrY8G8J2KFJT_HOhcRUPIb3_VVzVq5NQM0jpOx_Aba5EQ05qVcdWZbtEc3nE5_yyd_N4L12tbT7p1RxnEgNAYxKDvzn5ZMIXP6pfF18-eZQxMiIyjkgyQaHqKw5wtYMmQ9JqMWBl6D_bg3l86J5tJbaYNqxCJb6uP7u6MagMMfzPm6e0OVSVZkfuuGmhKFeL6ozydt5r3o-QazdONS-HXJLbrGs3HxX_dh9y_KjX2KkIswm9bsiTSsNK30DPG22GS0jRRJ0PVA9SGJ2WH7JyW-Q0MVHaLdp4lVU0RBz5M6RuQji/p.jpeg?is_prewarmed=true" alt="صورة إسماعيل المنشاوي" /> 
+            <h3>إسماعيل المنشاوي</h3>
+            <p>الرئيس التنفيذي والمؤسس</p>
+          </div>
+          <div class="team-member">
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="صورة أحمد بدراوي" /> 
+            <h3>أحمد بدراوي</h3>
+            <p>رئيس التحول الرقمي</p>
+          </div>
+           <div class="team-member">
+            <img src="https://images.pexels.com/photos/9304917/pexels-photo-9304917.jpeg" alt="صورة ندى السيد" /> 
+            <h3>ندى السيد</h3>
+            <p>مدير التطوير</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- تذييل احترافي ورسمي -->
+  <footer class="official-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>المصرية الإماراتية</h4>
+          <p>نقدم حلولًا متكاملة للتجارة الدولية والاستيراد والتصدير والوكالات التجارية، ونربط الأعمال بالأسواق العالمية من مصر والإمارات.</p>
+        </div>
+        <div class="footer-column">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
+            <li><a href="products.html">منتجاتنا</a></li>
+            <li><a href="careers.html">الوظائف</a></li>
+            <li><a href="faqs.html">الأسئلة الشائعة</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>اتصل بنا</h4>
+          <p><i class="fas fa-map-marker-alt"></i> العنوان: مدينة العاشر من رمضان، الشرقية، مصر</p>
+          <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+201011766232">+20 101 176 6232</a></p>
+          <p><i class="fas fa-envelope"></i> البريد الإلكتروني: <a href="mailto:info@egy-uae.com">info@egy-uae.com</a></p>
+        </div>
+        <div class="footer-column">
+          <h4>تابعنا</h4>
+          <div class="social-links">
+            <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourcompany" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/yourcompany" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year-footer"></span> المصرية الإماراتية. جميع الحقوق محفوظة.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">سياسة الخصوصية</a> | 
+          <a href="terms.html">الشروط والأحكام</a> | 
+          <a href="sitemap.xml">خريطة الموقع</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("current-year-footer").textContent = new Date().getFullYear();
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+</html>
