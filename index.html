@@ -1,525 +1,580 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- SEO Enhancements: Optimized Title, Meta Description, and Keywords -->
-  <title>Al Masriya Al Emaratiya - Global Trade, Import & Export Solutions</title>
-  <meta name="description" content="Al Massria Al Emaratia provides integrated solutions for import, export, and commercial agencies in Egypt and UAE. We connect businesses with global markets." />
-  <meta name="keywords" content="Al Masriya Al Emaratiya, import, export, commercial agencies, global trade, Egypt, UAE, trade solutions, shipping, logistics, international markets" />
-  <meta name="author" content="Al Masriya Al Emaratiya" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.egy-uae.com/index.html" /> <!-- Updated canonical for English page -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Al Masriya Al Emaratia — Global Trade & Commercial Agencies</title>
+    <meta name="description" content="Al Masriya Al Emaratia — Import & export services, commercial agency representation and supply-chain solutions between Egypt, UAE and the world." />
+    <meta name="author" content="Al Masriya Al Emaratia" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* Basic Styling */
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body{line-height:1.6;color:#333;background:#f9f9f9;direction:ltr;} /* LTR direction for English */
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    /* Header */
-    header{
-      background:linear-gradient(90deg,#1976d2,#0d47a1);
-      padding:1rem 0;
-      color:#fff;
-      box-shadow:0 3px 6px rgba(0,0,0,0.2);
-    }
-    .navbar{
-      width:90%;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
-    .nav-links{list-style:none;display:flex;gap:1.5rem;}
-    .nav-links li a{
-      color:#fff;
-      font-weight:600;
-      position:relative;
-      text-decoration:none;
-      border:none;          
-      transition:0.3s;
-    }
-    .nav-links li a::after{
-      content:"";
-      position:absolute;
-      left:0; /* Direction for LTR */
-      bottom:-4px;
-      width:0;
-      height:2px;
-      background:#bbdefb;
-      transition:width 0.3s ease;
-    }
-    .nav-links li a:hover::after,
-    .nav-links li a.active::after{width:100%;}
-    .company-logo-header {
-      height: 40px; /* Adjust as needed */
-      vertical-align: middle;
-      margin-right: 10px; /* Direction for LTR */
-      margin-left: 0;
-    }
-    .logo a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #fff;
-    }
+    <style>
+        :root{
+            --blue-1:#1976d2;
+            --blue-2:#0d47a1;
+            --accent:#bbdefb;
+            --accent-2:#90caf9;
+            --bg:#f7f8fb;
+            --card:#ffffff;
+            --muted:#6b7480;
+            --radius:14px;
+            --maxw:1200px;
+        }
 
-    /* Hero Section */
-    .hero{
-      background:url('https://images.pexels.com/photos/12810604/pexels-photo-12810604.jpeg') center/cover no-repeat;
-      color:#fff;text-align:center;
-      padding:100px 20px;
-      animation:fadeIn 1.5s;
-    }
-    .hero h1{font-size:48px;margin-bottom:10px;}
-    .hero h1 span {color: #bbdefb;}
-    .hero p{font-size:20px;max-width:700px;margin:auto;}
-    .btn-primary {
-      display: inline-block;
-      background-color: #bbdefb;
-      color: #0d47a1;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 25px;
-      transition: background-color 0.3s ease;
-    }
-    .btn-primary:hover {
-      background-color: #90caf9;
-    }
+        /* Reset & base */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{
+            font-family:"Cairo",sans-serif;
+            color:#1f2937; /* Color changed to a darker tone */
+            background:var(--bg);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.6;
+            -webkit-text-size-adjust:100%;
+        }
+        h1,h2,h3{font-family:"Playfair Display",serif;color:var(--blue-2);margin-bottom:.6rem}
+        p{color:#344054; /* Color changed to a darker tone */}
+        a{color:inherit;text-decoration:none}
+        img{max-width:100%;display:block}
+        .container{width:90%;max-width:var(--maxw);margin:0 auto; padding-top:40px; padding-bottom:40px;}
 
-    /* General Section Styles */
-    section {
-      padding: 60px 20px;
-      margin-bottom: 30px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      width: 90%;
-      max-width: 1200px;
-      margin: 30px auto;
-    }
-    section h2 {
-      text-align: center;
-      color: #0d47a1;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      position: relative;
-    }
-    section h2::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: #1976d2;
-      border-radius: 2px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        /* Header */
+        .site-header{
+            position:sticky;top:0;z-index:60;
+            background:linear-gradient(90deg,var(--blue-1),var(--blue-2));
+            box-shadow:0 6px 18px rgba(13,71,161,0.12);
+            padding:.8rem 0;
+            transition:padding .25s,backdrop-filter .25s;
+        }
+        .site-header.shrink{padding:.4rem 0;backdrop-filter: blur(4px)}
+        .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700}
+        .brand img{height:44px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,0.15)}
+        .nav-right{display:flex;align-items:center;gap:12px}
+        .main-nav{list-style:none;display:flex;gap:18px}
+        .main-nav a{color:#fff;font-weight:600;padding:8px 10px;border-radius:8px;transition:background .18s}
+        .main-nav a:hover{background:rgba(255,255,255,0.07)}
+        .cta-call{background:var(--accent);color:var(--blue-2);font-weight:700;padding:9px 14px;border-radius:8px}
+        .lang{color:#fff;border:1px solid rgba(255,255,255,0.16);padding:7px 10px;border-radius:8px;display:flex;gap:8px;align-items:center}
+        .hamburger{display:none;font-size:1.45rem;color:#fff;background:transparent;border:none}
 
-    /* About Us Section */
-    .about-us .about-content {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .about-us .about-image {
-      flex: 1;
-      min-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    .about-us .about-content p {
-      flex: 2;
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+        /* Hero */
+        .hero{
+            padding:56px 0;
+            min-height:70vh;
+            display:grid;
+            grid-template-columns:1fr 520px;
+            gap:36px;
+            align-items:center;
+        }
+        .hero-left{padding-right:8px}
+        .kicker{display:inline-block;background:rgba(25,118,210,0.1);color:var(--blue-2);padding:8px 12px;border-radius:999px;font-weight:700;margin-bottom:18px} /* Color change for visibility */
+        .hero h1{font-size:44px;line-height:1.03}
+        .hero p.lead{font-size:18px;color:#4B5563;max-width:68%} /* Color changed to a darker tone */
+        .hero-ctas{margin-top:26px;display:flex;gap:14px;align-items:center}
+        .btn-primary{background:var(--accent);color:var(--blue-2);padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(25,118,210,0.08);transition:transform .14s,box-shadow .14s}
+        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(13,71,161,0.12)}
+        .btn-ghost{padding:10px 16px;border-radius:10px;border:1px solid rgba(13,71,161,0.08);background:transparent;color:var(--blue-2);font-weight:600}
 
-    /* Services Section */
-    .service-container, .partner-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .service-box, .partner-box {
-      background: #f1f7ff;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .service-box i, .partner-box i {
-      font-size: 45px;
-      color: #0d47a1;
-      margin-bottom: 20px;
-    }
-    .service-box h3, .partner-box h3 {
-      margin-bottom: 15px;
-      color: #1976d2;
-      font-size: 1.5rem;
-    }
-    .service-box p, .partner-box p {
-      font-size: 1rem;
-      color: #555;
-    }
-    .service-box:hover, .partner-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
+        /* Hero Right card (image + info) */
+        .hero-card{
+            background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
+            border-radius:18px;padding:12px;box-shadow:0 10px 30px rgba(3,24,66,0.08);
+            backdrop-filter: blur(4px);overflow:hidden;
+        }
+        .hero-visual{display:flex;gap:12px;align-items:center}
+        .hero-visual .img-wrap{flex:1;border-radius:12px;overflow:hidden;min-height:320px}
+        .hero-visual .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+        .hero-visual .meta{width:220px;padding:12px;display:flex;flex-direction:column;gap:10px}
+        .meta .m-title{font-weight:700;color:var(--blue-2);font-size:1rem}
+        .meta .m-sub{color:var(--muted);font-size:.95rem}
+        .meta .m-cta{margin-top:auto;background:var(--blue-2);color:#fff;padding:9px;border-radius:8px;text-align:center;font-weight:700}
 
-    /* Team Section */
-    .team-members-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .team-member {
-      text-align: center;
-      background: #f1f7ff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .team-member img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #1976d2;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .team-member h3 {
-      color: #0d47a1;
-      margin-bottom: 5px;
-      font-size: 1.3rem;
-    }
-    .team-member p {
-      color: #555;
-      font-size: 0.95rem;
-    }
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
+        /* Cards section (services) */
+        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:18px}
+        .card{
+            background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 26px rgba(13,71,161,0.05);transition:transform .2s,box-shadow .2s;
+            display:flex;flex-direction:column;gap:14px;min-height:220px;
+        }
+        .card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(13,71,161,0.08)}
+        .card .card-img{height:88px;width:88px;border-radius:10px;overflow:hidden}
+        .card .card-img img{width:100%;height:100%;object-fit:cover}
+        .card h3{margin-top:6px;font-size:1.08rem}
+        .card p{color:var(--muted);font-size:.96rem}
 
-    /* Footer */
-    .official-footer{background:#0d47a1;color:#fff;padding:40px 20px 20px;}
-    .official-footer .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-      margin-bottom:30px;
-      width:90%;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    .official-footer .footer-column h4{color:#bbdefb;margin-bottom:20px;font-size:1.4rem;}
-    .official-footer .footer-column p,
-    .official-footer .footer-column ul li,
-    .official-footer .footer-column a{color:#e0e0e0;font-size:0.95rem;text-decoration:none;}
-    .official-footer .footer-column ul{list-style:none;}
-    .official-footer .footer-column ul li{margin-bottom:10px;}
-    .official-footer .footer-column ul li a:hover,
-    .official-footer .footer-column a:hover{color:#fff;}
-    .official-footer .footer-column .social-links a{
-      color:#fff;
-      margin-right:15px; /* Direction for LTR */
-      margin-left:0;
-      font-size:1.3rem;
-      transition:0.3s;
-    }
-    .official-footer .footer-column .social-links a:hover{color:#bbdefb;}
-    .official-footer .footer-bottom{
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding-top:20px;
-      text-align:center;
-      font-size:0.9rem;
-      color:#e0e0e0;
-    }
-    .official-footer .footer-legal-links a{
-      color:#e0e0e0;
-      text-decoration:none;
-      margin:0 10px;
-      transition:0.3s;
-    }
-    .official-footer .footer-legal-links a:hover{color:#fff;}
+        /* Process / How we work */
+        .process{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
+        .step{flex:1;min-width:200px;background:linear-gradient(180deg,#fff, #fbfdff);padding:16px;border-radius:12px;box-shadow:0 8px 20px rgba(3,24,66,0.04)}
+        .step .num{background:var(--accent);color:var(--blue-2);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:12px}
 
-    /* Animations */
-    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-    @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
-    @keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+        /* Our Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+        .team-member-card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 26px rgba(13,71,161,0.05);
+            text-align: center;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .team-member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(13,71,161,0.08);
+        }
+        .team-member-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 12px;
+        }
+        .team-member-card h4 {
+            font-family: "Playfair Display", serif;
+            color: var(--blue-2);
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        .team-member-card p {
+            color: var(--muted);
+            font-size: .95rem;
+            margin-bottom: 12px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        .social-links a {
+            color: var(--blue-2);
+            font-size: 1.2rem;
+            transition: color .2s;
+        }
+        .social-links a:hover {
+            color: var(--blue-1);
+        }
 
-    /* Responsive */
-    @media(max-width:992px){
-      .navbar .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0; /* Direction for LTR */padding-bottom:15px;z-index:1000;}
-      .navbar .nav-links.nav-active{display:flex;}
-      .navbar .nav-links li{text-align:center;margin:10px 0;}
-      .navbar .nav-links li a{padding:10px 0;display:block;}
-      .menu-toggle{display:block;}
-      .about-us .about-content{flex-direction:column;}
-      .about-us .about-image{width:100%;}
-      .hero h1{font-size:36px;}
-      .hero p{font-size:18px;}
-      section h2{font-size:2rem;}
-      .official-footer .footer-grid{grid-template-columns:1fr;}
-      .official-footer .footer-column{text-align:center;}
-      .official-footer .footer-column .social-links{margin-top:20px;}
-    }
-    @media(max-width:768px){
-      .hero h1{font-size:32px;}
-      .hero p{font-size:16px;}
-      .service-container, .partner-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-    }
+        /* Partners strip */
+        .partners{margin:24px 0;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(25,118,210,0.06), rgba(13,71,161,0.03));overflow:hidden}
+        .partners-track{display:flex;gap:18px;align-items:center;overflow:auto;padding:10px 4px;scroll-snap-type:x mandatory}
+        .partner{min-width:140px;flex:0 0 140px;height:72px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:8px;box-shadow:0 6px 18px rgba(3,24,66,0.05);scroll-snap-align:center;filter:grayscale(20%);transition:filter .16s,transform .16s}
+        .partner:hover{filter:none;transform:translateY(-6px)}
 
-    /* Custom Language Switcher Button Styling */
-    .language-switcher {
-      position: relative;
-      display: inline-block;
-      margin-left: 20px; /* Adjust as needed for LTR */
-      font-size: 1rem;
-    }
+        /* Testimonials */
+        .testimonials{display:grid;grid-template-columns:1fr;gap:14px}
+        .test-wrap{position:relative;overflow:hidden;border-radius:12px}
+        .test-cards{display:flex;transition:transform .45s;gap:18px}
+        .test{min-width:320px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 10px 28px rgba(3,24,66,0.06)}
+        .test p{font-style:italic;color:var(--muted)}
+        .test h4{margin-top:12px;color:var(--blue-2)}
+        .test-controls{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin-top:12px}
+        .icon-btn{background:transparent;border:1px solid rgba(13,71,161,0.08);padding:8px;border-radius:8px;cursor:pointer}
 
-    .language-switcher a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 15px;
-      border: 1px solid #bbdefb;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        /* Footer */
+        footer{
+            margin-top:38px;
+            padding:40px 0;
+            background:linear-gradient(90deg,var(--blue-2),var(--blue-1));
+            color:#fff;
+            border-radius:18px 18px 0 0;
+        }
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+        .footer h4{color:var(--accent);margin-bottom:10px}
+        .footer p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+        .footer a{color:#e8f4ff; transition: color .2s;}
+        .footer a:hover { color: var(--accent); }
+        .footer p.small { color: rgba(255,255,255,0.8); font-size: 0.9rem;}
+        .footer-grid p {display: flex; align-items: center; gap: 8px;}
+        .footer-grid p i { min-width: 1.2rem; }
+        .footer-grid p a i { min-width: 0; }
+        .footer .container {
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+        
+        /* Back to top */
+        .to-top{position:fixed;right:18px;bottom:18px;background:var(--blue-2);color:#fff;padding:10px 12px;border-radius:12px;box-shadow:0 8px 22px rgba(3,24,66,0.16);display:none;z-index:80}
 
-    .language-switcher a:hover {
-      background-color: #bbdefb;
-      color: #0d47a1;
-    }
-
-    .language-switcher a i {
-      font-size: 1.2em;
-    }
-  </style>
+        /* Responsive */
+        @media(max-width:1100px){
+            .hero{grid-template-columns:1fr 420px}
+            .hero p.lead{max-width:100%}
+        }
+        @media(max-width:880px){
+            .hero{grid-template-columns:1fr;min-height:78vh;padding:40px 0}
+            .hero-visual{flex-direction:column}
+            .hero-left{text-align:center}
+            .hero p.lead{margin:10px auto 0}
+            .hero-visual .meta{width:100%}
+            .main-nav{display:none}
+            .hamburger{display:block}
+            .footer-grid {text-align: center;}
+            .footer-grid > div { margin-bottom: 20px; }
+            .social-links { justify-content: center; }
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Navigation Header -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">
-          <!-- Using a placeholder image for the logo. You should replace this with a stable, professional logo. -->
-          <img src="https://i.postimg.cc/c43bgBcF/Untitled-design-4-removebg-preview.png" alt="Al Massria Al Emaratia Logo" class="company-logo-header"> 
-          Al Masriya Al Emaratiya
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-      <div class="language-switcher">
-        <a href="home-ar.html" aria-label="Arabic Language"><i class="fas fa-globe"></i> العربية</a>
-      </div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </nav>
-  </header>
+    <header class="site-header" id="site-header" role="banner">
+        <div class="container nav">
+            <div class="brand" aria-label="Al Masriya Al Emaratia brand">
+                <a href="index.html" style="display:flex;align-items:center;gap:10px;color:inherit">
+                    <img src="https://i.postimg.cc/c43bgBcF/Untitled-design-4-removebg-preview.png" alt="Al Masriya Al Emaratia logo">
+                    <span style="color:#fff;font-weight:700">Al Masriya Al Emaratia</span>
+                </a>
+            </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to <span>Al Massria Al Emaratia</span></h1>
-        <h2>Global Trade Solutions from Egypt & UAE to the World</h2>
-        <p>We facilitate international import operations into Egypt and export from Egypt to the world, offering comprehensive trade solutions and commercial agency services that connect businesses with international markets.</p>
-        <a href="services-en.html" class="btn-primary">Discover Our Services</a>
-      </div>
-    </section>
+            <nav aria-label="Main navigation" style="display:flex;align-items:center;gap:14px">
+                <ul class="main-nav" role="menubar">
+                    <li role="none"><a role="menuitem" href="#home">Home</a></li>
+                    <li role="none"><a role="menuitem" href="#about">About</a></li>
+                    <li role="none"><a role="menuitem" href="#services">Services</a></li>
+                    <li role="none"><a role="menuitem" href="#team">Team</a></li>
+                    <li role="none"><a role="menuitem" href="#partners">Partners</a></li>
+                    <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+                </ul>
 
-    <!-- About Us Section -->
-    <section class="about-us">
-      <div class="container">
-        <h2>About Our Organization</h2>
-        <div class="about-content">
-          <!-- Professional image illustrating global trade -->
-          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="Global Trade Network Illustration" class="about-image" />
-          <p>Al Masriya Al Emaratiya for Import, Export, and Commercial Agencies was established in 2010 with strong roots in Egypt and the UAE, serving as a strategic hub for global trade. We specialize in importing from global markets into Egypt and exporting high-quality Egyptian products to international destinations, creating valuable commercial opportunities for our global partners.</p>
-          <p>With our deep knowledge of international markets and extensive global networks, we provide comprehensive services to help businesses navigate the complexities of global trade. Our team of experts offers tailored solutions to connect businesses with global opportunities and bring international products to their desired markets.</p>
-          <p>Our mission is to enhance the region's position as a gateway for global trade, contributing to the growth and prosperity of businesses through strategic international partnerships and innovative trade solutions that link our markets to the world.</p>
+                <div class="nav-right">
+                    <a class="lang" href="home-ar.html" aria-label="Arabic version"><i class="fas fa-globe"></i> العربية</a>
+                    <a class="cta-call" href="tel:+201011766232" aria-label="Call us">Call +20 101 176 6232</a>
+                    <button class="hamburger" id="menuBtn" aria-expanded="false" aria-label="Open menu">☰</button>
+                </div>
+            </nav>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Services Section -->
-    <section class="services">
-      <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-container">
-          <div class="service-box">
-            <i class="fas fa-chart-bar"></i> <!-- Bar chart for trade -->
-            <h3>Import & Export Management</h3>
-            <p>Comprehensive global import and export services, including documentation, logistics, customs clearance, and regulatory compliance for international trade.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-handshake"></i> <!-- Handshake for agency -->
-            <h3>Commercial Agency Representation</h3>
-            <p>Representing international brands and products in local markets, and local products in international markets, providing expertise and access to global networks.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-magnifying-glass-chart"></i> <!-- Magnifying glass with chart for market analysis -->
-            <h3>Global Market Analysis</h3>
-            <p>Detailed market research and analysis to help businesses understand opportunities, challenges, and the competitive landscape in international markets.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-network-wired"></i> <!-- Network for networking -->
-            <h3>Strategic Business Networking</h3>
-            <p>Connect with potential partners, suppliers, and clients through our extensive global network spanning key international trade centers worldwide.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-gavel"></i> <!-- Gavel for legal -->
-            <h3>International Trade Consultation</h3>
-            <p>Expert guidance on legal and regulatory requirements for international trade, including import/export regulations, contracts, and compliance across jurisdictions.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-boxes-packing"></i> <!-- Boxes packing for supply chain -->
-            <h3>Optimized Supply Chain Solutions</h3>
-            <p>Optimize your global supply chain operations to achieve maximum efficiency, reliability, and cost-effectiveness in international trade.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main>
+        <section id="home" class="container hero" aria-labelledby="hero-heading">
+            <div class="hero-left">
+                <span class="kicker">Trusted since 2010</span>
+                <h1 id="hero-heading">Global trade solutions from <span style="color:var(--accent)">Egypt & UAE</span> to the world</h1>
+                <p class="lead">We manage import & export operations end-to-end — logistics, customs clearance, commercial representation and market-entry strategies that connect your products with global buyers.</p>
 
-    <!-- Partners Section -->
-    <section class="partners">
-      <div class="container">
-        <h2>Our Strategic Partners</h2>
-        <p>We collaborate with leading global organizations and companies to provide comprehensive international trade solutions. Our strategic partnerships with shipping companies, customs agencies, trade organizations, and financial institutions worldwide enable us to offer enhanced services and connect businesses with markets across all continents.</p>
-        <div class="partner-container">
-          <div class="partner-box">
-            <i class="fas fa-building-columns"></i> <!-- Building columns for government/institutions -->
-            <h3>Government & Trade Bodies</h3>
-            <p>Partnerships with governmental trade organizations and international trade bodies to ensure smooth operations and compliance.</p>
-          </div>
-          <div class="partner-box">
-            <i class="fas fa-sitemap"></i> <!-- Sitemap for corporate network -->
-            <h3>Corporate & Industry Alliances</h3>
-            <p>Strategic alliances with leading international corporations and industry associations across global markets and sectors.</p>
-          </div>
-          <div class="partner-box">
-            <i class="fas fa-route"></i> <!-- Route for logistics -->
-            <h3>Global Logistics & Shipping</h3>
-            <p>Partnerships with international shipping, transport, and logistics companies operating across major global trade routes and hubs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                <div class="hero-ctas">
+                    <a href="#services" class="btn-primary" aria-label="Discover services">Discover our services</a>
+                    <a href="contact.html" class="btn-ghost" aria-label="Request a quote">Request a quote</a>
+                </div>
 
-    <!-- Team Section -->
-    <section class="team">
-      <div class="container">
-        <h2>Meet Our Expert Team</h2>
-        <div class="team-members-grid"> 
-          <div class="team-member">
-            <!-- Using a placeholder image for team members. Replace with actual photos. -->
-            <img src="https://uc2619d8c80f91a5999ee6b073a7.previews.dropboxusercontent.com/p/thumb/ACzB_yOswJivCRlIEU2bL9o4W0X3RNZ5-2MuZhm5PL25E6UcUwVUduowbF1fpuldfa3_MjEBkbpWaqo_60wv9_J9EOQv-1VP9Z775pGrOKrY8G8J2KFJT_HOhcRUPIb3_VVzVq5NQM0jpOx_Aba5EQ05qVcdWZbtEc3nE5_yyd_N4L12tbT7p1RxnEgNAYxKDvzn5ZMIXP6pfF18-eZQxMiIyjkgyQaHqKw5wtYMmQ9JqMWBl6D_bg3l86J5tJbaYNqxCJb6uP7u6MagMMfzPm6e0OVSVZkfuuGmhKFeL6ozydt5r3o-QazdONS-HXJLbrGs3HxX_dh9y_KjX2KkIswm9bsiTSsNK30DPG22GS0jRRJ0PVA9SGJ2WH7JyW-Q0MVHaLdp4lVU0RBz5M6RuQji/p.jpeg?is_prewarmed=true" alt="Ismail El Menshawy Photo" /> 
-            <h3>Ismail El Menshawy</h3>
-            <p>CEO & Founder</p>
-          </div>
-          <div class="team-member">
-            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="Ahmed Badrawy Photo" /> 
-            <h3>Ahmed Badrawy</h3>
-            <p>Head of Digital Transformation</p>
-          </div>
-           <div class="team-member">
-            <img src="https://images.pexels.com/photos/9304917/pexels-photo-9304917.jpeg" alt="Nada El-Sayed Photo" /> 
-            <h3>Nada El-Sayed</h3>
-            <p>Development Manager</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+                <div class="cards" style="margin-top:28px">
+                    <div class="card" aria-hidden="false">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="card-img"><img src="https://images.pexels.com/photos/186774/pexels-photo-186774.jpeg" alt="fast logistics"></div>
+                            <div>
+                                <h3>Reliable Logistics</h3>
+                                <p>Flexible shipping options across major routes & partners.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div style="display:flex;gap:12px;align-items:center">
+                            <div class="card-img"><img src="https://images.pexels.com/photos/3646776/pexels-photo-3646776.jpeg" alt="market analysis"></div>
+                            <div>
+                                <h3>Market Access</h3>
+                                <p>Local representation & market-entry strategies in MENA.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Professional and Official Footer -->
-  <footer class="official-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h4>Al Massria Al Emaratia</h4>
-          <p>We provide integrated solutions for international trade, import, export, and commercial agencies, connecting businesses with global markets from Egypt & UAE.</p>
-        </div>
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Contact Us</h4>
-          <p><i class="fas fa-map-marker-alt"></i> Address: 10th of Ramadan City, Sharqia, Egypt</p>
-          <p><i class="fas fa-phone"></i> Phone: <a href="tel:+201011766232">+20 101 176 6232</a></p>
-          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@egy-uae.com">info@egy-uae.com</a></p>
-        </div>
-        <div class="footer-column">
-          <h4>Follow Us</h4>
-          <div class="social-links">
-            <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/yourcompany" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/yourcompany" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year-footer"></span> Al Masriya Al Emaratiya. All rights reserved.</p>
-        <div class="footer-legal-links">
-          <a href="privacy.html">Privacy Policy</a> | 
-          <a href="terms.html">Terms & Conditions</a> | 
-          <a href="sitemap.xml">Sitemap</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+            <div class="hero-card" aria-hidden="false">
+                <div class="hero-visual">
+                    <div class="img-wrap" aria-hidden="true">
+                        <img src="https://images.pexels.com/photos/12810604/pexels-photo-12810604.jpeg" alt="Container ship moving to horizon — global trade">
+                    </div>
+                    <div class="meta">
+                        <div class="m-title">Door-to-door solutions</div>
+                        <div class="m-sub">Customs — Documentation — Warehousing — Local distribution</div>
+                        <div class="m-cta">Start a shipment</div>
+                        <div style="font-size:.86rem;color:var(--muted);margin-top:8px">Trusted partners in freight & customs across Egypt & UAE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script>
-    document.getElementById("current-year-footer").textContent = new Date().getFullYear();
+        <section id="about" class="container" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Al Masriya Al Emaratia</h2>
+            <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+                <div style="flex:1;min-width:280px">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200" alt="Global trade network" style="border-radius:12px;box-shadow:0 10px 28px rgba(3,24,66,0.06)">
+                </div>
+                <div style="flex:1.2;min-width:300px">
+                    <p style="margin-bottom:12px">Since 2010, we have bridged manufacturers, traders and commercial agents between Egypt and international markets. Our strength is in local expertise, global partnerships and an operations-first approach that minimizes delays and maximizes value.</p>
+                    <p style="color:var(--muted)">We support clients with consultancy, on-the-ground representation, logistics coordination and market research — tailoring solutions for each product and market segment.</p>
+                </div>
+            </div>
+        </section>
 
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('nav-active');
-    }
-  </script>
+        <section id="services" class="container" aria-labelledby="services-heading">
+            <h2 id="services-heading">Our Core Services</h2>
+            <div class="cards" role="list">
+                <article class="card" role="listitem" aria-label="Import and Export management">
+                    <div class="card-img"><img src="https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg" alt=""></div>
+                    <h3>Import & Export Management</h3>
+                    <p>Complete operations: documentation, customs clearance, insurance and door delivery.</p>
+                </article>
+
+                <article class="card" role="listitem" aria-label="Commercial agency representation">
+                    <div class="card-img"><img src="https://images.pexels.com/photos/886743/pexels-photo-886743.jpeg" alt=""></div>
+                    <h3>Commercial Agency Representation</h3>
+                    <p>We represent brands in local markets, create distribution channels and manage negotiations.</p>
+                </article>
+
+                <article class="card" role="listitem" aria-label="Market analysis">
+                    <div class="card-img"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt=""></div>
+                    <h3>Market Research & Analysis</h3>
+                    <p>Data-driven market entry strategies, competitor mapping and pricing guidance.</p>
+                </article>
+
+                <article class="card" role="listitem" aria-label="Supply chain solutions">
+                    <div class="card-img"><img src="https://images.pexels.com/photos/3755766/pexels-photo-3755766.jpeg" alt=""></div>
+                    <h3>Supply Chain Optimization</h3>
+                    <p>Warehouse, distribution and inventory strategies that reduce lead-times and costs.</p>
+                </article>
+            </div>
+
+            <div style="margin-top:28px">
+                <h3 style="margin-bottom:14px">How we work — simple & transparent</h3>
+                <div class="process">
+                    <div class="step">
+                        <div class="num">01</div>
+                        <strong>Consult</strong>
+                        <p style="color:var(--muted);margin-top:8px">Understand product, volumes and target markets.</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">02</div>
+                        <strong>Plan</strong>
+                        <p style="color:var(--muted);margin-top:8px">Create logistics & market-entry plan with timelines.</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">03</div>
+                        <strong>Execute</strong>
+                        <p style="color:var(--muted);margin-top:8px">Handle shipment, customs and delivery execution.</p>
+                    </div>
+                    <div class="step">
+                        <div class="num">04</div>
+                        <strong>Support</strong>
+                        <p style="color:var(--muted);margin-top:8px">Ongoing local support & reporting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="container" aria-labelledby="team-heading">
+            <h2 id="team-heading">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member-card">
+                    <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Ahmed Adel, Founder & CEO">
+                    <h4>Ismail El-Menshawy</h4>
+                    <p>Founder & CEO</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Amira El-Sayed, Operations Director">
+                    <h4>Ahmed Badrawi</h4>
+                    <p>Operations Director</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Karim Mansour, Head of Logistics">
+                    <h4>Ahmed Badrawi</h4>
+                    <p>Head of Digital Transformation</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Fatma Hussein, Commercial Agent">
+                    <h4>Nada El-Sayed</h4>
+                    <p>Commercial Agent</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="container" aria-labelledby="partners-heading">
+            <h2 id="partners-heading">Our Strategic Partners</h2>
+            <div class="partners" role="region" aria-label="Logos of partners">
+                <div class="partners-track" id="partners-track">
+                    <div class="partner"><img src="https://images.pexels.com/photos/163167/doctors-hands-meeting-163167.jpeg?w=640" alt="Partner 1" style="height:48px;object-fit:contain"></div>
+                    <div class="partner"><img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=640" alt="Partner 2" style="height:48px;object-fit:contain"></div>
+                    <div class="partner"><img src="https://images.pexels.com/photos/3228877/pexels-photo-3228877.jpeg?w=640" alt="Partner 3" style="height:48px;object-fit:contain"></div>
+                    <div class="partner"><img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?w=640" alt="Partner 4" style="height:48px;object-fit:contain"></div>
+                    <div class="partner"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?w=640" alt="Partner 5" style="height:48px;object-fit:contain"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="container" aria-labelledby="testi-heading">
+            <h2 id="testi-heading">What Clients Say</h2>
+            <div class="testimonials">
+                <div class="test-wrap">
+                    <div class="test-cards" id="test-cards">
+                        <div class="test">
+                            <p>"Professional, efficient and reliable — they helped us expand to GCC markets with zero headaches."</p>
+                            <h4>- International Retailer</h4>
+                        </div>
+                        <div class="test">
+                            <p>"Clear communication and precise logistics. Our goods arrived on schedule and in excellent condition."</p>
+                            <h4>- Egyptian Manufacturer</h4>
+                        </div>
+                        <div class="test">
+                            <p>"Excellent commercial representation — local contacts made the difference in distribution."</p>
+                            <h4>- Trading House</h4>
+                        </div>
+                    </div>
+
+                    <div class="test-controls" style="position:absolute;right:12px;bottom:12px">
+                        <button class="icon-btn" id="test-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                        <button class="icon-btn" id="test-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" aria-labelledby="cta-heading" style="padding-top:18px">
+            <div style="background:linear-gradient(90deg,var(--blue-1),var(--blue-2));padding:22px;border-radius:14px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+                <div>
+                    <h3 id="cta-heading" style="color:#fff;margin-bottom:6px">Ready to move goods globally?</h3>
+                    <p class="small" style="color:rgba(255,255,255,0.92)">Contact our operations team for a tailored quote and timeline.</p>
+                </div>
+                <div style="display:flex;gap:12px">
+                    <a href="contact.html" class="btn-primary" style="background:#fff;color:var(--blue-2)">Get a quote</a>
+                    <a href="tel:+201011766232" class="btn-ghost" style="border-color:rgba(255,255,255,0.16);color:#fff">Call +20 101 176 6232</a>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" role="contentinfo" style="margin-top:28px;">
+            <div class="container footer">
+                <div class="footer-grid">
+                    <div>
+                        <h4>Al Masriya Al Emaratia</h4>
+                        <p class="small">Integrated solutions for international trade, import & export, and commercial agency representation between Egypt and UAE.</p>
+                    </div>
+
+                    <div>
+                        <h4>Quick Links</h4>
+                        <p><a href="#services">Services</a> · <a href="#team">Team</a> · <a href="#partners">Partners</a> · <a href="#testimonials">Testimonials</a></p>
+                    </div>
+
+                    <div>
+                        <h4>Contact</h4>
+                        <p class="small"><i class="fas fa-map-marker-alt"></i> 10th of Ramadan City, Sharqia, Egypt</p>
+                        <p class="small"><i class="fas fa-phone"></i> <a href="tel:+201011766232">+20 101 176 6232</a></p>
+                        <p class="small"><i class="fas fa-envelope"></i> <a href="mailto:info@egy-uae.com">info@egy-uae.com</a></p>
+                    </div>
+
+                    <div>
+                        <h4>Follow</h4>
+                        <p style="display:flex;gap:8px"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></p>
+                    </div>
+                </div>
+
+                <div style="text-align:center;margin-top:20px;color:#e8f4ff">
+                    <small>&copy; <span id="year"></span> Al Masriya Al Emaratia — All rights reserved.</small>
+                </div>
+            </div>
+        </footer>
+
+        <button class="to-top" id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    </main>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Simple responsive nav toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.querySelector('.main-nav');
+
+        menuBtn?.addEventListener('click', () => {
+            const navOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !navOpen);
+            mainNav.style.display = navOpen ? 'none' : 'flex';
+        });
+
+        // Header shrink on scroll
+        const header = document.getElementById('site-header');
+        const toTop = document.getElementById('toTop');
+
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 30) {
+                header.classList.add('shrink');
+                if (toTop) toTop.style.display = 'block';
+            } else {
+                header.classList.remove('shrink');
+                if (toTop) toTop.style.display = 'none';
+            }
+        });
+
+        toTop?.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+        // Partners auto small loop (gentle)
+        const track = document.getElementById('partners-track');
+        let scrollDir = 1;
+        if(track){
+            setInterval(() => {
+                if(track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) scrollDir = -1;
+                if(track.scrollLeft <= 0) scrollDir = 1;
+                track.scrollBy({left: 1 * scrollDir, behavior: 'smooth'});
+            }, 80);
+        }
+
+        // Testimonials slider
+        const cards = document.getElementById('test-cards');
+        const prev = document.getElementById('test-prev');
+        const next = document.getElementById('test-next');
+        let testiIndex = 0;
+
+        function updateTesti(){
+            if (!cards || !cards.children.length) return;
+            const w = cards.children[0].offsetWidth + 18; // card width + gap
+            cards.style.transform = 'translateX(' + (-testiIndex * w) + 'px)';
+        }
+
+        next?.addEventListener('click', () => { 
+            if (!cards) return;
+            testiIndex = Math.min(testiIndex + 1, cards.children.length - 1); 
+            updateTesti(); 
+        });
+
+        prev?.addEventListener('click', () => { 
+            if (!cards) return;
+            testiIndex = Math.max(testiIndex - 1, 0); 
+            updateTesti(); 
+        });
+
+        // Auto-play testimonials
+        if(cards && cards.children.length > 1) {
+             setInterval(() => {
+                testiIndex = (testiIndex + 1) % cards.children.length;
+                updateTesti();
+            }, 5000);
+        }
+
+        // ensure update on resize
+        window.addEventListener('resize', updateTesti);
+        // initial update
+        setTimeout(updateTesti, 200);
+    </script>
 </body>
 </html>
