@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الأسئلة الشائعة - المصرية الإماراتية</title>
+  
+  <!-- تحسينات SEO -->
+  <meta name="description" content="إجابات لأكثر الأسئلة شيوعًا حول خدمات المصرية الإماراتية في الاستيراد والتصدير والوكالات التجارية. تعرف على كيفية عملنا ومواقعنا.">
+  <meta name="keywords" content="أسئلة متكررة، FAQs، المصرية الإماراتية، استيراد، تصدير، وكالات تجارية، لوجستيات، استشارات تجارية، شراكات، مصر، الإمارات">
+  <meta name="author" content="المصرية الإماراتية">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="الأسئلة الشائعة | المصرية الإماراتية">
+  <meta property="og:description" content="نقدم إجابات واضحة ومفصلة لأبرز استفساراتكم حول خدماتنا وسياساتنا.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1549646467-3c9f2b8f3a3e?w=800"> <!-- صورة مناسبة للأسئلة الشائعة -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/faqs.html">
+  <meta property="og:site_name" content="المصرية الإماراتية">
+
+  <!-- الخطوط والأيقونات -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    /* إعادة تعيين الأنماط الأساسية */
+    * {margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body {background:#f7f9fc;color:#333;line-height:1.6;direction:rtl;} /* دعم RTL */
+    a{text-decoration:none;color:inherit;}
+    ul{list-style:none;}
+
+    /* الرسوم المتحركة */
+    @keyframes fadeSlideDown {
+      0% {opacity:0;transform:translateY(-30px);}
+      100% {opacity:1;transform:translateY(0);}
+    }
+    @keyframes fadeIn {
+      0% {opacity:0;transform:translateY(20px);}
+      100% {opacity:1;transform:translateY(0);}
+    }
+    @keyframes iconBounce {
+      0%,100% {transform:translateY(0);}
+      50% {transform:translateY(-4px);}
+    }
+
+    /* الرأس */
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+      animation:fadeSlideDown 0.8s ease;
+      position:fixed; /* تثبيت الرأس */
+      width:100%;
+      top:0;
+      z-index:1000;
+      display: flex; /* لترتيب العناصر بشكل أفقي */
+      justify-content: space-between; /* توزيع العناصر على الأطراف */
+      align-items: center; /* محاذاة العناصر عموديًا */
+      flex-wrap: wrap; /* للسماح بالعناصر بالتجاوب */
+    }
+    .container{width:90%;max-width:1200px;margin:auto;}
+    header .logo{font-size:1.5rem;font-weight:700;}
+    header .logo a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+    .company-logo-header {
+      height: 40px;
+      vertical-align: middle;
+      margin-left: 10px; /* تغيير الهامش لـ RTL */
+      margin-right: 0;
+    }
+    nav ul{display:flex;gap:1.5rem;justify-content:flex-start;} /* تغيير الاتجاه لـ RTL */
+    nav ul li a{color:#fff;font-weight:600;position:relative;padding-bottom:4px;}
+    nav ul li a::after{
+      content:"";position:absolute;right:0;bottom:0;width:0;height:2px;background:#bbdefb; /* تغيير الاتجاه لـ RTL */
+      transition:width 0.3s ease;
+    }
+    nav ul li a:hover::after,nav ul li a.active::after{width:100%;}
+
+    header .container{display:flex;justify-content:space-between;align-items:center;}
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* قسم الأسئلة الشائعة */
+    .faq{padding:3rem 0;margin-top:90px;} /* تعويض ارتفاع الهيدر الثابت */
+    .faq h2{text-align:center;font-size:2.5rem;margin-bottom:1rem;color:#0d47a1;animation:fadeIn 1s ease;}
+    .faq p{text-align:center;font-size:1.1rem;margin-bottom:2.5rem;color:#555;animation:fadeIn 1.3s ease;max-width:800px;margin-left:auto;margin-right:auto;}
+
+    .faq-item{background:#fff;margin:1rem 0;padding:1.2rem 1.8rem;border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.3s, box-shadow 0.3s;}
+    .faq-item:hover{transform:translateX(-5px);box-shadow:0 6px 12px rgba(0,0,0,0.12);} /* تغيير الاتجاه لـ RTL */
+    .faq-question{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:#0d47a1;font-size:1.1rem;}
+    .faq-question i.fa-solid {
+        margin-left: 10px; /* مسافة بين الأيقونة والنص لـ RTL */
+        margin-right: 0;
+        transition: transform 0.3s ease;
+    }
+    .faq-question .toggle-icon {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+    .faq-answer{display:none;margin-top:1rem;color:#444;line-height:1.8;font-size:1rem;}
+    .faq-item.active .faq-question .toggle-icon {
+        transform: rotate(45deg); /* تدوير علامة الجمع لتصبح X عند الفتح */
+    }
+
+
+    /* التذييل */
+    footer{background:#0d47a1;color:#fff;padding:1.5rem 0;text-align:center;margin-top:3rem;}
+    footer p{font-size:0.95rem;margin-bottom:10px;}
+    footer .social a{color:#fff;margin:0 10px;font-size:1.4rem;transition:color 0.3s;}
+    footer .social a:hover{color:#bbdefb;}
+
+    /* الاستجابة للأجهزة المختلفة */
+    @media(max-width:992px){
+      nav ul{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;right:0;padding-bottom:15px;z-index:1000;}
+      nav ul.nav-active{display:flex;}
+      nav ul li{text-align:center;margin:10px 0;}
+      nav ul li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+      header .container{flex-direction:column;align-items:flex-end;} /* تعديل لمحاذاة العناصر في وضع الكولوم لـ RTL */
+      .faq h2{font-size:2rem;}
+      .faq p{font-size:1rem;}
+      .faq-question{font-size:1rem;}
+      .faq-answer{font-size:0.9rem;}
+    }
+    @media(max-width:768px){
+      .faq{padding:2rem 0;margin-top:80px;}
+      .faq h2{font-size:1.8rem;}
+      .faq p{font-size:0.9rem;}
+      .faq-item{padding:1rem 1.2rem;}
+      .faq-question span{font-size:0.95rem;}
+      .faq-question .toggle-icon {font-size:1rem;}
+    }
+
+    /* تصميم زر تبديل اللغة المخصص */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px; /* Ajusted for RTL */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo">
+        <a href="index-ar.html">
+            <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="شعار المصرية الإماراتية" class="company-logo-header">
+            المصرية الإماراتية
+        </a>
+      </h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home-ar.html">الرئيسية</a></li>
+          <li><a href="about-ar.html">من نحن</a></li>
+          <li><a href="services-ar.html">خدماتنا</a></li>
+          <li><a href="faqs-ar.html" class="active">الأسئلة الشائعة</a></li>
+          <li><a href="contact-ar.html">اتصل بنا</a></li>
+        </ul>
+      </nav>
+      <div class="language-switcher">
+        <a href="faqs.html" aria-label="English Language"><i class="fas fa-globe"></i> English</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2>الأسئلة الشائعة</h2>
+      <p>تجدون هنا إجابات لأكثر الأسئلة شيوعًا حول المصرية الإماراتية وخدماتنا.</p>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><i class="fa-solid fa-briefcase"></i> ما هي الخدمات التي تقدمونها؟</span>
+          <i class="fa-solid fa-plus toggle-icon"></i>
+        </div>
+        <div class="faq-answer">نحن نقدم خدمات الاستيراد والتصدير، والوكالات التجارية، والاستشارات، والحلول اللوجستية، بالإضافة إلى برامج تدريب متخصصة، لربط الأعمال التجارية عبر مصر، الإمارات، والأسواق الدولية.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><i class="fa-solid fa-location-dot"></i> أين يقع مقر شركتكم؟</span>
+          <i class="fa-solid fa-plus toggle-icon"></i>
+        </div>
+        <div class="faq-answer">يقع مكتبنا الرئيسي في مدينة العاشر من رمضان، محافظة الشرقية، مصر. ولدينا أيضًا شراكات وعمليات في الإمارات العربية المتحدة لدعم أعمالنا الدولية.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><i class="fa-solid fa-handshake"></i> كيف يمكنني أن أصبح شريكًا تجاريًا؟</span>
+          <i class="fa-solid fa-plus toggle-icon"></i>
+        </div>
+        <div class="faq-answer">يمكنكم التواصل معنا عبر صفحة "اتصل بنا" أو من خلال إرسال بريد إلكتروني إلى <a href="mailto:info@egy-uae.com">info@egy-uae.com</a>. سيتواصل فريقنا معكم لمناقشة فرص الشراكة.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><i class="fa-solid fa-ship"></i> هل تديرون عمليات الشحن الدولي؟</span>
+          <i class="fa-solid fa-plus toggle-icon"></i>
+        </div>
+        <div class="faq-answer">نعم، نحن نقدم حلولًا لوجستية شاملة تشمل الشحن البحري والجوي والبري، والتخليص الجمركي، وإدارة المستودعات لضمان سير عمليات الاستيراد والتصدير بسلاسة على مستوى العالم.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><i class="fa-solid fa-star"></i> لماذا أختار المصرية الإماراتية؟</span>
+          <i class="fa-solid fa-plus toggle-icon"></i>
+        </div>
+        <div class="faq-answer">نحن نجمع بين الخبرة الإقليمية العميقة، والشراكات العالمية القوية، وسنوات من الخبرة لتقديم حلول تجارية ولوجستية فعالة وموثوقة، مع التركيز على خدمة العملاء والنمو المستدام.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
+      <div class="social">
+        <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+      question.addEventListener("click", () => {
+        const answer = item.querySelector(".faq-answer");
+        const icon = question.querySelector(".toggle-icon");
+        
+        // إغلاق جميع الأسئلة المفتوحة أولاً
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector(".faq-answer").style.display = "none";
+            otherItem.querySelector(".toggle-icon").classList.remove("fa-minus");
+            otherItem.querySelector(".toggle-icon").classList.add("fa-plus");
+          }
+        });
+
+        // تبديل حالة العنصر الحالي
+        item.classList.toggle('active');
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          icon.classList.remove("fa-minus");
+          icon.classList.add("fa-plus");
+        } else {
+          answer.style.display = "block";
+          icon.classList.remove("fa-plus");
+          icon.classList.add("fa-minus");
+        }
+      });
+    });
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+</html>
