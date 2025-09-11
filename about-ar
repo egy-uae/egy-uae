@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>من نحن | المصرية الإماراتية</title>
+
+  <!-- علامات Meta لـ SEO -->
+  <meta name="description" content="المصرية الإماراتية هي شركة رائدة في الاستيراد والتصدير ومقرها في مصر والإمارات، وتقدم خدمات تجارية ولوجستية ووكالات تجارية موثوقة في جميع أنحاء العالم.">
+  <meta name="keywords" content="المصرية الإماراتية, استيراد تصدير مصر الإمارات, تجارة دولية, لوجستيات, وكالات تجارية, أعمال عالمية">
+  <meta name="author" content="المصرية الإماراتية">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="من نحن | المصرية الإماراتية">
+  <meta property="og:description" content="تعرف على المزيد عن المصرية الإماراتية، الرائدة عالميًا في الاستيراد والتصدير والوكالات التجارية.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1605902711622-cfb43c4437d7?w=800">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/about.html">
+
+  <!-- الأيقونات والخطوط -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* تصميمات أساسية */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;direction:rtl;} /* دعم RTL */
+
+    /* الرأس */
+    header{
+      background:linear-gradient(90deg,#1976d2,#0d47a1);
+      padding:1rem 0;
+      color:#fff;
+      box-shadow:0 3px 6px rgba(0,0,0,0.2);
+      display: flex; /* لترتيب العناصر بشكل أفقي */
+      justify-content: space-between; /* توزيع العناصر على الأطراف */
+      align-items: center; /* محاذاة العناصر عموديًا */
+      flex-wrap: wrap; /* للسماح بالعناصر بالتجاوب */
+    }
+    .navbar{
+      width:90%;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
+    .nav-links{list-style:none;display:flex;gap:1.5rem;}
+    .nav-links li a{
+      color:#fff;
+      font-weight:600;
+      position:relative;
+      text-decoration:none;          
+      border:none;          
+      transition:0.3s;
+    }
+    .nav-links li a::after{
+      content:"";
+      position:absolute;
+      right:0; /* تغيير الاتجاه لـ RTL */
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:#bbdefb;
+      transition:width 0.3s ease;
+    }
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after{width:100%;}
+    .company-logo-header {
+      height: 40px;
+      vertical-align: middle;
+      margin-left: 10px; /* تغيير الهامش لـ RTL */
+      margin-right: 0;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* قسم الأيقونة الرئيسية (Hero) */
+    .hero{
+      background:url('https://images.unsplash.com/photo-1505839673365-e3971f8d9184?w=1200') center/cover no-repeat;
+      color:#fff;text-align:center;
+      padding:100px 20px;
+      animation:fadeIn 1.5s;
+    }
+    .hero h1{font-size:48px;margin-bottom:10px;}
+    .hero p{font-size:20px;max-width:700px;margin:auto;}
+
+    /* محتوى من نحن */
+    .about-content{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:40px;width:90%;margin:60px auto;flex-wrap:wrap;
+      flex-direction: row-reverse; /* عكس الترتيب لـ RTL */
+    }
+    .about-content .text{flex:1;animation:slideInRight 1s;} /* عكس اتجاه الانيميشن */
+    .about-content .text h2{color:#0d47a1;margin-bottom:15px;}
+    .about-content .text p{margin-bottom:20px;}
+    .about-content .image{flex:1;animation:slideInLeft 1s;} /* عكس اتجاه الانيميشن */
+    .about-content .image img{width:100%;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+
+    /* الميزات البارزة */
+    .highlights{background:#fff;padding:60px 20px;}
+    .highlights h2{text-align:center;color:#0d47a1;margin-bottom:40px;}
+    .highlight-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;width:90%;margin:auto;
+    }
+    .highlight{
+      background:#f1f7ff;
+      padding:30px;
+      border-radius:12px;
+      text-align:center;
+      transition:0.3s;
+      animation:fadeInUp 1s;
+    }
+    .highlight i{font-size:40px;color:#0d47a1;margin-bottom:15px;}
+    .highlight h3{margin-bottom:10px;color:#0d47a1;}
+    .highlight:hover{transform:translateY(-8px);box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+
+    /* التذييل */
+    footer{background:#0d47a1;color:#fff;text-align:center;padding:20px 10px;margin-top:50px;}
+    footer p{margin-bottom:8px;}
+    footer .social a{color:#fff;margin:0 10px;font-size:18px;transition:0.3s;}
+    footer .social a:hover{color:#bbdefb;}
+
+    /* الرسوم المتحركة */
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+    @keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+    /* الاستجابة للأجهزة المختلفة */
+    @media(max-width:992px){
+      .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;right:0;padding-bottom:15px;z-index:1000;}
+      .nav-links.nav-active{display:flex;}
+      .nav-links li{text-align:center;margin:10px 0;}
+      .nav-links li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+      .about-content{flex-direction:column;}
+      .hero h1{font-size:36px;}
+      .hero p{font-size:18px;}
+    }
+    @media(max-width:768px){
+      .navbar{flex-direction:column;align-items:flex-end;} /* تعديل لمحاذاة العناصر في وضع الكولوم لـ RTL */
+      .hero h1{font-size:32px;}
+      .hero p{font-size:16px;}
+    }
+
+    /* تصميم زر تبديل اللغة المخصص */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px; /* Ajusted for RTL */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <!-- استخدام صورة شعار للموقع. يجب استبدالها بشعار احترافي ثابت. -->
+          <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="شعار المصرية الإماراتية" class="company-logo-header"> 
+          المصرية الإماراتية
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home-ar.html">الرئيسية</a></li>
+        <li><a href="about-ar.html" class="active">من نحن</a></li>
+        <li><a href="services-ar.html">خدماتنا</a></li>
+        <li><a href="faqs-ar.html">الأسئلة الشائعة</a></li>
+        <li><a href="contact-ar.html">اتصل بنا</a></li>
+      </ul>
+      <div class="language-switcher">
+        <a href="about-en.html" aria-label="English Language"><i class="fas fa-globe"></i> English</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>من نحن</h1>
+    <p>اكتشف من نحن، وماذا نمثل، ولماذا تثق الشركات في جميع أنحاء العالم بالمصرية الإماراتية.</p>
+  </section>
+
+  <!-- محتوى من نحن -->
+  <section class="about-content">
+    <div class="text">
+      <h2>من نحن</h2>
+      <p>
+        تأسست <strong>المصرية الإماراتية</strong> في عام 2010، وهي شركة استيراد وتصدير موثوقة 
+        تقدم خدمات تجارية ووكالات تجارية شاملة. بفضل جذورنا القوية في مصر والإمارات العربية المتحدة، 
+        نربط الشركات عالميًا من خلال لوجستيات فعالة، وعمليات شفافة، وشراكات موثوقة.
+      </p>
+
+      <h2>رؤيتنا</h2>
+      <p>
+        أن نصبح شركة رائدة عالميًا في التجارة واللوجستيات، معروفة بالتميز والثقة والنمو المستدام.
+      </p>
+
+      <h2>مهمتنا</h2>
+      <p>
+        نهدف إلى تقديم خدمات تجارة دولية سلسة تمكّن الشركات وتبني نجاحًا طويل الأمد.  
+        مهمتنا هي تبسيط التجارة العالمية مع خلق قيمة لشركائنا وعملائنا.
+      </p>
+    </div>
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="التجارة العالمية">
+    </div>
+  </section>
+
+  <!-- الميزات البارزة -->
+  <section class="highlights">
+    <h2>لماذا تختارنا</h2>
+    <div class="highlight-grid">
+      <div class="highlight">
+        <i class="fas fa-globe"></i>
+        <h3>انتشار عالمي</h3>
+        <p>توسيع أعمالك عبر الأسواق الدولية بثقة.</p>
+      </div>
+      <div class="highlight">
+        <i class="fas fa-handshake"></i>
+        <h3>شراكات موثوقة</h3>
+        <p>بناء علاقات طويلة الأمد قائمة على الثقة والشفافية.</p>
+      </div>
+      <div class="highlight">
+        <i class="fas fa-truck-fast"></i>
+        <h3>لوجستيات فعالة</h3>
+        <p>حلول سلسلة توريد موثوقة وسلسة مصممة خصيصًا لتلبية احتياجاتك.</p>
+      </div>
+      <div class="highlight">
+        <i class="fas fa-award"></i>
+        <h3>تميز مثبت</h3>
+        <p>سجل حافل بتقديم خدمات استيراد وتصدير عالمية المستوى.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <p>&copy; 2025 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
+    <div class="social">
+      <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
+    // تحديث السنة في التذييل (إذا كنت ترغب في تحديثها ديناميكيًا)
+    // document.querySelector('footer p').innerHTML = '&copy; ' + new Date().getFullYear() + ' المصرية الإماراتية. جميع الحقوق محفوظة.';
+  </script>
+</body>
+</html>
