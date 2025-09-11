@@ -9,14 +9,15 @@
   <meta name="keywords" content="Al Massria Al Emaratia, import, export, commercial agencies, global trade, Egypt, UAE, trade solutions, shipping, logistics, international markets" />
   <meta name="author" content="Al Massria Al Emaratia" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.egy-uae.com/" /> 
+  <link rel="canonical" href="https://www.egy-uae.com/index-en.html" /> <!-- Updated canonical for English page -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   
   <style>
+    /* Basic Styling */
     *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body{line-height:1.6;color:#333;background:#f9f9f9;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;direction:ltr;} /* LTR direction for English */
 
     /* Header */
     header{
@@ -46,7 +47,7 @@
     .nav-links li a::after{
       content:"";
       position:absolute;
-      left:0;
+      left:0; /* Direction for LTR */
       bottom:-4px;
       width:0;
       height:2px;
@@ -58,7 +59,8 @@
     .company-logo-header {
       height: 40px; /* Adjust as needed */
       vertical-align: middle;
-      margin-right: 10px;
+      margin-right: 10px; /* Direction for LTR */
+      margin-left: 0;
     }
     .logo a {
       display: flex;
@@ -243,7 +245,8 @@
     .official-footer .footer-column a:hover{color:#fff;}
     .official-footer .footer-column .social-links a{
       color:#fff;
-      margin-right:15px;
+      margin-right:15px; /* Direction for LTR */
+      margin-left:0;
       font-size:1.3rem;
       transition:0.3s;
     }
@@ -271,7 +274,7 @@
 
     /* Responsive */
     @media(max-width:992px){
-      .navbar .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0;padding-bottom:15px;z-index:1000;}
+      .navbar .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0; /* Direction for LTR */padding-bottom:15px;z-index:1000;}
       .navbar .nav-links.nav-active{display:flex;}
       .navbar .nav-links li{text-align:center;margin:10px 0;}
       .navbar .nav-links li a{padding:10px 0;display:block;}
@@ -292,21 +295,35 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
-    /* تصميم الزر الخاص بالترجمة */
-#google_translate_element select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-#google_translate_element select:hover {
-  background-color: #eaeaea;
-}
+    /* Custom Language Switcher Button Styling */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px; /* Adjust as needed for LTR */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
@@ -314,39 +331,24 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html">
+        <a href="index-en.html">
           <!-- Using a placeholder image for the logo. You should replace this with a stable, professional logo. -->
-          <img src= "https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="Al Massria Al Emaratia Logo" class="company-logo-header"> 
+          <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="Al Massria Al Emaratia Logo" class="company-logo-header"> 
           Al Massria Al Emaratia
         </a>
       </div>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="index-en.html" class="active">Home</a></li>
+        <li><a href="about-en.html">About Us</a></li>
+        <li><a href="services-en.html">Services</a></li>
+        <li><a href="faqs-en.html">FAQs</a></li>
+        <li><a href="contact-en.html">Contact Us</a></li>
       </ul>
+      <div class="language-switcher">
+        <a href="index.html" aria-label="Arabic Language"><i class="fas fa-globe"></i> العربية</a>
+      </div>
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-      <!-- زر اللغة -->
-  <div id="google_translate_element" style="margin-left: 20px;"></div>
-
-<!-- جوجل ترانسليت -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en', 
-      includedLanguages: 'ar,en,de,tr,hi,zh-CN', 
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },
-    'google_translate_element'
-  );
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
   </header>
 
   <main>
@@ -356,7 +358,7 @@ function googleTranslateElementInit() {
         <h1>Welcome to <span>Al Massria Al Emaratia</span></h1>
         <h2>Global Trade Solutions from Egypt & UAE to the World</h2>
         <p>We facilitate international import operations into Egypt and export from Egypt to the world, offering comprehensive trade solutions and commercial agency services that connect businesses with international markets.</p>
-        <a href="services.html" class="btn-primary">Discover Our Services</a>
+        <a href="services-en.html" class="btn-primary">Discover Our Services</a>
       </div>
     </section>
 
@@ -455,7 +457,7 @@ function googleTranslateElementInit() {
             <p>Head of Digital Transformation</p>
           </div>
            <div class="team-member">
-            <img src="https://images.pexels.com/photos/9304917/pexels-photo-9304917.jpeg" alt="Ahmed Badrawy Photo" /> 
+            <img src="https://images.pexels.com/photos/9304917/pexels-photo-9304917.jpeg" alt="Nada El-Sayed Photo" /> 
             <h3>Nada El-Sayed</h3>
             <p>Development Manager</p>
           </div>
@@ -475,13 +477,13 @@ function googleTranslateElementInit() {
         <div class="footer-column">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index-en.html">Home</a></li>
+            <li><a href="about-en.html">About Us</a></li>
+            <li><a href="services-en.html">Services</a></li>
+            <li><a href="products-en.html">Products</a></li>
+            <li><a href="careers-en.html">Careers</a></li>
+            <li><a href="faqs-en.html">FAQs</a></li>
+            <li><a href="contact-en.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -503,9 +505,9 @@ function googleTranslateElementInit() {
       <div class="footer-bottom">
         <p>&copy; <span id="current-year-footer"></span> Al Massria Al Emaratia. All rights reserved.</p>
         <div class="footer-legal-links">
-          <a href="privacy.html">Privacy Policy</a> | 
-          <a href="terms.html">Terms & Conditions</a> | 
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="privacy-en.html">Privacy Policy</a> | 
+          <a href="terms-en.html">Terms & Conditions</a> | 
+          <a href="sitemap-en.xml">Sitemap</a>
         </div>
       </div>
     </div>
