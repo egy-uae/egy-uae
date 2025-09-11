@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الشروط والأحكام - المؤسسة المصرية الإماراتية للاستيراد والتصدير</title>
+  <meta name="description" content="اقرأ الشروط والأحكام للمؤسسة المصرية الإماراتية للاستيراد والتصدير لفهم القواعد والسياسات التي تحكم استخدام خدماتنا.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {margin:0;padding:0;box-sizing:border-box;}
 
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background: #f9f9f9;
+      direction: rtl; /* لتحديد اتجاه النص من اليمين لليسار */
+      text-align: right; /* لمحاذاة النص لليمين */
+    }
+
+    /* Banner */
+    header {background: linear-gradient(90deg, #004aad, #0077ff);padding: 15px 0;position: relative;}
+    nav {display: flex;justify-content: center;gap: 30px;}
+    nav a {
+      text-decoration: none;color: #fff;font-weight: 500;font-size: 16px;position: relative;
+    }
+    nav a::after {
+      content: "";position: absolute;width: 0;height: 3px;background: #fff;right: 0;bottom: -6px; /* تغيير الاتجاه ليتناسب مع RTL */
+      transition: width 0.3s ease;border-radius: 2px;
+    }
+    nav a:hover::after, nav a.active::after {width: 100%;}
+
+    /* Translation Button */
+    .translation-btn {
+      position: absolute;
+      left: 20px; /* تغيير الاتجاه ليتناسب مع RTL */
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      color: #004aad;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .translation-btn:hover {
+      background: #e0e0e0;
+      color: #00327a;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .translation-btn i {
+      font-size: 18px;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;text-align: center;padding: 100px 20px;
+    }
+    .hero h1 {font-size: 42px;margin-bottom: 15px;text-shadow: 1px 1px 8px rgba(0,0,0,0.6);}
+    .hero p {font-size: 20px;text-shadow: 1px 1px 6px rgba(0,0,0,0.6);}
+
+    /* Sections */
+    section {max-width: 1100px;margin: 50px auto;padding: 20px;}
+    section h2 {color: #004aad;font-size: 26px;margin-bottom: 15px;}
+    section p {margin-bottom: 20px;color:#555;}
+
+    /* Back Button */
+    .back-btn {display: block;margin: 40px auto;text-align: center;}
+    .back-btn a {
+      background: #004aad;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;
+      font-weight: bold;transition: background 0.3s ease;
+    }
+    .back-btn a:hover {background: #00327a;}
+
+    /* Footer */
+    footer {background: #004aad;color: white;text-align: center;padding: 20px 10px;margin-top: 40px;}
+    footer p {font-size: 14px;}
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {flex-direction: column;gap: 15px;}
+      .translation-btn {
+        position: static;
+        transform: none;
+        margin-top: 15px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero h1 {font-size: 32px;}
+      .hero p {font-size: 18px;}
+      section {margin: 30px auto;padding: 15px;}
+      section h2 {font-size: 22px;}
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {font-size: 28px;}
+      .hero p {font-size: 16px;}
+      .back-btn a {padding: 10px 20px;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <header>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">عنّا</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="contact.html">اتصل بنا</a>
+    </nav>
+    <a href="terms-conditions-en.html" class="translation-btn">
+      <i class="fas fa-globe"></i> English
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>الشروط والأحكام</h1>
+    <p>يرجى قراءة الشروط بعناية قبل استخدام خدماتنا</p>
+  </section>
+
+  <!-- Terms Content -->
+  <section>
+    <h2>1. مقدمة</h2>
+    <p>تحكم هذه الشروط والأحكام استخدام الخدمات المقدمة من قبل المؤسسة المصرية الإماراتية للاستيراد والتصدير. باستخدام خدماتنا، فإنكم توافقون على الالتزام بهذه الشروط.</p>
+
+    <h2>2. استخدام الخدمات</h2>
+    <p>خدماتنا مخصصة للعمليات التجارية والتجارية القانونية فقط. أنتم توافقون على عدم إساءة استخدام الخدمات أو الانخراط في أنشطة تنتهك قوانين أو لوائح التجارة الدولية.</p>
+
+    <h2>3. العقود والاتفاقيات</h2>
+    <p>يجب توثيق جميع العقود التجارية والصفقات التجارية واتفاقيات الوكالة كتابيًا والتوقيع عليها من قبل الطرفين. الاتفاقيات الشفهية لا تعتبر ملزمة.</p>
+
+    <h2>4. الدفع والرسوم</h2>
+    <p>يجب أن تتم المدفوعات وفقًا للشروط والجداول الزمنية المتفق عليها. قد يؤدي التأخر في الدفع إلى تعليق الخدمة أو فرض رسوم إضافية.</p>
+
+    <h2>5. السرية</h2>
+    <p>نحن نضمن سرية معلومات العميل وبيانات التجارة. ومع ذلك، فإن العملاء مسؤولون أيضًا عن حماية وثائق العمل وبيانات الاعتماد المشتركة.</p>
+
+    <h2>6. تحديد المسؤولية</h2>
+    <p>بينما نسعى جاهدين لتقديم خدمات عالية الجودة، فإن المؤسسة المصرية الإماراتية لن تكون مسؤولة عن الخسائر الناجمة عن ظروف غير متوقعة، أو تأخيرات جمركية، أو أحداث قوة قاهرة.</p>
+
+    <h2>7. الإنهاء</h2>
+    <p>نحتفظ بالحق في تعليق أو إنهاء الخدمات إذا انتهك العميل هذه الشروط أو انخرط في ممارسات تجارية غير قانونية.</p>
+
+    <h2>8. القانون الحاكم</h2>
+    <p>تخضع هذه الشروط والأحكام للوائح التجارة الدولية والقوانين المعمول بها في مصر والإمارات العربية المتحدة.</p>
+
+    <h2>9. التحديثات</h2>
+    <p>قد نقوم بتحديث هذه الشروط والأحكام من وقت لآخر. الاستخدام المستمر لخدماتنا يعني قبول الشروط المحدثة.</p>
+  </section>
+
+  <!-- Back Button -->
+  <div class="back-btn">
+    <a href="home-ar.html"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a> <!-- تم تغيير اتجاه السهم ليناسب RTL -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 المؤسسة المصرية الإماراتية - جميع الحقوق محفوظة.</p>
+  </footer>
+
+</body>
+</html>
