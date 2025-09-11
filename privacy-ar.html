@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية - المؤسسة المصرية الإماراتية للاستيراد والتصدير</title>
+  <meta name="description" content="اقرأ سياسة الخصوصية للمؤسسة المصرية الإماراتية للاستيراد والتصدير لتفهم كيف نحمي بياناتك ونضمن سريتها.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {margin:0;padding:0;box-sizing:border-box;}
 
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background: #f9f9f9;
+      direction: rtl; /* لتحديد اتجاه النص من اليمين لليسار */
+      text-align: right; /* لمحاذاة النص لليمين */
+    }
+
+    /* Banner */
+    header {background: linear-gradient(90deg, #004aad, #0077ff);padding: 15px 0;position: relative;}
+    nav {display: flex;justify-content: center;gap: 30px;}
+    nav a {
+      text-decoration: none;color: #fff;font-weight: 500;font-size: 16px;position: relative;
+    }
+    nav a::after {
+      content: "";position: absolute;width: 0;height: 3px;background: #fff;right: 0;bottom: -6px; /* تغيير الاتجاه ليتناسب مع RTL */
+      transition: width 0.3s ease;border-radius: 2px;
+    }
+    nav a:hover::after, nav a.active::after {width: 100%;}
+
+    /* Translation Button */
+    .translation-btn {
+      position: absolute;
+      left: 20px; /* تغيير الاتجاه ليتناسب مع RTL */
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      color: #004aad;
+      padding: 8px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .translation-btn:hover {
+      background: #e0e0e0;
+      color: #00327a;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .translation-btn i {
+      font-size: 18px;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;text-align: center;padding: 100px 20px;
+    }
+    .hero h1 {font-size: 42px;margin-bottom: 15px;text-shadow: 1px 1px 8px rgba(0,0,0,0.6);}
+    .hero p {font-size: 20px;text-shadow: 1px 1px 6px rgba(0,0,0,0.6);}
+
+    /* Sections */
+    section {max-width: 1100px;margin: 50px auto;padding: 20px;}
+    section h2 {color: #004aad;font-size: 26px;margin-bottom: 15px;}
+    section p {margin-bottom: 20px;color:#555;}
+
+    /* Back Button */
+    .back-btn {display: block;margin: 40px auto;text-align: center;}
+    .back-btn a {
+      background: #004aad;color: white;padding: 12px 24px;border-radius: 8px;text-decoration: none;
+      font-weight: bold;transition: background 0.3s ease;
+    }
+    .back-btn a:hover {background: #00327a;}
+
+    /* Footer */
+    footer {background: #004aad;color: white;text-align: center;padding: 20px 10px;margin-top: 40px;}
+    footer p {font-size: 14px;}
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {flex-direction: column;gap: 15px;}
+      .translation-btn {
+        position: static;
+        transform: none;
+        margin-top: 15px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero h1 {font-size: 32px;}
+      .hero p {font-size: 18px;}
+      section {margin: 30px auto;padding: 15px;}
+      section h2 {font-size: 22px;}
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {font-size: 28px;}
+      .hero p {font-size: 16px;}
+      .back-btn a {padding: 10px 20px;}
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <header>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">عنّا</a>
+      <a href="services.html">خدماتنا</a>
+      <a href="contact">اتصل بنا</a>
+    </nav>
+    <a href="privacy-policy-en.html" class="translation-btn">
+      <i class="fas fa-globe"></i> English
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>سياسة الخصوصية</h1>
+    <p>ثقتكم وأمن بياناتكم هي أولويتنا القصوى</p>
+  </section>
+
+  <!-- Privacy Content -->
+  <section>
+    <h2>مقدمة</h2>
+    <p>توضح سياسة الخصوصية هذه كيفية جمعنا لبياناتكم الشخصية واستخدامها وحمايتها عند تعاملكم مع المؤسسة المصرية الإماراتية للاستيراد والتصدير. باستخدام خدماتنا، فإنكم توافقون على الشروط الموضحة في هذه السياسة.</p>
+
+    <h2>المعلومات التي نجمعها</h2>
+    <p>قد نجمع بيانات شخصية مثل اسمكم، عنوان بريدكم الإلكتروني، رقم هاتفكم، ومعلومات العمل الخاصة بكم. بالإضافة إلى ذلك، قد نجمع بيانات تقنية مثل عناوين بروتوكول الإنترنت وسلوك التصفح لأغراض الأمن والتحليلات.</p>
+
+    <h2>كيف نستخدم معلوماتكم</h2>
+    <p>تُستخدم معلوماتكم لتقديم خدماتنا وتحسينها، ومعالجة طلبات التجارة، وتعزيز التواصل، وضمان الامتثال للوائح التجارة الدولية.</p>
+
+    <h2>حماية البيانات</h2>
+    <p>نحن نطبق إجراءات أمنية صارمة لحماية بياناتكم الشخصية. يتم تخزين جميع المعلومات الحساسة بشكل آمن، ويقتصر الوصول إليها على الموظفين المصرح لهم فقط.</p>
+
+    <h2>مشاركة المعلومات</h2>
+    <p>نحن لا نبيع أو نؤجر معلوماتكم الشخصية. قد تتم مشاركة البيانات فقط مع شركاء موثوقين لغرض إنجاز العمليات التجارية أو الالتزامات القانونية.</p>
+
+    <h2>حقوقكم</h2>
+    <p>لديكم الحق في الوصول إلى بياناتكم الشخصية أو تحديثها أو طلب حذفها. للاستفسارات، يرجى الاتصال بنا عبر قنوات التواصل الرسمية الخاصة بنا.</p>
+
+    <h2>تحديثات السياسة</h2>
+    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر لتعكس التغييرات في ممارساتنا أو المتطلبات القانونية. سيتم نشر الإصدارات المحدثة على هذه الصفحة.</p>
+  </section>
+
+  <!-- Back Button -->
+  <div class="back-btn">
+    <a href="index.html"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a> <!-- تم تغيير اتجاه السهم ليناسب RTL -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 المؤسسة المصرية الإماراتية - جميع الحقوق محفوظة.</p>
+  </footer>
+
+</body>
+</html>
