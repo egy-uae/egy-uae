@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services | Al Massria Al Emaratia</title>
+  <title>Our Services | Al Masriya Al Emaratiya</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Discover the professional services of Al Massria Al Emaratia, including import, export, trade consulting, logistics, and business partnerships.">
-  <meta name="keywords" content="Import, Export, Trade, Logistics, Commercial Agency, Consulting, Egypt, UAE, Al Massria Al Emaratia">
-  <meta name="author" content="Al Massria Al Emaratia">
+  <!-- SEO Enhancements -->
+  <meta name="description" content="Discover Egyptian Emirati's professional range of services in import and export, trade consulting, logistics, and international business agencies. Integrated solutions for your business success.">
+  <meta name="keywords" content="import, export, international trade, logistics, commercial agency, trade consulting, trade training, Egypt, UAE, Egyptian Emirati, shipping, customs">
+  <meta name="author" content="Egyptian Emirati">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Our Services | Egyptian Emirati">
+  <meta property="og:description" content="We offer integrated trade and logistics solutions to ensure your business success in global markets. Import, export, agencies, consulting, and training.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.egy-uae.com/services.html">
+  <meta property="og:site_name" content="Egyptian Emirati">
 
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -16,8 +24,9 @@
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
   <style>
+    /* Basic Styling */
     *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body{line-height:1.6;color:#333;background:#f9f9f9;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;direction:ltr;} /* LTR Support */
 
     /* Header */
     header{
@@ -29,6 +38,10 @@
       top:0;
       width:100%;
       z-index:1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .navbar{
       width:90%;
@@ -50,7 +63,7 @@
     .nav-links li a::after{
       content:"";
       position:absolute;
-      left:0;
+      left:0; /* Direction for LTR */
       bottom:-4px;
       width:0;
       height:2px;
@@ -59,8 +72,25 @@
     }
     .nav-links li a:hover::after,
     .nav-links li a.active::after{width:100%;}
+    .company-logo-header {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px; /* Margin for LTR */
+      margin-left: 0;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
 
-    /* Hero */
+    /* Hero Section */
     .hero{
       background:url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
       height:60vh;
@@ -76,7 +106,7 @@
     .hero::after{
       content:"";
       position:absolute;
-      top:0;left:0;
+      top:0;left:0; /* Direction for LTR */
       width:100%;height:100%;
       background:rgba(0,0,0,0.5);
     }
@@ -108,6 +138,14 @@
     .service-detail.active{display:block;}
     .service-detail h2{color:#0d47a1;margin-bottom:15px;}
     .service-detail p{margin-bottom:15px;}
+    .service-detail ul {
+        margin-left: 20px; /* Indent lists for LTR */
+        list-style-type: disc;
+        margin-bottom: 15px;
+    }
+    .service-detail ul li {
+        margin-bottom: 5px;
+    }
 
     @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
@@ -123,68 +161,79 @@
     footer .social a{color:#fff;margin:0 10px;font-size:18px;transition:0.3s;}
     footer .social a:hover{color:#bbdefb;}
 
-    /* Responsive */
+    /* Responsiveness */
+    @media(max-width:992px){
+      .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0;padding-bottom:15px;z-index:1000;}
+      .nav-links.nav-active{display:flex;}
+      .nav-links li{text-align:center;margin:10px 0;}
+      .nav-links li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
+    }
     @media(max-width:768px){
-      .nav-links{flex-direction:column;gap:0.5rem;}
-      .navbar{flex-direction:column;align-items:flex-start;}
+      .navbar{flex-direction:column;align-items:flex-start;} /* Adjusted alignment for LTR column mode */
       .hero h1{font-size:2rem;}
       .hero p{font-size:1rem;}
     }
-    /* تصميم الزر الخاص بالترجمة */
-#google_translate_element select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-#google_translate_element select:hover {
-  background-color: #eaeaea;
-}
+    /* Custom language switcher button design */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px; /* Adjusted for LTR */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <nav class="navbar">
-      <div class="logo"><a href="index.html">Al Massria Al Emaratia</a></div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="Egyptian Emirati Logo" class="company-logo-header">
+          Al Masriya Al Emaratiya
+        </a>
+      </div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="services.html" class="active">Services</a></li>
         <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
+      <div class="language-switcher">
+        <a href="services-ar.html" aria-label="Arabic Language"><i class="fas fa-globe"></i> Arabic</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-      <!-- زر اللغة -->
-  <div id="google_translate_element" style="margin-left: 20px;"></div>
-
-<!-- جوجل ترانسليت -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en', 
-      includedLanguages: 'ar,en,de,tr,hi,zh-CN', 
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },
-    'google_translate_element'
-  );
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="content">
-      <h1>Our Services</h1>
-      <p>Professional trade and business solutions tailored to your success.</p>
+      <h1>Our Professional Services</h1>
+      <p>Trade and logistics solutions tailored to ensure your success.</p>
     </div>
   </section>
 
@@ -200,48 +249,83 @@ function googleTranslateElementInit() {
     </div>
     <div class="service-item" onclick="showService('logistics')">
       <i class='bx bx-package'></i>
-      <h3>Logistics</h3>
+      <h3>Logistics Solutions</h3>
     </div>
     <div class="service-item" onclick="showService('consulting')">
       <i class='bx bx-bar-chart-alt'></i>
-      <h3>Consulting</h3>
+      <h3>Business Consulting</h3>
     </div>
     <div class="service-item" onclick="showService('training')">
       <i class='bx bx-chalkboard'></i>
-      <h3>Training</h3>
+      <h3>Training & Development</h3>
     </div>
   </section>
 
   <!-- Services Details -->
   <section class="services-details">
     <div id="import" class="service-detail active">
-      <h2>Import & Export Solutions</h2>
-      <p>We facilitate international trade by offering reliable import and export services. From sourcing products to ensuring compliance with global standards, we guarantee smooth cross-border operations.</p>
+      <h2>Integrated Import & Export Solutions</h2>
+      <p>We provide reliable import and export services to facilitate your international trade. From sourcing products to ensuring compliance with global standards, we guarantee seamless cross-border operations.</p>
+      <p>We cover all aspects of the import and export process, including:</p>
+      <ul>
+        <li>Identifying reliable suppliers and customers.</li>
+        <li>Managing shipping documents and customs clearance.</li>
+        <li>Ensuring product quality and inspection.</li>
+        <li>Negotiating the best prices and terms.</li>
+      </ul>
     </div>
     <div id="agency" class="service-detail">
-      <h2>Commercial Agency</h2>
-      <p>As a trusted commercial agent, we represent global brands and build long-term partnerships in diverse markets, ensuring business growth and sustainable success.</p>
+      <h2>Commercial Agencies for Brand Representation</h2>
+      <p>As trusted commercial agents, we represent global brands and strive to build long-term partnerships in diverse markets, ensuring sustainable growth for your companies.</p>
+      <p>Our commercial agency services include:</p>
+      <ul>
+        <li>Representing brands in new markets.</li>
+        <li>Developing market entry strategies.</li>
+        <li>Managing relationships with distributors and partners.</li>
+        <li>Increasing brand awareness and market share.</li>
+      </ul>
     </div>
     <div id="logistics" class="service-detail">
-      <h2>Logistics & Supply Chain</h2>
-      <p>Our logistics solutions cover freight forwarding, customs clearance, and warehousing, helping businesses move products efficiently and cost-effectively.</p>
+      <h2>Efficient Logistics & Supply Chain Solutions</h2>
+      <p>Our logistics solutions cover sea, air, and land freight, customs clearance, and warehousing, helping businesses move products efficiently and cost-effectively.</p>
+      <p>Our logistics services include:</p>
+      <ul>
+        <li>Planning and executing international shipments.</li>
+        <li>Expedited customs clearance services.</li>
+        <li>Secure and flexible warehousing solutions.</li>
+        <li>Shipment tracking and risk management.</li>
+      </ul>
     </div>
     <div id="consulting" class="service-detail">
-      <h2>Business Consulting</h2>
-      <p>We provide expert consulting services to guide businesses in trade operations, compliance, and international expansion strategies.</p>
+      <h2>Business Consulting and International Expansion</h2>
+      <p>We provide specialized consulting services to guide businesses in trade operations, regulatory compliance, and international market expansion strategies, ensuring informed decision-making.</p>
+      <p>We offer consulting in the following areas:</p>
+      <ul>
+        <li>Market analysis and international expansion.</li>
+        <li>Compliance with trade regulations and international laws.</li>
+        <li>Optimizing efficiency of trade operations.</li>
+        <li>Developing international business strategies.</li>
+      </ul>
     </div>
     <div id="training" class="service-detail">
-      <h2>Professional Training</h2>
-      <p>Our training programs equip individuals, factories, and companies with the skills and knowledge needed to excel in global trade and supply chain management.</p>
+      <h2>Professional Trade Training Programs</h2>
+      <p>Our training programs are designed to equip individuals, factories, and companies with the skills and knowledge needed to excel in global trade and supply chain management, enhancing their competitive capabilities.</p>
+      <p>Our training programs cover:</p>
+      <ul>
+        <li>Fundamentals of import and export.</li>
+        <li>Supply chain management and logistics.</li>
+        <li>International marketing and trade negotiations.</li>
+        <li>Customs laws and regulations.</li>
+      </ul>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+    <p>&copy; 2025 Al Masriya Al Emaratiya. All Rights Reserved.</p>
     <div class="social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </footer>
 
@@ -250,6 +334,11 @@ function googleTranslateElementInit() {
       const details=document.querySelectorAll('.service-detail');
       details.forEach(detail=>detail.classList.remove('active'));
       document.getElementById(serviceId).classList.add('active');
+    }
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
     }
   </script>
 </body>
