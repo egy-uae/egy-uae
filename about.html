@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Al Massria Al Emaratia</title>
+  <title>About Us | Egyptian Emirati</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Al Massria Al Emaratia is a leading import & export company based in Egypt and UAE, delivering trusted trade, logistics, and commercial agency services worldwide.">
-  <meta name="keywords" content="Al Massria Al Emaratia, import export Egypt UAE, international trade, logistics, commercial agencies, global business">
-  <meta name="author" content="Al Massria Al Emaratia">
+  <!-- Meta tags for SEO -->
+  <meta name="description" content="Egyptian Emirati is a leading import and export company based in Egypt and the UAE, offering reliable trade, logistics, and commercial agency services worldwide.">
+  <meta name="keywords" content="Egyptian Emirati, import export Egypt UAE, international trade, logistics, commercial agencies, global business">
+  <meta name="author" content="Egyptian Emirati">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About Us | Al Massria Al Emaratia">
-  <meta property="og:description" content="Learn more about Al Massria Al Emaratia, a global leader in import, export, and commercial agencies.">
+  <meta property="og:title" content="About Us | Egyptian Emirati">
+  <meta property="og:description" content="Learn more about Egyptian Emirati, a global leader in import, export, and commercial agencies.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1605902711622-cfb43c4437d7?w=800">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.egy-uae.com/about.html">
 
-  <!-- Icons & Fonts -->
+  <!-- Icons and Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Basic designs */
     *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body{line-height:1.6;color:#333;background:#f9f9f9;}
+    body{line-height:1.6;color:#333;background:#f9f9f9;direction:ltr;} /* LTR support */
 
     /* Header */
     header{
@@ -31,6 +32,10 @@
       padding:1rem 0;
       color:#fff;
       box-shadow:0 3px 6px rgba(0,0,0,0.2);
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      flex-wrap: wrap; 
     }
     .navbar{
       width:90%;
@@ -46,14 +51,14 @@
       color:#fff;
       font-weight:600;
       position:relative;
-      text-decoration:none; /* شيل أي خط تحت النص */
-      border:none;          /* منع أي خط ثابت */
+      text-decoration:none;          
+      border:none;          
       transition:0.3s;
     }
     .nav-links li a::after{
       content:"";
       position:absolute;
-      left:0;
+      left:0; /* Direction for LTR */
       bottom:-4px;
       width:0;
       height:2px;
@@ -62,8 +67,25 @@
     }
     .nav-links li a:hover::after,
     .nav-links li a.active::after{width:100%;}
+    .company-logo-header {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px; /* Margin for LTR */
+      margin-left: 0;
+    }
+    .logo a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
 
-    /* Hero */
+    /* Hero section */
     .hero{
       background:url('https://images.unsplash.com/photo-1505839673365-e3971f8d9184?w=1200') center/cover no-repeat;
       color:#fff;text-align:center;
@@ -73,15 +95,16 @@
     .hero h1{font-size:48px;margin-bottom:10px;}
     .hero p{font-size:20px;max-width:700px;margin:auto;}
 
-    /* About Content */
+    /* About Us content */
     .about-content{
       display:flex;align-items:center;justify-content:space-between;
       gap:40px;width:90%;margin:60px auto;flex-wrap:wrap;
+      flex-direction: row; /* Order for LTR */
     }
-    .about-content .text{flex:1;animation:slideInLeft 1s;}
+    .about-content .text{flex:1;animation:slideInLeft 1s;} /* Animation direction */
     .about-content .text h2{color:#0d47a1;margin-bottom:15px;}
     .about-content .text p{margin-bottom:20px;}
-    .about-content .image{flex:1;animation:slideInRight 1s;}
+    .about-content .image{flex:1;animation:slideInRight 1s;} /* Animation direction */
     .about-content .image img{width:100%;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
 
     /* Highlights */
@@ -116,88 +139,103 @@
     @keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
     @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 
-    /* Responsive */
-    @media(max-width:768px){
-      .nav-links{flex-direction:column;gap:0.5rem;}
-      .navbar{flex-direction:column;align-items:flex-start;}
+    /* Responsiveness */
+    @media(max-width:992px){
+      .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;left:0;padding-bottom:15px;z-index:1000;}
+      .nav-links.nav-active{display:flex;}
+      .nav-links li{text-align:center;margin:10px 0;}
+      .nav-links li a{padding:10px 0;display:block;}
+      .menu-toggle{display:block;}
       .about-content{flex-direction:column;}
+      .hero h1{font-size:36px;}
+      .hero p{font-size:18px;}
+    }
+    @media(max-width:768px){
+      .navbar{flex-direction:column;align-items:flex-start;} /* Adjusted alignment for LTR column mode */
       .hero h1{font-size:32px;}
       .hero p{font-size:16px;}
     }
-    /* تصميم الزر الخاص بالترجمة */
-#google_translate_element select {
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-#google_translate_element select:hover {
-  background-color: #eaeaea;
-}
+    /* Custom language switcher button design */
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      margin-left: 20px; /* Adjusted for LTR */
+      font-size: 1rem;
+    }
+
+    .language-switcher a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #bbdefb;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .language-switcher a:hover {
+      background-color: #bbdefb;
+      color: #0d47a1;
+    }
+
+    .language-switcher a i {
+      font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <nav class="navbar">
-      <div class="logo"><a href="index.html">Al Massria Al Emaratia</a></div>
+      <div class="logo">
+        <a href="index.html">
+          <!-- Using a company logo image. This should be replaced with a professional, static logo. -->
+          <img src="https://i.postimg.cc/C5SkqykS/IMG-20241008-WA0000-removebg-preview.png" alt="Egyptian Emirati Logo" class="company-logo-header"> 
+          Egyptian Emirati
+        </a>
+      </div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="about.html" class="active">About Us</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="faqs.html">FAQs</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
+      <div class="language-switcher">
+        <a href="about-ar.html" aria-label="Arabic Language"><i class="fas fa-globe"></i> العربية</a>
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
-      <!-- زر اللغة -->
-  <div id="google_translate_element" style="margin-left: 20px;"></div>
-
-<!-- جوجل ترانسليت -->
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en', 
-      includedLanguages: 'ar,en,de,tr,hi,zh-CN', 
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    },
-    'google_translate_element'
-  );
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <h1>About Us</h1>
-    <p>Discover who we are, what we stand for, and why businesses worldwide trust Al Massria Al Emaratia.</p>
+    <p>Discover who we are, what we stand for, and why companies worldwide trust Egyptian Emirati.</p>
   </section>
 
-  <!-- About Content -->
+  <!-- About Us content -->
   <section class="about-content">
     <div class="text">
-      <h2>Who We Are</h2>
+      <h2>About Us</h2>
       <p>
-        Established in 2010, <strong>Al Massria Al Emaratia</strong> is a trusted import and export company 
-        providing comprehensive trade and commercial agency services. With strong roots in Egypt and the UAE, 
-        we connect businesses globally through efficient logistics, transparent operations, and reliable partnerships.
+        Established in 2010, <strong>Egyptian Emirati</strong> is a reliable import and export company 
+        offering comprehensive trade and commercial agency services. With our strong roots in Egypt and the UAE, 
+        we connect businesses globally through efficient logistics, transparent operations, and trusted partnerships.
       </p>
 
       <h2>Our Vision</h2>
       <p>
-        To become a global leader in trade and logistics, recognized for excellence, trust, and sustainable growth.
+        To become a global leader in trade and logistics, renowned for excellence, trust, and sustainable growth.
       </p>
 
       <h2>Our Mission</h2>
       <p>
-        We aim to deliver seamless international trade services that empower businesses and build long-term success.  
-        Our mission is to simplify global commerce while creating value for our partners and clients.
+        We aim to provide seamless international trade services that empower businesses and build long-term success.  
+        Our mission is to simplify global trade while creating value for our partners and clients.
       </p>
     </div>
     <div class="image">
@@ -212,7 +250,7 @@ function googleTranslateElementInit() {
       <div class="highlight">
         <i class="fas fa-globe"></i>
         <h3>Global Reach</h3>
-        <p>Expanding your business across international markets with confidence.</p>
+        <p>Expand your business across international markets with confidence.</p>
       </div>
       <div class="highlight">
         <i class="fas fa-handshake"></i>
@@ -222,7 +260,7 @@ function googleTranslateElementInit() {
       <div class="highlight">
         <i class="fas fa-truck-fast"></i>
         <h3>Efficient Logistics</h3>
-        <p>Reliable and smooth supply chain solutions tailored to your needs.</p>
+        <p>Reliable and seamless supply chain solutions tailored to your needs.</p>
       </div>
       <div class="highlight">
         <i class="fas fa-award"></i>
@@ -234,11 +272,20 @@ function googleTranslateElementInit() {
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Al Massria Al Emaratia. All Rights Reserved.</p>
+    <p>&copy; 2025 Egyptian Emirati. All rights reserved.</p>
     <div class="social">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('nav-active');
+    }
+    // Update year in footer (if you want it to update dynamically)
+    // document.querySelector('footer p').innerHTML = '&copy; ' + new Date().getFullYear() + ' Egyptian Emirati. All rights reserved.';
+  </script>
 </body>
 </html>
