@@ -3,573 +3,624 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Al Masriya Al Emaratia — Global Trade & Commercial Agencies</title>
-    <meta name="description" content="Al Masriya Al Emaratia — Import & export services, commercial agency representation and supply-chain solutions between Egypt, UAE and the world." />
+    <title>Al Masriya Al Emaratia — International Trade and Commercial Agencies Platform</title>
+    <meta name="description" content="Al Masriya Al Emaratia — An integrated platform for import and export services, commercial representation, supply chain solutions, and logistics between Egypt, the UAE, and the world." />
     <meta name="author" content="Al Masriya Al Emaratia" />
+    <meta name="keywords" content="import, export, customs clearance, international shipping, commercial agencies, Egypt, UAE" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        :root{
-            --blue-1:#1976d2;
-            --blue-2:#0d47a1;
-            --accent:#bbdefb;
-            --accent-2:#90caf9;
-            --bg:#f7f8fb;
-            --card:#ffffff;
-            --muted:#6b7480;
-            --radius:14px;
-            --maxw:1200px;
+        /* =================================================================
+           1. MODERN RESET & ROOT VARIABLES
+           ================================================================= */
+        :root {
+            --primary-color: #0d47a1; --primary-color-light: #1976d2;
+            --accent-color: #e3f2fd; --accent-color-dark: #bbdefb;
+            --background-color: #f8f9fa; --surface-color: #ffffff;
+            --text-color: #212529; --muted-text-color: #6c757d; --heading-color: #0d47a1;
+            --shadow-color-light: rgba(13, 71, 161, 0.07); --shadow-color-heavy: rgba(13, 71, 161, 0.1);
+            --border-color: #dee2e6; --radius-md: 12px; --radius-lg: 16px;
+            --maxw: 1200px; --transition-speed: 0.3s;
         }
 
-        /* Reset & base */
-        *{box-sizing:border-box;margin:0;padding:0}
-        html,body{height:100%}
-        body{
-            font-family:"Cairo",sans-serif;
-            color:#1f2937; /* Color changed to a darker tone */
-            background:var(--bg);
-            -webkit-font-smoothing:antialiased;
-            -moz-osx-font-smoothing:grayscale;
-            line-height:1.6;
-            -webkit-text-size-adjust:100%;
-        }
-        h1,h2,h3{font-family:"Playfair Display",serif;color:var(--blue-2);margin-bottom:.6rem}
-        p{color:#344054; /* Color changed to a darker tone */}
-        a{color:inherit;text-decoration:none}
-        img{max-width:100%;display:block}
-        .container{width:90%;max-width:var(--maxw);margin:0 auto; padding-top:40px; padding-bottom:40px;}
-
-        /* Header */
-        .site-header{
-            position:sticky;top:0;z-index:60;
-            background:linear-gradient(90deg,var(--blue-1),var(--blue-2));
-            box-shadow:0 6px 18px rgba(13,71,161,0.12);
-            padding:.8rem 0;
-            transition:padding .25s,backdrop-filter .25s;
-        }
-        .site-header.shrink{padding:.4rem 0;backdrop-filter: blur(4px)}
-        .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-        .brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700}
-        .brand img{height:44px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,0.15)}
-        .nav-right{display:flex;align-items:center;gap:12px}
-        .main-nav{list-style:none;display:flex;gap:18px}
-        .main-nav a{color:#fff;font-weight:600;padding:8px 10px;border-radius:8px;transition:background .18s}
-        .main-nav a:hover{background:rgba(255,255,255,0.07)}
-        .cta-call{background:var(--accent);color:var(--blue-2);font-weight:700;padding:9px 14px;border-radius:8px}
-        .lang{color:#fff;border:1px solid rgba(255,255,255,0.16);padding:7px 10px;border-radius:8px;display:flex;gap:8px;align-items:center}
-        .hamburger{display:none;font-size:1.45rem;color:#fff;background:transparent;border:none}
-
-        /* Hero */
-        .hero{
-            padding:56px 0;
-            min-height:70vh;
-            display:grid;
-            grid-template-columns:1fr 520px;
-            gap:36px;
-            align-items:center;
-        }
-        .hero-left{padding-right:8px}
-        .kicker{display:inline-block;background:rgba(25,118,210,0.1);color:var(--blue-2);padding:8px 12px;border-radius:999px;font-weight:700;margin-bottom:18px} /* Color change for visibility */
-        .hero h1{font-size:44px;line-height:1.03}
-        .hero p.lead{font-size:18px;color:#4B5563;max-width:68%} /* Color changed to a darker tone */
-        .hero-ctas{margin-top:26px;display:flex;gap:14px;align-items:center}
-        .btn-primary{background:var(--accent);color:var(--blue-2);padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:0 8px 20px rgba(25,118,210,0.08);transition:transform .14s,box-shadow .14s}
-        .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(13,71,161,0.12)}
-        .btn-ghost{padding:10px 16px;border-radius:10px;border:1px solid rgba(13,71,161,0.08);background:transparent;color:var(--blue-2);font-weight:600}
-
-        /* Hero Right card (image + info) */
-        .hero-card{
-            background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.6));
-            border-radius:18px;padding:12px;box-shadow:0 10px 30px rgba(3,24,66,0.08);
-            backdrop-filter: blur(4px);overflow:hidden;
-        }
-        .hero-visual{display:flex;gap:12px;align-items:center}
-        .hero-visual .img-wrap{flex:1;border-radius:12px;overflow:hidden;min-height:320px}
-        .hero-visual .img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-        .hero-visual .meta{width:220px;padding:12px;display:flex;flex-direction:column;gap:10px}
-        .meta .m-title{font-weight:700;color:var(--blue-2);font-size:1rem}
-        .meta .m-sub{color:var(--muted);font-size:.95rem}
-        .meta .m-cta{margin-top:auto;background:var(--blue-2);color:#fff;padding:9px;border-radius:8px;text-align:center;font-weight:700}
-
-        /* Cards section (services) */
-        .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:18px}
-        .card{
-            background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 26px rgba(13,71,161,0.05);transition:transform .2s,box-shadow .2s;
-            display:flex;flex-direction:column;gap:14px;min-height:220px;
-        }
-        .card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(13,71,161,0.08)}
-        .card .card-img{height:88px;width:88px;border-radius:10px;overflow:hidden}
-        .card .card-img img{width:100%;height:100%;object-fit:cover}
-        .card h3{margin-top:6px;font-size:1.08rem}
-        .card p{color:var(--muted);font-size:.96rem}
-
-        /* Process / How we work */
-        .process{display:flex;gap:18px;flex-wrap:wrap;justify-content:space-between}
-        .step{flex:1;min-width:200px;background:linear-gradient(180deg,#fff, #fbfdff);padding:16px;border-radius:12px;box-shadow:0 8px 20px rgba(3,24,66,0.04)}
-        .step .num{background:var(--accent);color:var(--blue-2);width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:12px}
-
-        /* Our Team Section */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 24px;
-        }
-        .team-member-card {
-            background: var(--card);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 26px rgba(13,71,161,0.05);
-            text-align: center;
-            transition: transform .2s, box-shadow .2s;
-        }
-        .team-member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(13,71,161,0.08);
-        }
-        .team-member-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 12px;
-        }
-        .team-member-card h4 {
-            font-family: "Playfair Display", serif;
-            color: var(--blue-2);
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-        .team-member-card p {
-            color: var(--muted);
-            font-size: .95rem;
-            margin-bottom: 12px;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-        .social-links a {
-            color: var(--blue-2);
-            font-size: 1.2rem;
-            transition: color .2s;
-        }
-        .social-links a:hover {
-            color: var(--blue-1);
+        [data-theme="dark"] {
+            --primary-color: #90caf9; --primary-color-light: #bbdefb;
+            --accent-color: #1e293b; --accent-color-dark: #334155;
+            --background-color: #0f172a; --surface-color: #1e293b;
+            --text-color: #e2e8f0; --muted-text-color: #94a3b8; --heading-color: #f8f9fa;
+            --shadow-color-light: rgba(0, 0, 0, 0.15); --shadow-color-heavy: rgba(0, 0, 0, 0.25);
+            --border-color: #334155;
         }
 
-        /* Partners strip */
-        .partners{margin:24px 0;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(25,118,210,0.06), rgba(13,71,161,0.03));overflow:hidden}
-        .partners-track{display:flex;gap:18px;align-items:center;overflow:auto;padding:10px 4px;scroll-snap-type:x mandatory}
-        .partner{min-width:140px;flex:0 0 140px;height:72px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:8px;box-shadow:0 6px 18px rgba(3,24,66,0.05);scroll-snap-align:center;filter:grayscale(20%);transition:filter .16s,transform .16s}
-        .partner:hover{filter:none;transform:translateY(-6px)}
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: "Tajawal", sans-serif; color: var(--text-color); background-color: var(--background-color); -webkit-font-smoothing: antialiased; line-height: 1.7; transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease; }
+        body.no-scroll { overflow: hidden; }
+        h1, h2, h3, h4 { color: var(--heading-color); margin-bottom: 0.8rem; font-weight: 700; }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; max-width: 600px; margin: 0 auto 50px; color: var(--muted-text-color); font-size: 1.05rem; }
+        a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+        .container { width: 90%; max-width: var(--maxw); margin: 0 auto; padding: 80px 0; }
+        .animated-item { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; transition-delay: var(--delay, 0s); }
+        .animated-item.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* Testimonials */
-        .testimonials{display:grid;grid-template-columns:1fr;gap:14px}
-        .test-wrap{position:relative;overflow:hidden;border-radius:12px}
-        .test-cards{display:flex;transition:transform .45s;gap:18px}
-        .test{min-width:320px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 10px 28px rgba(3,24,66,0.06)}
-        .test p{font-style:italic;color:var(--muted)}
-        .test h4{margin-top:12px;color:var(--blue-2)}
-        .test-controls{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin-top:12px}
-        .icon-btn{background:transparent;border:1px solid rgba(13,71,161,0.08);padding:8px;border-radius:8px;cursor:pointer}
-
-        /* Footer */
-        footer{
-            margin-top:38px;
-            padding:40px 0;
-            background:linear-gradient(90deg,var(--blue-2),var(--blue-1));
-            color:#fff;
-            border-radius:18px 18px 0 0;
-        }
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-        .footer h4{color:var(--accent);margin-bottom:10px}
-        .footer p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
-        .footer a{color:#e8f4ff; transition: color .2s;}
-        .footer a:hover { color: var(--accent); }
-        .footer p.small { color: rgba(255,255,255,0.8); font-size: 0.9rem;}
-        .footer-grid p {display: flex; align-items: center; gap: 8px;}
-        .footer-grid p i { min-width: 1.2rem; }
-        .footer-grid p a i { min-width: 0; }
-        .footer .container {
-            padding-top: 40px;
-            padding-bottom: 20px;
-        }
+        /* =================================================================
+           2. MODALS (AUTH & SETTINGS)
+           ================================================================= */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease; }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-content { background-color: var(--surface-color); padding: 30px 35px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); width: 90%; transform: scale(0.95); transition: transform var(--transition-speed) ease; position: relative; }
+        .modal-overlay.visible .modal-content { transform: scale(1); }
+        .modal-content .close-btn { position: absolute; top: 15px; right: 15px; /* RTL change: left -> right */ background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted-text-color); }
+        .modal-content h3 { text-align: center; font-size: 1.8rem; margin-bottom: 10px; }
+        .modal-content p { text-align: center; margin-bottom: 25px; }
+        .auth-modal { max-width: 420px; }
+        .form-group { margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 12px 15px; border: 1px solid var(--border-color); border-radius: var(--radius-md); background-color: var(--background-color); color: var(--text-color); font-family: inherit; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+        .form-input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--accent-color); }
+        .form-btn { width: 100%; padding: 14px; background-color: var(--primary-color); border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 700; cursor: pointer; color: #fff; transition: background-color 0.2s, transform 0.2s; }
+        [data-theme="dark"] .form-btn { color: var(--background-color); }
+        .form-btn:hover { background-color: var(--primary-color-light); transform: translateY(-2px); }
+        .form-footer-text { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+        .form-footer-text .switcher-link { font-weight: 700; color: var(--primary-color); cursor: pointer; }
+        .form-options { display: flex; justify-content: flex-end; /* RTL change: flex-start -> flex-end */ font-size: 0.85rem; margin-top: -10px; margin-bottom: 20px; }
+        .hidden { display: none; }
+        .settings-modal { max-width: 500px; }
+        .theme-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+        .theme-option { border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center; cursor: pointer; position: relative; transition: all 0.2s ease; }
+        .theme-option:hover { border-color: var(--primary-color); transform: translateY(-3px); }
+        .theme-option.selected { border-color: var(--primary-color); background-color: var(--accent-color); }
+        .theme-option .fa-check-circle { position: absolute; top: 8px; left: 8px; /* RTL change: right -> left */ font-size: 1rem; color: var(--primary-color); opacity: 0; transform: scale(0.5); transition: all 0.2s; }
+        .theme-option.selected .fa-check-circle { opacity: 1; transform: scale(1); }
+        .theme-option i:not(.fa-check-circle) { font-size: 2rem; margin-bottom: 10px; color: var(--primary-color); }
+        .theme-option span { font-weight: 500; font-size: 0.9rem; display: block; }
         
-        /* Back to top */
-        .to-top{position:fixed;right:18px;bottom:18px;background:var(--blue-2);color:#fff;padding:10px 12px;border-radius:12px;box-shadow:0 8px 22px rgba(3,24,66,0.16);display:none;z-index:80}
+        /* =================================================================
+           3. HEADER & NAVIGATION
+           ================================================================= */
+        .site-header { position: sticky; top: 0; z-index: 100; background: transparent; padding: 1rem 0; transition: all 0.25s; }
+        .site-header.scrolled { padding: 0.5rem 0; background-color: rgba(248, 249, 250, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); border-bottom: 1px solid var(--border-color); }
+        [data-theme="dark"] .site-header.scrolled { background-color: rgba(15, 23, 42, 0.85); }
+        .nav { display: flex; align-items: center; justify-content: space-between; }
+        .brand { display:flex; align-items:center; gap:12px; }
+        .logo-symbol { font-size: 1.8rem; color: var(--primary-color); background-color: var(--accent-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform var(--transition-speed) ease; }
+        .brand:hover .logo-symbol { transform: rotate(360deg); }
+        .nav-center { display: flex; align-items: center; gap: 25px; }
+        .main-nav { list-style: none; display: flex; gap: 20px; }
+        .main-nav a { font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.2s; }
+        .main-nav a:hover { color: var(--primary-color); background-color: var(--accent-color); }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .btn { padding: 12px 24px; border-radius: var(--radius-md); font-weight: 700; border: 2px solid transparent; transition: all 0.2s ease; display: inline-block; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--shadow-color-heavy); }
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+        [data-theme="dark"] .btn-primary { color: var(--background-color); }
+        .btn-ghost { background-color: transparent; border-color: var(--border-color); color: var(--primary-color); padding: 10px 20px; }
+        .btn-ghost:hover { background-color: var(--accent-color); }
+        .hamburger { display: none; font-size: 1.5rem; background: transparent; border: none; cursor: pointer; z-index: 110; }
+        .mobile-nav { position: fixed; top: 0; left: -100%; /* RTL change: right -> left */ width: 300px; height: 100%; background-color: var(--surface-color); z-index: 105; padding: 100px 30px 30px; box-shadow: 10px 0 30px rgba(0,0,0,0.1); /* RTL change: -10px -> 10px */ transition: left var(--transition-speed) ease-in-out; /* RTL change: right -> left */ }
+        .mobile-nav.is-open { left: 0; /* RTL change: right -> left */ }
+        .main-nav-mobile { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .main-nav-mobile a { font-size: 1.2rem; font-weight: 700; }
+        .mobile-nav-auth { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+        .mobile-nav-auth a { display: block; text-align: center; margin-bottom: 15px; }
 
-        /* Responsive */
-        @media(max-width:1100px){
-            .hero{grid-template-columns:1fr 420px}
-            .hero p.lead{max-width:100%}
+        /* =================================================================
+           4. VISUALLY ENHANCED SECTIONS
+           ================================================================= */
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; min-height: 80vh; }
+        .kicker { display: inline-block; background: var(--accent-color); color: var(--primary-color); padding: 8px 16px; border-radius: 999px; font-weight: 700; margin-bottom: 20px; }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.2rem); line-height: 1.2; font-weight: 800; }
+        h1 span { color: var(--primary-color); }
+        p.lead { font-size: 1.1rem; max-width: 85%; margin-bottom: 30px; }
+        .hero-ctas { margin-top: 26px; display: flex; gap: 14px; align-items: center; }
+        .hero-video { position: relative; height: 100%; min-height: 300px; width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); overflow: hidden; background-color: #000; }
+        .hero-video video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; object-fit: cover; }
+        
+        #services { background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { background: var(--surface-color); padding: 30px 25px; border-radius: var(--radius-lg); box-shadow: 0 8px 26px var(--shadow-color-light); border: 1px solid var(--border-color); text-align: center; transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-12px); box-shadow: 0 20px 45px var(--shadow-color-heavy); }
+        .service-card .icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; line-height: 1; }
+        .service-card h3 { font-size: 1.25rem; }
+        
+        .features-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
+        .feature-item { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 25px; }
+        .feature-item .icon { font-size: 1.5rem; color: var(--primary-color); background-color: var(--accent-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .feature-item h4 { margin-bottom: 5px; color: var(--heading-color); }
+        .feature-image { border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); overflow: hidden; transition: box-shadow var(--transition-speed) ease; }
+        .feature-image:hover { box-shadow: 0 25px 50px var(--shadow-color-heavy); }
+        .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-speed) ease; }
+        .feature-image:hover img { transform: scale(1.05); }
+        
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .step { text-align: center; padding: 20px; }
+        .step-number { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); background-color: var(--accent-color); border: 2px solid var(--border-color); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        
+        .stats-section { position: relative; overflow: hidden; }
+        .stats-video-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; object-fit: cover; }
+        .stats-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(13, 71, 161, 0.8); z-index: 1; }
+        [data-theme="dark"] .stats-section::before { background-color: rgba(15, 23, 42, 0.8); }
+        .stats-section .container { position: relative; z-index: 2; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .stat-item .stat-number, .stat-item .stat-label { color: #fff; }
+        .stat-item .stat-number { font-size: 3rem; font-weight: 800; }
+        
+        .testimonials-container { position: relative; }
+        .test-wrap { overflow: hidden; border-radius:var(--radius-lg); }
+        .test-cards { display: flex; transition:transform .45s ease-in-out; gap: 20px; }
+        .test { min-width: 100%; flex-shrink: 0; background: var(--surface-color); padding: 35px; border-radius: var(--radius-lg); box-shadow: 0 10px 28px var(--shadow-color-light); border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; }
+        .test-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid var(--accent-color-dark); }
+        .test p { font-style: italic; color: var(--text-color); font-size: 1.1rem; text-align: center; }
+        .test h4 { margin-top: 15px; color: var(--primary-color); font-weight: 700; text-align: center; }
+        
+        .cta-section { background: var(--primary-color); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; color: #fff; }
+        .cta-section h2, .cta-section p { color: #fff; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn-cta { background-color: #fff; color: var(--primary-color); }
+        .partners-track { display: flex; gap: 24px; align-items: center; overflow-x: auto; padding: 10px 4px; scrollbar-width: none; }
+        .partners-track::-webkit-scrollbar { display: none; }
+        .partner { min-width: 140px; flex: 0 0 140px; height: 80px; background: var(--surface-color); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; padding: 8px; box-shadow: 0 6px 18px var(--shadow-color-light); border: 1px solid var(--border-color); filter: grayscale(100%); opacity: 0.7; transition: all .2s; }
+        .partner:hover { filter: none; transform: translateY(-6px); opacity: 1; }
+        .partner img { max-height: 50px; width: auto; object-fit: contain; }
+        .test-controls { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+        .icon-btn { background: var(--surface-color); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: var(--primary-color); transition: all 0.2s ease; }
+        .icon-btn:hover { background: var(--accent-color); border-color: var(--primary-color); }
+        .site-footer { padding: 70px 0 30px 0; background-color: var(--surface-color); border-top: 1px solid var(--border-color); }
+        [data-theme="dark"] .site-footer { background-color: #020617; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
+        .footer-column h4 { margin-bottom: 20px; font-size: 1.1rem; color: var(--heading-color); }
+        .footer-column ul { list-style: none; }
+        .footer-column li:not(:last-child) { margin-bottom: 10px; }
+        .footer-column a:hover { color: var(--primary-color); }
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { font-size: 1.3rem; }
+        .social-links a:hover { color: var(--primary-color); transform: scale(1.1); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+        .floating-btn { position: fixed; bottom: -100px; background-color: var(--primary-color); color: #fff; width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 8px 22px var(--shadow-color-heavy); display: flex; align-items: center; justify-content: center; z-index: 80; border: none; cursor: pointer; transition: bottom 0.3s, transform 0.3s; }
+        [data-theme="dark"] .floating-btn { color: var(--background-color); }
+        .floating-btn.is-visible { bottom: 20px; }
+        .floating-btn:hover { transform: scale(1.1); }
+        .to-top { right: 20px; }
+        .settings-fab { left: 20px; }
+
+        /* =================================================================
+           6. RESPONSIVE DESIGN
+           ================================================================= */
+        @media(max-width:1024px){
+            .nav-center, .nav-right a { display: none; }
+            .hamburger { display: block; }
+            .hero { grid-template-columns:1fr; text-align: center; padding-top: 40px; }
+            .hero-ctas { justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .features-grid .feature-image { order: -1; margin-bottom: 40px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
         }
-        @media(max-width:880px){
-            .hero{grid-template-columns:1fr;min-height:78vh;padding:40px 0}
-            .hero-visual{flex-direction:column}
-            .hero-left{text-align:center}
-            .hero p.lead{margin:10px auto 0}
-            .hero-visual .meta{width:100%}
-            .main-nav{display:none}
-            .hamburger{display:block}
-            .footer-grid {text-align: center;}
-            .footer-grid > div { margin-bottom: 20px; }
-            .social-links { justify-content: center; }
+        @media (max-width: 768px) {
+            .container { padding: 60px 0; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-column .social-links { justify-content: center; }
+            .footer-bottom { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
-
 <body>
+    <div class="modal-overlay" id="auth-modal-overlay">
+        <div class="modal-content auth-modal">
+            <button class="close-btn" id="auth-close-btn" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div id="login-form">
+                <h3>Log In</h3><p>Welcome back! Log in to continue.</p>
+                <form onsubmit="event.preventDefault();"><div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required></div><div class="form-group"><input type="password" class="form-input" placeholder="Password" required></div><div class="form-options"><a href="#" class="switcher-link" style="font-size: inherit;">Forgot Password?</a></div><button type="submit" class="form-btn">Log In</button></form>
+                <p class="form-footer-text">Don't have an account? <a class="switcher-link" id="show-signup">Sign Up Now</a></p>
+            </div>
+            <div id="signup-form" class="hidden">
+                <h3>Create a New Account</h3><p>Join us now to facilitate your international trade.</p>
+                <form onsubmit="event.preventDefault();"><div class="form-group"><input type="text" class="form-input" placeholder="Full Name" required></div><div class="form-group"><input type="email" class="form-input" placeholder="Email Address" required></div><div class="form-group"><input type="password" class="form-input" placeholder="Password" required></div><div class="form-group"><input type="password" class="form-input" placeholder="Confirm Password" required></div><button type="submit" class="form-btn">Create Account</button></form>
+                <p class="form-footer-text">Already have an account? <a class="switcher-link" id="show-login">Log In</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-overlay" id="settings-modal-overlay">
+        <div class="modal-content settings-modal">
+            <button class="close-btn" id="settings-close-btn" aria-label="Close"><i class="fas fa-times"></i></button>
+            <h3>Customize Browsing Experience</h3><p>Choose your preferred theme. Your selection will be saved for future visits.</p>
+            <div class="theme-options"><div class="theme-option" data-theme="light"><i class="fas fa-check-circle"></i><i class="fas fa-sun"></i><span>Light</span></div><div class="theme-option" data-theme="dark"><i class="fas fa-check-circle"></i><i class="fas fa-moon"></i><span>Dark</span></div><div class="theme-option" data-theme="auto"><i class="fas fa-check-circle"></i><i class="fas fa-desktop"></i><span>Auto</span></div></div>
+            <button class="form-btn" id="save-settings-btn">Save and Continue</button>
+        </div>
+    </div>
+
     <header class="site-header" id="site-header" role="banner">
         <div class="container nav">
-            <div class="brand" aria-label="Al Masriya Al Emaratia brand">
-                <a href="index.html" style="display:flex;align-items:center;gap:10px;color:inherit">
-                    <img src="https://i.postimg.cc/0Nbxt9wy/IMG-20241008-WA0000.jpg" alt="Al Masriya Al Emaratia logo">
-                    <span style="color:#fff;font-weight:700">Al Masriya Al Emaratia</span>
-                </a>
+            <a href="#home" class="brand" aria-label="Al Masriya Al Emaratia brand"><div class="logo-symbol"><i class="fas fa-globe-americas"></i></div><span style="font-weight:700;font-size:1.1rem;">Al Masriya Al Emaratia</span></a>
+            <div class="nav-center">
+                <nav class="main-nav" aria-label="Main navigation"><ul class="main-nav" role="menubar"><li role="none"><a role="menuitem" href="#home">Home</a></li><li role="none"><a role="menuitem" href="#services">Our Services</a></li><li role="none"><a role="menuitem" href="#why-us">Why Us?</a></li><li role="none"><a role="menuitem" href="#contact">Contact Us</a></li></ul></nav>
             </div>
-
-            <nav aria-label="Main navigation" style="display:flex;align-items:center;gap:14px">
-                <ul class="main-nav" role="menubar">
-                    <li role="none"><a role="menuitem" href="index.html">Home</a></li>
-                    <li role="none"><a role="menuitem" href="about.html">About</a></li>
-                    <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-                    <li role="none"><a role="menuitem" href="faqs.html">FAQs</a></li>
-                    <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
-                </ul>
-
-                <div class="nav-right">
-                    <a class="lang" href="home-ar.html" aria-label="Arabic version"><i class="fas fa-globe"></i> العربية</a>
-                    <a class="cta-call" href="tel:+201011766232" aria-label="Call us">Call +20 101 176 6232</a>
-                    <button class="hamburger" id="menuBtn" aria-expanded="false" aria-label="Open menu">☰</button>
-                </div>
-            </nav>
+            <div class="nav-right">
+                <a href="#" class="open-auth-modal" style="font-weight: 500;">Log In</a>
+                <a href="#" class="btn btn-primary open-auth-modal-signup" style="padding: 10px 20px;">Sign Up</a>
+                <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </header>
+    
+    <div class="mobile-nav" id="mobile-nav">
+        <nav>
+            <ul class="main-nav-mobile"><li><a href="#home">Home</a></li><li><a href="#services">Our Services</a></li><li><a href="#why-us">Why Us?</a></li><li><a href="#contact">Contact Us</a></li></ul>
+            <div class="mobile-nav-auth"><a href="#" class="btn btn-primary open-auth-modal-signup" style="width: 100%;">Sign Up</a><a href="#" class="open-auth-modal" style="font-weight: 700;">Log In</a></div>
+        </nav>
+    </div>
 
     <main>
         <section id="home" class="container hero" aria-labelledby="hero-heading">
             <div class="hero-left">
-                <span class="kicker">Trusted since 2010</span>
-                <h1 id="hero-heading">Global trade solutions from <span style="color:var(--accent)">Egypt & UAE</span> to the world</h1>
-                <p class="lead">We manage import & export operations end-to-end — logistics, customs clearance, commercial representation and market-entry strategies that connect your products with global buyers.</p>
-
-                <div class="hero-ctas">
-                    <a href="#services" class="btn-primary" aria-label="Discover services">Discover our services</a>
-                    <a href="contact.html" class="btn-ghost" aria-label="Request a quote">Request a quote</a>
-                </div>
-
-                <div class="cards" style="margin-top:28px">
-                    <div class="card" aria-hidden="false">
-                        <div style="display:flex;gap:12px;align-items:center">
-                            <div class="card-img"><img src="https://png.pngtree.com/thumb_back/fh260/background/20250829/pngtree-express-delivery-truck-supply-container-terminal-image_18552291.webp" alt="fast logistics"></div>
-                            <div>
-                                <h3>Reliable Logistics</h3>
-                                <p>Flexible shipping options across major routes & partners.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div style="display:flex;gap:12px;align-items:center">
-                            <div class="card-img"><img src="https://images.pexels.com/photos/8463138/pexels-photo-8463138.jpeg" alt="market analysis"></div>
-                            <div>
-                                <h3>Market Access</h3>
-                                <p>Local representation & market-entry strategies in MENA.</p>
-                            </div>
-                        </div>
-                    </div>
+                <span class="kicker animated-item" style="--delay: 0.1s;">Your Gateway to Global Trade</span>
+                <h1 id="hero-heading" class="animated-item" style="--delay: 0.2s;">An Integrated Platform Connecting <span>Egypt and the UAE</span> to the World</h1>
+                <p class="lead animated-item" style="--delay: 0.3s;">We provide comprehensive import and export solutions, managing door-to-door supply chains efficiently and reliably.</p>
+                <div class="hero-ctas animated-item" style="--delay: 0.4s;">
+                    <a href="#services" class="btn btn-primary">Discover Our Services</a>
+                    <a href="#contact" class="btn btn-ghost">Request a Quote</a>
                 </div>
             </div>
-
-            <div class="hero-card" aria-hidden="false">
-                <div class="hero-visual">
-                    <div class="img-wrap" aria-hidden="true">
-                         <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-      <source src="https://www.pexels.com/download/video/6170599/" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-                    </div>
-                    <div class="meta">
-                        <div class="m-title">Door-to-door solutions</div>
-                        <div class="m-sub">Customs — Documentation — Warehousing — Local distribution</div>
-                       <div class="m-cta">
-                          <a href="#shipment"  aria-label="Start a shipment">Start a shipment</a>
-                         </div>
-                        <div style="font-size:.86rem;color:var(--muted);margin-top:8px">Trusted partners in freight & customs across Egypt & UAE</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="container" aria-labelledby="about-heading">
-            <h2 id="about-heading">About Al Masriya Al Emaratia</h2>
-            <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
-                <div style="flex:1;min-width:280px">
-                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200" alt="Global trade network" style="border-radius:12px;box-shadow:0 10px 28px rgba(3,24,66,0.06)">
-                </div>
-                <div style="flex:1.2;min-width:300px">
-                    <p style="margin-bottom:12px">Since 2010, we have bridged manufacturers, traders and commercial agents between Egypt and international markets. Our strength is in local expertise, global partnerships and an operations-first approach that minimizes delays and maximizes value.</p>
-                    <p style="color:var(--muted)">We support clients with consultancy, on-the-ground representation, logistics coordination and market research — tailoring solutions for each product and market segment.</p>
-                </div>
+            <div class="hero-video animated-item" style="--delay: 0.5s;">
+                <video autoplay muted loop playsinline poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <source src="https://cdn.pixabay.com/video/2024/05/18/212404_tiny.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </section>
 
         <section id="services" class="container" aria-labelledby="services-heading">
-            <h2 id="services-heading">Our Core Services</h2>
-            <div class="cards" role="list">
-                <article class="card" role="listitem" aria-label="Import and Export management">
-                    <div class="card-img"><img src="https://images.pexels.com/photos/262353/pexels-photo-262353.jpeg" alt=""></div>
-                    <h3>Import & Export Management</h3>
-                    <p>Complete operations: documentation, customs clearance, insurance and door delivery.</p>
-                </article>
-
-                <article class="card" role="listitem" aria-label="Commercial agency representation">
-                    <div class="card-img"><img src="https://sat-eg.net/wp-content/uploads/2023/11/Strategic-Partnerships.jpg" alt=""></div>
-                    <h3>Commercial Agency Representation</h3>
-                    <p>We represent brands in local markets, create distribution channels and manage negotiations.</p>
-                </article>
-
-                <article class="card" role="listitem" aria-label="Market analysis">
-                    <div class="card-img"><img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt=""></div>
-                    <h3>Market Research & Analysis</h3>
-                    <p>Data-driven market entry strategies, competitor mapping and pricing guidance.</p>
-                </article>
-
-                <article class="card" role="listitem" aria-label="Supply chain solutions">
-                    <div class="card-img"><img src="https://images.pexels.com/photos/4481528/pexels-photo-4481528.jpeg" alt=""></div>
-                    <h3>Supply Chain Optimization</h3>
-                    <p>Warehouse, distribution and inventory strategies that reduce lead-times and costs.</p>
-                </article>
-            </div>
-
-            <div style="margin-top:28px">
-                <h3 style="margin-bottom:14px">How we work — simple & transparent</h3>
-                <div class="process">
-                    <div class="step">
-                        <div class="num">01</div>
-                        <strong>Consult</strong>
-                        <p style="color:var(--muted);margin-top:8px">Understand product, volumes and target markets.</p>
-                    </div>
-                    <div class="step">
-                        <div class="num">02</div>
-                        <strong>Plan</strong>
-                        <p style="color:var(--muted);margin-top:8px">Create logistics & market-entry plan with timelines.</p>
-                    </div>
-                    <div class="step">
-                        <div class="num">03</div>
-                        <strong>Execute</strong>
-                        <p style="color:var(--muted);margin-top:8px">Handle shipment, customs and delivery execution.</p>
-                    </div>
-                    <div class="step">
-                        <div class="num">04</div>
-                        <strong>Support</strong>
-                        <p style="color:var(--muted);margin-top:8px">Ongoing local support & reporting.</p>
-                    </div>
-                </div>
-            </div>
+            <h2 id="services-heading" class="animated-item" style="--delay: 0s;">Our Platform... Integrated Services Under One Roof</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">We offer a comprehensive suite of services designed to facilitate international trade and meet all your business requirements.</p>
+            <div class="services-grid"><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-globe-americas"></i></div><h3>Import and Export Management</h3><p>Full management of shipping operations from the source to the final destination, ensuring compliance with all international regulations.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-dolly"></i></div><h3>Logistics and Supply Chain Solutions</h3><p>Planning and implementing customized logistics solutions including land, sea, and air transport, warehousing, and inventory management.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-file-invoice"></i></div><h3>Customs Clearance and Compliance</h3><p>A team of experts to ensure fast and efficient customs clearance, avoiding any unexpected delays or costs.</p></div><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-handshake"></i></div><h3>Commercial Agencies and Representation</h3><p>We act as a reliable agent and representative for your company in the Egyptian and UAE markets, opening new doors for growth.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-search-dollar"></i></div><h3>Sourcing and Procurement</h3><p>We help you find the best suppliers and products from around the world at competitive prices and high quality.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>International Trade Consulting</h3><p>We provide specialized consultations to help you understand markets and make informed decisions for success.</p></div></div>
         </section>
 
-        <section id="team" class="container" aria-labelledby="team-heading">
-            <h2 id="team-heading">Meet Our Team</h2>
-            <div class="team-grid">
-                <div class="team-member-card">
-                    <img src="https://i.postimg.cc/nr9mMKCv/Mr-Ismail-El-Menshawy.jpg" alt="Ismail El-Menshawy, Founder & CEO">
-                    <h4>Mr. Ismail El-Menshawy</h4>
-                    <p>Founder & CEO</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="team-member-card">
-                    <img src="https://i.postimg.cc/zBLxPG5p/Eng-Ahmed-Badrawi.jpg" alt="Ahmed Badrawi, Head of Logistics">
-                    <h4>Ahmed Badrawi</h4>
-                    <p>- - - </p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="team-member-card">
-                    <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="Fatma Hussein, Commercial Agent">
-                    <h4>Nada El-Sayed</h4>
-                    <p>Business Development Manager</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
+        <section id="why-us" class="container" aria-labelledby="why-us-heading">
+            <div class="features-grid"><div class="features-list"><h2 id="why-us-heading" class="animated-item" style="--delay: 0s; text-align: left;">Your Strategic Partner for Global Success</h2><p class="section-subtitle animated-item" style="--delay: 0.1s; text-align: left; margin-right: auto; margin-left: 0;">We don't just provide services; we build long-term partnerships based on trust, transparency, and tangible results.</p><div class="feature-item animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-map-marked-alt"></i></div><div><h4>Deep Market Expertise</h4><p>Accurate understanding of the business environment and regulations in both Egypt and the UAE ensures the smooth running of your commercial operations.</p></div></div><div class="feature-item animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-network-wired"></i></div><div><h4>Wide Global Network</h4><p>Strong relationships with shipping partners, suppliers, and regulatory bodies all around the world.</p></div></div><div class="feature-item animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-cogs"></i></div><div><h4>Comprehensive and Integrated Solutions</h4><p>We handle all aspects of international trade, allowing you to focus on the growth of your core business.</p></div></div></div><div class="feature-image animated-item" style="--delay: 0.3s;"><img src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Team collaborating in a modern office" loading="lazy"></div></div>
+        </section>
+
+        <section id="process" class="container" aria-labelledby="process-heading">
+            <h2 id="process-heading" class="animated-item" style="--delay: 0s;">A Simple and Effective Workflow</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">We follow a systematic process that guarantees transparency and efficiency at every stage of your shipment's journey.</p>
+            <div class="process-steps"><div class="step animated-item" style="--delay: 0.2s;"><div class="step-number">01</div><h4>Consultation and Planning</h4><p>We understand your needs and develop a customized plan that meets your goals and budget.</p></div><div class="step animated-item" style="--delay: 0.3s;"><div class="step-number">02</div><h4>Execution and Follow-up</h4><p>We begin executing the plan while keeping you constantly updated on all developments.</p></div><div class="step animated-item" style="--delay: 0.4s;"><div class="step-number">03</div><h4>Clearance and Shipping</h4><p>We handle all customs and logistics procedures to ensure a smooth arrival.</p></div><div class="step animated-item" style="--delay: 0.5s;"><div class="step-number">04</div><h4>Delivery and Evaluation</h4><p>We deliver your shipment to the specified location and ensure your complete satisfaction with the service.</p></div></div>
+        </section>
+        
+        <section id="stats" class="stats-section" aria-label="Company Statistics">
+            <video autoplay loop muted playsinline class="stats-video-bg">
+                <source src="https://cdn.pixabay.com/video/2025/05/01/276047_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="container"><div class="stats-grid"><div class="stat-item animated-item" style="--delay: 0.1s;"><span class="stat-number" data-target="15">+15</span><span class="stat-label">Years of Experience</span></div><div class="stat-item animated-item" style="--delay: 0.2s;"><span class="stat-number" data-target="5000">+5,000</span><span class="stat-label">Completed Shipments</span></div><div class="stat-item animated-item" style="--delay: 0.3s;"><span class="stat-number" data-target="40">+40</span><span class="stat-label">Countries Worldwide</span></div><div class="stat-item animated-item" style="--delay: 0.4s;"><span class="stat-number" data-target="99">99%</span><span class="stat-label">Customer Satisfaction</span></div></div></div>
         </section>
 
         <section id="partners" class="container" aria-labelledby="partners-heading">
-            <h2 id="partners-heading">Our Strategic Partners</h2>
-            <div class="partners" role="region" aria-label="Logos of partners">
-                <div class="partners-track" id="partners-track">
-                    <div class="partner"><img src="https://images.seeklogo.com/logo-png/4/2/dhl-logo-png_seeklogo-40800.png" alt="Partner 1" style="height:48px;object-fit:contain"></div>
-                    <div class="partner"><img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=640" alt="Partner 2" style="height:48px;object-fit:contain"></div>
-                    <div class="partner"><img src="https://media.licdn.com/dms/image/v2/C560BAQEquMqKFr0hQg/company-logo_200_200/company-logo_200_200/0/1634020975871?e=1760572800&v=beta&t=6WzOpEqxeLUGJ5rfqGCkiCcsxpuflZKlWlqWfwTBhtw" alt="Partner 3" style="height:48px;object-fit:contain"></div>
-                    <div class="partner"><img src="https://scontent.fcai20-1.fna.fbcdn.net/v/t39.30808-6/441876110_890655903101261_7162093956853545573_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=e9n0nS9CRO8Q7kNvwHe-4NU&_nc_oc=AdkoLcglIz-E3NVsIpGBTuGArmC9BUsEsnolDI1BTqFUcmAtvnJka0ZGy88g6LTfNEI&_nc_zt=23&_nc_ht=scontent.fcai20-1.fna&_nc_gid=ipr3qzXIRvKijKesAnuA2g&oh=00_AfYCNjug14Vu7KFjzMBcMd9AnBruEpUB9hOTe5fiSHi6Eg&oe=68CB383E" alt="Partner 4" style="height:48px;object-fit:contain"></div>
-                    <div class="partner"><img src="https://yt3.googleusercontent.com/7qe0RVyD-YFIGwXwnijwD1o1NNfcz6MUJtmBM5CXBsACP5AKLd8-pQ6L_Ld8Xq-HlFTh7gm9aw=s900-c-k-c0x00ffffff-no-rj" alt="Partner 5" style="height:48px;object-fit:contain"></div>
-                </div>
-            </div>
+            <h2 id="partners-heading" class="animated-item" style="--delay: 0s;">Our Partners in Success</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">We work with a network of the best shipping and logistics companies to ensure world-class service.</p>
+            <div class="partners-track animated-item" style="--delay: 0.2s;" id="partners-track"><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Maersk_Group_logo.svg/1280px-Maersk_Group_logo.svg.png" alt="Maersk Logo"></div><div class="partner"><img src="https://images.seeklogo.com/logo-png/4/2/dhl-logo-png_seeklogo-40800.png" alt="DHL Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/FedEx_Express.svg/1200px-FedEx_Express.svg.png" alt="FedEx Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/DB_Schenker_logo.svg" alt="DB Schenker Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Aramex-logo.svg/1280px-Aramex-logo.svg.png" alt="Aramex Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MSC_Mediterranean_Shipping_Company_logo.svg/1280px-MSC_Mediterranean_Shipping_Company_logo.svg.png" alt="MSC Logo"></div></div>
         </section>
 
-        <section id="testimonials" class="container" aria-labelledby="testi-heading">
-            <h2 id="testi-heading">What Clients Say</h2>
-            <div class="testimonials">
+        <section id="testimonials" class="container" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading" class="animated-item" style="--delay: 0s;">What Our Clients Say</h2>
+            <p class="section-subtitle animated-item" style="--delay: 0.1s;">Real feedback from partners who trust our services for their international trade.</p>
+            <div class="testimonials-container animated-item" style="--delay: 0.2s;">
                 <div class="test-wrap">
                     <div class="test-cards" id="test-cards">
                         <div class="test">
-                            <p>"Professional, efficient and reliable — they helped us expand to GCC markets with zero headaches."</p>
-                            <h4>- International Retailer</h4>
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="Client Avatar" class="test-avatar">
+                            <p>"Al Masriya Al Emaratia streamlined our customs clearance process between Dubai and Cairo. Their team is professional and highly efficient."</p>
+                            <h4>Ahmed Hassan, CEO of Nile Trading</h4>
                         </div>
                         <div class="test">
-                            <p>"Clear communication and precise logistics. Our goods arrived on schedule and in excellent condition."</p>
-                            <h4>- Egyptian Manufacturer</h4>
+                            <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="Client Avatar" class="test-avatar">
+                            <p>"The best logistics company we've dealt with. They handled the entire supply chain from sourcing to delivery perfectly."</p>
+                            <h4>Fahad Al-Mansoori, Director of Emirates Imports</h4>
                         </div>
                         <div class="test">
-                            <p>"Excellent commercial representation — local contacts made the difference in distribution."</p>
-                            <h4>- Trading House</h4>
+                            <img src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="Client Avatar" class="test-avatar">
+                            <p>"We managed to enter the Egyptian market thanks to their commercial representation services. A truly strategic partner."</p>
+                            <h4>Sara Khan, Founder of Global Ventures</h4>
                         </div>
                     </div>
-
-                    <div class="test-controls" style="position:absolute;right:12px;bottom:12px">
-                        <button class="icon-btn" id="test-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                        <button class="icon-btn" id="test-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                    </div>
+                </div>
+                <div class="test-controls">
+                    <button class="icon-btn prev-test-btn" id="prev-test-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button class="icon-btn next-test-btn" id="next-test-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <section class="container" aria-labelledby="cta-heading" style="padding-top:18px">
-            <div style="background:linear-gradient(90deg,var(--blue-1),var(--blue-2));padding:22px;border-radius:14px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-                <div>
-                    <h3 id="cta-heading" style="color:#fff;margin-bottom:6px">Ready to move goods globally?</h3>
-                    <p class="small" style="color:rgba(255,255,255,0.92)">Contact our operations team for a tailored quote and timeline.</p>
-                </div>
-                <div style="display:flex;gap:12px">
-                    <a href="contact.html" class="btn-primary" style="background:#fff;color:var(--blue-2)">Get a quote</a>
-                    <a href="tel:+201011766232" class="btn-ghost" style="border-color:rgba(255,255,255,0.16);color:#fff">Call +20 101 176 6232</a>
-                </div>
+        <section id="cta" class="container">
+            <div class="cta-section animated-item" style="--delay: 0s;">
+                <h2 class="animated-item" style="--delay: 0.1s;">Ready to Simplify Your International Trade?</h2>
+                <p class="animated-item" style="--delay: 0.2s;">Join hundreds of companies that rely on our platform to seamlessly connect their business between Egypt, the UAE, and the rest of the world.</p>
+                <a href="#contact" class="btn btn-cta animated-item" style="--delay: 0.3s;">Start Now</a>
             </div>
         </section>
-
-        <footer id="contact" role="contentinfo" style="margin-top:28px;">
-            <div class="container footer">
-                <div class="footer-grid">
-                    <div>
-                        <h4>Al Masriya Al Emaratia</h4>
-                        <p class="small">Integrated solutions for international trade, import & export, and commercial agency representation between Egypt and UAE.</p>
-                    </div>
-
-                    <div>
-                        <h4>Quick Links</h4>
-                        <p><a href="#services">Services</a> · <a href="#team">Team</a> · <a href="#partners">Partners</a> · <a href="#testimonials">Testimonials</a></p>
-                    </div>
-
-                    <div>
-                        <h4>Contact</h4>
-                        <p class="small"><i class="fas fa-map-marker-alt"></i> 10th of Ramadan City, Sharqia, Egypt</p>
-                        <p class="small"><i class="fas fa-phone"></i> <a href="tel:+201011766232">+20 101 176 6232</a></p>
-                        <p class="small"><i class="fas fa-envelope"></i> <a href="mailto:info@egy-uae.com">info@egy-uae.com</a></p>
-                    </div>
-
-                    <div>
-                        <h4>Follow</h4>
-                        <p style="display:flex;gap:8px"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></p>
-                    </div>
-                </div>
-
-                <div style="text-align:center;margin-top:20px;color:#e8f4ff">
-                    <small>&copy; <span id="year"></span> Al Masriya Al Emaratia — All rights reserved.</small>
-                </div>
-            </div>
-        </footer>
-
-        <button class="to-top" id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     </main>
 
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-column about">
+                <h4>Al Masriya Al Emaratia</h4>
+                <p style="font-size:0.9rem; color:var(--muted-text-color);">Your integrated platform for international trade, offering comprehensive import, export, and logistics solutions.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#why-us">Why Us?</a></li>
+                    <li><a href="#process">Workflow</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-info" id="contact">
+                <h4>Contact Us</h4>
+                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-map-marker-alt" style="margin-inline-end: 8px;"></i> 10th of Ramadan, Egypt</p>
+                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-envelope" style="margin-inline-end: 8px;"></i> info@egy-uae.com</p>
+                <p style="font-size:0.9rem;"><i class="fas fa-phone" style="margin-inline-end: 8px;"></i> +20 101 337 8572</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 Al Masriya Al Emaratia. All rights reserved.</p>
+            <p>Designed and Developed by <a href="#" style="font-weight:700; color:var(--primary-color);">Our Team</a></p>
+        </div>
+    </footer>
+
+    <button class="floating-btn to-top" id="to-top-btn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <button class="floating-btn settings-fab" id="settings-fab" aria-label="Settings"><i class="fas fa-cog"></i></button>
+    
     <script>
-        // Year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Placeholder for the necessary JavaScript functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle element visibility for animations
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-        // Simple responsive nav toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const mainNav = document.querySelector('.main-nav');
+            document.querySelectorAll('.animated-item').forEach(item => {
+                observer.observe(item);
+            });
 
-        menuBtn?.addEventListener('click', () => {
-            const navOpen = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !navOpen);
-            mainNav.style.display = navOpen ? 'none' : 'flex';
-        });
+            // Header Scroll Effect
+            const header = document.getElementById('site-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
 
-        // Header shrink on scroll
-        const header = document.getElementById('site-header');
-        const toTop = document.getElementById('toTop');
+            // To Top Button Visibility
+            const toTopBtn = document.getElementById('to-top-btn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    toTopBtn.classList.add('is-visible');
+                } else {
+                    toTopBtn.classList.remove('is-visible');
+                }
+            });
+            toTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Hamburger Menu Toggle
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const body = document.body;
 
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 30) {
-                header.classList.add('shrink');
-                if (toTop) toTop.style.display = 'block';
-            } else {
-                header.classList.remove('shrink');
-                if (toTop) toTop.style.display = 'none';
+            hamburgerBtn.addEventListener('click', () => {
+                const isOpen = mobileNav.classList.toggle('is-open');
+                body.classList.toggle('no-scroll', isOpen);
+                hamburgerBtn.setAttribute('aria-expanded', isOpen);
+                hamburgerBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            });
+
+            // Close mobile nav on link click
+            document.querySelectorAll('.main-nav-mobile a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('is-open');
+                    body.classList.remove('no-scroll');
+                    hamburgerBtn.setAttribute('aria-expanded', 'false');
+                    hamburgerBtn.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+
+            // Auth Modal Logic
+            const authOverlay = document.getElementById('auth-modal-overlay');
+            const authCloseBtn = document.getElementById('auth-close-btn');
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const showSignupLink = document.getElementById('show-signup');
+            const showLoginLink = document.getElementById('show-login');
+
+            function openAuthModal(showSignup = false) {
+                authOverlay.classList.add('visible');
+                body.classList.add('no-scroll');
+                if (showSignup) {
+                    loginForm.classList.add('hidden');
+                    signupForm.classList.remove('hidden');
+                } else {
+                    loginForm.classList.remove('hidden');
+                    signupForm.classList.add('hidden');
+                }
             }
+            
+            function closeAuthModal() {
+                authOverlay.classList.remove('visible');
+                body.classList.remove('no-scroll');
+            }
+
+            document.querySelectorAll('.open-auth-modal').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); }));
+            document.querySelectorAll('.open-auth-modal-signup').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); }));
+            authCloseBtn.addEventListener('click', closeAuthModal);
+            authOverlay.addEventListener('click', (e) => {
+                if (e.target === authOverlay) { closeAuthModal(); }
+            });
+
+            showSignupLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); });
+            showLoginLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); });
+
+            // Settings Modal Logic (Theme Switcher)
+            const settingsOverlay = document.getElementById('settings-modal-overlay');
+            const settingsFab = document.getElementById('settings-fab');
+            const settingsCloseBtn = document.getElementById('settings-close-btn');
+            const themeOptions = document.querySelectorAll('.theme-option');
+            const saveSettingsBtn = document.getElementById('save-settings-btn');
+            let selectedTheme = localStorage.getItem('theme') || 'auto';
+
+            function applyTheme(theme) {
+                const html = document.documentElement;
+                if (theme === 'dark') {
+                    html.setAttribute('data-theme', 'dark');
+                } else if (theme === 'light') {
+                    html.removeAttribute('data-theme');
+                } else {
+                    // 'auto' logic: follow system preference
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        html.setAttribute('data-theme', 'dark');
+                    } else {
+                        html.removeAttribute('data-theme');
+                    }
+                }
+                document.querySelectorAll('.theme-option').forEach(option => {
+                    option.classList.remove('selected');
+                    if (option.getAttribute('data-theme') === theme) {
+                        option.classList.add('selected');
+                    }
+                });
+            }
+
+            // Listen for system theme changes if set to 'auto'
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+                if (selectedTheme === 'auto') {
+                    applyTheme('auto');
+                }
+            });
+
+            function openSettingsModal() {
+                settingsOverlay.classList.add('visible');
+                body.classList.add('no-scroll');
+            }
+            
+            function closeSettingsModal() {
+                settingsOverlay.classList.remove('visible');
+                body.classList.remove('no-scroll');
+            }
+
+            settingsFab.addEventListener('click', openSettingsModal);
+            settingsCloseBtn.addEventListener('click', closeSettingsModal);
+            settingsOverlay.addEventListener('click', (e) => {
+                if (e.target === settingsOverlay) { closeSettingsModal(); }
+            });
+
+            themeOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    themeOptions.forEach(o => o.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedTheme = option.getAttribute('data-theme');
+                });
+            });
+
+            saveSettingsBtn.addEventListener('click', () => {
+                localStorage.setItem('theme', selectedTheme);
+                applyTheme(selectedTheme);
+                closeSettingsModal();
+            });
+
+            // Initialize theme on load
+            applyTheme(selectedTheme);
+
+
+            // Stats Counter Animation (Only runs when visible)
+            const statObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.stat-number').forEach(element => {
+                            const target = parseInt(element.getAttribute('data-target').replace('+', '').replace(',', ''));
+                            const startValue = 0;
+                            const duration = 2000;
+                            let startTime = null;
+
+                            const animate = (timestamp) => {
+                                if (!startTime) startTime = timestamp;
+                                const progress = timestamp - startTime;
+                                const percentage = Math.min(progress / duration, 1);
+                                const value = Math.floor(percentage * target);
+
+                                // Format the number with a comma if over 1000, and keep the prefix/suffix
+                                let formattedValue = value.toLocaleString('en-US');
+                                if (element.textContent.includes('+') && target > 15) { // Check for '+' and skip if it's the '15+' stat
+                                    formattedValue = '+' + formattedValue;
+                                } else if (element.textContent.includes('%')) { // Check for '%'
+                                    formattedValue += '%';
+                                }
+
+                                element.textContent = formattedValue;
+
+                                if (percentage < 1) {
+                                    window.requestAnimationFrame(animate);
+                                }
+                            };
+
+                            window.requestAnimationFrame(animate);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('#stats .stats-grid').forEach(item => {
+                statObserver.observe(item);
+            });
+
+            // Testimonial Carousel
+            const testCards = document.getElementById('test-cards');
+            const prevBtn = document.getElementById('prev-test-btn');
+            const nextBtn = document.getElementById('next-test-btn');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const cardWidth = testCards.querySelector('.test').offsetWidth + 20; // card width + gap
+                const offset = -currentIndex * cardWidth;
+                testCards.style.transform = `translateX(${offset}px)`;
+            }
+
+            function nextTestimonial() {
+                currentIndex = (currentIndex + 1) % testCards.children.length;
+                updateCarousel();
+            }
+
+            function prevTestimonial() {
+                currentIndex = (currentIndex - 1 + testCards.children.length) % testCards.children.length;
+                updateCarousel();
+            }
+
+            nextBtn.addEventListener('click', nextTestimonial);
+            prevBtn.addEventListener('click', prevTestimonial);
+            
+            window.addEventListener('resize', updateCarousel); // Recalculate on resize
+            updateCarousel(); // Initial positioning
+
         });
-
-        toTop?.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
-
-        // Partners auto small loop (gentle)
-        const track = document.getElementById('partners-track');
-        let scrollDir = 1;
-        if(track){
-            setInterval(() => {
-                if(track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) scrollDir = -1;
-                if(track.scrollLeft <= 0) scrollDir = 1;
-                track.scrollBy({left: 1 * scrollDir, behavior: 'smooth'});
-            }, 80);
-        }
-
-        // Testimonials slider
-        const cards = document.getElementById('test-cards');
-        const prev = document.getElementById('test-prev');
-        const next = document.getElementById('test-next');
-        let testiIndex = 0;
-
-        function updateTesti(){
-            if (!cards || !cards.children.length) return;
-            const w = cards.children[0].offsetWidth + 18; // card width + gap
-            cards.style.transform = 'translateX(' + (-testiIndex * w) + 'px)';
-        }
-
-        next?.addEventListener('click', () => { 
-            if (!cards) return;
-            testiIndex = Math.min(testiIndex + 1, cards.children.length - 1); 
-            updateTesti(); 
-        });
-
-        prev?.addEventListener('click', () => { 
-            if (!cards) return;
-            testiIndex = Math.max(testiIndex - 1, 0); 
-            updateTesti(); 
-        });
-
-        // Auto-play testimonials
-        if(cards && cards.children.length > 1) {
-             setInterval(() => {
-                testiIndex = (testiIndex + 1) % cards.children.length;
-                updateTesti();
-            }, 5000);
-        }
-
-        // ensure update on resize
-        window.addEventListener('resize', updateTesti);
-        // initial update
-        setTimeout(updateTesti, 200);
     </script>
+
 </body>
 </html>
