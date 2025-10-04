@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -34,6 +34,43 @@
             --border-color: #334155;
         }
 
+        /* ----------------------------------------------------------------- */
+        /* RTL (Right-to-Left) Adjustments for Arabic Language */
+        /* ----------------------------------------------------------------- */
+        [dir="rtl"] .modal-content .close-btn { left: 15px; right: auto; }
+        [dir="rtl"] .form-options { justify-content: flex-start; }
+        [dir="rtl"] .site-header.scrolled { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+        [dir="rtl"] .mobile-nav { right: -100%; left: auto; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+        [dir="rtl"] .mobile-nav.is-open { right: 0; left: auto; }
+        [dir="rtl"] .floating-btn.to-top { left: 20px; right: auto; }
+        [dir="rtl"] .floating-btn.settings-fab { right: 20px; left: auto; }
+        [dir="rtl"] .theme-option .fa-check-circle { right: 8px; left: auto; }
+        [dir="rtl"] .hero-left { text-align: right; }
+        [dir="rtl"] h2 { text-align: right; }
+        [dir="rtl"] .section-subtitle { text-align: right; margin-right: 0; margin-left: auto; }
+        [dir="rtl"] p.lead { max-width: 100%; }
+        [dir="rtl"] .hero-ctas { justify-content: flex-end; }
+        [dir="rtl"] .features-grid .features-list { order: 0; }
+        [dir="rtl"] .features-grid .feature-image { order: 1; }
+        [dir="rtl"] .feature-item { text-align: right; }
+        [dir="rtl"] .feature-item .icon { margin-left: 15px; margin-right: 0; }
+        [dir="rtl"] .footer-grid { text-align: right; }
+        [dir="rtl"] .footer-column .social-links { justify-content: flex-end; }
+        [dir="rtl"] .footer-bottom { flex-direction: row; }
+        [dir="rtl"] @media(max-width:1024px) {
+            .hero-left { text-align: center; }
+            .hero-ctas { justify-content: center; }
+            .features-grid .features-list { order: 1; }
+            .features-grid .feature-image { order: 0; }
+            .feature-item { text-align: center; flex-direction: column; align-items: center; }
+            .feature-item .icon { margin: 0 auto 10px; }
+        }
+        [dir="rtl"] @media (max-width: 768px) {
+            .footer-grid { text-align: center; }
+            .footer-column .social-links { justify-content: center; }
+        }
+
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: "Tajawal", sans-serif; color: var(--text-color); background-color: var(--background-color); -webkit-font-smoothing: antialiased; line-height: 1.7; transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease; }
@@ -47,13 +84,91 @@
         .animated-item.is-visible { opacity: 1; transform: translateY(0); }
 
         /* =================================================================
-           2. MODALS (AUTH & SETTINGS)
+           2. NEW NAVBAR CONTROLS (LANGUAGE & THEME)
+           ================================================================= */
+        .control-btn {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: var(--primary-color);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .control-btn:hover {
+            background: var(--accent-color);
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .language-switcher {
+            position: relative;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            /* Adjust based on direction */
+            left: 0; 
+            min-width: 150px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 8px 20px var(--shadow-color-heavy);
+            padding: 5px 0;
+            margin-top: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+            z-index: 200;
+        }
+
+        [dir="rtl"] .language-dropdown {
+            left: auto;
+            right: 0;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-dropdown a {
+            display: block;
+            padding: 8px 15px;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+
+        .language-dropdown a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Highlight the current language */
+        .language-dropdown a.active {
+            background-color: var(--accent-color-dark);
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* =================================================================
+           3. MODALS (AUTH & SETTINGS)
            ================================================================= */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease; }
         .modal-overlay.visible { opacity: 1; visibility: visible; }
         .modal-content { background-color: var(--surface-color); padding: 30px 35px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); width: 90%; transform: scale(0.95); transition: transform var(--transition-speed) ease; position: relative; }
         .modal-overlay.visible .modal-content { transform: scale(1); }
-        .modal-content .close-btn { position: absolute; top: 15px; right: 15px; /* RTL change: left -> right */ background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted-text-color); }
+        .modal-content .close-btn { position: absolute; top: 15px; right: 15px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted-text-color); }
         .modal-content h3 { text-align: center; font-size: 1.8rem; margin-bottom: 10px; }
         .modal-content p { text-align: center; margin-bottom: 25px; }
         .auth-modal { max-width: 420px; }
@@ -65,20 +180,20 @@
         .form-btn:hover { background-color: var(--primary-color-light); transform: translateY(-2px); }
         .form-footer-text { text-align: center; margin-top: 20px; font-size: 0.9rem; }
         .form-footer-text .switcher-link { font-weight: 700; color: var(--primary-color); cursor: pointer; }
-        .form-options { display: flex; justify-content: flex-end; /* RTL change: flex-start -> flex-end */ font-size: 0.85rem; margin-top: -10px; margin-bottom: 20px; }
+        .form-options { display: flex; justify-content: flex-end; font-size: 0.85rem; margin-top: -10px; margin-bottom: 20px; }
         .hidden { display: none; }
         .settings-modal { max-width: 500px; }
         .theme-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
         .theme-option { border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center; cursor: pointer; position: relative; transition: all 0.2s ease; }
         .theme-option:hover { border-color: var(--primary-color); transform: translateY(-3px); }
         .theme-option.selected { border-color: var(--primary-color); background-color: var(--accent-color); }
-        .theme-option .fa-check-circle { position: absolute; top: 8px; left: 8px; /* RTL change: right -> left */ font-size: 1rem; color: var(--primary-color); opacity: 0; transform: scale(0.5); transition: all 0.2s; }
+        .theme-option .fa-check-circle { position: absolute; top: 8px; left: 8px; font-size: 1rem; color: var(--primary-color); opacity: 0; transform: scale(0.5); transition: all 0.2s; }
         .theme-option.selected .fa-check-circle { opacity: 1; transform: scale(1); }
         .theme-option i:not(.fa-check-circle) { font-size: 2rem; margin-bottom: 10px; color: var(--primary-color); }
         .theme-option span { font-weight: 500; font-size: 0.9rem; display: block; }
         
         /* =================================================================
-           3. HEADER & NAVIGATION
+           4. HEADER & NAVIGATION
            ================================================================= */
         .site-header { position: sticky; top: 0; z-index: 100; background: transparent; padding: 1rem 0; transition: all 0.25s; }
         .site-header.scrolled { padding: 0.5rem 0; background-color: rgba(248, 249, 250, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); border-bottom: 1px solid var(--border-color); }
@@ -99,15 +214,15 @@
         .btn-ghost { background-color: transparent; border-color: var(--border-color); color: var(--primary-color); padding: 10px 20px; }
         .btn-ghost:hover { background-color: var(--accent-color); }
         .hamburger { display: none; font-size: 1.5rem; background: transparent; border: none; cursor: pointer; z-index: 110; }
-        .mobile-nav { position: fixed; top: 0; left: -100%; /* RTL change: right -> left */ width: 300px; height: 100%; background-color: var(--surface-color); z-index: 105; padding: 100px 30px 30px; box-shadow: 10px 0 30px rgba(0,0,0,0.1); /* RTL change: -10px -> 10px */ transition: left var(--transition-speed) ease-in-out; /* RTL change: right -> left */ }
-        .mobile-nav.is-open { left: 0; /* RTL change: right -> left */ }
+        .mobile-nav { position: fixed; top: 0; left: -100%; width: 300px; height: 100%; background-color: var(--surface-color); z-index: 105; padding: 100px 30px 30px; box-shadow: 10px 0 30px rgba(0,0,0,0.1); transition: left var(--transition-speed) ease-in-out; }
+        .mobile-nav.is-open { left: 0; }
         .main-nav-mobile { list-style: none; display: flex; flex-direction: column; gap: 20px; }
         .main-nav-mobile a { font-size: 1.2rem; font-weight: 700; }
         .mobile-nav-auth { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); }
         .mobile-nav-auth a { display: block; text-align: center; margin-bottom: 15px; }
 
         /* =================================================================
-           4. VISUALLY ENHANCED SECTIONS
+           5. VISUALLY ENHANCED SECTIONS (Existing Styles)
            ================================================================= */
         .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; min-height: 80vh; }
         .kicker { display: inline-block; background: var(--accent-color); color: var(--primary-color); padding: 8px 16px; border-radius: 999px; font-weight: 700; margin-bottom: 20px; }
@@ -186,10 +301,11 @@
         .settings-fab { left: 20px; }
 
         /* =================================================================
-           6. RESPONSIVE DESIGN
+           6. RESPONSIVE DESIGN (Existing Styles)
            ================================================================= */
         @media(max-width:1024px){
-            .nav-center, .nav-right a { display: none; }
+            .nav-center { display: none; }
+            .nav-right a:not(.btn-primary):not(.language-switcher a) { display: none; } /* Hide Log In link */
             .hamburger { display: block; }
             .hero { grid-template-columns:1fr; text-align: center; padding-top: 40px; }
             .hero-ctas { justify-content: center; }
@@ -205,7 +321,7 @@
         }
     </style>
 </head>
-<body>
+<body dir="ltr">
     <div class="modal-overlay" id="auth-modal-overlay">
         <div class="modal-content auth-modal">
             <button class="close-btn" id="auth-close-btn" aria-label="Close"><i class="fas fa-times"></i></button>
@@ -226,7 +342,10 @@
         <div class="modal-content settings-modal">
             <button class="close-btn" id="settings-close-btn" aria-label="Close"><i class="fas fa-times"></i></button>
             <h3>Customize Browsing Experience</h3><p>Choose your preferred theme. Your selection will be saved for future visits.</p>
-            <div class="theme-options"><div class="theme-option" data-theme="light"><i class="fas fa-check-circle"></i><i class="fas fa-sun"></i><span>Light</span></div><div class="theme-option" data-theme="dark"><i class="fas fa-check-circle"></i><i class="fas fa-moon"></i><span>Dark</span></div><div class="theme-option" data-theme="auto"><i class="fas fa-check-circle"></i><i class="fas fa-desktop"></i><span>Auto</span></div></div>
+            <div class="theme-options">
+                <div class="theme-option selected" data-theme="light"><i class="fas fa-check-circle"></i><i class="fas fa-sun"></i><span>Light</span></div>
+                <div class="theme-option" data-theme="dark"><i class="fas fa-check-circle"></i><i class="fas fa-moon"></i><span>Dark</span></div>
+                </div>
             <button class="form-btn" id="save-settings-btn">Save and Continue</button>
         </div>
     </div>
@@ -238,6 +357,20 @@
                 <nav class="main-nav" aria-label="Main navigation"><ul class="main-nav" role="menubar"><li role="none"><a role="menuitem" href="#home">Home</a></li><li role="none"><a role="menuitem" href="#services">Our Services</a></li><li role="none"><a role="menuitem" href="#why-us">Why Us?</a></li><li role="none"><a role="menuitem" href="#contact">Contact Us</a></li></ul></nav>
             </div>
             <div class="nav-right">
+                <div class="language-switcher">
+                    <button class="control-btn" aria-label="Language Switcher">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="home-ar.html" data-lang="ar" class="lang-option">العربية 🇪🇬</a>
+                        <a href="#" data-lang="en" class="lang-option active">English 🇺🇸</a>
+                    </div>
+                </div>
+
+                <button class="control-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
                 <a href="#" class="open-auth-modal" style="font-weight: 500;">Log In</a>
                 <a href="#" class="btn btn-primary open-auth-modal-signup" style="padding: 10px 20px;">Sign Up</a>
                 <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="Open menu"><i class="fas fa-bars"></i></button>
@@ -293,99 +426,233 @@
         </section>
 
         <section id="partners" class="container" aria-labelledby="partners-heading">
-            <h2 id="partners-heading" class="animated-item" style="--delay: 0s;">Our Partners in Success</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">We work with a network of the best shipping and logistics companies to ensure world-class service.</p>
-            <div class="partners-track animated-item" style="--delay: 0.2s;" id="partners-track"><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Maersk_Group_logo.svg/1280px-Maersk_Group_logo.svg.png" alt="Maersk Logo"></div><div class="partner"><img src="https://images.seeklogo.com/logo-png/4/2/dhl-logo-png_seeklogo-40800.png" alt="DHL Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/FedEx_Express.svg/1200px-FedEx_Express.svg.png" alt="FedEx Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/DB_Schenker_logo.svg" alt="DB Schenker Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Aramex-logo.svg/1280px-Aramex-logo.svg.png" alt="Aramex Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MSC_Mediterranean_Shipping_Company_logo.svg/1280px-MSC_Mediterranean_Shipping_Company_logo.svg.png" alt="MSC Logo"></div></div>
+            <h2 id="partners-heading" class="animated-item" style="--delay: 0s;">Our Partners in Success</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">We work with a network of the best shipping and logistics companies around the world to ensure the highest standards of service.</p>
+            <div class="partners-track">
+                <div class="partner animated-item" style="--delay: 0.2s;"><img src="https://via.placeholder.com/100x50?text=Partner+A" alt="Partner Logo A"></div>
+                <div class="partner animated-item" style="--delay: 0.3s;"><img src="https://via.placeholder.com/100x50?text=Partner+B" alt="Partner Logo B"></div>
+                <div class="partner animated-item" style="--delay: 0.4s;"><img src="https://via.placeholder.com/100x50?text=Partner+C" alt="Partner Logo C"></div>
+                <div class="partner animated-item" style="--delay: 0.5s;"><img src="https://via.placeholder.com/100x50?text=Partner+D" alt="Partner Logo D"></div>
+                <div class="partner animated-item" style="--delay: 0.6s;"><img src="https://via.placeholder.com/100x50?text=Partner+E" alt="Partner Logo E"></div>
+                <div class="partner animated-item" style="--delay: 0.7s;"><img src="https://via.placeholder.com/100x50?text=Partner+F" alt="Partner Logo F"></div>
+                <div class="partner animated-item" style="--delay: 0.8s;"><img src="https://via.placeholder.com/100x50?text=Partner+G" alt="Partner Logo G"></div>
+            </div>
         </section>
 
         <section id="testimonials" class="container" aria-labelledby="testimonials-heading">
-            <h2 id="testimonials-heading" class="animated-item" style="--delay: 0s;">What Our Clients Say</h2>
-            <p class="section-subtitle animated-item" style="--delay: 0.1s;">Real feedback from partners who trust our services for their international trade.</p>
+            <h2 id="testimonials-heading" class="animated-item" style="--delay: 0s;">What Our Clients Say About Us</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">We are proud of the strong relationships we have built with our clients.</p>
             <div class="testimonials-container animated-item" style="--delay: 0.2s;">
                 <div class="test-wrap">
                     <div class="test-cards" id="test-cards">
-                        <div class="test">
-                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="Client Avatar" class="test-avatar">
-                            <p>"Al Masriya Al Emaratia streamlined our customs clearance process between Dubai and Cairo. Their team is professional and highly efficient."</p>
-                            <h4>Ahmed Hassan, CEO of Nile Trading</h4>
-                        </div>
-                        <div class="test">
-                            <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="Client Avatar" class="test-avatar">
-                            <p>"The best logistics company we've dealt with. They handled the entire supply chain from sourcing to delivery perfectly."</p>
-                            <h4>Fahad Al-Mansoori, Director of Emirates Imports</h4>
-                        </div>
-                        <div class="test">
-                            <img src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="Client Avatar" class="test-avatar">
-                            <p>"We managed to enter the Egyptian market thanks to their commercial representation services. A truly strategic partner."</p>
-                            <h4>Sara Khan, Founder of Global Ventures</h4>
-                        </div>
+                        <div class="test"><img src="https://i.pravatar.cc/150?img=1" alt="Client 1" class="test-avatar"><p>"Al Masriya Al Emaratia provided us with an integrated solution that exceeded our expectations. The customs clearance was fast and completely hassle-free."</p><h4>Mohamed Al Ameri - UAE Trader</h4></div>
+                        <div class="test"><img src="https://i.pravatar.cc/150?img=2" alt="Client 2" class="test-avatar"><p>"The logistical support was excellent, and the professional team helped us overcome every challenge. A truly reliable partner for international trade."</p><h4>Fatima El Masry - Egyptian Investor</h4></div>
+                        <div class="test"><img src="https://i.pravatar.cc/150?img=3" alt="Client 3" class="test-avatar"><p>"Their sourcing service saved us a lot of time and effort. We found the best products at very competitive prices. Highly recommended!"</p><h4>Khalid Hassan - Import Company Manager</h4></div>
                     </div>
                 </div>
-                <div class="test-controls">
-                    <button class="icon-btn prev-test-btn" id="prev-test-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                    <button class="icon-btn next-test-btn" id="next-test-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                </div>
+                <div class="test-controls"><button class="icon-btn" id="prev-test"><i class="fas fa-chevron-left"></i></button><button class="icon-btn" id="next-test"><i class="fas fa-chevron-right"></i></button></div>
             </div>
         </section>
 
-        <section id="cta" class="container">
-            <div class="cta-section animated-item" style="--delay: 0s;">
-                <h2 class="animated-item" style="--delay: 0.1s;">Ready to Simplify Your International Trade?</h2>
-                <p class="animated-item" style="--delay: 0.2s;">Join hundreds of companies that rely on our platform to seamlessly connect their business between Egypt, the UAE, and the rest of the world.</p>
-                <a href="#contact" class="btn btn-cta animated-item" style="--delay: 0.3s;">Start Now</a>
-            </div>
+        <section id="contact" class="container" aria-labelledby="cta-heading">
+            <div class="cta-section animated-item" style="--delay: 0s;"><h2 id="cta-heading">Ready to Start Your Next Commercial Project?</h2><p>Contact us today for a free consultation and let us help you achieve your global trade goals effortlessly.</p><a href="#" class="btn btn-cta open-auth-modal-signup">Request a Quote Now</a></div>
         </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-grid">
-            <div class="footer-column about">
-                <h4>Al Masriya Al Emaratia</h4>
-                <p style="font-size:0.9rem; color:var(--muted-text-color);">Your integrated platform for international trade, offering comprehensive import, export, and logistics solutions.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#why-us">Why Us?</a></li>
-                    <li><a href="#process">Workflow</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-column contact-info" id="contact">
-                <h4>Contact Us</h4>
-                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-map-marker-alt" style="margin-inline-end: 8px;"></i> 10th of Ramadan, Egypt</p>
-                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-envelope" style="margin-inline-end: 8px;"></i> info@egy-uae.com</p>
-                <p style="font-size:0.9rem;"><i class="fas fa-phone" style="margin-inline-end: 8px;"></i> +20 101 337 8572</p>
-            </div>
+            <div class="footer-column"><a href="#home" class="brand" aria-label="Al Masriya Al Emaratia brand"><div class="logo-symbol" style="width:40px;height:40px;font-size:1.5rem;margin-bottom:15px;"><i class="fas fa-globe-americas"></i></div><span style="font-weight:700;font-size:1.1rem;color:var(--heading-color);">Al Masriya Al Emaratia</span></a><p style="margin-top:15px;font-size:0.9rem;">Your trusted partner for integrated trade and logistics solutions between Egypt and the UAE.</p><div class="social-links"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="footer-column"><h4>Quick Links</h4><ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#why-us">Why Us?</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Careers</a></li></ul></div>
+            <div class="footer-column"><h4>Our Services</h4><ul><li><a href="#">Import/Export</a></li><li><a href="#">Logistics</a></li><li><a href="#">Customs Clearance</a></li><li><a href="#">Agencies</a></li><li><a href="#">Consulting</a></li></ul></div>
+            <div class="footer-column"><h4>Contact Info</h4><p style="font-size:0.9rem;"><strong>Email:</strong> info@egy-uae.com</p><p style="font-size:0.9rem;"><strong>Phone:</strong> +971-50-458-8956 (UAE)</p><p style="font-size:0.9rem;"><strong>Phone:</strong> +20-101-337-8572 (Egypt)</p></div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2024 Al Masriya Al Emaratia. All rights reserved.</p>
-            <p>Designed and Developed by <a href="#" style="font-weight:700; color:var(--primary-color);">Our Team</a></p>
+            <span>© 2024 Al Masriya Al Emaratia. All Rights Reserved.</span>
+            <span><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></span>
         </div>
     </footer>
 
     <button class="floating-btn to-top" id="to-top-btn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-    <button class="floating-btn settings-fab" id="settings-fab" aria-label="Settings"><i class="fas fa-cog"></i></button>
-    
     <script>
-        // Placeholder for the necessary JavaScript functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to handle element visibility for animations
-            const observer = new IntersectionObserver((entries, observer) => {
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const body = document.body;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const langOptions = document.querySelectorAll('.lang-option');
+
+            // =================================================================
+            // 1. Theme Toggler Logic (Dark/Light)
+            // =================================================================
+
+            // Set Light theme as default and check localStorage
+            const storedTheme = localStorage.getItem('theme') || 'light';
+
+            const setTheme = (theme) => {
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                // Update button icon
+                if (theme === 'dark') {
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                }
+            };
+
+            const toggleTheme = () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                setTheme(newTheme);
+            };
+
+            // Apply stored theme on load
+            setTheme(storedTheme);
+            
+            themeToggleBtn.addEventListener('click', toggleTheme);
+
+            // =================================================================
+            // 2. Language Switcher Logic (Arabic/English)
+            // =================================================================
+
+            const storedLang = localStorage.getItem('language') || 'en';
+
+            const setLanguage = (lang) => {
+                const isRTL = lang === 'ar';
+                html.setAttribute('lang', lang);
+                body.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+                localStorage.setItem('language', lang);
+
+                // Update active class
+                langOptions.forEach(option => {
+                    option.classList.toggle('active', option.dataset.lang === lang);
+                });
+                
+                // You would need to add full translation logic here
+                if (isRTL) {
+                    console.log("Interface elements should now be translated and mirrored (RTL)");
+                    alert("تم تفعيل اللغة العربية - يرجى ملاحظة أن الترجمة الفعلية لمحتوى الصفحة تتطلب ملفات ترجمة إضافية (I18N).");
+                } else {
+                    console.log("Interface elements should now be in English (LTR)");
+                }
+            };
+
+            // Apply stored language on load
+            setLanguage(storedLang);
+
+            langOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(option.dataset.lang);
+                    // Close the dropdown after selection (optional)
+                    // e.target.closest('.language-dropdown').style.opacity = 0; 
+                    // e.target.closest('.language-dropdown').style.visibility = 'hidden';
+                });
+            });
+
+            // =================================================================
+            // 3. Existing JavaScript (Scroll, Hamburger, Modals)
+            // =================================================================
+            
+            // Hamburger Menu
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            const toggleMobileNav = () => {
+                mobileNav.classList.toggle('is-open');
+                body.classList.toggle('no-scroll');
+                const isOpen = mobileNav.classList.contains('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', isOpen);
+                hamburgerBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            };
+            hamburgerBtn.addEventListener('click', toggleMobileNav);
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.main-nav-mobile a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileNav.classList.contains('is-open')) {
+                        toggleMobileNav();
+                    }
+                });
+            });
+
+            // Header Scroll Effect
+            const header = document.getElementById('site-header');
+            const topBtn = document.getElementById('to-top-btn');
+
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                    topBtn.classList.add('is-visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    topBtn.classList.remove('is-visible');
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+
+            // Scroll to Top Button
+            topBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Modals Logic (Auth and Settings) - Simplified
+            const authModalOverlay = document.getElementById('auth-modal-overlay');
+            const authCloseBtn = document.getElementById('auth-close-btn');
+            const openAuthModalBtns = document.querySelectorAll('.open-auth-modal');
+            const openAuthModalSignupBtns = document.querySelectorAll('.open-auth-modal-signup');
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const showSignupLink = document.getElementById('show-signup');
+            const showLoginLink = document.getElementById('show-login');
+
+            const openAuthModal = (isSignup = false) => {
+                authModalOverlay.classList.add('visible');
+                body.classList.add('no-scroll');
+                if (isSignup) {
+                    loginForm.classList.add('hidden');
+                    signupForm.classList.remove('hidden');
+                } else {
+                    loginForm.classList.remove('hidden');
+                    signupForm.classList.add('hidden');
+                }
+            };
+
+            const closeAuthModal = () => {
+                authModalOverlay.classList.remove('visible');
+                body.classList.remove('no-scroll');
+            };
+
+            openAuthModalBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); }));
+            openAuthModalSignupBtns.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); }));
+            authCloseBtn.addEventListener('click', closeAuthModal);
+            authModalOverlay.addEventListener('click', (e) => {
+                if (e.target === authModalOverlay) { closeAuthModal(); }
+            });
+
+            showSignupLink.addEventListener('click', (e) => { e.preventDefault(); loginForm.classList.add('hidden'); signupForm.classList.remove('hidden'); });
+            showLoginLink.addEventListener('click', (e) => { e.preventDefault(); loginForm.classList.remove('hidden'); signupForm.classList.add('hidden'); });
+
+            // Testimonials Slider (Existing Logic)
+            const testCards = document.getElementById('test-cards');
+            const prevTestBtn = document.getElementById('prev-test');
+            const nextTestBtn = document.getElementById('next-test');
+            const cardWidth = 360; // Approximate width + gap
+
+            let currentTest = 0;
+
+            const updateSlider = () => {
+                const totalCards = testCards.children.length;
+                if (currentTest < 0) currentTest = 0;
+                if (currentTest >= totalCards) currentTest = totalCards - 1; 
+
+                const offset = currentTest * cardWidth;
+                testCards.style.transform = `translateX(-${offset}px)`;
+            };
+
+            nextTestBtn.addEventListener('click', () => { currentTest++; updateSlider(); });
+            prevTestBtn.addEventListener('click', () => { currentTest--; updateSlider(); });
+            
+            // Intersection Observer for Animations (Existing Logic)
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
@@ -397,230 +664,45 @@
             document.querySelectorAll('.animated-item').forEach(item => {
                 observer.observe(item);
             });
-
-            // Header Scroll Effect
-            const header = document.getElementById('site-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // To Top Button Visibility
-            const toTopBtn = document.getElementById('to-top-btn');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 400) {
-                    toTopBtn.classList.add('is-visible');
-                } else {
-                    toTopBtn.classList.remove('is-visible');
-                }
-            });
-            toTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
             
-            // Hamburger Menu Toggle
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            const mobileNav = document.getElementById('mobile-nav');
-            const body = document.body;
+            // Stats Counter (Existing Logic)
+            const counters = document.querySelectorAll('.stat-number');
 
-            hamburgerBtn.addEventListener('click', () => {
-                const isOpen = mobileNav.classList.toggle('is-open');
-                body.classList.toggle('no-scroll', isOpen);
-                hamburgerBtn.setAttribute('aria-expanded', isOpen);
-                hamburgerBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
-            });
+            const animateCounter = (el) => {
+                const target = +el.dataset.target.replace('+', '').replace(',', '').replace('%', '');
+                let count = 0;
+                const duration = 1500;
+                const step = target / (duration / 10);
+                const isPercentage = el.dataset.target.includes('%');
+                const isPlus = el.dataset.target.includes('+');
 
-            // Close mobile nav on link click
-            document.querySelectorAll('.main-nav-mobile a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNav.classList.remove('is-open');
-                    body.classList.remove('no-scroll');
-                    hamburgerBtn.setAttribute('aria-expanded', 'false');
-                    hamburgerBtn.querySelector('i').className = 'fas fa-bars';
-                });
-            });
-
-            // Auth Modal Logic
-            const authOverlay = document.getElementById('auth-modal-overlay');
-            const authCloseBtn = document.getElementById('auth-close-btn');
-            const loginForm = document.getElementById('login-form');
-            const signupForm = document.getElementById('signup-form');
-            const showSignupLink = document.getElementById('show-signup');
-            const showLoginLink = document.getElementById('show-login');
-
-            function openAuthModal(showSignup = false) {
-                authOverlay.classList.add('visible');
-                body.classList.add('no-scroll');
-                if (showSignup) {
-                    loginForm.classList.add('hidden');
-                    signupForm.classList.remove('hidden');
-                } else {
-                    loginForm.classList.remove('hidden');
-                    signupForm.classList.add('hidden');
-                }
-            }
-            
-            function closeAuthModal() {
-                authOverlay.classList.remove('visible');
-                body.classList.remove('no-scroll');
-            }
-
-            document.querySelectorAll('.open-auth-modal').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); }));
-            document.querySelectorAll('.open-auth-modal-signup').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); }));
-            authCloseBtn.addEventListener('click', closeAuthModal);
-            authOverlay.addEventListener('click', (e) => {
-                if (e.target === authOverlay) { closeAuthModal(); }
-            });
-
-            showSignupLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); });
-            showLoginLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); });
-
-            // Settings Modal Logic (Theme Switcher)
-            const settingsOverlay = document.getElementById('settings-modal-overlay');
-            const settingsFab = document.getElementById('settings-fab');
-            const settingsCloseBtn = document.getElementById('settings-close-btn');
-            const themeOptions = document.querySelectorAll('.theme-option');
-            const saveSettingsBtn = document.getElementById('save-settings-btn');
-            let selectedTheme = localStorage.getItem('theme') || 'auto';
-
-            function applyTheme(theme) {
-                const html = document.documentElement;
-                if (theme === 'dark') {
-                    html.setAttribute('data-theme', 'dark');
-                } else if (theme === 'light') {
-                    html.removeAttribute('data-theme');
-                } else {
-                    // 'auto' logic: follow system preference
-                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                        html.setAttribute('data-theme', 'dark');
+                const updateCount = () => {
+                    count += step;
+                    if (count < target) {
+                        let displayCount = Math.ceil(count);
+                        if (displayCount > target) displayCount = target;
+                        el.innerText = `${isPlus && displayCount > 0 ? '+' : ''}${displayCount.toLocaleString()}${isPercentage ? '%' : ''}`;
+                        requestAnimationFrame(updateCount);
                     } else {
-                        html.removeAttribute('data-theme');
+                        el.innerText = el.dataset.target;
                     }
-                }
-                document.querySelectorAll('.theme-option').forEach(option => {
-                    option.classList.remove('selected');
-                    if (option.getAttribute('data-theme') === theme) {
-                        option.classList.add('selected');
-                    }
-                });
-            }
+                };
+                updateCount();
+            };
 
-            // Listen for system theme changes if set to 'auto'
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-                if (selectedTheme === 'auto') {
-                    applyTheme('auto');
-                }
-            });
-
-            function openSettingsModal() {
-                settingsOverlay.classList.add('visible');
-                body.classList.add('no-scroll');
-            }
-            
-            function closeSettingsModal() {
-                settingsOverlay.classList.remove('visible');
-                body.classList.remove('no-scroll');
-            }
-
-            settingsFab.addEventListener('click', openSettingsModal);
-            settingsCloseBtn.addEventListener('click', closeSettingsModal);
-            settingsOverlay.addEventListener('click', (e) => {
-                if (e.target === settingsOverlay) { closeSettingsModal(); }
-            });
-
-            themeOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    themeOptions.forEach(o => o.classList.remove('selected'));
-                    option.classList.add('selected');
-                    selectedTheme = option.getAttribute('data-theme');
-                });
-            });
-
-            saveSettingsBtn.addEventListener('click', () => {
-                localStorage.setItem('theme', selectedTheme);
-                applyTheme(selectedTheme);
-                closeSettingsModal();
-            });
-
-            // Initialize theme on load
-            applyTheme(selectedTheme);
-
-
-            // Stats Counter Animation (Only runs when visible)
-            const statObserver = new IntersectionObserver((entries, observer) => {
+            const counterObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.querySelectorAll('.stat-number').forEach(element => {
-                            const target = parseInt(element.getAttribute('data-target').replace('+', '').replace(',', ''));
-                            const startValue = 0;
-                            const duration = 2000;
-                            let startTime = null;
-
-                            const animate = (timestamp) => {
-                                if (!startTime) startTime = timestamp;
-                                const progress = timestamp - startTime;
-                                const percentage = Math.min(progress / duration, 1);
-                                const value = Math.floor(percentage * target);
-
-                                // Format the number with a comma if over 1000, and keep the prefix/suffix
-                                let formattedValue = value.toLocaleString('en-US');
-                                if (element.textContent.includes('+') && target > 15) { // Check for '+' and skip if it's the '15+' stat
-                                    formattedValue = '+' + formattedValue;
-                                } else if (element.textContent.includes('%')) { // Check for '%'
-                                    formattedValue += '%';
-                                }
-
-                                element.textContent = formattedValue;
-
-                                if (percentage < 1) {
-                                    window.requestAnimationFrame(animate);
-                                }
-                            };
-
-                            window.requestAnimationFrame(animate);
-                        });
-                        observer.unobserve(entry.target);
+                    if (entry.isIntersecting && !entry.target.dataset.animated) {
+                        animateCounter(entry.target);
+                        entry.target.dataset.animated = true;
                     }
                 });
-            }, { threshold: 0.5 });
-            
-            document.querySelectorAll('#stats .stats-grid').forEach(item => {
-                statObserver.observe(item);
+            }, { threshold: 0.7 });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
             });
-
-            // Testimonial Carousel
-            const testCards = document.getElementById('test-cards');
-            const prevBtn = document.getElementById('prev-test-btn');
-            const nextBtn = document.getElementById('next-test-btn');
-            let currentIndex = 0;
-
-            function updateCarousel() {
-                const cardWidth = testCards.querySelector('.test').offsetWidth + 20; // card width + gap
-                const offset = -currentIndex * cardWidth;
-                testCards.style.transform = `translateX(${offset}px)`;
-            }
-
-            function nextTestimonial() {
-                currentIndex = (currentIndex + 1) % testCards.children.length;
-                updateCarousel();
-            }
-
-            function prevTestimonial() {
-                currentIndex = (currentIndex - 1 + testCards.children.length) % testCards.children.length;
-                updateCarousel();
-            }
-
-            nextBtn.addEventListener('click', nextTestimonial);
-            prevBtn.addEventListener('click', prevTestimonial);
-            
-            window.addEventListener('resize', updateCarousel); // Recalculate on resize
-            updateCarousel(); // Initial positioning
-
         });
     </script>
-
 </body>
 </html>
