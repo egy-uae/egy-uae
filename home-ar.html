@@ -1,525 +1,625 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- تحسينات SEO: عنوان محسّن، وصف ميتا، وكلمات مفتاحية -->
-  <title>المصرية الإماراتية - حلول التجارة العالمية، الاستيراد والتصدير</title>
-  <meta name="description" content="المصرية الإماراتية تقدم حلولًا متكاملة للاستيراد والتصدير والوكالات التجارية في مصر والإمارات. نربط الأعمال بالأسواق العالمية." />
-  <meta name="keywords" content="المصرية الإماراتية, استيراد, تصدير, وكالات تجارية, تجارة عالمية, مصر, الإمارات, حلول تجارية, شحن, لوجستيات, أسواق دولية" />
-  <meta name="author" content="المصرية الإماراتية" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.egy-uae.com/home-ar.html" /> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>المصرية الإماراتية — منصة التجارة الدولية والوكالات التجارية</title>
+    <meta name="description" content="المصرية الإماراتية — منصة متكاملة لخدمات الاستيراد والتصدير، التمثيل التجاري، حلول سلاسل الإمداد والخدمات اللوجستية بين مصر، الإمارات والعالم." />
+    <meta name="author" content="المصرية الإماراتية" />
+    <meta name="keywords" content="استيراد, تصدير, تخليص جمركي, شحن دولي, وكالات تجارية, مصر, الإمارات" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* تصميمات أساسية */
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Cairo",sans-serif;}
-    body{line-height:1.6;color:#333;background:#f9f9f9;direction:rtl;} /* دعم RTL */
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* =================================================================
+           1. MODERN RESET & ROOT VARIABLES
+           ================================================================= */
+        :root {
+            --primary-color: #0d47a1; --primary-color-light: #1976d2;
+            --accent-color: #e3f2fd; --accent-color-dark: #bbdefb;
+            --background-color: #f8f9fa; --surface-color: #ffffff;
+            --text-color: #212529; --muted-text-color: #6c757d; --heading-color: #0d47a1;
+            --shadow-color-light: rgba(13, 71, 161, 0.07); --shadow-color-heavy: rgba(13, 71, 161, 0.1);
+            --border-color: #dee2e6; --radius-md: 12px; --radius-lg: 16px;
+            --maxw: 1200px; --transition-speed: 0.3s;
+        }
 
-    /* الرأس */
-    header{
-      background:linear-gradient(90deg,#1976d2,#0d47a1);
-      padding:1rem 0;
-      color:#fff;
-      box-shadow:0 3px 6px rgba(0,0,0,0.2);
-    }
-    .navbar{
-      width:90%;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .navbar .logo a{color:#fff;font-size:1.5rem;font-weight:700;text-decoration:none;}
-    .nav-links{list-style:none;display:flex;gap:1.5rem;}
-    .nav-links li a{
-      color:#fff;
-      font-weight:600;
-      position:relative;
-      text-decoration:none;
-      border:none;          
-      transition:0.3s;
-    }
-    .nav-links li a::after{
-      content:"";
-      position:absolute;
-      right:0; /* تغيير الاتجاه لـ RTL */
-      bottom:-4px;
-      width:0;
-      height:2px;
-      background:#bbdefb;
-      transition:width 0.3s ease;
-    }
-    .nav-links li a:hover::after,
-    .nav-links li a.active::after{width:100%;}
-    .company-logo-header {
-      height: 40px; /* تعديل حسب الحاجة */
-      vertical-align: middle;
-      margin-left: 10px; /* تغيير الهامش لـ RTL */
-      margin-right: 0;
-    }
-    .logo a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #fff;
-    }
+        [data-theme="dark"] {
+            --primary-color: #90caf9; --primary-color-light: #bbdefb;
+            --accent-color: #1e293b; --accent-color-dark: #334155;
+            --background-color: #0f172a; --surface-color: #1e293b;
+            --text-color: #e2e8f0; --muted-text-color: #94a3b8; --heading-color: #f8f9fa;
+            --shadow-color-light: rgba(0, 0, 0, 0.15); --shadow-color-heavy: rgba(0, 0, 0, 0.25);
+            --border-color: #334155;
+        }
 
-    /* قسم الأيقونة الرئيسية (Hero Section) */
-    .hero{
-      background:url('https://images.pexels.com/photos/12810604/pexels-photo-12810604.jpeg') center/cover no-repeat;
-      color:#fff;text-align:center;
-      padding:100px 20px;
-      animation:fadeIn 1.5s;
-    }
-    .hero h1{font-size:48px;margin-bottom:10px;}
-    .hero h1 span {color: #bbdefb;}
-    .hero p{font-size:20px;max-width:700px;margin:auto;}
-    .btn-primary {
-      display: inline-block;
-      background-color: #bbdefb;
-      color: #0d47a1;
-      padding: 12px 25px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 25px;
-      transition: background-color 0.3s ease;
-    }
-    .btn-primary:hover {
-      background-color: #90caf9;
-    }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: "Tajawal", sans-serif; color: var(--text-color); background-color: var(--background-color); -webkit-font-smoothing: antialiased; line-height: 1.7; transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease; }
+        body.no-scroll { overflow: hidden; }
+        h1, h2, h3, h4 { color: var(--heading-color); margin-bottom: 0.8rem; font-weight: 700; }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; max-width: 600px; margin: 0 auto 50px; color: var(--muted-text-color); font-size: 1.05rem; }
+        a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+        .container { width: 90%; max-width: var(--maxw); margin: 0 auto; padding: 80px 0; }
+        .animated-item { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; transition-delay: var(--delay, 0s); }
+        .animated-item.is-visible { opacity: 1; transform: translateY(0); }
 
-    /* أنماط الأقسام العامة */
-    section {
-      padding: 60px 20px;
-      margin-bottom: 30px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      width: 90%;
-      max-width: 1200px;
-      margin: 30px auto;
-    }
-    section h2 {
-      text-align: center;
-      color: #0d47a1;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      position: relative;
-    }
-    section h2::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: #1976d2;
-      border-radius: 2px;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        /* =================================================================
+           2. MODALS (AUTH & SETTINGS)
+           ================================================================= */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease; }
+        .modal-overlay.visible { opacity: 1; visibility: visible; }
+        .modal-content { background-color: var(--surface-color); padding: 30px 35px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); width: 90%; transform: scale(0.95); transition: transform var(--transition-speed) ease; position: relative; }
+        .modal-overlay.visible .modal-content { transform: scale(1); }
+        .modal-content .close-btn { position: absolute; top: 15px; left: 15px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted-text-color); }
+        .modal-content h3 { text-align: center; font-size: 1.8rem; margin-bottom: 10px; }
+        .modal-content p { text-align: center; margin-bottom: 25px; }
+        .auth-modal { max-width: 420px; }
+        .form-group { margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 12px 15px; border: 1px solid var(--border-color); border-radius: var(--radius-md); background-color: var(--background-color); color: var(--text-color); font-family: inherit; font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+        .form-input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--accent-color); }
+        .form-btn { width: 100%; padding: 14px; background-color: var(--primary-color); border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 700; cursor: pointer; color: #fff; transition: background-color 0.2s, transform 0.2s; }
+        [data-theme="dark"] .form-btn { color: var(--background-color); }
+        .form-btn:hover { background-color: var(--primary-color-light); transform: translateY(-2px); }
+        .form-footer-text { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+        .form-footer-text .switcher-link { font-weight: 700; color: var(--primary-color); cursor: pointer; }
+        .form-options { display: flex; justify-content: flex-start; font-size: 0.85rem; margin-top: -10px; margin-bottom: 20px; }
+        .hidden { display: none; }
+        .settings-modal { max-width: 500px; }
+        .theme-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+        .theme-option { border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center; cursor: pointer; position: relative; transition: all 0.2s ease; }
+        .theme-option:hover { border-color: var(--primary-color); transform: translateY(-3px); }
+        .theme-option.selected { border-color: var(--primary-color); background-color: var(--accent-color); }
+        .theme-option .fa-check-circle { position: absolute; top: 8px; right: 8px; font-size: 1rem; color: var(--primary-color); opacity: 0; transform: scale(0.5); transition: all 0.2s; }
+        .theme-option.selected .fa-check-circle { opacity: 1; transform: scale(1); }
+        .theme-option i:not(.fa-check-circle) { font-size: 2rem; margin-bottom: 10px; color: var(--primary-color); }
+        .theme-option span { font-weight: 500; font-size: 0.9rem; display: block; }
+        
+        /* =================================================================
+           3. HEADER & NAVIGATION
+           ================================================================= */
+        .site-header { position: sticky; top: 0; z-index: 100; background: transparent; padding: 1rem 0; transition: all 0.25s; }
+        .site-header.scrolled { padding: 0.5rem 0; background-color: rgba(248, 249, 250, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); border-bottom: 1px solid var(--border-color); }
+        [data-theme="dark"] .site-header.scrolled { background-color: rgba(15, 23, 42, 0.85); }
+        .nav { display: flex; align-items: center; justify-content: space-between; }
+        .brand { display:flex; align-items:center; gap:12px; }
+        .logo-symbol { font-size: 1.8rem; color: var(--primary-color); background-color: var(--accent-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform var(--transition-speed) ease; }
+        .brand:hover .logo-symbol { transform: rotate(360deg); }
+        .nav-center { display: flex; align-items: center; gap: 25px; }
+        .main-nav { list-style: none; display: flex; gap: 20px; }
+        .main-nav a { font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: all 0.2s; }
+        .main-nav a:hover { color: var(--primary-color); background-color: var(--accent-color); }
+        .nav-right { display: flex; align-items: center; gap: 12px; }
+        .btn { padding: 12px 24px; border-radius: var(--radius-md); font-weight: 700; border: 2px solid transparent; transition: all 0.2s ease; display: inline-block; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px var(--shadow-color-heavy); }
+        .btn-primary { background-color: var(--primary-color); color: #fff; }
+        [data-theme="dark"] .btn-primary { color: var(--background-color); }
+        .btn-ghost { background-color: transparent; border-color: var(--border-color); color: var(--primary-color); padding: 10px 20px; }
+        .btn-ghost:hover { background-color: var(--accent-color); }
+        .hamburger { display: none; font-size: 1.5rem; background: transparent; border: none; cursor: pointer; z-index: 110; }
+        .mobile-nav { position: fixed; top: 0; right: -100%; width: 300px; height: 100%; background-color: var(--surface-color); z-index: 105; padding: 100px 30px 30px; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: right var(--transition-speed) ease-in-out; }
+        .mobile-nav.is-open { right: 0; }
+        .main-nav-mobile { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .main-nav-mobile a { font-size: 1.2rem; font-weight: 700; }
+        .mobile-nav-auth { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+        .mobile-nav-auth a { display: block; text-align: center; margin-bottom: 15px; }
 
-    /* قسم من نحن */
-    .about-us .about-content {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .about-us .about-image {
-      flex: 1;
-      min-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    .about-us .about-content p {
-      flex: 2;
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+        /* =================================================================
+           4. VISUALLY ENHANCED SECTIONS
+           ================================================================= */
+        .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; min-height: 80vh; }
+        .kicker { display: inline-block; background: var(--accent-color); color: var(--primary-color); padding: 8px 16px; border-radius: 999px; font-weight: 700; margin-bottom: 20px; }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.2rem); line-height: 1.2; font-weight: 800; }
+        h1 span { color: var(--primary-color); }
+        p.lead { font-size: 1.1rem; max-width: 85%; margin-bottom: 30px; }
+        .hero-ctas { margin-top: 26px; display: flex; gap: 14px; align-items: center; }
+        .hero-video { position: relative; height: 100%; min-height: 300px; width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); overflow: hidden; background-color: #000; }
+        .hero-video video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; object-fit: cover; }
+        
+        #services { background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { background: var(--surface-color); padding: 30px 25px; border-radius: var(--radius-lg); box-shadow: 0 8px 26px var(--shadow-color-light); border: 1px solid var(--border-color); text-align: center; transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-12px); box-shadow: 0 20px 45px var(--shadow-color-heavy); }
+        .service-card .icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; line-height: 1; }
+        .service-card h3 { font-size: 1.25rem; }
+        
+        .features-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
+        .feature-item { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 25px; }
+        .feature-item .icon { font-size: 1.5rem; color: var(--primary-color); background-color: var(--accent-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .feature-item h4 { margin-bottom: 5px; color: var(--heading-color); }
+        .feature-image { border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); overflow: hidden; transition: box-shadow var(--transition-speed) ease; }
+        .feature-image:hover { box-shadow: 0 25px 50px var(--shadow-color-heavy); }
+        .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-speed) ease; }
+        .feature-image:hover img { transform: scale(1.05); }
+        
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .step { text-align: center; padding: 20px; }
+        .step-number { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); background-color: var(--accent-color); border: 2px solid var(--border-color); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+        
+        .stats-section { position: relative; overflow: hidden; }
+        .stats-video-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; object-fit: cover; }
+        .stats-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(13, 71, 161, 0.8); z-index: 1; }
+        [data-theme="dark"] .stats-section::before { background-color: rgba(15, 23, 42, 0.8); }
+        .stats-section .container { position: relative; z-index: 2; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .stat-item .stat-number, .stat-item .stat-label { color: #fff; }
+        .stat-item .stat-number { font-size: 3rem; font-weight: 800; }
+        
+        .testimonials-container { position: relative; }
+        .test-wrap { overflow: hidden; border-radius:var(--radius-lg); }
+        .test-cards { display: flex; transition:transform .45s ease-in-out; gap: 20px; }
+        .test { min-width: 100%; flex-shrink: 0; background: var(--surface-color); padding: 35px; border-radius: var(--radius-lg); box-shadow: 0 10px 28px var(--shadow-color-light); border: 1px solid var(--border-color); display: flex; flex-direction: column; align-items: center; }
+        .test-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid var(--accent-color-dark); }
+        .test p { font-style: italic; color: var(--text-color); font-size: 1.1rem; text-align: center; }
+        .test h4 { margin-top: 15px; color: var(--primary-color); font-weight: 700; text-align: center; }
+        
+        .cta-section { background: var(--primary-color); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; color: #fff; }
+        .cta-section h2, .cta-section p { color: #fff; }
+        .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+        .btn-cta { background-color: #fff; color: var(--primary-color); }
+        .partners-track { display: flex; gap: 24px; align-items: center; overflow-x: auto; padding: 10px 4px; scrollbar-width: none; }
+        .partners-track::-webkit-scrollbar { display: none; }
+        .partner { min-width: 140px; flex: 0 0 140px; height: 80px; background: var(--surface-color); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; padding: 8px; box-shadow: 0 6px 18px var(--shadow-color-light); border: 1px solid var(--border-color); filter: grayscale(100%); opacity: 0.7; transition: all .2s; }
+        .partner:hover { filter: none; transform: translateY(-6px); opacity: 1; }
+        .partner img { max-height: 50px; width: auto; object-fit: contain; }
+        .test-controls { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+        .icon-btn { background: var(--surface-color); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: var(--primary-color); transition: all 0.2s ease; }
+        .icon-btn:hover { background: var(--accent-color); border-color: var(--primary-color); }
+        .site-footer { padding: 70px 0 30px 0; background-color: var(--surface-color); border-top: 1px solid var(--border-color); }
+        [data-theme="dark"] .site-footer { background-color: #020617; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
+        .footer-column h4 { margin-bottom: 20px; font-size: 1.1rem; color: var(--heading-color); }
+        .footer-column ul { list-style: none; }
+        .footer-column li:not(:last-child) { margin-bottom: 10px; }
+        .footer-column a:hover { color: var(--primary-color); }
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { font-size: 1.3rem; }
+        .social-links a:hover { color: var(--primary-color); transform: scale(1.1); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+        .floating-btn { position: fixed; bottom: -100px; background-color: var(--primary-color); color: #fff; width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 8px 22px var(--shadow-color-heavy); display: flex; align-items: center; justify-content: center; z-index: 80; border: none; cursor: pointer; transition: bottom 0.3s, transform 0.3s; }
+        [data-theme="dark"] .floating-btn { color: var(--background-color); }
+        .floating-btn.is-visible { bottom: 20px; }
+        .floating-btn:hover { transform: scale(1.1); }
+        .to-top { right: 20px; }
+        .settings-fab { left: 20px; }
 
-    /* قسم الخدمات */
-    .service-container, .partner-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .service-box, .partner-box {
-      background: #f1f7ff;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .service-box i, .partner-box i {
-      font-size: 45px;
-      color: #0d47a1;
-      margin-bottom: 20px;
-    }
-    .service-box h3, .partner-box h3 {
-      margin-bottom: 15px;
-      color: #1976d2;
-      font-size: 1.5rem;
-    }
-    .service-box p, .partner-box p {
-      font-size: 1rem;
-      color: #555;
-    }
-    .service-box:hover, .partner-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    /* قسم فريق العمل */
-    .team-members-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .team-member {
-      text-align: center;
-      background: #f1f7ff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .team-member img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #1976d2;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .team-member h3 {
-      color: #0d47a1;
-      margin-bottom: 5px;
-      font-size: 1.3rem;
-    }
-    .team-member p {
-      color: #555;
-      font-size: 0.95rem;
-    }
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    /* التذييل */
-    .official-footer{background:#0d47a1;color:#fff;padding:40px 20px 20px;}
-    .official-footer .footer-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-      margin-bottom:30px;
-      width:90%;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    .official-footer .footer-column h4{color:#bbdefb;margin-bottom:20px;font-size:1.4rem;}
-    .official-footer .footer-column p,
-    .official-footer .footer-column ul li,
-    .official-footer .footer-column a{color:#e0e0e0;font-size:0.95rem;text-decoration:none;}
-    .official-footer .footer-column ul{list-style:none;}
-    .official-footer .footer-column ul li{margin-bottom:10px;}
-    .official-footer .footer-column ul li a:hover,
-    .official-footer .footer-column a:hover{color:#fff;}
-    .official-footer .footer-column .social-links a{
-      color:#fff;
-      margin-left:15px; /* تغيير الهامش لـ RTL */
-      margin-right:0;
-      font-size:1.3rem;
-      transition:0.3s;
-    }
-    .official-footer .footer-column .social-links a:hover{color:#bbdefb;}
-    .official-footer .footer-bottom{
-      border-top:1px solid rgba(255,255,255,0.1);
-      padding-top:20px;
-      text-align:center;
-      font-size:0.9rem;
-      color:#e0e0e0;
-    }
-    .official-footer .footer-legal-links a{
-      color:#e0e0e0;
-      text-decoration:none;
-      margin:0 10px;
-      transition:0.3s;
-    }
-    .official-footer .footer-legal-links a:hover{color:#fff;}
-
-    /* الرسوم المتحركة */
-    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-    @keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
-    @keyframes slideInRight{from{opacity:0;transform:translateX(50px);}to{opacity:1;transform:translateX(0);}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-
-    /* الاستجابة للأجهزة المختلفة */
-    @media(max-width:992px){
-      .navbar .nav-links{display:none;flex-direction:column;width:100%;background:#0d47a1;position:absolute;top:70px;right:0; /* تغيير الاتجاه لـ RTL */padding-bottom:15px;z-index:1000;}
-      .navbar .nav-links.nav-active{display:flex;}
-      .navbar .nav-links li{text-align:center;margin:10px 0;}
-      .navbar .nav-links li a{padding:10px 0;display:block;}
-      .menu-toggle{display:block;}
-      .about-us .about-content{flex-direction:column;}
-      .about-us .about-image{width:100%;}
-      .hero h1{font-size:36px;}
-      .hero p{font-size:18px;}
-      section h2{font-size:2rem;}
-      .official-footer .footer-grid{grid-template-columns:1fr;}
-      .official-footer .footer-column{text-align:center;}
-      .official-footer .footer-column .social-links{margin-top:20px;}
-    }
-    @media(max-width:768px){
-      .hero h1{font-size:32px;}
-      .hero p{font-size:16px;}
-      .service-container, .partner-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-    }
-
-    /* تصميم زر تبديل اللغة المخصص */
-    .language-switcher {
-      position: relative;
-      display: inline-block;
-      margin-right: 20px; /* Adjust as needed */
-      font-size: 1rem;
-    }
-
-    .language-switcher a {
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 15px;
-      border: 1px solid #bbdefb;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .language-switcher a:hover {
-      background-color: #bbdefb;
-      color: #0d47a1;
-    }
-
-    .language-switcher a i {
-      font-size: 1.2em;
-    }
-  </style>
+        /* =================================================================
+           6. RESPONSIVE DESIGN
+           ================================================================= */
+        @media(max-width:1024px){
+            .nav-center, .nav-right a { display: none; }
+            .hamburger { display: block; }
+            .hero { grid-template-columns:1fr; text-align: center; padding-top: 40px; }
+            .hero-ctas { justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .features-grid .feature-image { order: -1; margin-bottom: 40px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        }
+        @media (max-width: 768px) {
+            .container { padding: 60px 0; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-column .social-links { justify-content: center; }
+            .footer-bottom { flex-direction: column; gap: 15px; }
+        }
+    </style>
 </head>
 <body>
-  <!-- رأس التنقل -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="home-ar.html">
-          <!-- استخدام صورة شعار للموقع. يجب استبدالها بشعار احترافي ثابت. -->
-          <img src="https://i.postimg.cc/c43bgBcF/Untitled-design-4-removebg-preview.png" alt="شعار المصرية الإماراتية" class="company-logo-header"> 
-          المصرية الإماراتية
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="home-ar.html" class="active">الرئيسية</a></li>
-        <li><a href="about-ar.html">من نحن</a></li>
-        <li><a href="services-ar.html">خدماتنا</a></li>
-        <li><a href="faqs-ar.html">الأسئلة الشائعة</a></li>
-        <li><a href="contact-ar.html">اتصل بنا</a></li>
-      </ul>
-      <div class="language-switcher">
-        <a href="index.html" aria-label="English Language"><i class="fas fa-globe"></i> English</a>
-      </div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- قسم الأيقونة الرئيسية (Hero Section) -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>أهلاً بكم في <span>المصرية الإماراتية</span></h1>
-        <h2>حلول التجارة العالمية من مصر والإمارات إلى العالم</h2>
-        <p>نحن نسهل عمليات الاستيراد الدولية إلى مصر والتصدير من مصر إلى العالم، ونقدم حلولًا تجارية شاملة وخدمات وكالات تجارية تربط الأعمال بالأسواق الدولية.</p>
-        <a href="services.html" class="btn-primary">اكتشف خدماتنا</a>
-      </div>
-    </section>
-
-    <!-- قسم من نحن -->
-    <section class="about-us">
-      <div class="container">
-        <h2>عن مؤسستنا</h2>
-        <div class="about-content">
-          <!-- صورة احترافية توضح التجارة العالمية -->
-          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="توضيح لشبكة التجارة العالمية" class="about-image" />
-          <p>تأسست الشركة المصرية الإماراتية للاستيراد والتصدير والوكالات التجارية في عام 2010 بجذور قوية في مصر والإمارات العربية المتحدة، لتكون مركزًا استراتيجيًا للتجارة العالمية. نحن متخصصون في الاستيراد من الأسواق العالمية إلى مصر وتصدير المنتجات المصرية عالية الجودة إلى وجهات دولية، مما يخلق فرصًا تجارية قيمة لشركائنا العالميين.</p>
-          <p>بفضل معرفتنا العميقة بالأسواق الدولية وشبكاتنا العالمية الواسعة، نقدم خدمات شاملة لمساعدة الشركات على التعامل مع تعقيدات التجارة العالمية. يقدم فريق خبرائنا حلولًا مخصصة لربط الشركات بالفرص العالمية وجلب المنتجات الدولية إلى أسواقها المستهدفة.</p>
-          <p>مهمتنا هي تعزيز مكانة المنطقة كبوابة للتجارة العالمية، والمساهمة في نمو وازدهار الأعمال من خلال الشراكات الدولية الاستراتيجية والحلول التجارية المبتكرة التي تربط أسواقنا بالعالم.</p>
+    <div class="modal-overlay" id="auth-modal-overlay">
+        <div class="modal-content auth-modal">
+            <button class="close-btn" id="auth-close-btn" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+            <div id="login-form">
+                <h3>تسجيل الدخول</h3><p>مرحباً بعودتك! سجل الدخول للمتابعة.</p>
+                <form onsubmit="event.preventDefault();"><div class="form-group"><input type="email" class="form-input" placeholder="البريد الإلكتروني" required></div><div class="form-group"><input type="password" class="form-input" placeholder="كلمة المرور" required></div><div class="form-options"><a href="#" class="switcher-link" style="font-size: inherit;">هل نسيت كلمة المرور؟</a></div><button type="submit" class="form-btn">تسجيل الدخول</button></form>
+                <p class="form-footer-text">ليس لديك حساب؟ <a class="switcher-link" id="show-signup">سجل الآن</a></p>
+            </div>
+            <div id="signup-form" class="hidden">
+                <h3>إنشاء حساب جديد</h3><p>انضم إلينا الآن لتسهيل تجارتك الدولية.</p>
+                <form onsubmit="event.preventDefault();"><div class="form-group"><input type="text" class="form-input" placeholder="الاسم الكامل" required></div><div class="form-group"><input type="email" class="form-input" placeholder="البريد الإلكتروني" required></div><div class="form-group"><input type="password" class="form-input" placeholder="كلمة المرور" required></div><div class="form-group"><input type="password" class="form-input" placeholder="تأكيد كلمة المرور" required></div><button type="submit" class="form-btn">إنشاء حساب</button></form>
+                <p class="form-footer-text">لديك حساب بالفعل؟ <a class="switcher-link" id="show-login">سجل الدخول</a></p>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- قسم الخدمات -->
-    <section class="services">
-      <div class="container">
-        <h2>خدماتنا</h2>
-        <div class="service-container">
-          <div class="service-box">
-            <i class="fas fa-chart-bar"></i> <!-- رسم بياني للتجارة -->
-            <h3>إدارة الاستيراد والتصدير</h3>
-            <p>خدمات استيراد وتصدير عالمية شاملة، بما في ذلك الوثائق واللوجستيات والتخليص الجمركي والامتثال التنظيمي للتجارة الدولية.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-handshake"></i> <!-- مصافحة للوكالة -->
-            <h3>تمثيل الوكالات التجارية</h3>
-            <p>تمثيل العلامات التجارية والمنتجات الدولية في الأسواق المحلية، والمنتجات المحلية في الأسواق الدولية، مما يوفر الخبرة والوصول إلى الشبكات العالمية.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-magnifying-glass-chart"></i> <!-- عدسة مكبرة مع رسم بياني لتحليل السوق -->
-            <h3>تحليل السوق العالمية</h3>
-            <p>أبحاث وتحليلات سوقية مفصلة لمساعدة الشركات على فهم الفرص والتحديات والمشهد التنافسي في الأسواق الدولية.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-network-wired"></i> <!-- شبكة للتواصل -->
-            <h3>تواصل أعمال استراتيجي</h3>
-            <p>تواصل مع الشركاء والموردين والعملاء المحتملين من خلال شبكتنا العالمية الواسعة التي تمتد عبر مراكز التجارة الدولية الرئيسية في جميع أنحاء العالم.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-gavel"></i> <!-- مطرقة للقانون -->
-            <h3>استشارات التجارة الدولية</h3>
-            <p>إرشادات الخبراء حول المتطلبات القانونية والتنظيمية للتجارة الدولية، بما في ذلك لوائح الاستيراد/التصدير والعقود والامتثال عبر الولايات القضائية.</p>
-          </div>
-          <div class="service-box">
-            <i class="fas fa-boxes-packing"></i> <!-- صناديق تعبئة لسلسلة التوريد -->
-            <h3>حلول سلسلة التوريد المحسنة</h3>
-            <p>تحسين عمليات سلسلة التوريد العالمية الخاصة بك لتحقيق أقصى قدر من الكفاءة والموثوقية وفعالية التكلفة في التجارة الدولية.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- قسم الشركاء -->
-    <section class="partners">
-      <div class="container">
-        <h2>شركاؤنا الاستراتيجيون</h2>
-        <p>نتعاون مع منظمات وشركات عالمية رائدة لتقديم حلول تجارية دولية شاملة. تتيح لنا شراكاتنا الاستراتيجية مع شركات الشحن والوكالات الجمركية والمنظمات التجارية والمؤسسات المالية حول العالم تقديم خدمات معززة وربط الشركات بالأسواق عبر جميع القارات.</p>
-        <div class="partner-container">
-          <div class="partner-box">
-            <i class="fas fa-building-columns"></i> <!-- أعمدة مبان للحكومة/المؤسسات -->
-            <h3>الهيئات الحكومية والتجارية</h3>
-            <p>شراكات مع المنظمات التجارية الحكومية والهيئات التجارية الدولية لضمان سلاسة العمليات والامتثال.</p>
-          </div>
-          <div class="partner-box">
-            <i class="fas fa-sitemap"></i> <!-- خريطة موقع لشبكة الشركات -->
-            <h3>تحالفات الشركات والصناعة</h3>
-            <p>تحالفات استراتيجية مع الشركات الدولية الرائدة والجمعيات الصناعية عبر الأسواق والقطاعات العالمية.</p>
-          </div>
-          <div class="partner-box">
-            <i class="fas fa-route"></i> <!-- مسار للوجستيات -->
-            <h3>اللوجستيات والشحن العالمي</h3>
-            <p>شراكات مع شركات الشحن والنقل واللوجستيات الدولية العاملة عبر طرق ومراكز التجارة العالمية الرئيسية.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- قسم فريق العمل -->
-    <section class="team">
-      <div class="container">
-        <h2>تعرف على فريق عملنا الخبير</h2>
-        <div class="team-members-grid"> 
-          <div class="team-member">
-            <!-- استخدام صورة شعار لأعضاء الفريق. استبدلها بصور حقيقية. -->
-            <img src="https://uc2619d8c80f91a5999ee6b073a7.previews.dropboxusercontent.com/p/thumb/ACzB_yOswJivCRlIEU2bL9o4W0X3RNZ5-2MuZhm5PL25E6UcUwVUduowbF1fpuldfa3_MjEBkbpWaqo_60wv9_J9EOQv-1VP9Z775pGrOKrY8G8J2KFJT_HOhcRUPIb3_VVzVq5NQM0jpOx_Aba5EQ05qVcdWZbtEc3nE5_yyd_N4L12tbT7p1RxnEgNAYxKDvzn5ZMIXP6pfF18-eZQxMiIyjkgyQaHqKw5wtYMmQ9JqMWBl6D_bg3l86J5tJbaYNqxCJb6uP7u6MagMMfzPm6e0OVSVZkfuuGmhKFeL6ozydt5r3o-QazdONS-HXJLbrGs3HxX_dh9y_KjX2KkIswm9bsiTSsNK30DPG22GS0jRRJ0PVA9SGJ2WH7JyW-Q0MVHaLdp4lVU0RBz5M6RuQji/p.jpeg?is_prewarmed=true" alt="صورة إسماعيل المنشاوي" /> 
-            <h3>إسماعيل المنشاوي</h3>
-            <p>الرئيس التنفيذي والمؤسس</p>
-          </div>
-          <div class="team-member">
-            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg" alt="صورة أحمد بدراوي" /> 
-            <h3>أحمد بدراوي</h3>
-            <p>رئيس التحول الرقمي</p>
-          </div>
-           <div class="team-member">
-            <img src="https://images.pexels.com/photos/9304917/pexels-photo-9304917.jpeg" alt="صورة ندى السيد" /> 
-            <h3>ندى السيد</h3>
-            <p>مدير التطوير</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- تذييل احترافي ورسمي -->
-  <footer class="official-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h4>المصرية الإماراتية</h4>
-          <p>نقدم حلولًا متكاملة للتجارة الدولية والاستيراد والتصدير والوكالات التجارية، ونربط الأعمال بالأسواق العالمية من مصر والإمارات.</p>
-        </div>
-        <div class="footer-column">
-          <h4>روابط سريعة</h4>
-          <ul>
-            <li><a href="home-ar.html">الرئيسية</a></li>
-            <li><a href="about-ar.html">من نحن</a></li>
-            <li><a href="services-ar.html">خدماتنا</a></li>
-            <li><a href="products-ar.html">منتجاتنا</a></li>
-            <li><a href="careers-ar.html">الوظائف</a></li>
-            <li><a href="faqs-ar.html">الأسئلة الشائعة</a></li>
-            <li><a href="contact-ar.html">اتصل بنا</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>اتصل بنا</h4>
-          <p><i class="fas fa-map-marker-alt"></i> العنوان: مدينة العاشر من رمضان، الشرقية، مصر</p>
-          <p><i class="fas fa-phone"></i> الهاتف: <a href="tel:+201011766232">+20 101 176 6232</a></p>
-          <p><i class="fas fa-envelope"></i> البريد الإلكتروني: <a href="mailto:info@egy-uae.com">info@egy-uae.com</a></p>
-        </div>
-        <div class="footer-column">
-          <h4>تابعنا</h4>
-          <div class="social-links">
-            <a href="https://www.facebook.com/yourcompany" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/yourcompany" target="_blank" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/company/yourcompany" target="_blank" aria-label="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/yourcompany" target="_blank" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year-footer"></span> المصرية الإماراتية. جميع الحقوق محفوظة.</p>
-        <div class="footer-legal-links">
-          <a href="privacy-ar.html">سياسة الخصوصية</a> | 
-          <a href="terms-ar.html">الشروط والأحكام</a> | 
-          <a href="sitemap.xml">خريطة الموقع</a>
-        </div>
-      </div>
     </div>
-  </footer>
+    
+    <div class="modal-overlay" id="settings-modal-overlay">
+        <div class="modal-content settings-modal">
+            <button class="close-btn" id="settings-close-btn" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+            <h3>تخصيص تجربة التصفح</h3><p>اختر المظهر المفضل لديك. سيتم حفظ اختيارك لزياراتك القادمة.</p>
+            <div class="theme-options"><div class="theme-option" data-theme="light"><i class="fas fa-check-circle"></i><i class="fas fa-sun"></i><span>فاتح</span></div><div class="theme-option" data-theme="dark"><i class="fas fa-check-circle"></i><i class="fas fa-moon"></i><span>داكن</span></div><div class="theme-option" data-theme="auto"><i class="fas fa-check-circle"></i><i class="fas fa-desktop"></i><span>تلقائي</span></div></div>
+            <button class="form-btn" id="save-settings-btn">حفظ ومتابعة</button>
+        </div>
+    </div>
 
-  <script>
-    document.getElementById("current-year-footer").textContent = new Date().getFullYear();
+    <header class="site-header" id="site-header" role="banner">
+        <div class="container nav">
+            <a href="#home" class="brand" aria-label="Al Masriya Al Emaratia brand"><div class="logo-symbol"><i class="fas fa-globe-americas"></i></div><span style="font-weight:700;font-size:1.1rem;">المصرية الإماراتية</span></a>
+            <div class="nav-center">
+                <nav class="main-nav" aria-label="Main navigation"><ul class="main-nav" role="menubar"><li role="none"><a role="menuitem" href="#home">الرئيسية</a></li><li role="none"><a role="menuitem" href="#services">خدماتنا</a></li><li role="none"><a role="menuitem" href="#why-us">لماذا نحن؟</a></li><li role="none"><a role="menuitem" href="#contact">اتصل بنا</a></li></ul></nav>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="open-auth-modal" style="font-weight: 500;">تسجيل الدخول</a>
+                <a href="#" class="btn btn-primary open-auth-modal-signup" style="padding: 10px 20px;">تسجيل جديد</a>
+                <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="mobile-nav" id="mobile-nav">
+        <nav>
+            <ul class="main-nav-mobile"><li><a href="#home">الرئيسية</a></li><li><a href="#services">خدماتنا</a></li><li><a href="#why-us">لماذا نحن؟</a></li><li><a href="#contact">اتصل بنا</a></li></ul>
+            <div class="mobile-nav-auth"><a href="#" class="btn btn-primary open-auth-modal-signup" style="width: 100%;">تسجيل جديد</a><a href="#" class="open-auth-modal" style="font-weight: 700;">تسجيل الدخول</a></div>
+        </nav>
+    </div>
 
-    function toggleMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.classList.toggle('nav-active');
-    }
-  </script>
+    <main>
+        <section id="home" class="container hero" aria-labelledby="hero-heading">
+            <div class="hero-left">
+                <span class="kicker animated-item" style="--delay: 0.1s;">بوابتك للتجارة العالمية</span>
+                <h1 id="hero-heading" class="animated-item" style="--delay: 0.2s;">منصة متكاملة تربط <span>مصر والإمارات</span> بالعالم</h1>
+                <p class="lead animated-item" style="--delay: 0.3s;">نوفر حلولاً شاملة للاستيراد والتصدير، وندير سلاسل الإمداد من الباب إلى الباب بكفاءة وموثوقية.</p>
+                <div class="hero-ctas animated-item" style="--delay: 0.4s;">
+                    <a href="#services" class="btn btn-primary">اكتشف خدماتنا</a>
+                    <a href="#contact" class="btn btn-ghost">اطلب عرض سعر</a>
+                </div>
+            </div>
+            <div class="hero-video animated-item" style="--delay: 0.5s;">
+                <video autoplay muted loop playsinline poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                    <source src="https://cdn.pixabay.com/video/2024/05/18/212404_tiny.mp4" type="video/mp4">
+                    متصفحك لا يدعم وسم الفيديو.
+                </video>
+            </div>
+        </section>
+
+        <section id="services" class="container" aria-labelledby="services-heading">
+            <h2 id="services-heading" class="animated-item" style="--delay: 0s;">منصتنا.. خدمات متكاملة تحت سقف واحد</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نقدم مجموعة شاملة من الخدمات المصممة لتسهيل التجارة الدولية وتلبية كافة متطلبات أعمالك.</p>
+            <div class="services-grid"><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-globe-americas"></i></div><h3>إدارة الاستيراد والتصدير</h3><p>إدارة كاملة لعمليات الشحن من المصدر إلى الوجهة النهائية، مع ضمان الامتثال لجميع اللوائح الدولية.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-dolly"></i></div><h3>الحلول اللوجستية وسلاسل الإمداد</h3><p>تخطيط وتنفيذ حلول لوجستية مخصصة تشمل النقل البري والبحري والجوي، والتخزين وإدارة المخزون.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-file-invoice"></i></div><h3>التخليص الجمركي والامتثال</h3><p>فريق من الخبراء لضمان تخليص جمركي سريع وفعال، وتجنب أي تأخير أو تكاليف غير متوقعة.</p></div><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-handshake"></i></div><h3>الوكالات والتمثيل التجاري</h3><p>نعمل كوكيل وممثل موثوق لشركتك في أسواق مصر والإمارات، مما يفتح لك أبواباً جديدة للنمو.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-search-dollar"></i></div><h3>تحديد المصادر والمشتريات</h3><p>نساعدك في العثور على أفضل الموردين والمنتجات من جميع أنحاء العالم بأسعار تنافسية وجودة عالية.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>استشارات التجارة الدولية</h3><p>نقدم استشارات متخصصة لمساعدتك على فهم الأسواق واتخاذ قرارات مستنيرة لتحقيق النجاح.</p></div></div>
+        </section>
+
+        <section id="why-us" class="container" aria-labelledby="why-us-heading">
+            <div class="features-grid"><div class="features-list"><h2 id="why-us-heading" class="animated-item" style="--delay: 0s; text-align: right;">شريكك الاستراتيجي للنجاح العالمي</h2><p class="section-subtitle animated-item" style="--delay: 0.1s; text-align: right; margin-right: 0; margin-left: auto;">نحن لا نقدم خدمات فقط، بل نبني شراكات طويلة الأمد قائمة على الثقة والشفافية والنتائج الملموسة.</p><div class="feature-item animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-map-marked-alt"></i></div><div><h4>خبرة عميقة بالأسواق</h4><p>فهم دقيق لبيئة الأعمال واللوائح في كل من مصر والإمارات يضمن سلاسة عملياتك التجارية.</p></div></div><div class="feature-item animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-network-wired"></i></div><div><h4>شبكة عالمية واسعة</h4><p>علاقات قوية مع شركاء الشحن والموردين والجهات التنظيمية في جميع أنحاء العالم.</p></div></div><div class="feature-item animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-cogs"></i></div><div><h4>حلول متكاملة وشاملة</h4><p>نتولى جميع جوانب التجارة الدولية، مما يتيح لك التركيز على نمو أعمالك الأساسية.</p></div></div></div><div class="feature-image animated-item" style="--delay: 0.3s;"><img src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="فريق عمل يتعاون في مكتب حديث" loading="lazy"></div></div>
+        </section>
+
+        <section id="process" class="container" aria-labelledby="process-heading">
+            <h2 id="process-heading" class="animated-item" style="--delay: 0s;">آلية عمل مبسطة وفعالة</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نتبع عملية منهجية تضمن الشفافية والكفاءة في كل مرحلة من مراحل رحلة شحنتك.</p>
+            <div class="process-steps"><div class="step animated-item" style="--delay: 0.2s;"><div class="step-number">01</div><h4>الاستشارة والتخطيط</h4><p>نفهم احتياجاتك ونضع خطة مخصصة تلبي أهدافك وميزانيتك.</p></div><div class="step animated-item" style="--delay: 0.3s;"><div class="step-number">02</div><h4>التنفيذ والمتابعة</h4><p>نبدأ في تنفيذ الخطة مع إبقائك على اطلاع دائم بجميع التطورات.</p></div><div class="step animated-item" style="--delay: 0.4s;"><div class="step-number">03</div><h4>التخليص والشحن</h4><p>نتولى جميع الإجراءات الجمركية واللوجستية لضمان وصول سلس.</p></div><div class="step animated-item" style="--delay: 0.5s;"><div class="step-number">04</div><h4>التسليم والتقييم</h4><p>نسلم شحنتك في الموقع المحدد ونتأكد من رضاك التام عن الخدمة.</p></div></div>
+        </section>
+        
+        <section id="stats" class="stats-section" aria-label="إحصائيات الشركة">
+            <video autoplay loop muted playsinline class="stats-video-bg">
+                <source src="https://cdn.pixabay.com/video/2025/05/01/276047_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="container"><div class="stats-grid"><div class="stat-item animated-item" style="--delay: 0.1s;"><span class="stat-number" data-target="15">+15</span><span class="stat-label">عاماً من الخبرة</span></div><div class="stat-item animated-item" style="--delay: 0.2s;"><span class="stat-number" data-target="5000">+5,000</span><span class="stat-label">شحنة مكتملة</span></div><div class="stat-item animated-item" style="--delay: 0.3s;"><span class="stat-number" data-target="40">+40</span><span class="stat-label">دولة حول العالم</span></div><div class="stat-item animated-item" style="--delay: 0.4s;"><span class="stat-number" data-target="99">99%</span><span class="stat-label">رضا العملاء</span></div></div></div>
+        </section>
+
+        <section id="partners" class="container" aria-labelledby="partners-heading">
+            <h2 id="partners-heading" class="animated-item" style="--delay: 0s;">شركاؤنا في النجاح</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نعمل مع شبكة من أفضل شركات الشحن والخدمات اللوجستية لضمان تقديم خدمة عالمية المستوى.</p>
+            <div class="partners-track animated-item" style="--delay: 0.2s;" id="partners-track"><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Maersk_Group_logo.svg/1280px-Maersk_Group_logo.svg.png" alt="Maersk Logo"></div><div class="partner"><img src="https://images.seeklogo.com/logo-png/4/2/dhl-logo-png_seeklogo-40800.png" alt="DHL Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/FedEx_Express.svg/1200px-FedEx_Express.svg.png" alt="FedEx Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/DB_Schenker_logo.svg" alt="DB Schenker Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Aramex-logo.svg/1280px-Aramex-logo.svg.png" alt="Aramex Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MSC_Mediterranean_Shipping_Company_logo.svg/1280px-MSC_Mediterranean_Shipping_Company_logo.svg.png" alt="MSC Logo"></div></div>
+        </section>
+
+        <section id="testimonials" class="container" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading" class="animated-item" style="--delay: 0s;">ماذا يقول عملاؤنا</h2>
+            <p class="section-subtitle animated-item" style="--delay: 0.1s;">آراء حقيقية لشركاء يثقون في خدماتنا لتجارتهم الدولية.</p>
+            <div class="testimonials-container animated-item" style="--delay: 0.2s;">
+                <div class="test-wrap">
+                    <div class="test-cards" id="test-cards">
+                        <div class="test">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="صورة عميل" class="test-avatar">
+                            <p>"المصرية الإماراتية سهلت عملية التخليص الجمركي بين دبي والقاهرة بالنسبة لنا. فريقهم محترف وفعال للغاية."</p>
+                            <h4>أحمد حسن، الرئيس التنفيذي لشركة النيل للتجارة</h4>
+                        </div>
+                        <div class="test">
+                            <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="صورة عميل" class="test-avatar">
+                            <p>"أفضل شركة لوجستية تعاملنا معها. لقد أداروا سلسلة الإمداد بالكامل من التوريد إلى التسليم بامتياز."</p>
+                            <h4>فهد المنصوري، مدير شركة الإمارات للاستيراد</h4>
+                        </div>
+                        <div class="test">
+                            <img src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="صورة عميل" class="test-avatar">
+                            <p>"تمكنا من دخول السوق المصري بفضل خدماتهم للتمثيل التجاري. شريك استراتيجي بحق."</p>
+                            <h4>سارة خان، مؤسس شركة جلوبال فينتشرز</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-controls">
+                    <button class="icon-btn prev-test-btn" id="prev-test-btn" aria-label="الشهادة السابقة"><i class="fas fa-chevron-left"></i></button>
+                    <button class="icon-btn next-test-btn" id="next-test-btn" aria-label="الشهادة التالية"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="container">
+            <div class="cta-section animated-item" style="--delay: 0s;">
+                <h2 class="animated-item" style="--delay: 0.1s;">هل أنت مستعد لتبسيط تجارتك الدولية؟</h2>
+                <p class="animated-item" style="--delay: 0.2s;">انضم إلى مئات الشركات التي تعتمد على منصتنا لربط أعمالها بسلاسة بين مصر والإمارات وبقية العالم.</p>
+                <a href="#contact" class="btn btn-cta animated-item" style="--delay: 0.3s;">ابدأ الآن</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-column about">
+                <h4>المصرية الإماراتية</h4>
+                <p style="font-size:0.9rem; color:var(--muted-text-color);">منصتك المتكاملة للتجارة الدولية، تقدم حلولاً شاملة للاستيراد والتصدير والخدمات اللوجستية.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#why-us">لماذا نحن؟</a></li>
+                    <li><a href="#process">آلية العمل</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>الدعم</h4>
+                <ul>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الخدمة</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-info" id="contact">
+                <h4>اتصل بنا</h4>
+                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-map-marker-alt" style="margin-inline-end: 8px;"></i> لبعاشر من رمضان، مصر</p>
+                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-envelope" style="margin-inline-end: 8px;"></i> info@egy-uae.com</p>
+                <p style="font-size:0.9rem;"><i class="fas fa-phone" style="margin-inline-end: 8px;"></i> +20 101 337 8572</p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
+            <p>تصميم وتطوير بواسطة <a href="#" style="font-weight:700; color:var(--primary-color);">فريقنا</a></p>
+        </div>
+    </footer>
+
+    <button class="floating-btn to-top" id="to-top-btn" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+    <button class="floating-btn settings-fab" id="settings-fab" aria-label="الإعدادات"><i class="fas fa-cog"></i></button>
+    
+    <script>
+        // Placeholder for the necessary JavaScript functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to handle element visibility for animations
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animated-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            // Header Scroll Effect
+            const header = document.getElementById('site-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // To Top Button Visibility
+            const toTopBtn = document.getElementById('to-top-btn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    toTopBtn.classList.add('is-visible');
+                } else {
+                    toTopBtn.classList.remove('is-visible');
+                }
+            });
+            toTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Hamburger Menu Toggle
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const body = document.body;
+
+            hamburgerBtn.addEventListener('click', () => {
+                const isOpen = mobileNav.classList.toggle('is-open');
+                body.classList.toggle('no-scroll', isOpen);
+                hamburgerBtn.setAttribute('aria-expanded', isOpen);
+                hamburgerBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            });
+
+            // Close mobile nav on link click
+            document.querySelectorAll('.main-nav-mobile a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('is-open');
+                    body.classList.remove('no-scroll');
+                    hamburgerBtn.setAttribute('aria-expanded', 'false');
+                    hamburgerBtn.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+
+            // Auth Modal Logic
+            const authOverlay = document.getElementById('auth-modal-overlay');
+            const authCloseBtn = document.getElementById('auth-close-btn');
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const showSignupLink = document.getElementById('show-signup');
+            const showLoginLink = document.getElementById('show-login');
+
+            function openAuthModal(showSignup = false) {
+                authOverlay.classList.add('visible');
+                body.classList.add('no-scroll');
+                if (showSignup) {
+                    loginForm.classList.add('hidden');
+                    signupForm.classList.remove('hidden');
+                } else {
+                    loginForm.classList.remove('hidden');
+                    signupForm.classList.add('hidden');
+                }
+            }
+            
+            function closeAuthModal() {
+                authOverlay.classList.remove('visible');
+                body.classList.remove('no-scroll');
+            }
+
+            document.querySelectorAll('.open-auth-modal').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); }));
+            document.querySelectorAll('.open-auth-modal-signup').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); }));
+            authCloseBtn.addEventListener('click', closeAuthModal);
+            authOverlay.addEventListener('click', (e) => {
+                if (e.target === authOverlay) { closeAuthModal(); }
+            });
+
+            showSignupLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); });
+            showLoginLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); });
+
+            // Settings Modal Logic (Theme Switcher)
+            const settingsOverlay = document.getElementById('settings-modal-overlay');
+            const settingsFab = document.getElementById('settings-fab');
+            const settingsCloseBtn = document.getElementById('settings-close-btn');
+            const themeOptions = document.querySelectorAll('.theme-option');
+            const saveSettingsBtn = document.getElementById('save-settings-btn');
+            let selectedTheme = localStorage.getItem('theme') || 'auto';
+
+            function applyTheme(theme) {
+                const html = document.documentElement;
+                if (theme === 'dark') {
+                    html.setAttribute('data-theme', 'dark');
+                } else if (theme === 'light') {
+                    html.removeAttribute('data-theme');
+                } else {
+                    // 'auto' logic: follow system preference
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        html.setAttribute('data-theme', 'dark');
+                    } else {
+                        html.removeAttribute('data-theme');
+                    }
+                }
+                document.querySelectorAll('.theme-option').forEach(option => {
+                    option.classList.remove('selected');
+                    if (option.getAttribute('data-theme') === theme) {
+                        option.classList.add('selected');
+                    }
+                });
+            }
+
+            // Listen for system theme changes if set to 'auto'
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+                if (selectedTheme === 'auto') {
+                    applyTheme('auto');
+                }
+            });
+
+            function openSettingsModal() {
+                settingsOverlay.classList.add('visible');
+                body.classList.add('no-scroll');
+            }
+            
+            function closeSettingsModal() {
+                settingsOverlay.classList.remove('visible');
+                body.classList.remove('no-scroll');
+            }
+
+            settingsFab.addEventListener('click', openSettingsModal);
+            settingsCloseBtn.addEventListener('click', closeSettingsModal);
+            settingsOverlay.addEventListener('click', (e) => {
+                if (e.target === settingsOverlay) { closeSettingsModal(); }
+            });
+
+            themeOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    themeOptions.forEach(o => o.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedTheme = option.getAttribute('data-theme');
+                });
+            });
+
+            saveSettingsBtn.addEventListener('click', () => {
+                localStorage.setItem('theme', selectedTheme);
+                applyTheme(selectedTheme);
+                closeSettingsModal();
+            });
+
+            // Initialize theme on load
+            applyTheme(selectedTheme);
+
+
+            // Stats Counter Animation (Only runs when visible)
+            const statObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.querySelectorAll('.stat-number').forEach(element => {
+                            const target = parseInt(element.getAttribute('data-target').replace('+', '').replace(',', ''));
+                            const startValue = 0;
+                            const duration = 2000;
+                            let startTime = null;
+
+                            const animate = (timestamp) => {
+                                if (!startTime) startTime = timestamp;
+                                const progress = timestamp - startTime;
+                                const percentage = Math.min(progress / duration, 1);
+                                const value = Math.floor(percentage * target);
+
+                                // Format the number with a comma if over 1000, and keep the prefix/suffix
+                                let formattedValue = value.toLocaleString('en-US');
+                                if (element.textContent.includes('+') && target > 15) { // Check for '+' and skip if it's the '15+' stat
+                                    formattedValue = '+' + formattedValue;
+                                } else if (element.textContent.includes('%')) { // Check for '%'
+                                    formattedValue += '%';
+                                }
+
+                                element.textContent = formattedValue;
+
+                                if (percentage < 1) {
+                                    window.requestAnimationFrame(animate);
+                                }
+                            };
+
+                            window.requestAnimationFrame(animate);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('#stats .stats-grid').forEach(item => {
+                statObserver.observe(item);
+            });
+
+            // Testimonial Carousel
+            const testCards = document.getElementById('test-cards');
+            const prevBtn = document.getElementById('prev-test-btn');
+            const nextBtn = document.getElementById('next-test-btn');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const cardWidth = testCards.querySelector('.test').offsetWidth + 20; // card width + gap
+                const offset = -currentIndex * cardWidth;
+                testCards.style.transform = `translateX(${offset}px)`;
+            }
+
+            function nextTestimonial() {
+                currentIndex = (currentIndex + 1) % testCards.children.length;
+                updateCarousel();
+            }
+
+            function prevTestimonial() {
+                currentIndex = (currentIndex - 1 + testCards.children.length) % testCards.children.length;
+                updateCarousel();
+            }
+
+            nextBtn.addEventListener('click', nextTestimonial);
+            prevBtn.addEventListener('click', prevTestimonial);
+            
+            window.addEventListener('resize', updateCarousel); // Recalculate on resize
+            updateCarousel(); // Initial positioning
+
+        });
+    </script>
 </body>
 </html>
