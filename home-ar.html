@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>المصرية الإماراتية — منصة التجارة الدولية والوكالات التجارية</title>
-    <meta name="description" content="المصرية الإماراتية — منصة متكاملة لخدمات الاستيراد والتصدير، التمثيل التجاري، حلول سلاسل الإمداد والخدمات اللوجستية بين مصر، الإمارات والعالم." />
+    <title>المصرية الإماراتية — منصة التجارة الدولية والتوكيلات التجارية</title>
+    <meta name="description" content="المصرية الإماراتية — منصة متكاملة لخدمات الاستيراد والتصدير والتمثيل التجاري وحلول سلاسل الإمداد والخدمات اللوجستية بين مصر والإمارات والعالم." />
     <meta name="author" content="المصرية الإماراتية" />
-    <meta name="keywords" content="استيراد, تصدير, تخليص جمركي, شحن دولي, وكالات تجارية, مصر, الإمارات" />
+    <meta name="keywords" content="استيراد, تصدير, تخليص جمركي, شحن دولي, توكيلات تجارية, مصر, الإمارات" />
 
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -34,6 +34,45 @@
             --border-color: #334155;
         }
 
+        /* ----------------------------------------------------------------- */
+        /* RTL (Right-to-Left) Adjustments for Arabic Language */
+        /* ----------------------------------------------------------------- */
+        [dir="rtl"] .modal-content .close-btn { left: 15px; right: auto; }
+        [dir="rtl"] .form-options { justify-content: flex-start; }
+        [dir="rtl"] .site-header.scrolled { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
+        [dir="rtl"] .mobile-nav { right: -100%; left: auto; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+        [dir="rtl"] .mobile-nav.is-open { right: 0; left: auto; }
+        [dir="rtl"] .floating-btn.to-top { left: 20px; right: auto; }
+        [dir="rtl"] .floating-btn.settings-fab { right: 20px; left: auto; }
+        [dir="rtl"] .theme-option .fa-check-circle { right: 8px; left: auto; }
+        [dir="rtl"] .hero-left { text-align: right; }
+        [dir="rtl"] h2, [dir="rtl"] h3 { text-align: right; }
+        [dir="rtl"] .section-subtitle { text-align: right; margin-right: 0; margin-left: auto; }
+        [dir="rtl"] p.lead { max-width: 100%; }
+        [dir="rtl"] .hero-ctas { justify-content: flex-end; }
+        [dir="rtl"] .features-grid .features-list { order: 0; }
+        [dir="rtl"] .features-grid .feature-image { order: 1; }
+        [dir="rtl"] .feature-item { text-align: right; }
+        [dir="rtl"] .feature-item .icon { margin-left: 15px; margin-right: 0; }
+        [dir="rtl"] .footer-grid { text-align: right; }
+        [dir="rtl"] .footer-column .social-links { justify-content: flex-end; }
+        [dir="rtl"] .footer-bottom { flex-direction: row; }
+        [dir="rtl"] .nav-center { margin-left: auto; margin-right: 25px; } /* Adjust nav position for RTL */
+        [dir="rtl"] #why-us-heading, [dir="rtl"] #why-us .section-subtitle { text-align: right !important; margin-left: auto !important; margin-right: 0 !important; }
+        [dir="rtl"] @media(max-width:1024px) {
+            .hero-left { text-align: center; }
+            .hero-ctas { justify-content: center; }
+            .features-grid .features-list { order: 1; }
+            .features-grid .feature-image { order: 0; }
+            .feature-item { text-align: center; flex-direction: column; align-items: center; }
+            .feature-item .icon { margin: 0 auto 10px; }
+            [dir="rtl"] #why-us-heading, [dir="rtl"] #why-us .section-subtitle { text-align: center !important; margin: 0 auto 20px !important; }
+        }
+        [dir="rtl"] @media (max-width: 768px) {
+            .footer-grid { text-align: center; }
+            .footer-column .social-links { justify-content: center; }
+        }
+
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: "Tajawal", sans-serif; color: var(--text-color); background-color: var(--background-color); -webkit-font-smoothing: antialiased; line-height: 1.7; transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease; }
@@ -46,14 +85,19 @@
         .animated-item { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; transition-delay: var(--delay, 0s); }
         .animated-item.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* =================================================================
-           2. MODALS (AUTH & SETTINGS)
-           ================================================================= */
+        .control-btn { background: var(--surface-color); border: 1px solid var(--border-color); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; color: var(--primary-color); transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+        .control-btn:hover { background: var(--accent-color); border-color: var(--primary-color); transform: scale(1.05); }
+        .language-switcher { position: relative; }
+        .language-dropdown { position: absolute; top: 100%; left: auto; right: 0; min-width: 150px; background-color: var(--surface-color); border: 1px solid var(--border-color); border-radius: var(--radius-md); box-shadow: 0 8px 20px var(--shadow-color-heavy); padding: 5px 0; margin-top: 10px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; z-index: 200; }
+        .language-switcher:hover .language-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .language-dropdown a { display: block; padding: 8px 15px; font-size: 0.95rem; color: var(--text-color); white-space: nowrap; }
+        .language-dropdown a:hover { background-color: var(--accent-color); color: var(--primary-color); }
+        .language-dropdown a.active { background-color: var(--accent-color-dark); font-weight: 700; color: var(--primary-color); }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease; }
         .modal-overlay.visible { opacity: 1; visibility: visible; }
         .modal-content { background-color: var(--surface-color); padding: 30px 35px; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); width: 90%; transform: scale(0.95); transition: transform var(--transition-speed) ease; position: relative; }
         .modal-overlay.visible .modal-content { transform: scale(1); }
-        .modal-content .close-btn { position: absolute; top: 15px; left: 15px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted-text-color); }
+        .modal-content .close-btn { position: absolute; top: 15px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted-text-color); }
         .modal-content h3 { text-align: center; font-size: 1.8rem; margin-bottom: 10px; }
         .modal-content p { text-align: center; margin-bottom: 25px; }
         .auth-modal { max-width: 420px; }
@@ -65,21 +109,8 @@
         .form-btn:hover { background-color: var(--primary-color-light); transform: translateY(-2px); }
         .form-footer-text { text-align: center; margin-top: 20px; font-size: 0.9rem; }
         .form-footer-text .switcher-link { font-weight: 700; color: var(--primary-color); cursor: pointer; }
-        .form-options { display: flex; justify-content: flex-start; font-size: 0.85rem; margin-top: -10px; margin-bottom: 20px; }
+        .form-options { display: flex; font-size: 0.85rem; margin-top: -10px; margin-bottom: 20px; }
         .hidden { display: none; }
-        .settings-modal { max-width: 500px; }
-        .theme-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
-        .theme-option { border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 15px; text-align: center; cursor: pointer; position: relative; transition: all 0.2s ease; }
-        .theme-option:hover { border-color: var(--primary-color); transform: translateY(-3px); }
-        .theme-option.selected { border-color: var(--primary-color); background-color: var(--accent-color); }
-        .theme-option .fa-check-circle { position: absolute; top: 8px; right: 8px; font-size: 1rem; color: var(--primary-color); opacity: 0; transform: scale(0.5); transition: all 0.2s; }
-        .theme-option.selected .fa-check-circle { opacity: 1; transform: scale(1); }
-        .theme-option i:not(.fa-check-circle) { font-size: 2rem; margin-bottom: 10px; color: var(--primary-color); }
-        .theme-option span { font-weight: 500; font-size: 0.9rem; display: block; }
-        
-        /* =================================================================
-           3. HEADER & NAVIGATION
-           ================================================================= */
         .site-header { position: sticky; top: 0; z-index: 100; background: transparent; padding: 1rem 0; transition: all 0.25s; }
         .site-header.scrolled { padding: 0.5rem 0; background-color: rgba(248, 249, 250, 0.85); backdrop-filter: blur(10px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); border-bottom: 1px solid var(--border-color); }
         [data-theme="dark"] .site-header.scrolled { background-color: rgba(15, 23, 42, 0.85); }
@@ -99,16 +130,11 @@
         .btn-ghost { background-color: transparent; border-color: var(--border-color); color: var(--primary-color); padding: 10px 20px; }
         .btn-ghost:hover { background-color: var(--accent-color); }
         .hamburger { display: none; font-size: 1.5rem; background: transparent; border: none; cursor: pointer; z-index: 110; }
-        .mobile-nav { position: fixed; top: 0; right: -100%; width: 300px; height: 100%; background-color: var(--surface-color); z-index: 105; padding: 100px 30px 30px; box-shadow: -10px 0 30px rgba(0,0,0,0.1); transition: right var(--transition-speed) ease-in-out; }
-        .mobile-nav.is-open { right: 0; }
-        .main-nav-mobile { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+        .mobile-nav { position: fixed; top: 0; width: 300px; height: 100%; background-color: var(--surface-color); z-index: 105; padding: 100px 30px 30px; transition: right var(--transition-speed) ease-in-out; }
+        .main-nav-mobile { list-style: none; display: flex; flex-direction: column; gap: 20px; text-align: right; }
         .main-nav-mobile a { font-size: 1.2rem; font-weight: 700; }
         .mobile-nav-auth { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); }
         .mobile-nav-auth a { display: block; text-align: center; margin-bottom: 15px; }
-
-        /* =================================================================
-           4. VISUALLY ENHANCED SECTIONS
-           ================================================================= */
         .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; min-height: 80vh; }
         .kicker { display: inline-block; background: var(--accent-color); color: var(--primary-color); padding: 8px 16px; border-radius: 999px; font-weight: 700; margin-bottom: 20px; }
         h1 { font-size: clamp(2.5rem, 5vw, 3.2rem); line-height: 1.2; font-weight: 800; }
@@ -117,14 +143,12 @@
         .hero-ctas { margin-top: 26px; display: flex; gap: 14px; align-items: center; }
         .hero-video { position: relative; height: 100%; min-height: 300px; width: 100%; border-radius: var(--radius-lg); box-shadow: 0 15px 40px var(--shadow-color-heavy); overflow: hidden; background-color: #000; }
         .hero-video video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; object-fit: cover; }
-        
         #services { background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .service-card { background: var(--surface-color); padding: 30px 25px; border-radius: var(--radius-lg); box-shadow: 0 8px 26px var(--shadow-color-light); border: 1px solid var(--border-color); text-align: center; transition: all 0.3s; }
         .service-card:hover { transform: translateY(-12px); box-shadow: 0 20px 45px var(--shadow-color-heavy); }
         .service-card .icon { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; line-height: 1; }
-        .service-card h3 { font-size: 1.25rem; }
-        
+        .service-card h3 { font-size: 1.25rem; text-align: center; }
         .features-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: center; }
         .feature-item { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 25px; }
         .feature-item .icon { font-size: 1.5rem; color: var(--primary-color); background-color: var(--accent-color); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -133,11 +157,9 @@
         .feature-image:hover { box-shadow: 0 25px 50px var(--shadow-color-heavy); }
         .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-speed) ease; }
         .feature-image:hover img { transform: scale(1.05); }
-        
         .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .step { text-align: center; padding: 20px; }
         .step-number { font-size: 1.5rem; font-weight: 800; color: var(--primary-color); background-color: var(--accent-color); border: 2px solid var(--border-color); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-        
         .stats-section { position: relative; overflow: hidden; }
         .stats-video-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; object-fit: cover; }
         .stats-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(13, 71, 161, 0.8); z-index: 1; }
@@ -146,7 +168,6 @@
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
         .stat-item .stat-number, .stat-item .stat-label { color: #fff; }
         .stat-item .stat-number { font-size: 3rem; font-weight: 800; }
-        
         .testimonials-container { position: relative; }
         .test-wrap { overflow: hidden; border-radius:var(--radius-lg); }
         .test-cards { display: flex; transition:transform .45s ease-in-out; gap: 20px; }
@@ -154,9 +175,8 @@
         .test-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 3px solid var(--accent-color-dark); }
         .test p { font-style: italic; color: var(--text-color); font-size: 1.1rem; text-align: center; }
         .test h4 { margin-top: 15px; color: var(--primary-color); font-weight: 700; text-align: center; }
-        
         .cta-section { background: var(--primary-color); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; color: #fff; }
-        .cta-section h2, .cta-section p { color: #fff; }
+        .cta-section h2, .cta-section p { color: #fff; text-align: center; }
         .cta-section p { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
         .btn-cta { background-color: #fff; color: var(--primary-color); }
         .partners-track { display: flex; gap: 24px; align-items: center; overflow-x: auto; padding: 10px 4px; scrollbar-width: none; }
@@ -182,65 +202,52 @@
         [data-theme="dark"] .floating-btn { color: var(--background-color); }
         .floating-btn.is-visible { bottom: 20px; }
         .floating-btn:hover { transform: scale(1.1); }
-        .to-top { right: 20px; }
-        .settings-fab { left: 20px; }
-
-        /* =================================================================
-           6. RESPONSIVE DESIGN
-           ================================================================= */
-        @media(max-width:1024px){
-            .nav-center, .nav-right a { display: none; }
-            .hamburger { display: block; }
-            .hero { grid-template-columns:1fr; text-align: center; padding-top: 40px; }
-            .hero-ctas { justify-content: center; }
-            .features-grid { grid-template-columns: 1fr; }
-            .features-grid .feature-image { order: -1; margin-bottom: 40px; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        }
-        @media (max-width: 768px) {
-            .container { padding: 60px 0; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-column .social-links { justify-content: center; }
-            .footer-bottom { flex-direction: column; gap: 15px; }
-        }
+        .to-top { right: auto; left: 20px; }
+        @media(max-width:1024px){ .nav-center { display: none; } .nav-right a:not(.btn-primary):not(.language-switcher a) { display: none; } .hamburger { display: block; } .hero { grid-template-columns:1fr; text-align: center; padding-top: 40px; } .hero-ctas { justify-content: center; } .features-grid { grid-template-columns: 1fr; } .features-grid .feature-image { order: -1; margin-bottom: 40px; } .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } }
+        @media (max-width: 768px) { .container { padding: 60px 0; } .footer-grid { grid-template-columns: 1fr; text-align: center; } .footer-column .social-links { justify-content: center; } .footer-bottom { flex-direction: column; gap: 15px; } }
     </style>
 </head>
-<body>
+<body dir="rtl">
     <div class="modal-overlay" id="auth-modal-overlay">
         <div class="modal-content auth-modal">
             <button class="close-btn" id="auth-close-btn" aria-label="إغلاق"><i class="fas fa-times"></i></button>
             <div id="login-form">
-                <h3>تسجيل الدخول</h3><p>مرحباً بعودتك! سجل الدخول للمتابعة.</p>
+                <h3>تسجيل الدخول</h3><p>أهلاً بعودتك! سجل الدخول للمتابعة.</p>
                 <form onsubmit="event.preventDefault();"><div class="form-group"><input type="email" class="form-input" placeholder="البريد الإلكتروني" required></div><div class="form-group"><input type="password" class="form-input" placeholder="كلمة المرور" required></div><div class="form-options"><a href="#" class="switcher-link" style="font-size: inherit;">هل نسيت كلمة المرور؟</a></div><button type="submit" class="form-btn">تسجيل الدخول</button></form>
-                <p class="form-footer-text">ليس لديك حساب؟ <a class="switcher-link" id="show-signup">سجل الآن</a></p>
+                <p class="form-footer-text">ليس لديك حساب؟ <a class="switcher-link" id="show-signup">انضم الآن</a></p>
             </div>
             <div id="signup-form" class="hidden">
                 <h3>إنشاء حساب جديد</h3><p>انضم إلينا الآن لتسهيل تجارتك الدولية.</p>
                 <form onsubmit="event.preventDefault();"><div class="form-group"><input type="text" class="form-input" placeholder="الاسم الكامل" required></div><div class="form-group"><input type="email" class="form-input" placeholder="البريد الإلكتروني" required></div><div class="form-group"><input type="password" class="form-input" placeholder="كلمة المرور" required></div><div class="form-group"><input type="password" class="form-input" placeholder="تأكيد كلمة المرور" required></div><button type="submit" class="form-btn">إنشاء حساب</button></form>
-                <p class="form-footer-text">لديك حساب بالفعل؟ <a class="switcher-link" id="show-login">سجل الدخول</a></p>
+                <p class="form-footer-text">لديك حساب بالفعل؟ <a class="switcher-link" id="show-login">تسجيل الدخول</a></p>
             </div>
-        </div>
-    </div>
-    
-    <div class="modal-overlay" id="settings-modal-overlay">
-        <div class="modal-content settings-modal">
-            <button class="close-btn" id="settings-close-btn" aria-label="إغلاق"><i class="fas fa-times"></i></button>
-            <h3>تخصيص تجربة التصفح</h3><p>اختر المظهر المفضل لديك. سيتم حفظ اختيارك لزياراتك القادمة.</p>
-            <div class="theme-options"><div class="theme-option" data-theme="light"><i class="fas fa-check-circle"></i><i class="fas fa-sun"></i><span>فاتح</span></div><div class="theme-option" data-theme="dark"><i class="fas fa-check-circle"></i><i class="fas fa-moon"></i><span>داكن</span></div><div class="theme-option" data-theme="auto"><i class="fas fa-check-circle"></i><i class="fas fa-desktop"></i><span>تلقائي</span></div></div>
-            <button class="form-btn" id="save-settings-btn">حفظ ومتابعة</button>
         </div>
     </div>
 
     <header class="site-header" id="site-header" role="banner">
         <div class="container nav">
-            <a href="#home" class="brand" aria-label="Al Masriya Al Emaratia brand"><div class="logo-symbol"><i class="fas fa-globe-americas"></i></div><span style="font-weight:700;font-size:1.1rem;">المصرية الإماراتية</span></a>
+            <a href="#home" class="brand" aria-label="شعار المصرية الإماراتية"><div class="logo-symbol"><i class="fas fa-globe-americas"></i></div><span style="font-weight:700;font-size:1.1rem;">المصرية الإماراتية</span></a>
             <div class="nav-center">
-                <nav class="main-nav" aria-label="Main navigation"><ul class="main-nav" role="menubar"><li role="none"><a role="menuitem" href="#home">الرئيسية</a></li><li role="none"><a role="menuitem" href="#services">خدماتنا</a></li><li role="none"><a role="menuitem" href="#why-us">لماذا نحن؟</a></li><li role="none"><a role="menuitem" href="#contact">اتصل بنا</a></li></ul></nav>
+                <nav class="main-nav" aria-label="القائمة الرئيسية"><ul class="main-nav" role="menubar"><li role="none"><a role="menuitem" href="#home">الرئيسية</a></li><li role="none"><a role="menuitem" href="#services">خدماتنا</a></li><li role="none"><a role="menuitem" href="#why-us">لماذا نحن؟</a></li><li role="none"><a role="menuitem" href="#contact">اتصل بنا</a></li></ul></nav>
             </div>
             <div class="nav-right">
+                <div class="language-switcher">
+                    <button class="control-btn" aria-label="مفتاح اللغة">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" data-lang="ar" class="lang-option active">العربية 🇪🇬</a>
+                        <a href="index.html" data-lang="en" class="lang-option">English 🇺🇸</a>
+                    </div>
+                </div>
+
+                <button class="control-btn" id="theme-toggle" aria-label="تغيير المظهر">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
                 <a href="#" class="open-auth-modal" style="font-weight: 500;">تسجيل الدخول</a>
-                <a href="#" class="btn btn-primary open-auth-modal-signup" style="padding: 10px 20px;">تسجيل جديد</a>
-                <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+                <a href="#" class="btn btn-primary open-auth-modal-signup" style="padding: 10px 20px;">انضم الآن</a>
+                <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-label="فتح القائمة"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
@@ -248,7 +255,7 @@
     <div class="mobile-nav" id="mobile-nav">
         <nav>
             <ul class="main-nav-mobile"><li><a href="#home">الرئيسية</a></li><li><a href="#services">خدماتنا</a></li><li><a href="#why-us">لماذا نحن؟</a></li><li><a href="#contact">اتصل بنا</a></li></ul>
-            <div class="mobile-nav-auth"><a href="#" class="btn btn-primary open-auth-modal-signup" style="width: 100%;">تسجيل جديد</a><a href="#" class="open-auth-modal" style="font-weight: 700;">تسجيل الدخول</a></div>
+            <div class="mobile-nav-auth"><a href="#" class="btn btn-primary open-auth-modal-signup" style="width: 100%;">انضم الآن</a><a href="#" class="open-auth-modal" style="font-weight: 700;">تسجيل الدخول</a></div>
         </nav>
     </div>
 
@@ -272,120 +279,156 @@
         </section>
 
         <section id="services" class="container" aria-labelledby="services-heading">
-            <h2 id="services-heading" class="animated-item" style="--delay: 0s;">منصتنا.. خدمات متكاملة تحت سقف واحد</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نقدم مجموعة شاملة من الخدمات المصممة لتسهيل التجارة الدولية وتلبية كافة متطلبات أعمالك.</p>
-            <div class="services-grid"><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-globe-americas"></i></div><h3>إدارة الاستيراد والتصدير</h3><p>إدارة كاملة لعمليات الشحن من المصدر إلى الوجهة النهائية، مع ضمان الامتثال لجميع اللوائح الدولية.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-dolly"></i></div><h3>الحلول اللوجستية وسلاسل الإمداد</h3><p>تخطيط وتنفيذ حلول لوجستية مخصصة تشمل النقل البري والبحري والجوي، والتخزين وإدارة المخزون.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-file-invoice"></i></div><h3>التخليص الجمركي والامتثال</h3><p>فريق من الخبراء لضمان تخليص جمركي سريع وفعال، وتجنب أي تأخير أو تكاليف غير متوقعة.</p></div><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-handshake"></i></div><h3>الوكالات والتمثيل التجاري</h3><p>نعمل كوكيل وممثل موثوق لشركتك في أسواق مصر والإمارات، مما يفتح لك أبواباً جديدة للنمو.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-search-dollar"></i></div><h3>تحديد المصادر والمشتريات</h3><p>نساعدك في العثور على أفضل الموردين والمنتجات من جميع أنحاء العالم بأسعار تنافسية وجودة عالية.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>استشارات التجارة الدولية</h3><p>نقدم استشارات متخصصة لمساعدتك على فهم الأسواق واتخاذ قرارات مستنيرة لتحقيق النجاح.</p></div></div>
+            <h2 id="services-heading" class="animated-item" style="--delay: 0s;">منصتنا... خدمات متكاملة تحت سقف واحد</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نقدم مجموعة متكاملة من الخدمات المصممة لتسهيل التجارة الدولية وتلبية كافة متطلبات أعمالك.</p>
+            <div class="services-grid"><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-globe-americas"></i></div><h3>إدارة الاستيراد والتصدير</h3><p>إدارة كاملة لعمليات الشحن من المصدر وحتى الوجهة النهائية، مع ضمان الامتثال لجميع اللوائح الدولية.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-dolly"></i></div><h3>حلول لوجستية وسلاسل الإمداد</h3><p>تخطيط وتنفيذ حلول لوجستية مخصصة تشمل النقل البري والبحري والجوي، والتخزين، وإدارة المخزون.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-file-invoice"></i></div><h3>التخليص الجمركي والامتثال</h3><p>فريق من الخبراء لضمان تخليص جمركي سريع وفعال، وتجنب أي تأخير أو تكاليف غير متوقعة.</p></div><div class="service-card animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-handshake"></i></div><h3>التوكيلات والتمثيل التجاري</h3><p>نعمل كوكيل وممثل موثوق لشركتك في السوقين المصري والإماراتي، ونفتح لك آفاقاً جديدة للنمو.</p></div><div class="service-card animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-search-dollar"></i></div><h3>التوريد والمشتريات</h3><p>نساعدك في العثور على أفضل الموردين والمنتجات من جميع أنحاء العالم بأسعار تنافسية وجودة عالية.</p></div><div class="service-card animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-chart-line"></i></div><h3>استشارات التجارة الدولية</h3><p>نقدم استشارات متخصصة لمساعدتك على فهم الأسواق واتخاذ قرارات مستنيرة لتحقيق النجاح.</p></div></div>
         </section>
 
         <section id="why-us" class="container" aria-labelledby="why-us-heading">
-            <div class="features-grid"><div class="features-list"><h2 id="why-us-heading" class="animated-item" style="--delay: 0s; text-align: right;">شريكك الاستراتيجي للنجاح العالمي</h2><p class="section-subtitle animated-item" style="--delay: 0.1s; text-align: right; margin-right: 0; margin-left: auto;">نحن لا نقدم خدمات فقط، بل نبني شراكات طويلة الأمد قائمة على الثقة والشفافية والنتائج الملموسة.</p><div class="feature-item animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-map-marked-alt"></i></div><div><h4>خبرة عميقة بالأسواق</h4><p>فهم دقيق لبيئة الأعمال واللوائح في كل من مصر والإمارات يضمن سلاسة عملياتك التجارية.</p></div></div><div class="feature-item animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-network-wired"></i></div><div><h4>شبكة عالمية واسعة</h4><p>علاقات قوية مع شركاء الشحن والموردين والجهات التنظيمية في جميع أنحاء العالم.</p></div></div><div class="feature-item animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-cogs"></i></div><div><h4>حلول متكاملة وشاملة</h4><p>نتولى جميع جوانب التجارة الدولية، مما يتيح لك التركيز على نمو أعمالك الأساسية.</p></div></div></div><div class="feature-image animated-item" style="--delay: 0.3s;"><img src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="فريق عمل يتعاون في مكتب حديث" loading="lazy"></div></div>
+            <div class="features-grid"><div class="features-list"><h2 id="why-us-heading" class="animated-item" style="--delay: 0s;">شريكك الاستراتيجي للنجاح العالمي</h2><p id="why-us-subtitle" class="section-subtitle animated-item" style="--delay: 0.1s;">نحن لا نقدم خدمات فقط، بل نبني شراكات طويلة الأمد قائمة على الثقة والشفافية والنتائج الملموسة.</p><div class="feature-item animated-item" style="--delay: 0.2s;"><div class="icon"><i class="fas fa-map-marked-alt"></i></div><div><h4>خبرة عميقة بالسوق</h4><p>فهم دقيق لبيئة الأعمال واللوائح في كل من مصر والإمارات، مما يضمن سلاسة عملياتك التجارية.</p></div></div><div class="feature-item animated-item" style="--delay: 0.3s;"><div class="icon"><i class="fas fa-network-wired"></i></div><div><h4>شبكة عالمية واسعة</h4><p>علاقات قوية مع شركاء الشحن والموردين والجهات التنظيمية في جميع أنحاء العالم.</p></div></div><div class="feature-item animated-item" style="--delay: 0.4s;"><div class="icon"><i class="fas fa-cogs"></i></div><div><h4>حلول شاملة ومتكاملة</h4><p>نتولى جميع جوانب التجارة الدولية، مما يتيح لك التركيز على نمو أعمالك الأساسية.</p></div></div></div><div class="feature-image animated-item" style="--delay: 0.3s;"><img src="https://images.pexels.com/photos/7533347/pexels-photo-7533347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="فريق يتعاون في مكتب حديث" loading="lazy"></div></div>
         </section>
 
         <section id="process" class="container" aria-labelledby="process-heading">
-            <h2 id="process-heading" class="animated-item" style="--delay: 0s;">آلية عمل مبسطة وفعالة</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نتبع عملية منهجية تضمن الشفافية والكفاءة في كل مرحلة من مراحل رحلة شحنتك.</p>
-            <div class="process-steps"><div class="step animated-item" style="--delay: 0.2s;"><div class="step-number">01</div><h4>الاستشارة والتخطيط</h4><p>نفهم احتياجاتك ونضع خطة مخصصة تلبي أهدافك وميزانيتك.</p></div><div class="step animated-item" style="--delay: 0.3s;"><div class="step-number">02</div><h4>التنفيذ والمتابعة</h4><p>نبدأ في تنفيذ الخطة مع إبقائك على اطلاع دائم بجميع التطورات.</p></div><div class="step animated-item" style="--delay: 0.4s;"><div class="step-number">03</div><h4>التخليص والشحن</h4><p>نتولى جميع الإجراءات الجمركية واللوجستية لضمان وصول سلس.</p></div><div class="step animated-item" style="--delay: 0.5s;"><div class="step-number">04</div><h4>التسليم والتقييم</h4><p>نسلم شحنتك في الموقع المحدد ونتأكد من رضاك التام عن الخدمة.</p></div></div>
+            <h2 id="process-heading" class="animated-item" style="--delay: 0s;">آلية عمل بسيطة وفعالة</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نتبع عملية منهجية تضمن الشفافية والكفاءة في كل مرحلة من مراحل رحلة شحنتك.</p>
+            <div class="process-steps"><div class="step animated-item" style="--delay: 0.2s;"><div class="step-number">01</div><h4>الاستشارة والتخطيط</h4><p>نفهم احتياجاتك ونضع خطة مخصصة تلبي أهدافك وميزانيتك.</p></div><div class="step animated-item" style="--delay: 0.3s;"><div class="step-number">02</div><h4>التنفيذ والمتابعة</h4><p>نبدأ في تنفيذ الخطة مع إبقائك على اطلاع دائم بجميع المستجدات.</p></div><div class="step animated-item" style="--delay: 0.4s;"><div class="step-number">03</div><h4>التخليص والشحن</h4><p>نتولى جميع الإجراءات الجمركية واللوجستية لضمان وصول سلس.</p></div><div class="step animated-item" style="--delay: 0.5s;"><div class="step-number">04</div><h4>التسليم والتقييم</h4><p>نسلم شحنتك في الموقع المحدد ونتأكد من رضاك التام عن الخدمة.</p></div></div>
         </section>
         
         <section id="stats" class="stats-section" aria-label="إحصائيات الشركة">
             <video autoplay loop muted playsinline class="stats-video-bg">
                 <source src="https://cdn.pixabay.com/video/2025/05/01/276047_tiny.mp4" type="video/mp4">
             </video>
-            <div class="container"><div class="stats-grid"><div class="stat-item animated-item" style="--delay: 0.1s;"><span class="stat-number" data-target="15">+15</span><span class="stat-label">عاماً من الخبرة</span></div><div class="stat-item animated-item" style="--delay: 0.2s;"><span class="stat-number" data-target="5000">+5,000</span><span class="stat-label">شحنة مكتملة</span></div><div class="stat-item animated-item" style="--delay: 0.3s;"><span class="stat-number" data-target="40">+40</span><span class="stat-label">دولة حول العالم</span></div><div class="stat-item animated-item" style="--delay: 0.4s;"><span class="stat-number" data-target="99">99%</span><span class="stat-label">رضا العملاء</span></div></div></div>
-        </section>
-
-        <section id="partners" class="container" aria-labelledby="partners-heading">
-            <h2 id="partners-heading" class="animated-item" style="--delay: 0s;">شركاؤنا في النجاح</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نعمل مع شبكة من أفضل شركات الشحن والخدمات اللوجستية لضمان تقديم خدمة عالمية المستوى.</p>
-            <div class="partners-track animated-item" style="--delay: 0.2s;" id="partners-track"><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Maersk_Group_logo.svg/1280px-Maersk_Group_logo.svg.png" alt="Maersk Logo"></div><div class="partner"><img src="https://images.seeklogo.com/logo-png/4/2/dhl-logo-png_seeklogo-40800.png" alt="DHL Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/FedEx_Express.svg/1200px-FedEx_Express.svg.png" alt="FedEx Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/DB_Schenker_logo.svg" alt="DB Schenker Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Aramex-logo.svg/1280px-Aramex-logo.svg.png" alt="Aramex Logo"></div><div class="partner"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/MSC_Mediterranean_Shipping_Company_logo.svg/1280px-MSC_Mediterranean_Shipping_Company_logo.svg.png" alt="MSC Logo"></div></div>
+            <div class="container"><div class="stats-grid"><div class="stat-item animated-item" style="--delay: 0.1s;"><span class="stat-number" data-target="+15">15+</span><span class="stat-label">عاماً من الخبرة</span></div><div class="stat-item animated-item" style="--delay: 0.2s;"><span class="stat-number" data-target="+5,000">5,000+</span><span class="stat-label">شحنة مكتملة</span></div><div class="stat-item animated-item" style="--delay: 0.3s;"><span class="stat-number" data-target="+40">40+</span><span class="stat-label">دولة حول العالم</span></div><div class="stat-item animated-item" style="--delay: 0.4s;"><span class="stat-number" data-target="99%">99%</span><span class="stat-label">رضا العملاء</span></div></div></div>
         </section>
 
         <section id="testimonials" class="container" aria-labelledby="testimonials-heading">
-            <h2 id="testimonials-heading" class="animated-item" style="--delay: 0s;">ماذا يقول عملاؤنا</h2>
-            <p class="section-subtitle animated-item" style="--delay: 0.1s;">آراء حقيقية لشركاء يثقون في خدماتنا لتجارتهم الدولية.</p>
+            <h2 id="testimonials-heading" class="animated-item" style="--delay: 0s;">ماذا يقول عملاؤنا عنا</h2><p class="section-subtitle animated-item" style="--delay: 0.1s;">نحن فخورون بالعلاقات القوية التي بنيناها مع عملائنا ونسعى دائماً لتجاوز توقعاتهم.</p>
             <div class="testimonials-container animated-item" style="--delay: 0.2s;">
                 <div class="test-wrap">
                     <div class="test-cards" id="test-cards">
-                        <div class="test">
-                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="صورة عميل" class="test-avatar">
-                            <p>"المصرية الإماراتية سهلت عملية التخليص الجمركي بين دبي والقاهرة بالنسبة لنا. فريقهم محترف وفعال للغاية."</p>
-                            <h4>أحمد حسن، الرئيس التنفيذي لشركة النيل للتجارة</h4>
-                        </div>
-                        <div class="test">
-                            <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="صورة عميل" class="test-avatar">
-                            <p>"أفضل شركة لوجستية تعاملنا معها. لقد أداروا سلسلة الإمداد بالكامل من التوريد إلى التسليم بامتياز."</p>
-                            <h4>فهد المنصوري، مدير شركة الإمارات للاستيراد</h4>
-                        </div>
-                        <div class="test">
-                            <img src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&w=160&h=160" alt="صورة عميل" class="test-avatar">
-                            <p>"تمكنا من دخول السوق المصري بفضل خدماتهم للتمثيل التجاري. شريك استراتيجي بحق."</p>
-                            <h4>سارة خان، مؤسس شركة جلوبال فينتشرز</h4>
-                        </div>
+                        <div class="test"><img src="https://i.pravatar.cc/150?img=1" alt="العميل 1" class="test-avatar"><p>"قدمت لنا المصرية الإماراتية حلاً متكاملاً فاق توقعاتنا. كان التخليص الجمركي سريعاً وبدون أي متاعب على الإطلاق."</p><h4>محمد العامري - تاجر إماراتي</h4></div>
+                        <div class="test"><img src="https://i.pravatar.cc/150?img=2" alt="العميل 2" class="test-avatar"><p>"الدعم اللوجستي كان ممتازاً، والفريق المحترف ساعدنا على تجاوز كل التحديات. شريك موثوق بحق للتجارة الدولية."</p><h4>فاطمة المصري - مستثمرة مصرية</h4></div>
+                        <div class="test"><img src="https://i.pravatar.cc/150?img=3" alt="العميل 3" class="test-avatar"><p>"خدمة التوريد لديهم وفرت علينا الكثير من الوقت والجهد. وجدنا أفضل المنتجات بأسعار تنافسية جداً. نوصي بهم بشدة!"</p><h4>خالد حسن - مدير شركة استيراد</h4></div>
                     </div>
                 </div>
-                <div class="test-controls">
-                    <button class="icon-btn prev-test-btn" id="prev-test-btn" aria-label="الشهادة السابقة"><i class="fas fa-chevron-left"></i></button>
-                    <button class="icon-btn next-test-btn" id="next-test-btn" aria-label="الشهادة التالية"><i class="fas fa-chevron-right"></i></button>
-                </div>
+                <div class="test-controls"><button class="icon-btn" id="prev-test"><i class="fas fa-chevron-right"></i></button><button class="icon-btn" id="next-test"><i class="fas fa-chevron-left"></i></button></div>
             </div>
         </section>
 
-        <section id="cta" class="container">
-            <div class="cta-section animated-item" style="--delay: 0s;">
-                <h2 class="animated-item" style="--delay: 0.1s;">هل أنت مستعد لتبسيط تجارتك الدولية؟</h2>
-                <p class="animated-item" style="--delay: 0.2s;">انضم إلى مئات الشركات التي تعتمد على منصتنا لربط أعمالها بسلاسة بين مصر والإمارات وبقية العالم.</p>
-                <a href="#contact" class="btn btn-cta animated-item" style="--delay: 0.3s;">ابدأ الآن</a>
-            </div>
+        <section id="contact" class="container" aria-labelledby="cta-heading">
+            <div class="cta-section animated-item" style="--delay: 0s;"><h2 id="cta-heading">هل أنت مستعد لبدء مشروعك التجاري التالي؟</h2><p>تواصل معنا اليوم للحصول على استشارة مجانية، ودعنا نساعدك في تحقيق أهدافك التجارية العالمية بكل سهولة.</p><a href="#" class="btn btn-cta open-auth-modal-signup">اطلب عرض سعر الآن</a></div>
         </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
         <div class="container footer-grid">
-            <div class="footer-column about">
-                <h4>المصرية الإماراتية</h4>
-                <p style="font-size:0.9rem; color:var(--muted-text-color);">منصتك المتكاملة للتجارة الدولية، تقدم حلولاً شاملة للاستيراد والتصدير والخدمات اللوجستية.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>روابط سريعة</h4>
-                <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#services">خدماتنا</a></li>
-                    <li><a href="#why-us">لماذا نحن؟</a></li>
-                    <li><a href="#process">آلية العمل</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>الدعم</h4>
-                <ul>
-                    <li><a href="#contact">اتصل بنا</a></li>
-                    <li><a href="#">الأسئلة الشائعة</a></li>
-                    <li><a href="#">سياسة الخصوصية</a></li>
-                    <li><a href="#">شروط الخدمة</a></li>
-                </ul>
-            </div>
-            <div class="footer-column contact-info" id="contact">
-                <h4>اتصل بنا</h4>
-                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-map-marker-alt" style="margin-inline-end: 8px;"></i> لبعاشر من رمضان، مصر</p>
-                <p style="margin-bottom:10px; font-size:0.9rem;"><i class="fas fa-envelope" style="margin-inline-end: 8px;"></i> info@egy-uae.com</p>
-                <p style="font-size:0.9rem;"><i class="fas fa-phone" style="margin-inline-end: 8px;"></i> +20 101 337 8572</p>
-            </div>
+            <div class="footer-column"><a href="#home" class="brand" aria-label="شعار المصرية الإماراتية"><div class="logo-symbol" style="width:40px;height:40px;font-size:1.5rem;margin-bottom:15px;"><i class="fas fa-globe-americas"></i></div><span style="font-weight:700;font-size:1.1rem;color:var(--heading-color);">المصرية الإماراتية</span></a><p style="margin-top:15px;font-size:0.9rem;">شريكك الموثوق لحلول التجارة والخدمات اللوجستية المتكاملة بين مصر والإمارات.</p><div class="social-links"><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+            <div class="footer-column"><h4>روابط سريعة</h4><ul><li><a href="#home">الرئيسية</a></li><li><a href="#services">خدماتنا</a></li><li><a href="#why-us">لماذا نحن؟</a></li><li><a href="#contact">اتصل بنا</a></li><li><a href="#">وظائف</a></li></ul></div>
+            <div class="footer-column"><h4>خدماتنا</h4><ul><li><a href="#">استيراد وتصدير</a></li><li><a href="#">خدمات لوجستية</a></li><li><a href="#">تخليص جمركي</a></li><li><a href="#">توكيلات تجارية</a></li><li><a href="#">استشارات</a></li></ul></div>
+            <div class="footer-column"><h4>معلومات الاتصال</h4><p style="font-size:0.9rem;"><strong>البريد:</strong> info@egy-uae.com</p><p style="font-size:0.9rem;"><strong>الهاتف:</strong> 971-50-458-8956+ (الإمارات)</p><p style="font-size:0.9rem;"><strong>الهاتف:</strong> 20-101-337-8572+ (مصر)</p></div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2024 المصرية الإماراتية. جميع الحقوق محفوظة.</p>
-            <p>تصميم وتطوير بواسطة <a href="#" style="font-weight:700; color:var(--primary-color);">فريقنا</a></p>
+            <span>© 2024 المصرية الإماراتية. جميع الحقوق محفوظة.</span>
+            <span><a href="privacy-ar.html">سياسة الخصوصية</a> | <a href="terms-ar.html">شروط الاستخدام</a></span>
         </div>
     </footer>
 
-    <button class="floating-btn to-top" id="to-top-btn" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
-    <button class="floating-btn settings-fab" id="settings-fab" aria-label="الإعدادات"><i class="fas fa-cog"></i></button>
-    
+    <button class="floating-btn to-top" id="to-top-btn" aria-label="الانتقال للأعلى"><i class="fas fa-arrow-up"></i></button>
+
     <script>
-        // Placeholder for the necessary JavaScript functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Function to handle element visibility for animations
-            const observer = new IntersectionObserver((entries, observer) => {
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const body = document.body;
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const langOptions = document.querySelectorAll('.lang-option');
+
+            // Theme Toggler Logic
+            const storedTheme = localStorage.getItem('theme') || 'light';
+            const setTheme = (theme) => {
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            };
+            setTheme(storedTheme);
+            themeToggleBtn.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+
+            // CORRECTED Language Switcher Logic
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.dataset.lang;
+                    const targetUrl = this.getAttribute('href');
+                    localStorage.setItem('language', lang);
+                    if (targetUrl && targetUrl !== '#') {
+                        window.location.href = targetUrl;
+                    }
+                });
+            });
+
+            const storedLang = localStorage.getItem('language') || 'ar';
+            langOptions.forEach(option => option.classList.toggle('active', option.dataset.lang === storedLang));
+
+            // Hamburger Menu
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const toggleMobileNav = () => {
+                const isOpen = mobileNav.classList.toggle('is-open');
+                body.classList.toggle('no-scroll', isOpen);
+                hamburgerBtn.setAttribute('aria-expanded', isOpen);
+                hamburgerBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            };
+            hamburgerBtn.addEventListener('click', toggleMobileNav);
+            document.querySelectorAll('.main-nav-mobile a').forEach(link => link.addEventListener('click', () => mobileNav.classList.contains('is-open') && toggleMobileNav()));
+
+            // Header Scroll & To Top Button
+            const header = document.getElementById('site-header');
+            const topBtn = document.getElementById('to-top-btn');
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY > 50;
+                header.classList.toggle('scrolled', scrolled);
+                topBtn.classList.toggle('is-visible', scrolled);
+            });
+            topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            // Modals Logic
+            const authModalOverlay = document.getElementById('auth-modal-overlay');
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            const openAuthModal = (isSignup = false) => {
+                authModalOverlay.classList.add('visible');
+                body.classList.add('no-scroll');
+                loginForm.classList.toggle('hidden', isSignup);
+                signupForm.classList.toggle('hidden', !isSignup);
+            };
+            const closeAuthModal = () => {
+                authModalOverlay.classList.remove('visible');
+                body.classList.remove('no-scroll');
+            };
+            document.querySelectorAll('.open-auth-modal').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); }));
+            document.querySelectorAll('.open-auth-modal-signup').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); }));
+            document.getElementById('auth-close-btn').addEventListener('click', closeAuthModal);
+            authModalOverlay.addEventListener('click', (e) => { if (e.target === authModalOverlay) closeAuthModal(); });
+            document.getElementById('show-signup').addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); });
+            document.getElementById('show-login').addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); });
+
+            // Testimonials Slider
+            const testCards = document.getElementById('test-cards');
+            const prevTestBtn = document.getElementById('prev-test');
+            const nextTestBtn = document.getElementById('next-test');
+            let currentTest = 0;
+            const updateSlider = () => {
+                const totalCards = testCards.children.length;
+                if (currentTest < 0) currentTest = totalCards - 1;
+                if (currentTest >= totalCards) currentTest = 0;
+                const offset = currentTest * (testCards.children[0].offsetWidth + 20); // Card width + gap
+                testCards.style.transform = `translateX(-${offset}px)`;
+            };
+            if(testCards) { // In RTL, the buttons are reversed
+                nextTestBtn.addEventListener('click', () => { currentTest--; updateSlider(); });
+                prevTestBtn.addEventListener('click', () => { currentTest++; updateSlider(); });
+            }
+
+            // Intersection Observer for Animations
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
@@ -393,232 +436,36 @@
                     }
                 });
             }, { threshold: 0.1 });
+            document.querySelectorAll('.animated-item').forEach(item => observer.observe(item));
 
-            document.querySelectorAll('.animated-item').forEach(item => {
-                observer.observe(item);
-            });
-
-            // Header Scroll Effect
-            const header = document.getElementById('site-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // To Top Button Visibility
-            const toTopBtn = document.getElementById('to-top-btn');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 400) {
-                    toTopBtn.classList.add('is-visible');
-                } else {
-                    toTopBtn.classList.remove('is-visible');
-                }
-            });
-            toTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // Hamburger Menu Toggle
-            const hamburgerBtn = document.getElementById('hamburger-btn');
-            const mobileNav = document.getElementById('mobile-nav');
-            const body = document.body;
-
-            hamburgerBtn.addEventListener('click', () => {
-                const isOpen = mobileNav.classList.toggle('is-open');
-                body.classList.toggle('no-scroll', isOpen);
-                hamburgerBtn.setAttribute('aria-expanded', isOpen);
-                hamburgerBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
-            });
-
-            // Close mobile nav on link click
-            document.querySelectorAll('.main-nav-mobile a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNav.classList.remove('is-open');
-                    body.classList.remove('no-scroll');
-                    hamburgerBtn.setAttribute('aria-expanded', 'false');
-                    hamburgerBtn.querySelector('i').className = 'fas fa-bars';
-                });
-            });
-
-            // Auth Modal Logic
-            const authOverlay = document.getElementById('auth-modal-overlay');
-            const authCloseBtn = document.getElementById('auth-close-btn');
-            const loginForm = document.getElementById('login-form');
-            const signupForm = document.getElementById('signup-form');
-            const showSignupLink = document.getElementById('show-signup');
-            const showLoginLink = document.getElementById('show-login');
-
-            function openAuthModal(showSignup = false) {
-                authOverlay.classList.add('visible');
-                body.classList.add('no-scroll');
-                if (showSignup) {
-                    loginForm.classList.add('hidden');
-                    signupForm.classList.remove('hidden');
-                } else {
-                    loginForm.classList.remove('hidden');
-                    signupForm.classList.add('hidden');
-                }
-            }
-            
-            function closeAuthModal() {
-                authOverlay.classList.remove('visible');
-                body.classList.remove('no-scroll');
-            }
-
-            document.querySelectorAll('.open-auth-modal').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); }));
-            document.querySelectorAll('.open-auth-modal-signup').forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); }));
-            authCloseBtn.addEventListener('click', closeAuthModal);
-            authOverlay.addEventListener('click', (e) => {
-                if (e.target === authOverlay) { closeAuthModal(); }
-            });
-
-            showSignupLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(true); });
-            showLoginLink.addEventListener('click', (e) => { e.preventDefault(); openAuthModal(false); });
-
-            // Settings Modal Logic (Theme Switcher)
-            const settingsOverlay = document.getElementById('settings-modal-overlay');
-            const settingsFab = document.getElementById('settings-fab');
-            const settingsCloseBtn = document.getElementById('settings-close-btn');
-            const themeOptions = document.querySelectorAll('.theme-option');
-            const saveSettingsBtn = document.getElementById('save-settings-btn');
-            let selectedTheme = localStorage.getItem('theme') || 'auto';
-
-            function applyTheme(theme) {
-                const html = document.documentElement;
-                if (theme === 'dark') {
-                    html.setAttribute('data-theme', 'dark');
-                } else if (theme === 'light') {
-                    html.removeAttribute('data-theme');
-                } else {
-                    // 'auto' logic: follow system preference
-                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                        html.setAttribute('data-theme', 'dark');
-                    } else {
-                        html.removeAttribute('data-theme');
-                    }
-                }
-                document.querySelectorAll('.theme-option').forEach(option => {
-                    option.classList.remove('selected');
-                    if (option.getAttribute('data-theme') === theme) {
-                        option.classList.add('selected');
-                    }
-                });
-            }
-
-            // Listen for system theme changes if set to 'auto'
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-                if (selectedTheme === 'auto') {
-                    applyTheme('auto');
-                }
-            });
-
-            function openSettingsModal() {
-                settingsOverlay.classList.add('visible');
-                body.classList.add('no-scroll');
-            }
-            
-            function closeSettingsModal() {
-                settingsOverlay.classList.remove('visible');
-                body.classList.remove('no-scroll');
-            }
-
-            settingsFab.addEventListener('click', openSettingsModal);
-            settingsCloseBtn.addEventListener('click', closeSettingsModal);
-            settingsOverlay.addEventListener('click', (e) => {
-                if (e.target === settingsOverlay) { closeSettingsModal(); }
-            });
-
-            themeOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    themeOptions.forEach(o => o.classList.remove('selected'));
-                    option.classList.add('selected');
-                    selectedTheme = option.getAttribute('data-theme');
-                });
-            });
-
-            saveSettingsBtn.addEventListener('click', () => {
-                localStorage.setItem('theme', selectedTheme);
-                applyTheme(selectedTheme);
-                closeSettingsModal();
-            });
-
-            // Initialize theme on load
-            applyTheme(selectedTheme);
-
-
-            // Stats Counter Animation (Only runs when visible)
-            const statObserver = new IntersectionObserver((entries, observer) => {
+            // Stats Counter
+            const counterObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.querySelectorAll('.stat-number').forEach(element => {
-                            const target = parseInt(element.getAttribute('data-target').replace('+', '').replace(',', ''));
-                            const startValue = 0;
-                            const duration = 2000;
-                            let startTime = null;
+                        const el = entry.target;
+                        const targetText = el.dataset.target;
+                        const target = +targetText.replace(/[^0-9.]/g, '');
+                        if (isNaN(target)) return;
+                        
+                        let count = 0;
+                        const duration = 2000;
+                        const increment = target / (duration / 16);
 
-                            const animate = (timestamp) => {
-                                if (!startTime) startTime = timestamp;
-                                const progress = timestamp - startTime;
-                                const percentage = Math.min(progress / duration, 1);
-                                const value = Math.floor(percentage * target);
-
-                                // Format the number with a comma if over 1000, and keep the prefix/suffix
-                                let formattedValue = value.toLocaleString('en-US');
-                                if (element.textContent.includes('+') && target > 15) { // Check for '+' and skip if it's the '15+' stat
-                                    formattedValue = '+' + formattedValue;
-                                } else if (element.textContent.includes('%')) { // Check for '%'
-                                    formattedValue += '%';
-                                }
-
-                                element.textContent = formattedValue;
-
-                                if (percentage < 1) {
-                                    window.requestAnimationFrame(animate);
-                                }
-                            };
-
-                            window.requestAnimationFrame(animate);
-                        });
-                        observer.unobserve(entry.target);
+                        const updateCount = () => {
+                            count += increment;
+                            if (count < target) {
+                                el.innerText = targetText.replace(/[0-9,]+/, Math.ceil(count).toLocaleString());
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                el.innerText = targetText;
+                            }
+                        };
+                        requestAnimationFrame(updateCount);
+                        observer.unobserve(el);
                     }
                 });
             }, { threshold: 0.5 });
-            
-            document.querySelectorAll('#stats .stats-grid').forEach(item => {
-                statObserver.observe(item);
-            });
-
-            // Testimonial Carousel
-            const testCards = document.getElementById('test-cards');
-            const prevBtn = document.getElementById('prev-test-btn');
-            const nextBtn = document.getElementById('next-test-btn');
-            let currentIndex = 0;
-
-            function updateCarousel() {
-                const cardWidth = testCards.querySelector('.test').offsetWidth + 20; // card width + gap
-                const offset = -currentIndex * cardWidth;
-                testCards.style.transform = `translateX(${offset}px)`;
-            }
-
-            function nextTestimonial() {
-                currentIndex = (currentIndex + 1) % testCards.children.length;
-                updateCarousel();
-            }
-
-            function prevTestimonial() {
-                currentIndex = (currentIndex - 1 + testCards.children.length) % testCards.children.length;
-                updateCarousel();
-            }
-
-            nextBtn.addEventListener('click', nextTestimonial);
-            prevBtn.addEventListener('click', prevTestimonial);
-            
-            window.addEventListener('resize', updateCarousel); // Recalculate on resize
-            updateCarousel(); // Initial positioning
-
+            document.querySelectorAll('.stat-number').forEach(counter => counterObserver.observe(counter));
         });
     </script>
 </body>
