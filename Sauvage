@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauvage - Dior</title>
+    <style>
+        /* --- Google Fonts --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+        /* --- Dior Inspired Color & Font Palette --- */
+        :root {
+            --background-color: #000000;
+            --primary-text-color: #FFFFFF;
+            --secondary-text-color: #a9a9a9; /* Light Grey/Silver */
+            --border-color: rgba(255, 255, 255, 0.2);
+            --font-main: 'Cairo', sans-serif;
+        }
+
+        /* --- Global Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background-color);
+            color: var(--secondary-text-color);
+            font-size: 18px;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-text-color);
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 20px;
+            max-width: 650px;
+        }
+
+        .section {
+            padding: 140px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* --- Header --- */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 50px;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-text-color);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #heroVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: var(--primary-text-color);
+            font-weight: 300;
+            margin: 0;
+        }
+        
+        .scroll-down-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            z-index: 2;
+            font-size: 14px;
+            letter-spacing: 1px;
+            writing-mode: vertical-rl;
+        }
+        .scroll-down-indicator::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: white;
+            margin: 10px auto 0;
+        }
+
+        /* --- Image Gallery Section --- */
+        .gallery-section {
+            padding: 80px 0;
+            background-color: var(--background-color);
+            overflow: hidden;
+        }
+        
+        .scroller {
+            max-width: 100%;
+            overflow: hidden;
+             -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+            mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+        }
+
+        .scroller-inner {
+            display: flex;
+            gap: 25px;
+            width: max-content;
+            animation: scroll 60s linear infinite;
+        }
+        
+        .scroller:hover .scroller-inner {
+            animation-play-state: paused;
+        }
+        
+        .gallery-item {
+            width: 450px;
+            height: 600px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        @keyframes scroll {
+            to {
+                transform: translate(calc(-50% - 12.5px));
+            }
+        }
+        
+        /* --- Details Section --- */
+        #details {
+            text-align: center;
+        }
+
+        #details h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        
+        #details p {
+            font-size: 1.2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .notes-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .note-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary-text-color);
+        }
+        
+        .note-item p {
+            font-size: 1rem;
+            max-width: 250px;
+        }
+
+        /* --- Philosophy Section --- */
+        #philosophy {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 80vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1920x1080.png/000000/FFFFFF?text=Desert+Landscape');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax Effect */
+        }
+        
+        #philosophy blockquote {
+            font-size: 2.5rem;
+            font-weight: 700;
+            max-width: 800px;
+            line-height: 1.5;
+            color: var(--primary-text-color);
+            border-right: 4px solid var(--primary-text-color);
+            padding-right: 30px;
+        }
+
+        /* --- Purchase Section --- */
+        #purchase {
+            text-align: center;
+        }
+
+        #purchase h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .product-variant {
+            font-size: 1.5rem;
+            color: var(--secondary-text-color);
+            margin-bottom: 30px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-text-color);
+            margin-bottom: 40px;
+        }
+        
+        .purchase-button {
+            background-color: transparent;
+            color: var(--primary-text-color);
+            padding: 18px 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 2px solid var(--primary-text-color);
+            border-radius: 2px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .purchase-button:hover {
+            background-color: var(--primary-text-color);
+            color: var(--background-color);
+        }
+        
+        /* --- Footer --- */
+        .footer {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        /* --- Animation & Responsive --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            .section { padding: 80px 0; }
+            .notes-container { flex-direction: column; align-items: center; }
+            #philosophy blockquote { font-size: 1.8rem; }
+            .gallery-item { width: 300px; height: 400px; }
+            .logo { font-size: 1.5rem; }
+            .header { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">DIOR</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+             <!-- لوضع فيديو، قم بإزالة علامات التعليق من السطر التالي واستبدل الرابط -->
+             <!-- <video playsinline autoplay muted loop poster="رابط لصورة تعرض في حال لم يعمل الفيديو" id="heroVideo">
+                <source src="رابط ملف الفيديو MP4" type="video/mp4">
+             </video> -->
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="reveal">SAUVAGE</h1>
+                <p class="reveal" style="transition-delay: 150ms;">EAU DE PARFUM</p>
+            </div>
+            <div class="scroll-down-indicator">SCROLL</div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section class="gallery-section">
+            <div class="scroller" data-animated="true">
+                <div class="scroller-inner">
+                    <!-- ضع صورك هنا. قم بمضاعفة القائمة مرة أخرى للحصول على حركة سلسة -->
+                    <!-- المجموعة الأولى -->
+                    <div class="gallery-item"><img src="Perfumes/Sauvage-100ml-image(1)" alt="لقطة لمنتج سوفاج"></div>
+                    <div class="gallery-item"><img src="Perfumes/Sauvage-100ml-image(2)" alt="نمط حياة سوفاج"></div>
+                    <div class="gallery-item"><img src="Perfumes/Sauvage-100ml-image(3)" alt="طبيعة مستوحى منها سوفاج"></div>
+                    <div class="gallery-item"><img src="Perfumes/Sauvage-100ml-image(4)" alt="زجاجة عطر سوفاج"></div>
+                    <div class="gallery-item"><img src="Perfumes/Sauvage-100ml-image(5)" alt="رجل سوفاج"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Details" alt="تفاصيل عطر سوفاج"></div>
+                    <!-- المجموعة الثانية (مكررة) -->
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Product+1" alt="لقطة لمنتج سوفاج"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Lifestyle+1" alt="نمط حياة سوفاج"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Nature+1" alt="طبيعة مستوحى منها سوفاج"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Product+2" alt="زجاجة عطر سوفاج"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Lifestyle+2" alt="رجل سوفاج"></div>
+                    <div class="gallery-item"><img src="https://via.placeholder.com/450x600.png/000000/FFFFFF?text=Details" alt="تفاصيل عطر سوفاج"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scent Details Section -->
+        <section id="details" class="section">
+            <div class="container">
+                <h2 class="reveal">تركيبة حسية وغامضة</h2>
+                <p class="reveal">يوازن Sauvage Eau de Parfum بين الانتعاش القوي والجوانب الشرقية الدافئة. تركيبة حيوية تحتفظ بالروح الجامحة لسوفاج وتضيف عليها لمسة من الغموض والجاذبية.</p>
+                <div class="notes-container reveal">
+                    <div class="note-item">
+                        <h3>برغموت كالابريا</h3>
+                        <p>مكون أساسي ومنعش، يمنح العطر بداية حيوية ومشرقة.</p>
+                    </div>
+                    <div class="note-item">
+                        <h3>جوزة الطيب</h3>
+                        <p>تضيف لمسة حارة ومتطورة إلى قلب العطر، مما يعزز من عمقه.</p>
+                    </div>
+                    <div class="note-item">
+                        <h3>خلاصة الفانيليا</h3>
+                        <p>تغلف الرائحة بلمسة دخانية حسية تمنحها أثرًا ذكوريًا لا يُقاوم.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section">
+            <div class="container reveal">
+                <blockquote>"لابتكار Sauvage، استخدمت الرجل كنقطة انطلاق. رجولة قوية وواضحة. صورة رجل يتجاوز الزمان والموضة."</blockquote>
+                 <p style="margin-top:20px; color: var(--primary-text-color);">فرانسوا ديماشي، مبتكر عطور Dior</p>
+            </div>
+        </section>
+
+        <!-- Purchase Section -->
+        <section id="purchase" class="section">
+            <div class="container reveal">
+                <h2>امتلك أيقونة العطور</h2>
+                <div class="product-variant">EAU DE PARFUM - 100ML</div>
+                <div class="price">
+                    <!-- ضع السعر هنا -->
+                    $155.00
+                </div>
+                <!-- ضع رابط الشراء هنا -->
+                <a href="#" class="purchase-button">أضف إلى السلة</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 [اسم متجرك]. مستوحى من Dior. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- JavaScript for Reveal on Scroll ---
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(element => {
+                revealOnScroll.observe(element);
+            });
+
+            // --- JavaScript for Infinite Scroll Gallery ---
+            const scroller = document.querySelector(".scroller");
+            if (scroller) {
+                 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                    scroller.setAttribute("data-animated", true);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
