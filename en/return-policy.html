@@ -1,11 +1,297 @@
-<img src="https://www.pinnaclecart.com/blog/wp-content/uploads/2022/03/return-policy-1200x583.png">
-<h1>Return & Refund Policy</h1>
-<p>At amae, we value your satisfaction and want to ensure you have a seamless shopping experience. If you are not entirely happy with your purchase, we are here to help.</p>
-<h2>1. Return Window</h2>
-<p>You have 14 days from the date of delivery to request a return or exchange.</p>
-<break></break>
-<h2>2. Eligibility Criteria</h2>
-<h4>To be eligible for a return, please ensure that:</h4>
-<p>The item is unused, unwashed, and in the same condition that you received it.</p>
-<p>The item is in its original packaging with all tags, labels, and accessories attached.</p>
-<p>You have the receipt or proof of purchase (Order Number).</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return & Refund Policy | AMAE Store</title>
+    <!-- Importing Poppins font for a professional English look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0c2461; /* Royal Blue */
+            --accent-color: #d90429;  /* Dynamic Red */
+            --text-color: #2b2d42;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 6px solid var(--accent-color);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Policy Card Style */
+        .policy-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 8px solid var(--primary-color);
+            transition: all 0.4s ease;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-left-color: var(--accent-color);
+        }
+
+        .policy-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+        }
+
+        .policy-card h2 i {
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+
+        .policy-card ul {
+            list-style: none;
+            padding-left: 25px;
+        }
+
+        .policy-card ul li {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .policy-card ul li::before {
+            content: "\f058"; /* Font Awesome check circle */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: -30px;
+            color: var(--accent-color);
+        }
+
+        /* Steps Section */
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .step-item {
+            background: #f1f3f9;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: 0.3s;
+        }
+
+        .step-item:hover {
+            background: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #001a33 100%);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 60px;
+            border-bottom: 8px solid var(--accent-color);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 25px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-btn:hover {
+            background: #b90322;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(217, 4, 41, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .policy-card { padding: 25px; }
+            .policy-card h2 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>AMAE STORE</h1>
+            <p>Al-Masria Al-Emiratia For Trading Services</p>
+            <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Your satisfaction and trust are our top priorities</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Section 1: Introduction -->
+        <div class="policy-card">
+            <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+            <p>At <strong>AMAE Store</strong>, we are committed to providing a reliable and transparent shopping experience. If you are not entirely satisfied with your purchase, we are here to assist you with the return or exchange process in accordance with consumer protection laws.</p>
+        </div>
+
+        <!-- Section 2: Conditions -->
+        <div class="policy-card">
+            <h2><i class="fas fa-clipboard-check"></i> Return Conditions</h2>
+            <ul>
+                <li>Return or exchange requests must be made within <strong>14 days</strong> of delivery (or 30 days for manufacturing defects).</li>
+                <li>Items must be in their original condition, unused, and in the original packaging.</li>
+                <li>The original purchase invoice or proof of payment is required.</li>
+                <li>Opened or used products cannot be returned unless a clear manufacturing defect is found.</li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Non-returnable items -->
+        <div class="policy-card">
+            <h2><i class="fas fa-exclamation-triangle"></i> Non-Returnable Items</h2>
+            <p>For health and safety reasons, we cannot accept returns for the following (unless defective):</p>
+            <ul>
+                <li>Personal care and skincare products.</li>
+                <li>Customized items or products modified at the customer's request.</li>
+                <li>Consumable goods that have been unsealed.</li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Refund Process -->
+        <div class="policy-card">
+            <h2><i class="fas fa-sync-alt"></i> Refund Process</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <p><strong>Inspection:</strong> We inspect the product upon arrival at our warehouse to ensure its condition.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <p><strong>Approval:</strong> Return requests are reviewed and approved within 48 hours.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <p><strong>Payout:</strong> Funds are returned via the original payment method within 7-14 business days.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Contact -->
+        <div class="contact-box">
+            <h2>Have more questions?</h2>
+            <p>AMAE Store Digital Support team is always ready to help you.</p>
+            <a href="mailto:digital@egy-uae.com" class="contact-btn">
+                <i class="fas fa-envelope"></i> Contact Us Now
+            </a>
+            <div style="margin-top: 25px; font-size: 1rem; opacity: 0.9;">
+                <p><i class="fas fa-phone-alt"></i> Hotline: +20 1013378572</p>
+                <p><i class="fas fa-globe"></i> Support Email: digital@egy-uae.com</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AMAE Store - Al-Masria Al-Emiratia. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Auto-update the year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll Reveal Animation
+        const cards = document.querySelectorAll('.policy-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.8s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
